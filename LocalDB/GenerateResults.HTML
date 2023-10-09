@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Player Stats Calculator</title>
+</head>
+<body>
+    <h1>Football Player Stats Calculator</h1>
+
+    <label for="name">Name:</label>
+    <input type="text" id="name"><br><br>
+
+    <label for="position">Position:</label>
+    <select id="position">
+        <option value="ATT">ATT</option>
+        <option value="MID">MID</option>
+        <option value="DEF">DEF</option>
+        <option value="GK">GK</option>
+    </select><br><br>
+
+    <label for="defaultValue">Default Value:</label>
+    <input type="number" id="defaultValue" min="0" max="100" value="70"><br><br>
+
+    <label for="PAC">Pace (PAC):</label>
+    <input type="number" id="PAC" min="0" max="100"><br><br>
+
+    <label for="SHO">Shooting (SHO):</label>
+    <input type="number" id="SHO" min="0" max="100"><br><br>
+
+    <label for="PAS">Passing (PAS):</label>
+    <input type="number" id="PAS" min="0" max="100"><br><br>
+
+    <label for="DRI">Dribbling (DRI):</label>
+    <input type="number" id="DRI" min="0" max="100"><br><br>
+
+    <label for="DEF">Defending (DEF):</label>
+    <input type="number" id="DEF" min="0" max="100"><br><br>
+
+    <label for="PHY">Physicality (PHY):</label>
+    <input type="number" id="PHY" min="0" max="100"><br><br>
+
+    <button onclick="calculateStats()">Calculate</button><br><br>
+
+    <h2>Results:</h2>
+    <p>ATT: <span id="ATTResult"></span></p>
+    <p>MID: <span id="MIDResult"></span></p>
+    <p>DEF: <span id="DEFResult"></span></p>
+    <p>GK: <span id="GKResult"></span></p>
+
+    <h2>JSON Format:</h2>
+    <pre id="jsonResult"></pre>
+
+    <script>
+        let results = [];
+        function calculateStats() {
+            const name = document.getElementById('name').value;
+            const position = document.getElementById('position').value;
+            const defaultValue = parseFloat(document.getElementById('defaultValue').value);
+            const PAC = parseFloat(document.getElementById('PAC').value) || defaultValue;
+            const SHO = parseFloat(document.getElementById('SHO').value) || defaultValue;
+            const PAS = parseFloat(document.getElementById('PAS').value) || defaultValue;
+            const DRI = parseFloat(document.getElementById('DRI').value) || defaultValue;
+            const DEF = parseFloat(document.getElementById('DEF').value) || defaultValue;
+            const PHY = parseFloat(document.getElementById('PHY').value) || defaultValue;
+
+            let ATT, MID, DEFValue, GKValue;
+
+            
+            ATT = (SHO + DRI + PAC + PHY) / 4;
+            MID = (DRI + PAC + PHY + PAS) / 4;
+            DEFValue = (PAS + PAC + DEF + PHY) / 4;
+            GKValue = 20;
+            
+
+            if(position === "GK"){
+                GKValue = defaultValue;
+                ATT/=2;
+                MID/=2;
+                DEFValue/=2;
+
+            }
+            else if(position === "ATT"){
+                ATT = defaultValue;
+            }
+            else if(position === "MID"){
+                MID = defaultValue;
+            }
+            else if(position === "DEF"){
+                DEFValue = defaultValue;
+            }
+
+            document.getElementById('ATTResult').textContent = ATT.toFixed(2);
+            document.getElementById('MIDResult').textContent = MID.toFixed(2);
+            document.getElementById('DEFResult').textContent = DEFValue.toFixed(2);
+            document.getElementById('GKResult').textContent = GKValue.toFixed(2);
+
+
+            const jsonResult = {
+                Name: name,
+                Position: position,
+                ATT: ATT.toFixed(2),
+                MID: MID.toFixed(2),
+                DEF: DEFValue.toFixed(2),
+                GK: GKValue.toFixed(2)
+            };
+            results.push(jsonResult);
+            console.log(results);
+            document.getElementById('jsonResult').textContent = JSON.stringify(jsonResult, null, 2);
+        }
+    </script>
+</body>
+</html>

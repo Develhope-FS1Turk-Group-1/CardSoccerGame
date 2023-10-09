@@ -1,0 +1,299 @@
+{
+    "Leagues": {
+        "SuperLeague": {
+            "Fenerbahce": {
+                "Country": "Turkey",
+                "Stadium": "Şükrü Saracoğlu Stadium",
+                "Manager": "Vitor Pereira",
+                "Players":[
+                    {
+                        "Name":"Edin Dzeko",
+                        "ATT":83,
+                        "MID":71,
+                        "DEF":63,
+                        "GK":20},
+                    {
+                        "Name": "Livakovic",
+                        "Position": "GK",
+                        "ATT": "40.63",
+                        "MID": "40.00",
+                        "DEF": "35.88",
+                        "GK": "82.00"
+                    },
+                    {
+                        "Name": "Dusan Tadic",
+                        "Position": "ATT",
+                        "ATT": "82.00",
+                        "MID": "77.00",
+                        "DEF": "67.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Fred",
+                        "Position": "MID",
+                        "ATT": "73.75",
+                        "MID": "81.00",
+                        "DEF": "75.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Cengiz Under",
+                        "Position": "MID",
+                        "ATT": "71.00",
+                        "MID": "78.00",
+                        "DEF": "60.75",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Michy Batshuayi",
+                        "Position": "ATT",
+                        "ATT": "77.00",
+                        "MID": "73.75",
+                        "DEF": "63.75",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Ferdi Kadioglu",
+                        "Position": "DEF",
+                        "ATT": "75.75",
+                        "MID": "77.75",
+                        "DEF": "77.00",
+                        "GK": "20.00"
+                    }
+                ]
+            },
+            "Galatasaray": {
+                "Country": "Turkey",
+                "Stadium": "Türk Telekom Stadium",
+                "Manager": "Fatih Terim"
+            },
+            "Besiktas": {
+                "Country": "Turkey",
+                "Stadium": "Vodafone Park",
+                "Manager": "Sergen Yalçın"
+            },
+            "Trabzonspor": {
+                "Country": "Turkey",
+                "Stadium": "Medical Park Stadium",
+                "Manager": "Eddie Newton"
+            },
+            "Basaksehir": {
+                "Country": "Turkey",
+                "Stadium": "Fatih Terim Stadium",
+                "Manager": "Aykut Kocaman"
+            },
+            "Alanyaspor": {
+                "Country": "Turkey",
+                "Stadium": "Bahçeşehir Okulları Stadium",
+                "Manager": "Serdar Akbulut"
+            },
+            "Gaziantep": {
+                "Country": "Turkey",
+                "Stadium": "Kalyon Stadyumu",
+                "Manager": "Ricardo Sá Pinto"
+            },
+            "Hatayspor": {
+                "Country": "Turkey",
+                "Stadium": "Antakya Atatürk Stadyumu",
+                "Manager": "Ömer Erdoğan"
+            },
+            "Konyaspor": {
+                "Country": "Turkey",
+                "Stadium": "Konya Büyükşehir Stadium",
+                "Manager": "Bulent Korkmaz"
+            },
+            "Göztepe": {
+                "Country": "Turkey",
+                "Stadium": "Gürsel Aksel Stadium",
+                "Manager": "Baris Zeren"
+            },
+            "Sivasspor": {
+                "Country": "Turkey",
+                "Stadium": "Yeni 4 Eylül Stadium",
+                "Manager": "Riza Calimbay"
+            },
+            "Antalyaspor": {
+                "Country": "Turkey",
+                "Stadium": "Antalya Stadyumu",
+                "Manager": "Ersun Yanal"
+            },
+            "Malatyaspor": {
+                "Country": "Turkey",
+                "Stadium": "Yeni Malatya Stadyumu",
+                "Manager": "Hüseyin Kalpar"
+            },
+            "Denizlispor": {
+                "Country": "Turkey",
+                "Stadium": "Denizli Atatürk Stadyumu",
+                "Manager": "Yalcin Kosukavak"
+            },
+            "Rizespor": {
+                "Country": "Turkey",
+                "Stadium": "Çaykur Didi Stadium",
+                "Manager": "Yildirim Uraz"
+            }
+        },
+        "PremierLeague": {
+            "ManchesterUnited": {
+                "Country": "England",
+                "Stadium": "Old Trafford",
+                "Manager": "Ole Gunnar Solskjær"
+            },
+            "Liverpool": {
+                "Country": "England",
+                "Stadium": "Anfield",
+                "Manager": "Jurgen Klopp"
+            },
+            "Chelsea": {
+                "Country": "England",
+                "Stadium": "Stamford Bridge",
+                "Manager": "Thomas Tuchel"
+            },
+            "ManchesterCity": {
+                "Country": "England",
+                "Stadium": "Etihad Stadium",
+                "Manager": "Pep Guardiola"
+            },
+            "Arsenal": {
+                "Country": "England",
+                "Stadium": "Emirates Stadium",
+                "Manager": "Mikel Arteta"
+            },
+            "TottenhamHotspur": {
+                "Country": "England",
+                "Stadium": "Tottenham Hotspur Stadium",
+                "Manager": "Nuno Espirito Santo"
+            },
+            "Everton": {
+                "Country": "England",
+                "Stadium": "Goodison Park",
+                "Manager": "Rafael Benitez"
+            },
+            "LeicesterCity": {
+                "Country": "England",
+                "Stadium": "King Power Stadium",
+                "Manager": "Brendan Rodgers"
+            },
+            "WolverhamptonWanderers": {
+                "Country": "England",
+                "Stadium": "Molineux Stadium",
+                "Manager": "Bruno Lage"
+            },
+            "WestHamUnited": {
+                "Country": "England",
+                "Stadium": "London Stadium",
+                "Manager": "David Moyes"
+            },
+            "AstonVilla": {
+                "Country": "England",
+                "Stadium": "Villa Park",
+                "Manager": "Dean Smith"
+            },
+            "Southampton": {
+                "Country": "England",
+                "Stadium": "St Mary's Stadium",
+                "Manager": "Ralph Hasenhüttl"
+            },
+            "CrystalPalace": {
+                "Country": "England",
+                "Stadium": "Selhurst Park",
+                "Manager": "Patrick Vieira"
+            },
+            "NewcastleUnited": {
+                "Country": "England",
+                "Stadium": "St James' Park",
+                "Manager": "Steve Bruce"
+            },
+            "BrightonHoveAlbion": {
+                "Country": "England",
+                "Stadium": "Amex Stadium",
+                "Manager": "Graham Potter"
+            }
+        },
+        "LaLiga": {
+            "RealMadrid": {
+                "Country": "Spain",
+                "Stadium": "Santiago Bernabeu",
+                "Manager": "Carlo Ancelotti"
+            },
+            "Barcelona": {
+                "Country": "Spain",
+                "Stadium": "Camp Nou",
+                "Manager": "Ronald Koeman"
+            },
+            "AtleticoMadrid": {
+                "Country": "Spain",
+                "Stadium": "Wanda Metropolitano",
+                "Manager": "Diego Simeone"
+            },
+            "Valencia": {
+                "Country": "Spain",
+                "Stadium": "Mestalla",
+                "Manager": "José Bordalás"
+            },
+            "Sevilla": {
+                "Country": "Spain",
+                "Stadium": "Ramon Sanchez-Pizjuan",
+                "Manager": "Julen Lopetegui"
+            },
+            "Villarreal": {
+                "Country": "Spain",
+                "Stadium": "Estadio de la Ceramica",
+                "Manager": "Unai Emery"
+            },
+            "RealSociedad": {
+                "Country": "Spain",
+                "Stadium": "Anoeta Stadium",
+                "Manager": "Imanol Alguacil"
+            },
+            "AthleticBilbao": {
+                "Country": "Spain",
+                "Stadium": "San Mames",
+                "Manager": "Marcelino Garcia Toral"
+            },
+            "RealBetis": {
+                "Country": "Spain",
+                "Stadium": "Benito Villamarin",
+                "Manager": "Manuel Pellegrini"
+            },
+            "CeltaVigo": {
+                "Country": "Spain",
+                "Stadium": "Balaidos",
+                "Manager": "Eduardo Coudet"
+            },
+            "Levante": {
+                "Country": "Spain",
+                "Stadium": "Ciutat de Valencia",
+                "Manager": "Paco Lopez"
+            },
+            "Getafe": {
+                "Country": "Spain",
+                "Stadium": "Coliseum Alfonso Pérez",
+                "Manager": "Mikel Arteta"
+            },
+            "Espanyol": {
+                "Country": "Spain",
+                "Stadium": "RCDE Stadium",
+                "Manager": "Vicente Moreno"
+            },
+            "Mallorca": {
+                "Country": "Spain",
+                "Stadium": "Son Moix Stadium",
+                "Manager": "Luis Garcia Plaza"
+            },
+            "Osasuna": {
+                "Country": "Spain",
+                "Stadium": "El Sadar Stadium",
+                "Manager": "Jagoba Arrasate"
+            }
+        }
+    }
+}
+
+/*
+ATT Sut drib Pace phy
+MID drip pace Phy Pas
+Def Pas Pace Def Phy
+GK gk
+
+*/
