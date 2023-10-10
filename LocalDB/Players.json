@@ -5,23 +5,25 @@
                 "Country": "Turkey",
                 "Stadium": "Şükrü Saracoğlu Stadium",
                 "Manager": "Vitor Pereira",
-                "Players":[
+                "Players": [
                     {
-                        "Name":"Edin Dzeko",
-                        "ATT":83,
-                        "MID":71,
-                        "DEF":63,
-                        "GK":20},
-                    {
-                        "Name": "Livakovic",
-                        "Position": "GK",
-                        "ATT": "40.63",
-                        "MID": "40.00",
-                        "DEF": "35.88",
-                        "GK": "82.00"
+                        "Name": "Edin Džeko",
+                        "Position": "ATT",
+                        "ATT": "83.00",
+                        "MID": "71.00",
+                        "DEF": "63.00",
+                        "GK": "20.00"
                     },
                     {
-                        "Name": "Dusan Tadic",
+                        "Name": "Dominik Livaković",
+                        "Position": "GK",
+                        "ATT": "82.00",
+                        "MID": "80.00",
+                        "DEF": "71.75",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Dušan Tadić",
                         "Position": "ATT",
                         "ATT": "82.00",
                         "MID": "77.00",
@@ -37,10 +39,10 @@
                         "GK": "20.00"
                     },
                     {
-                        "Name": "Cengiz Under",
-                        "Position": "MID",
-                        "ATT": "71.00",
-                        "MID": "78.00",
+                        "Name": "Cengiz Ünder",
+                        "Position": "ATT",
+                        "ATT": "78.00",
+                        "MID": "71.25",
                         "DEF": "60.75",
                         "GK": "20.00"
                     },
@@ -54,10 +56,194 @@
                     },
                     {
                         "Name": "Ferdi Kadioglu",
-                        "Position": "DEF",
-                        "ATT": "75.75",
+                        "Position": "ATT",
+                        "ATT": "77.00",
                         "MID": "77.75",
+                        "DEF": "74.50",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Rodrigo Becão",
+                        "Position": "DEF",
+                        "ATT": "51.00",
+                        "MID": "56.75",
                         "DEF": "77.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Sebastian Szymanski",
+                        "Position": "MID",
+                        "ATT": "70.00",
+                        "MID": "72.00",
+                        "DEF": "77.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Altay Bayındır",
+                        "Position": "GK",
+                        "ATT": "38.25",
+                        "MID": "38.13",
+                        "DEF": "32.00",
+                        "GK": "76.00"
+                    },
+                    {
+                        "Name": "Alexander Djiku",
+                        "Position": "ATT",
+                        "ATT": "76.00",
+                        "MID": "72.00",
+                        "DEF": "74.25",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Ryan Kent",
+                        "Position": "ATT",
+                        "ATT": "76.00",
+                        "MID": "76.50",
+                        "DEF": "66.75",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Luan Peres",
+                        "Position": "DEF",
+                        "ATT": "65.00",
+                        "MID": "71.00",
+                        "DEF": "76.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Miguel Crespo da Silva",
+                        "Position": "MID",
+                        "ATT": "71.75",
+                        "MID": "75.00",
+                        "DEF": "73.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Irfan Can Kahveci",
+                        "Position": "MID",
+                        "ATT": "72.25",
+                        "MID": "75.00",
+                        "DEF": "68.75",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Joshua King",
+                        "Position": "ATT",
+                        "ATT": "75.00",
+                        "MID": "73.75",
+                        "DEF": "68.75",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Lincoln",
+                        "Position": "MID",
+                        "ATT": "72.00",
+                        "MID": "75.00",
+                        "DEF": "69.25",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Miha Zajc",
+                        "Position": "MID",
+                        "ATT": "70.25",
+                        "MID": "75.00",
+                        "DEF": "68.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Emre Mor",
+                        "Position": "ATT",
+                        "ATT": "74.00",
+                        "MID": "74.25",
+                        "DEF": "63.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Bright Osayi-Samuel",
+                        "Position": "DEF",
+                        "ATT": "77.50",
+                        "MID": "78.50",
+                        "DEF": "74.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Serdar Aziz",
+                        "Position": "DEF",
+                        "ATT": "57.75",
+                        "MID": "62.25",
+                        "DEF": "73.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Mert Müldür",
+                        "Position": "DEF",
+                        "ATT": "68.00",
+                        "MID": "70.50",
+                        "DEF": "72.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "İsmail Yüksek",
+                        "Position": "MID",
+                        "ATT": "70.25",
+                        "MID": "72.00",
+                        "DEF": "72.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Umut Nayir",
+                        "Position": "ATT",
+                        "ATT": "71.00",
+                        "MID": "65.50",
+                        "DEF": "56.75",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Mert Hakan Yandaş",
+                        "Position": "MID",
+                        "ATT": "71.25",
+                        "MID": "71.00",
+                        "DEF": "69.75",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Samet Akaydin",
+                        "Position": "MID",
+                        "ATT": "55.75",
+                        "MID": "70.00",
+                        "DEF": "63.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "İrfan Can Eğribayat",
+                        "Position": "GK",
+                        "ATT": "34.88",
+                        "MID": "35.38",
+                        "DEF": "32.13",
+                        "GK": "70.00"
+                    },
+                    {
+                        "Name": "Jayden Oosterwolde",
+                        "Position": "DEF",
+                        "ATT": "67.00",
+                        "MID": "71.75",
+                        "DEF": "69.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Bartug Elmaz",
+                        "Position": "MID",
+                        "ATT": "58.25",
+                        "MID": "61.00",
+                        "DEF": "66.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Bartug Elmaz",
+                        "Position": "ATT",
+                        "ATT": "65.00",
+                        "MID": "67.25",
+                        "DEF": "62.50",
                         "GK": "20.00"
                     }
                 ]
@@ -65,12 +251,424 @@
             "Galatasaray": {
                 "Country": "Turkey",
                 "Stadium": "Türk Telekom Stadium",
-                "Manager": "Fatih Terim"
+                "Manager": "Fatih Terim",
+                "Players": [
+                    {
+                        "Name": "Lucas Torreira",
+                        "Position": "MID",
+                        "ATT": "76.00",
+                        "MID": "82.00",
+                        "DEF": "77.50",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Dries Mertens",
+                        "Position": "MID",
+                        "ATT": "72.00",
+                        "MID": "81.00",
+                        "DEF": "61.25",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Wilfried Zaha",
+                        "Position": "ATT",
+                        "ATT": "81.00",
+                        "MID": "80.75",
+                        "DEF": "68.75",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Mauro Icardi",
+                        "Position": "ATT",
+                        "ATT": "80.00",
+                        "MID": "70.25",
+                        "DEF": "62.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Fernando Muslera",
+                        "Position": "GK",
+                        "ATT": "39.50",
+                        "MID": "38.50",
+                        "DEF": "35.25",
+                        "GK": "80.00"
+                    },
+                    {
+                        "Name": "Hakim Ziyech",
+                        "Position": "ATT",
+                        "ATT": "80.00",
+                        "MID": "75.50",
+                        "DEF": "67.75",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Sacha Boey",
+                        "Position": "DEF",
+                        "ATT": "75.00",
+                        "MID": "77.50",
+                        "DEF": "79.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Kerem Demirbay",
+                        "Position": "MID",
+                        "ATT": "71.75",
+                        "MID": "79.00",
+                        "DEF": "70.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Angeliño",
+                        "Position": "DEF",
+                        "ATT": "73.00",
+                        "MID": "75.50",
+                        "DEF": "79.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Victor Nelsson",
+                        "Position": "DEF",
+                        "ATT": "64.25",
+                        "MID": "68.25",
+                        "DEF": "78.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Sérgio Oliveira",
+                        "Position": "MID",
+                        "ATT": "65.75",
+                        "MID": "78.00",
+                        "DEF": "65.50",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Tanguy Ndombele",
+                        "Position": "MID",
+                        "ATT": "72.00",
+                        "MID": "78.00",
+                        "DEF": "69.50",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Kerem Aktürkoğlu",
+                        "Position": "ATT",
+                        "ATT": "77.00",
+                        "MID": "73.00",
+                        "DEF": "62.75",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Abdülkerim Bardakcı",
+                        "Position": "DEF",
+                        "ATT": "60.25",
+                        "MID": "68.25",
+                        "DEF": "77.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Davinson Sánchez",
+                        "Position": "DEF",
+                        "ATT": "65.50",
+                        "MID": "67.25",
+                        "DEF": "77.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Cédric Bakambu",
+                        "Position": "ATT",
+                        "ATT": "76.00",
+                        "MID": "70.75",
+                        "DEF": "61.50",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Mateus Tetê",
+                        "Position": "MID",
+                        "ATT": "71.75",
+                        "MID": "76.00",
+                        "DEF": "62.25",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Léo Dubois",
+                        "Position": "DEF",
+                        "ATT": "66.75",
+                        "MID": "70.50",
+                        "DEF": "74.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Günay Güvenç",
+                        "Position": "GK",
+                        "ATT": "36.50",
+                        "MID": "36.50",
+                        "DEF": "33.88",
+                        "GK": "74.00"
+                    },
+                    {
+                        "Name": "Fredrik Midtsjø",
+                        "Position": "MID",
+                        "ATT": "72.25",
+                        "MID": "74.00",
+                        "DEF": "74.75",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Kaan Ayhan",
+                        "Position": "DEF",
+                        "ATT": "63.00",
+                        "MID": "67.00",
+                        "DEF": "68.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Baris Alper Yilmaz",
+                        "Position": "ATT",
+                        "ATT": "72.00",
+                        "MID": "76.50",
+                        "DEF": "68.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Halil İbrahim Dervişoğlu",
+                        "Position": "ATT",
+                        "ATT": "70.00",
+                        "MID": "69.50",
+                        "DEF": "61.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Berkan Kutlu",
+                        "Position": "MID",
+                        "ATT": "70.75",
+                        "MID": "69.00",
+                        "DEF": "71.50",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Kazimcan Karatas",
+                        "Position": "DEF",
+                        "ATT": "68.00",
+                        "MID": "68.50",
+                        "DEF": "68.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Emin Bayram",
+                        "Position": "DEF",
+                        "ATT": "54.50",
+                        "MID": "59.00",
+                        "DEF": "65.00",
+                        "GK": "20.00"
+                    }
+                ]
             },
             "Besiktas": {
                 "Country": "Turkey",
                 "Stadium": "Vodafone Park",
-                "Manager": "Sergen Yalçın"
+                "Manager": "Sergen Yalçın",
+                "Players": [
+                    {
+                        "Name": "Vincent Aboubakar",
+                        "Position": "ATT",
+                        "ATT": "79.00",
+                        "MID": "75.75",
+                        "DEF": "65.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Gedson Fernandes",
+                        "Position": "MID",
+                        "ATT": "77.25",
+                        "MID": "78.00",
+                        "DEF": "76.75",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Rachid Ghezzal",
+                        "Position": "ATT",
+                        "ATT": "78.00",
+                        "MID": "72.75",
+                        "DEF": "59.50",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Ante Rebić",
+                        "Position": "ATT",
+                        "ATT": "77.00",
+                        "MID": "76.50",
+                        "DEF": "68.75",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Arthur Masuaku",
+                        "Position": "DEF",
+                        "ATT": "74.50",
+                        "MID": "77.50",
+                        "DEF": "76.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Milot Rashica",
+                        "Position": "ATT",
+                        "ATT": "76.00",
+                        "MID": "75.50",
+                        "DEF": "68.75",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Valentin Rosier",
+                        "Position": "DEF",
+                        "ATT": "71.75",
+                        "MID": "75.00",
+                        "DEF": "76.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Eric Bailly",
+                        "Position": "DEF",
+                        "ATT": "62.00",
+                        "MID": "66.25",
+                        "DEF": "76.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Mert Günok",
+                        "Position": "GK",
+                        "ATT": "37.38",
+                        "MID": "37.38",
+                        "DEF": "35.13",
+                        "GK": "75.00"
+                    },
+                    {
+                        "Name": "Amir Hadžiahmetović",
+                        "Position": "MID",
+                        "ATT": "70.00",
+                        "MID": "75.00",
+                        "DEF": "72.50",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Cenk Tosun",
+                        "Position": "ATT",
+                        "ATT": "75.00",
+                        "MID": "69.25",
+                        "DEF": "60.25",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Daniel Amartey",
+                        "Position": "DEF",
+                        "ATT": "64.00",
+                        "MID": "65.75",
+                        "DEF": "74.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Omar Colley",
+                        "Position": "DEF",
+                        "ATT": "58.50",
+                        "MID": "62.75",
+                        "DEF": "74.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Ersin Destanoğlu",
+                        "Position": "GK",
+                        "ATT": "37.13",
+                        "MID": "36.88",
+                        "DEF": "32.38",
+                        "GK": "74.00"
+                    },
+                    {
+                        "Name": "Jean Onana",
+                        "Position": "MID",
+                        "ATT": "68.25",
+                        "MID": "74.00",
+                        "DEF": "69.25",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Salih Uçan",
+                        "Position": "MID",
+                        "ATT": "66.75",
+                        "MID": "74.00",
+                        "DEF": "65.75",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Onur Bulut",
+                        "Position": "DEF",
+                        "ATT": "69.50",
+                        "MID": "72.00",
+                        "DEF": "74.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Jackson Muleka",
+                        "Position": "ATT",
+                        "ATT": "70.00",
+                        "MID": "70.25",
+                        "DEF": "61.25",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Tayyip Sanuç",
+                        "Position": "DEF",
+                        "ATT": "59.00",
+                        "MID": "60.25",
+                        "DEF": "70.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Necip Uysal",
+                        "Position": "DEF",
+                        "ATT": "61.25",
+                        "MID": "62.50",
+                        "DEF": "68.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Tayfur Bingöl",
+                        "Position": "DEF",
+                        "ATT": "68.50",
+                        "MID": "70.00",
+                        "DEF": "68.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Umut Meraş",
+                        "Position": "DEF",
+                        "ATT": "62.75",
+                        "MID": "67.00",
+                        "DEF": "67.00",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Kartal Yılmaz",
+                        "Position": "MID",
+                        "ATT": "62.75",
+                        "MID": "67.00",
+                        "DEF": "66.75",
+                        "GK": "20.00"
+                    },
+                    {
+                        "Name": "Utku Yuvakuran",
+                        "Position": "GK",
+                        "ATT": "32.63",
+                        "MID": "32.25",
+                        "DEF": "28.25",
+                        "GK": "66.00"
+                    },
+                    {
+                        "Name": "Oguzhan Akgün",
+                        "Position": "MID",
+                        "ATT": "65.75",
+                        "MID": "63.00",
+                        "DEF": "51.75",
+                        "GK": "20.00"
+                    }
+                ]
             },
             "Trabzonspor": {
                 "Country": "Turkey",
@@ -289,7 +887,6 @@
         }
     }
 }
-
 /*
 ATT Sut drib Pace phy
 MID drip pace Phy Pas

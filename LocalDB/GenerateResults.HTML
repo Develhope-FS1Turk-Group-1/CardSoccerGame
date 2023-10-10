@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Football Player Stats Calculator</title>
 </head>
-<body>
+<body style="background-color: gray;">
     <h1>Football Player Stats Calculator</h1>
 
     <label for="name">Name:</label>
@@ -67,9 +67,9 @@
             let ATT, MID, DEFValue, GKValue;
 
             
-            ATT = (SHO + DRI + PAC + PHY) / 4;
-            MID = (DRI + PAC + PHY + PAS) / 4;
-            DEFValue = (PAS + PAC + DEF + PHY) / 4;
+            ATT = Number((SHO + DRI + PAC + PHY) / 4);
+            MID = Number((DRI + PAC + PHY + PAS) / 4);
+            DEFValue = Number((PAS + PAC + DEF + PHY) / 4);
             GKValue = 20;
             
 
