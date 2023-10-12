@@ -1,7 +1,5 @@
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import {BrowserRouter as Router, Switch, Route, Link,Routes} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Audience from './components/Audience/Audience';
 import Market from './components/Market/Market';
 import Online from './components/Online/Online';
@@ -11,31 +9,31 @@ function App() {
 
   return (
       <div>
-          <BrowserRouter>
-        <Routes>
-          <Route path='/' exact element={<HomePage/>}/>
-                  <Route
-                      path='/audience'
-                      element={<Audience />}
-                  />
-                  <Route
-                      path='/market'
-                      element={<Market/>}
-                  />
-                  <Route
-                      path='/online'
-                      element={<Online/>}
-                  />
-                  <Route
-                      path='/tean'
-                      element={<Team/>}
-                  />
-                  <Route
-                      path='/audience'
-                      element={<Audience />}
-                  />
+          <Router>
+            <Routes>
+                <Route path='/' exact element={<HomePage/>}/>
+                <Route
+                    path='/audience'
+                    element={<Audience />}
+                />
+                <Route
+                    path='/market'
+                    element={<Market/>}
+                />
+                <Route
+                    path='/online'
+                    element={<Online/>}
+                />
+                <Route
+                    path='/tean'
+                    element={<Team/>}
+                />
+                <Route
+                    path='/audience'
+                    element={<Audience />}
+                />
               </Routes>
-          </BrowserRouter>
+          </Router>
       </div>
   );
 }
