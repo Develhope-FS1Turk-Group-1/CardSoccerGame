@@ -8,6 +8,9 @@ const validationSchema = yup.object({
     username: yup.string().required('Zorunlu alan'),
     email: yup.string().required('Zorunlu alan'),
     password: yup.string().required('Zorunlu alan'),
+    username: yup.string().required('Required Field'),
+    mail: yup.string().required('Required Field'),
+    password: yup.string().required('Required Field'),
 });
 
 const RegisterPage = () => {
@@ -43,6 +46,7 @@ const RegisterPage = () => {
         axios
             .post('http://localhost:3050/register', formdata)
             .then((response) => {
+
                 console.log(response.data)
                 localStorage.setItem('user', JSON.stringify(response.data));
                 navigate("/dashboard");
@@ -60,7 +64,7 @@ const RegisterPage = () => {
                     <input
                         className='logInInput'
                         type='text'
-                        placeholder='Kullanıcı Adı'
+                        placeholder='Username'
                         name='username'
                         value={formdata.username}
                         onChange={handleChange}
