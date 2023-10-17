@@ -58,7 +58,7 @@ app.post('/register', async (req, res) => {
 
 
   app.post('/login', async (req, res) => {
-    const { username, password } = req.body;
+    const { mail, password } = req.body;
 
     try {
       const query = `
@@ -67,7 +67,7 @@ app.post('/register', async (req, res) => {
         WHERE mail = $1 AND password = $2
       `;
 
-      const result = await pool.query(query, [username, password]);
+      const result = await pool.query(query, [mail, password]);
 
       if (result.rows.length === 1) {
         const user = result.rows[0];
