@@ -14,7 +14,7 @@ const LoginPage = () => {
     const [errors, setErrors] = useState({});
     const validationSchema = yup.object({
         mail: yup.string().required('Required'),
-        password: yup.string().required('Zorunlu alan'),
+        password: yup.string().required('Required'),
     });
     const navigate = useNavigate();
 
@@ -47,7 +47,7 @@ const LoginPage = () => {
                      localStorage.setItem('user', JSON.stringify(response.data.username));
                     navigate('/dasboard');
                 } else {
-                    console.log('Kullanıcı oturumu doğrulanamadı');
+                    console.log('User session not authorized');
                 }
             })
             .catch((error) => {
@@ -62,7 +62,7 @@ const LoginPage = () => {
                     <h1>Welcome</h1>
                     <input
                         className='logInInput'
-                        type='text'
+                        type='email'
                         placeholder='Mail'
                         name='mail'
                         value={formdata.mail}

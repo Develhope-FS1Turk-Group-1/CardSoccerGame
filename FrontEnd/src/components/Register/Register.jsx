@@ -5,9 +5,6 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const validationSchema = yup.object({
-    username: yup.string().required('Zorunlu alan'),
-    email: yup.string().required('Zorunlu alan'),
-    password: yup.string().required('Zorunlu alan'),
     username: yup.string().required('Required Field'),
     mail: yup.string().required('Required Field'),
     password: yup.string().required('Required Field'),
