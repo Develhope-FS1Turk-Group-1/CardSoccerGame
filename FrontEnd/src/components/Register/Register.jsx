@@ -1,6 +1,13 @@
 import {useState} from 'react';
 import './RegisterPageStyle.css';
+import * as yup from 'yup';
 import axios from 'axios';
+
+const validationSchema = yup.object({
+    username: yup.string().required('Zorunlu alan'),
+    lastName: yup.string().required('Zorunlu alan'),
+    password: yup.string().required('Zorunlu alan'),
+});
 
 const RegisterPage = () => {
     const [formdata, setFormData] = useState({
@@ -8,6 +15,8 @@ const RegisterPage = () => {
         mail: '',
         password: '',
     });
+
+    const [errors, setErrors] = useState({});
 
     const handleChange = (e) => {
         setFormData({
@@ -37,7 +46,10 @@ const RegisterPage = () => {
                 console.log(error);
             });
 
-        setFormData('');
+        setFormData({
+            username: '',
+            password: '',
+        });
     };
 
     return (

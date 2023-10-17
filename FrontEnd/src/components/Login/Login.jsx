@@ -7,7 +7,7 @@ import axios from 'axios';
 const validationSchema = yup.object({
     username: yup.string().required('Zorunlu alan'),
     lastName: yup.string().required('Zorunlu alan'),
-    password: yup.string().password('Geçersiz Şifre').required('Zorunlu alan'),
+    password: yup.string().required('Zorunlu alan'),
 });
 
 const LoginPage = () => {
@@ -15,6 +15,8 @@ const LoginPage = () => {
         username: '',
         password: '',
     });
+
+    const [errors, setErrors] = useState({});
 
     const handleChange = (e) => {
         setFormData({
