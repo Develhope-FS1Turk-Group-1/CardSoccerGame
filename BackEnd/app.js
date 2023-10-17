@@ -59,7 +59,7 @@ app.post('/register', async (req, res) => {
 
   app.post('/login', async (req, res) => {
     const { mail, password } = req.body;
-
+    console.log(mail , password);
     try {
       const query = `
         SELECT userId, username
@@ -70,6 +70,7 @@ app.post('/register', async (req, res) => {
       const result = await pool.query(query, [mail, password]);
 
       if (result.rows.length === 1) {
+        console.log((result.rows[0]));
         const user = result.rows[0];
         res.json({ userId: user.userid, username: user.username });
       } else {
