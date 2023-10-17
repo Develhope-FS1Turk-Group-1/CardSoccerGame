@@ -20,12 +20,11 @@ app.use(cors());
 
 // Create a connection pool
 const pool = new Pool({ connectionString });
-let client; 
+let client;
 
 async function connectDB(){
     client = await pool.connect();
     console.log("Successfully connected to db!");
-
 }
 
 
@@ -39,18 +38,17 @@ app.listen(PORT, () => {
 app.post('/register', async (req, res) => {
     const { username, password, mail } = req.body;
 
-  
     try {
       const registrationDate = new Date(); // Assuming registration date is current date
-  
+
       const query = `
         INSERT INTO users (username, password, mail, registrationDate)
         VALUES ($1, $2, $3, $4)
         RETURNING *
       `;
-  
+
       const result = await client.query(query, [username, password, mail, registrationDate]);
-  
+
       res.status(201).json({ message: 'User registered successfully', user: result.rows[0] });
     } catch (error) {
       console.error('Error registering user', error);
@@ -60,17 +58,17 @@ app.post('/register', async (req, res) => {
 
 
   app.post('/login', async (req, res) => {
-    const { mail, password } = req.body;
-  
+    const { username, password } = req.body;
+
     try {
       const query = `
         SELECT userId, username
         FROM users
         WHERE mail = $1 AND password = $2
       `;
-  
-      const result = await pool.query(query, [mail, password]);
-  
+
+      const result = await pool.query(query, [username, password]);
+
       if (result.rows.length === 1) {
         const user = result.rows[0];
         res.json({ userId: user.userid, username: user.username });
@@ -111,7 +109,7 @@ app.post('/register', async (req, res) => {
 
 app.put('/updatePassword', async (req, res) => {
     const { mail, oldPassword, newPassword } = req.body;
-  
+
     try {
       const query = `
         UPDATE users
@@ -119,9 +117,9 @@ app.put('/updatePassword', async (req, res) => {
         WHERE mail = $2 AND password = $3
         RETURNING *
       `;
-  
+
       const result = await pool.query(query, [newPassword, mail, oldPassword]);
-  
+
       if (result.rows.length === 1) {
         const updatedUser = result.rows[0];
         res.json({ message: 'Password updated successfully', user: updatedUser });
@@ -133,4 +131,3 @@ app.put('/updatePassword', async (req, res) => {
       res.status(500).json({ message: 'Internal server error' });
     }
   });
-  

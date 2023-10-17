@@ -6,6 +6,7 @@ import Team from './components/Team/Team';
 import HomePage from './components/Home/Home';
 import LoginPage from './components/Login/Login';
 import RegisterPage from './components/Register/Register';
+import Dashboard from './components/Dashboard/Dashboard';
 function App() {
     return (
         <div>
@@ -17,6 +18,11 @@ function App() {
                         element={<HomePage />}
                     />
                     <Route
+                        path='/dashboard'
+                        exact
+                        element={<Dashboard />}
+                    />
+                    <Route
                         path='/login'
                         exact
                         element={<LoginPage />}
@@ -24,7 +30,7 @@ function App() {
                     <Route
                         path='/register'
                         exact
-                        element={<RegisterPage/>}
+                        element={<RegisterPage />}
                     />
                     <Route
                         path='/audience'
