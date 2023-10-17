@@ -48,7 +48,7 @@ const RegisterPage = () => {
             .then((response) => {
 
                 console.log(response.data)
-                localStorage.setItem('user', JSON.stringify(response.data));
+                localStorage.setItem('user', JSON.stringify(response.data.username));
                 navigate("/dashboard");
             })
             .catch((error) => {

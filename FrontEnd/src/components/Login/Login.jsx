@@ -8,12 +8,12 @@ import axios from 'axios';
 
 const LoginPage = () => {
     const [formdata, setFormData] = useState({
-        username: '',
+        mail: '',
         password: '',
     });
     const [errors, setErrors] = useState({});
     const validationSchema = yup.object({
-        username: yup.string().required('Zorunlu alan'),
+        mail: yup.string().required('Required'),
         password: yup.string().required('Zorunlu alan'),
     });
     const navigate = useNavigate();
@@ -42,7 +42,9 @@ const LoginPage = () => {
         axios
             .post('http://localhost:3050/login', formdata)
             .then((response) => {
-               if (response.data && response.data.user.userId) {
+               if (response.data) {
+                     console.log(response.data)
+                     localStorage.setItem('user', JSON.stringify(response.data.username));
                     navigate('/dasboard');
                 } else {
                     console.log('Kullanıcı oturumu doğrulanamadı');
@@ -61,12 +63,12 @@ const LoginPage = () => {
                     <input
                         className='logInInput'
                         type='text'
-                        placeholder='Kullanıcı Adı'
-                        name='username'
-                        value={formdata.username}
+                        placeholder='Mail'
+                        name='mail'
+                        value={formdata.mail}
                         onChange={handleChange}
                     />
-                    {errors.username && <div>{errors.username}</div>}
+                    {errors.mail && <div>{errors.mail}</div>}
                     <input
                         className='logInInput'
                         type='password'
