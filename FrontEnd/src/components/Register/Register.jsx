@@ -4,9 +4,9 @@ import * as yup from 'yup';
 import axios from 'axios';
 
 const validationSchema = yup.object({
-    username: yup.string().required('Zorunlu alan'),
-    lastName: yup.string().required('Zorunlu alan'),
-    password: yup.string().required('Zorunlu alan'),
+    username: yup.string().required('Required Field'),
+    mail: yup.string().required('Required Field'),
+    password: yup.string().required('Required Field'),
 });
 
 const RegisterPage = () => {
@@ -25,7 +25,7 @@ const RegisterPage = () => {
         });
     };
 
-    const HandleSubmit = () => {
+    const HandleSubmit = (e) => {
         e.preventDefault();
         validationSchema
             .validate(formdata, {abortEarly: true})
@@ -40,8 +40,15 @@ const RegisterPage = () => {
                 setErrors(newErrors);
             });
         axios
-            .post('http://localhost:5173/register', formdata)
-            .then((response) => {})
+            .post('http://localhost:3050/register', formdata)
+            .then((response) => {
+                if(response.status == 201){
+                    console.log(response.data)
+                    localStorage.setItem('userId',JSON.stringify(response.data.userid));
+                    localStorage.setItem('userName',JSON.stringify(response.data.username));
+                    alert("Successfully registered");
+                }
+            })
             .catch((error) => {
                 console.log(error);
             });
@@ -49,6 +56,7 @@ const RegisterPage = () => {
         setFormData({
             username: '',
             password: '',
+            mail:''
         });
     };
 
@@ -60,7 +68,7 @@ const RegisterPage = () => {
                     <input
                         className='logInInput'
                         type='text'
-                        placeholder='Kullanıcı Adı'
+                        placeholder='Username'
                         name='username'
                         value={formdata.username}
                         onChange={handleChange}
@@ -79,8 +87,8 @@ const RegisterPage = () => {
 
                     <input
                         className='logInInput'
-                        type='text'
-                        placeholder='Şifre'
+                        type='password'
+                        placeholder='Password'
                         name='password'
                         value={formdata.password}
                         onChange={handleChange}

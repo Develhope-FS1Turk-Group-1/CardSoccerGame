@@ -38,6 +38,7 @@ app.listen(PORT, () => {
 
 app.post('/register', async (req, res) => {
     const { username, password, mail } = req.body;
+
   
     try {
       const registrationDate = new Date(); // Assuming registration date is current date
