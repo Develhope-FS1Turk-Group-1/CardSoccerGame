@@ -1,6 +1,11 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
 }
 
 .soccerAllContainer {
@@ -9,9 +14,10 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url("./Football\ card\ game\ desıgn\ \(1\).png");
+    background-image: url("../../../Assets/Login/loginBackground.png");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:fill;
+    background-position:center;
 }
 
 .checkbox{
@@ -33,7 +39,7 @@
 .soccerSmallContainer h1 {
     font-size: 40px;
     font-weight: 600;
-    color: #9411C2;
+    color: #370466;
     margin-bottom: 30px;
 }
 
@@ -42,6 +48,13 @@
     height: 40px;
     border-radius: 25px;
     padding: 10px;
+    border: none;
+    position: relative;
+}
+
+
+.logInInput::placeholder{
+    color: #545B65;
 }
 
 
@@ -50,15 +63,20 @@
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
-    color: #9411C2;
+    color: #9611BD;
+}
+
+.forgottenPassword{
+    color: #9611BD;
 }
 .logInButton{
     color: white;
-    background-color: #9411C2;
+    background-color: #370466;
     padding: 10px 100px;
     border-radius: 25px;
+    border: none;
 }
 
 .registerText{
-    color: #9411C2;
+    color: #9611BD;
 }
