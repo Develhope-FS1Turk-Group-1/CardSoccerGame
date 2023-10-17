@@ -8,11 +8,6 @@ const Dashboard = () => {
     const userData = JSON.parse(localStorage.getItem('user'));
     if (userData) {
       setUser(userData.user.username);
-    } else {
-      axios.get('http://localhost:3050/login')
-        .then(response => {
-        setUser(response.data.user.username);
-      })
     }
 
   }, [])
