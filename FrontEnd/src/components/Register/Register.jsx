@@ -2,10 +2,11 @@ import {useState} from 'react';
 import './RegisterPageStyle.css';
 import * as yup from 'yup';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const validationSchema = yup.object({
     username: yup.string().required('Zorunlu alan'),
-    lastName: yup.string().required('Zorunlu alan'),
+    email: yup.string().required('Zorunlu alan'),
     password: yup.string().required('Zorunlu alan'),
 });
 
@@ -15,8 +16,8 @@ const RegisterPage = () => {
         mail: '',
         password: '',
     });
-
     const [errors, setErrors] = useState({});
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         setFormData({
@@ -25,7 +26,7 @@ const RegisterPage = () => {
         });
     };
 
-    const HandleSubmit = () => {
+    const HandleSubmit = (e) => {
         e.preventDefault();
         validationSchema
             .validate(formdata, {abortEarly: true})
@@ -40,23 +41,22 @@ const RegisterPage = () => {
                 setErrors(newErrors);
             });
         axios
-            .post('http://localhost:5173/register', formdata)
-            .then((response) => {})
+            .post('http://localhost:3050/register', formdata)
+            .then((response) => {
+                console.log(response.data)
+                localStorage.setItem('user', JSON.stringify(response.data));
+                navigate("/dashboard");
+            })
             .catch((error) => {
                 console.log(error);
             });
-
-        setFormData({
-            username: '',
-            password: '',
-        });
     };
 
     return (
         <div className='soccerHomepage'>
             <div className='soccerAllContainer'>
                 <div className='soccerSmallContainer'>
-                    <h1>Ücretsiz Kayıt Ol!</h1>
+                    <h1>Free Sign Up!</h1>
                     <input
                         className='logInInput'
                         type='text'
@@ -79,8 +79,8 @@ const RegisterPage = () => {
 
                     <input
                         className='logInInput'
-                        type='text'
-                        placeholder='Şifre'
+                        type='password'
+                        placeholder='Password'
                         name='password'
                         value={formdata.password}
                         onChange={handleChange}
@@ -90,7 +90,7 @@ const RegisterPage = () => {
                     <button
                         className='logInButton'
                         onClick={HandleSubmit}>
-                        Kayıt ol
+                        Sign up
                     </button>
                 </div>
             </div>
