@@ -1,0 +1,68 @@
+.headerAllContainer {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.608);
+    height: 70px;
+}
+
+.headerSmallContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    height: 100%;
+    margin: auto;
+}
+
+.leftSide{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    height: 50%;
+}
+
+#headerCoinImage {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    position: absolute;
+}
+
+.levelContainer h3 {
+    color: white;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.moneyContainer {
+    display: flex;
+    align-items: center;
+}
+.moneyValue{
+    background-color: aliceblue;
+    padding: 5px 20px;
+    border-radius: 30px;
+    padding-left: 50px;
+    font-size: 25px;
+}
+
+
+.rightSide{
+    display: flex;
+    align-items: center;
+    background-color: aliceblue;
+    border-radius: 30px;
+    padding: 5px 15px;
+    font-size: 25px;
+    gap: 10px;
+}
+
+#soccerImage {
+    width: 40px;
+    height: 40px;
+}
+#headerLogOutImage {
+    width: 30px;
+    height: 30px;
+}
