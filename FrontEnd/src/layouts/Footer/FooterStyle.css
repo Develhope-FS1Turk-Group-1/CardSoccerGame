@@ -1,0 +1,92 @@
+.MainFooterComponent{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.886);
+    height: 100px;
+}
+
+.FooterButtonField{
+    
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.FooterButtonField button {
+    width: 20%;
+    background-color: #3f234dca;
+    color: white;
+    font-weight: 700;
+    border-radius: 5%;
+    font-size: 100%;
+    position: relative;
+    top: 0;
+    transition: top ease 0.5s;
+    
+}
+
+.FooterButtonField button:hover{
+    top: -20px;
+    color: black;
+    transition: 0.5s ease;
+    border: solid 2px #fff;
+    box-shadow:
+      inset 60px 0 120px #269355,  /* left magenta */
+      inset -60px 0 120px rgb(145, 13, 130); /* right cyan */
+    
+    cursor: pointer;
+}
+
+.FooterTwoSideButton{
+    width: 20%;
+    background-color: #3f234dca;
+    color: white;
+    font-weight: 700;
+    border-radius: 15%;
+    font-size: 100%;
+    position: relative;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.FooterTwoSideButton button{
+    width: 50%;
+    height: 100%;
+    background-color: #3f234dca;
+    color: white;
+    font-weight: 700;
+    border-radius: 5%;
+    font-size: 100%;
+    position: relative;
+    top: 0;
+    transition: top ease 0.5s;
+}
+
+.FooterTwoSideButton img{
+    height: 80%;
+    width: 100%;
+}
+
+.FooterSocialField{
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+}
+
+.TopSideSocial{
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    width: 5%;
+}
+.FooterSocialField h5{
+    color: white;
+    margin-top: 10px;
+    font-size: 10px;
+}
+.TopSideSocial img{
+    height: 100%;
+    width: 100%;
+}
