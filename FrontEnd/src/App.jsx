@@ -11,6 +11,7 @@ import Single from './components/Single/Single';
 function App() {
     return (
         <div>
+            <Header />
             <Router>
                 <Routes>
                     <Route
