@@ -1,40 +1,89 @@
 .formationContainer {
   width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  justify-content: flex-start;
+  align-items: normal;
+  padding: 20px;
   margin: auto;
   background-image: url("../../Assets/Single/loginBackground.png");
   background-position: center;
   object-fit: fill;
-  height: auto;
+  gap: 10px;
 }
 .formationContainer .lineContainer {
-  width: 580px;
+  height: 100%;
+  width: 55%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  justify-content: flex-end;
   row-gap: 10px;
   padding: 10px;
   background-color: black;
   background-image: url("../../Assets/Single/greenField.png");
   background-position: center;
   object-fit: contain;
-  height: calc(100vh - 170px);
+  height: 100%;
 }
-.formationContainer .lineContainer .forward, .formationContainer .lineContainer .midField, .formationContainer .lineContainer .defence, .formationContainer .lineContainer .goalKeeper {
+.formationContainer .lineContainer .forward,
+.formationContainer .lineContainer .midField,
+.formationContainer .lineContainer .defence,
+.formationContainer .lineContainer .goalKeeper {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 .formationContainer .lineContainer .player {
-  width: 90px;
-  height: 110px;
+  width: 70px;
+  height: 90px;
   background-color: antiquewhite;
   gap: 10px;
+}
+.formationContainer .formationBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 15%;
+  justify-content: flex-start;
+}
+.formationContainer .formationBtn button {
+  font-size: 18px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 100px;
+  border: 1px solid #fff;
+  background-color: #192655;
+  color: #DAFFFB;
+  cursor: pointer;
+}
+.formationContainer .formationBtn button:hover {
+  background-color: #176B87;
+}
+.formationContainer .formationBtn button span {
+  font-size: 15px;
+  font-weight: 500;
+}
+.formationContainer .playerList {
+  border: 1px solid #fff;
+  width: 30%;
+}
+.formationContainer .playerList p {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #176B87;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+.formationContainer .playerList p:hover {
+  color: aqua;
 }
 
 /*# sourceMappingURL=main.css.map */
