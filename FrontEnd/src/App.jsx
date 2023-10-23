@@ -11,53 +11,18 @@ import Single from './components/Single/Single';
 function App() {
     return (
         <div>
-            <Header />
             <Router>
                 <Routes>
-                    <Route
-                        path='/'
-                        exact
-                        element={<HomePage />}
-                    />
-                    <Route
-                        path='/dashboard'
-                        exact
-                        element={<Dashboard />}
-                    />
-                    <Route
-                        path='/login'
-                        exact
-                        element={<LoginPage />}
-                    />
-                    <Route
-                        path='/register'
-                        exact
-                        element={<RegisterPage />}
-                    />
-                    <Route
-                        path='/audience'
-                        element={<Audience />}
-                    />
-                    <Route
-                        path='/market'
-                        element={<Market />}
-                    />
-                    <Route
-                        path='/online'
-                        element={<Online />}
-                    />
-                    <Route
-                        path='/team'
-                        element={<Team />}
-                    />
-                    <Route
-                        path='/single'
-                        element={<Single />}
-                    />
-                    <Route
-                        path='/audience'
-                        element={<Audience />}
-                    />
+                    <Route path='/' exact element={<HomePage />} />
+                    <Route path='/dashboard' exact element={<Dashboard />} />
+                    <Route path='/login' exact element={<LoginPage />} />
+                    <Route path='/register' exact element={<RegisterPage />} />
+                    <Route path='/audience' element={<Audience />} />
+                    <Route path='/market' element={<Market />} />
+                    <Route path='/online' element={<Online />} />
+                    <Route path='/team' element={<Team />} />
+                    <Route path='/single' element={<Single />} />
+                    <Route path='/audience' element={<Audience />} />
                 </Routes>
             </Router>
         </div>

@@ -1,13 +1,16 @@
 .formationContainer {
-  width: 50%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   margin: auto;
+  background-image: url("../../Assets/Single/loginBackground.png");
+  background-position: center;
+  object-fit: fill;
+  height: auto;
 }
 .formationContainer .lineContainer {
-  width: 80%;
+  width: 580px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,20 +18,22 @@
   row-gap: 10px;
   padding: 10px;
   background-color: black;
+  background-image: url("../../Assets/Single/greenField.png");
+  background-position: center;
+  object-fit: contain;
 }
-.formationContainer .lineContainer .aline {
-  width: 100%;
-  height: 100px;
-  background-color: red;
+.formationContainer .lineContainer .forward, .formationContainer .lineContainer .midField, .formationContainer .lineContainer .defence, .formationContainer .lineContainer .goalKeeper {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
+  margin-bottom: 5px;
 }
-.formationContainer .lineContainer .aline > div {
-  width: 60px;
-  height: 100px;
-  background-color: aqua;
+.formationContainer .lineContainer .player {
+  width: 90px;
+  height: 110px;
+  background-color: antiquewhite;
+  gap: 10px;
 }
 
 /*# sourceMappingURL=main.css.map */
