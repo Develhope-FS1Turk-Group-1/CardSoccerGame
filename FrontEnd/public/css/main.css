@@ -21,6 +21,7 @@
   background-image: url("../../Assets/Single/greenField.png");
   background-position: center;
   object-fit: contain;
+  height: calc(100vh - 170px);
 }
 .formationContainer .lineContainer .forward, .formationContainer .lineContainer .midField, .formationContainer .lineContainer .defence, .formationContainer .lineContainer .goalKeeper {
   display: flex;

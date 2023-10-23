@@ -5,7 +5,7 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
-        "start-scss": "sass --watch public/scss/main.scss:public/css/main.css",
+        "scss": "sass --watch public/scss/main.scss:public/css/main.css",
         "build": "vite build",
         "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
         "preview": "vite preview"
