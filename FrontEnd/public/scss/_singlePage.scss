@@ -5,31 +5,38 @@
 }
 
 .formationContainer {
-    width: 50%;
+    width: 100%;
     @include flex;
-    height: 100vh;
     margin: auto;
+    background-image: url('../../Assets/Single/loginBackground.png');
+    background-position: center;
+    object-fit: fill;
+    height: auto;
 
     .lineContainer {
-        width: 80%;
+        width: 580px;
         @include flex;
         flex-direction: column;
         row-gap: 10px;
         padding: 10px;
         background-color: black;
+         background-image: url('../../Assets/Single/greenField.png');
+         background-position: center;
+        object-fit: contain;
 
-        .aline {
-            width: 100%;
-            height: 100px;
-            background-color: red;
-            @include flex;
+        .forward, .midField, .defence, .goalKeeper{
+            @include flex();
             gap: 10px;
-
-            > div {
-                width: 60px;
-                height: 100px;
-                background-color: aqua;
-            }
+            margin-bottom: 5px;
         }
+
+        .player{
+            width: 90px;
+            height: 110px;
+            background-color:antiquewhite;
+            gap: 10px;
+        }
+
+
     }
 }
