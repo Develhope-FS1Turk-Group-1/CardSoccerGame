@@ -1,3 +1,5 @@
+import PlayerCards from "./PlayerCards";
+
 const Fourthree = () => {
     return (
         <div>
