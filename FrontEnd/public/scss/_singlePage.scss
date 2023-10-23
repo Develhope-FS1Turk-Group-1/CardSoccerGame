@@ -20,21 +20,24 @@
         row-gap: 10px;
         padding: 10px;
         background-color: black;
-         background-image: url('../../Assets/Single/greenField.png');
-         background-position: center;
+        background-image: url('../../Assets/Single/greenField.png');
+        background-position: center;
         object-fit: contain;
         height: calc(100vh - 170px);
 
-        .forward, .midField, .defence, .goalKeeper{
+        .forward,
+        .midField,
+        .defence,
+        .goalKeeper {
             @include flex();
             gap: 10px;
             margin-bottom: 5px;
         }
 
-        .player{
+        .player {
             width: 90px;
             height: 110px;
-            background-color:antiquewhite;
+            background-color: antiquewhite;
             gap: 10px;
         }
 

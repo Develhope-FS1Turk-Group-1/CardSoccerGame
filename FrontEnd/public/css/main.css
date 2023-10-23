@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .formationContainer {
   width: 100%;
   display: flex;
@@ -23,7 +29,10 @@
   object-fit: contain;
   height: calc(100vh - 170px);
 }
-.formationContainer .lineContainer .forward, .formationContainer .lineContainer .midField, .formationContainer .lineContainer .defence, .formationContainer .lineContainer .goalKeeper {
+.formationContainer .lineContainer .forward,
+.formationContainer .lineContainer .midField,
+.formationContainer .lineContainer .defence,
+.formationContainer .lineContainer .goalKeeper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,6 +44,155 @@
   height: 110px;
   background-color: antiquewhite;
   gap: 10px;
+}
+
+.soccerMarket {
+  width: 100%;
+  height: 100%;
+}
+.soccerMarket .marketAllContainer {
+  color: aliceblue;
+  background-image: url("../../Assets/Market/Default_soccer_stadium_view_full_of_crowd_night_time_ray_traci_0_d6bb2c97-38a0-444f-8a16-15375f76b1ba_1.jpg");
+  height: calc(100vh - 170px);
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.soccerMarket .marketAllContainer .marketSmallContainer {
+  background-color: rgba(0, 0, 0, 0.608);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  width: 90%;
+  height: 90%;
+  border-radius: 20px;
+}
+.soccerMarket .marketAllContainer .marketSmallContainer h1 {
+  font-size: 50px;
+}
+.soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 90%;
+  justify-content: space-around;
+}
+.soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .cardContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 30%;
+  height: 100%;
+  overflow: hidden;
+  gap: 20px;
+}
+.soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .cardContainer h3 {
+  font-size: 50px;
+}
+.soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .cardContainer h5 {
+  font-size: 20px;
+}
+.soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .marketCardPrice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  gap: 10px;
+}
+.soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .marketCardPrice #marketCoinImage {
+  width: 40px;
+}
+.soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .casualUpperCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  max-width: 250px;
+  width: 100%;
+  height: 100%;
+}
+.soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .casualUpperCard h3,
+.soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .casualUpperCard h5,
+.soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .casualUpperCard b {
+  color: blue;
+}
+.soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .casualUpperCard .marketCardPrice {
+  cursor: pointer;
+}
+.soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .casualUpperCard #cardImage {
+  height: 100%;
+  width: 100%;
+  border: 2px solid blue;
+  cursor: pointer;
+  border-radius: 10px;
+  background-image: url("../../Assets/Market/casual.jpg");
+  background-position: center top;
+  background-size: cover;
+}
+.soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .rareUpperCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  max-width: 250px;
+  width: 100%;
+  height: 100%;
+}
+.soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .rareUpperCard h3,
+.soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .rareUpperCard h5,
+.soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .rareUpperCard b {
+  color: yellow;
+}
+.soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .rareUpperCard .marketCardPrice {
+  cursor: pointer;
+}
+.soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .rareUpperCard #cardImage {
+  border: 2px solid yellow;
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  background-image: url("../../Assets/Market/rare.jpg");
+  background-position: center top;
+  background-size: cover;
+  cursor: pointer;
+}
+.soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .legendUpperCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  max-width: 250px;
+  width: 100%;
+  height: 100%;
+}
+.soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .legendUpperCard h3,
+.soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .legendUpperCard h5,
+.soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .legendUpperCard b {
+  color: red;
+}
+.soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .legendUpperCard .marketCardPrice {
+  cursor: pointer;
+}
+.soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .legendUpperCard #cardImage {
+  height: 100%;
+  width: 100%;
+  border: 2px solid red;
+  border-radius: 10px;
+  background-image: url("../../Assets/Market/legend.jpg");
+  background-position: center top;
+  background-size: cover;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=main.css.map */

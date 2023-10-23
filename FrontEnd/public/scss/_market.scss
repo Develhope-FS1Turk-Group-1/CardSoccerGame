@@ -1,0 +1,169 @@
+@mixin flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin background {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center
+}
+
+.soccerMarket {
+    width: 100%;
+    height: 100%;
+
+    .marketAllContainer {
+        color: aliceblue;
+        background-image: url("../../Assets/Market/Default_soccer_stadium_view_full_of_crowd_night_time_ray_traci_0_d6bb2c97-38a0-444f-8a16-15375f76b1ba_1.jpg");
+        height: calc(100vh - 170px);
+        width: 100%;
+        @include background;
+        @include flex;
+
+        .marketSmallContainer {
+            background-color: rgba(0, 0, 0, 0.608);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            width: 90%;
+            height: 90%;
+            border-radius: 20px;
+
+            h1 {
+                font-size: 50px;
+            }
+
+            .marketCardContainer {
+                @include flex;
+                width: 100%;
+                height: 90%;
+                justify-content: space-around;
+
+                .cardContainer {
+                    @include flex;
+                    flex-direction: column;
+                    width: 30%;
+                    height: 100%;
+                    overflow: hidden;
+                    gap: 20px;
+
+                    h3 {
+                        font-size: 50px
+                    }
+
+                    h5 {
+                        font-size: 20px
+                    }
+                }
+
+                .marketCardPrice {
+                    @include flex;
+                    font-size: 50px;
+                    gap: 10px;
+
+                    #marketCoinImage {
+                        width: 40px;
+                    }
+                }
+
+                .casualUpperCard {
+                    @include flex;
+                    flex-direction: column;
+                    overflow: hidden;
+                    max-width: 250px;
+                    width: 100%;
+                    height: 100%;
+
+                    h3,
+                    h5,
+                    b {
+                        color: blue;
+                    }
+
+                    .marketCardPrice {
+                        cursor: pointer;
+                    }
+
+
+                    #cardImage {
+                        height: 100%;
+                        width: 100%;
+                        border: 2px solid blue;
+                        cursor: pointer;
+                        border-radius: 10px;
+                        background-image: url("../../Assets/Market/casual.jpg");
+                        background-position: center top;
+                        background-size: cover;
+                    }
+                }
+
+
+                .rareUpperCard {
+                    @include flex;
+                    flex-direction: column;
+                    overflow: hidden;
+                    max-width: 250px;
+                    width: 100%;
+                    height: 100%;
+
+                    h3,
+                    h5,
+                    b {
+                        color: yellow;
+                    }
+
+                    .marketCardPrice {
+                        cursor: pointer;
+                    }
+
+
+                    #cardImage {
+                        border: 2px solid yellow;
+                        border-radius: 10px;
+                        height: 100%;
+                        width: 100%;
+                        background-image: url("../../Assets/Market/rare.jpg");
+                        background-position: center top;
+                        background-size: cover;
+                        cursor: pointer;
+                    }
+                }
+
+
+                .legendUpperCard {
+                    @include flex;
+                    flex-direction: column;
+                    overflow: hidden;
+                    max-width: 250px;
+                    width: 100%;
+                    height: 100%;
+
+                    h3,
+                    h5,
+                    b {
+                        color: red;
+                    }
+
+                    .marketCardPrice {
+                        cursor: pointer;
+                    }
+
+                    #cardImage {
+                        height: 100%;
+                        width: 100%;
+                        border: 2px solid red;
+                        border-radius: 10px;
+                        background-image: url("../../Assets/Market/legend.jpg");
+                        background-position: center top;
+                        background-size: cover;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
