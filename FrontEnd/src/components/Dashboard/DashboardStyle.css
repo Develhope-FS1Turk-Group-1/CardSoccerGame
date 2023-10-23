@@ -1,0 +1,58 @@
+.DashboardBackground {
+    display: flex;
+    background-image: url("../../Assets/Market/Default_soccer_stadium_view_full_of_crowd_night_time_ray_traci_0_d6bb2c97-38a0-444f-8a16-15375f76b1ba_1.jpg");
+    height: 80vh;
+    background-size: 100% 110%;
+    background-repeat: no-repeat;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.Dashboarddiv {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    height: 100%;
+    background-color: rgba(2, 0, 0, 0.516);
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .tacticsDiv img, .playDiv img, .marketDiv img{
+    height: 60%;
+    width: 70%;
+    border-radius: 10%;
+    border: 3px solid #52B668;
+    object-fit: cover;
+    filter:blur(1px);
+    transition: 1s ease;
+  }
+  
+  .tacticsDiv img:hover, .playDiv img:hover, .marketDiv img:hover{
+    filter: blur(0);
+    transition: 2s ease;
+    cursor: pointer;
+    height: 75%;
+  }
+
+  .tacticsDiv, .playDiv, .marketDiv {
+    font-size: 22px;
+    color: #52B668;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+    width: 25%;
+  }
+  
+
+.tacticsDiv span, .playDiv span, .marketDiv span {
+    font-size: 28px;
+    color: transparent;
+    -webkit-text-stroke: 1px #52B668;
+    /* You can adjust the width and color of the outline */
+    text-stroke: 1px #52B668;
+}
