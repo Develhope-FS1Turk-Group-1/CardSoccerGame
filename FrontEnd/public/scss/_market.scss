@@ -90,14 +90,25 @@
 
 
                     #cardImage {
-                        height: 100%;
-                        width: 100%;
+                        height: 60%;
+                        width: 90%;
+                        object-fit: cover;
+                        filter: blur(1px);
+                        transition: 1s ease;
                         border: 2px solid blue;
-                        cursor: pointer;
                         border-radius: 10px;
+                        cursor: pointer;
                         background-image: url("../../Assets/Market/casual.jpg");
                         background-position: center top;
                         background-size: cover;
+                    }
+
+                    #cardImage:hover {
+                        filter: blur(0);
+                        transition: 2s ease;
+                        cursor: pointer;
+                        height: 100%;
+                        width: 100%;
                     }
                 }
 
@@ -124,12 +135,23 @@
                     #cardImage {
                         border: 2px solid yellow;
                         border-radius: 10px;
-                        height: 100%;
-                        width: 100%;
+                        height: 60%;
+                        width: 90%;
+                        object-fit: cover;
+                        filter: blur(1px);
+                        transition: 1s ease;
                         background-image: url("../../Assets/Market/rare.jpg");
                         background-position: center top;
                         background-size: cover;
                         cursor: pointer;
+                    }
+
+                    #cardImage:hover {
+                        filter: blur(0);
+                        transition: 2s ease;
+                        cursor: pointer;
+                        height: 100%;
+                        width: 100%
                     }
                 }
 
@@ -153,14 +175,25 @@
                     }
 
                     #cardImage {
-                        height: 100%;
-                        width: 100%;
+                        height: 60%;
+                        width: 90%;
+                        object-fit: cover;
+                        filter: blur(1px);
+                        transition: 1s ease;
                         border: 2px solid red;
                         border-radius: 10px;
                         background-image: url("../../Assets/Market/legend.jpg");
                         background-position: center top;
                         background-size: cover;
                         cursor: pointer;
+                    }
+
+                    #cardImage:hover {
+                        filter: blur(0);
+                        transition: 2s ease;
+                        cursor: pointer;
+                        height: 100%;
+                        width: 100%;
                     }
                 }
             }

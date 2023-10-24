@@ -8,13 +8,11 @@ import LoginPage from './components/Login/Login';
 import RegisterPage from './components/Register/Register';
 import Dashboard from './components/Dashboard/Dashboard';
 import Single from './components/Single/Single';
-import Footer from './layouts/Footer';
-import Header from './layouts/Header';
+
 
 function App() {
     return (
         <div>
-            <Header />
             <Router>
                 <Routes>
                     <Route path='/' exact element={<HomePage />} />
@@ -29,8 +27,6 @@ function App() {
                     <Route path='/audience' element={<Audience />} />
                 </Routes>
             </Router>
-            <Footer />
-
         </div>
     );
 }

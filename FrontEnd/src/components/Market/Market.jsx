@@ -4,6 +4,8 @@ import casual from '../../../Assets/Market/casual.jpg';
 import rare from '../../../Assets/Market/rare.jpg';
 import legend from '../../../Assets/Market/legend.jpg';
 import coin from '../../../Assets/Market/coin.png';
+import Header from '../../layouts/Header';
+import Footer from '../../layouts/Footer';
 
 
 const Market = () => {
@@ -29,6 +31,7 @@ const Market = () => {
 
   return (
     <div className='soccerMarket'>
+      <Header />
       <div className='marketAllContainer'>
         <div className='marketSmallContainer'>
           <h1>CARD MARKET</h1>
@@ -74,6 +77,7 @@ const Market = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   )
 }
