@@ -1,0 +1,42 @@
+
+CREATE TABLE users (
+    userid SERIAL PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    mail VARCHAR(100) NOT NULL,
+    money DECIMAL(10, 2) NOT NULL,
+    xp INT NOT NULL,
+    registrationdate DATE NOT NULL,
+    formation VARCHAR(100)
+);
+
+
+
+CREATE TABLE basePlayers (
+    id SERIAL PRIMARY KEY,
+    Name VARCHAR(100) NOT NULL,
+    Position VARCHAR(10) NOT NULL,
+    ATT INT NOT NULL,
+    MID INT NOT NULL,
+    DEF INT NOT NULL,
+    GK INT NOT NULL,
+    Team VARCHAR(50) NOT NULL
+);
+
+
+CREATE TABLE onlinePlayers (
+    id SERIAL PRIMARY KEY,
+    baseId INT NOT NULL,
+    userID INT NOT NULL,
+    level INT NOT NULL,
+    cardCount INT NOT NULL
+);
+
+
+CREATE TABLE formation (
+    formationId SERIAL PRIMARY KEY,
+    userId INT NOT NULL,
+    positionId INT NOT NULL,
+    playerId INT NOT NULL
+);
+

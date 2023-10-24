@@ -42,8 +42,8 @@ app.post('/register', async (req, res) => {
       const registrationDate = new Date(); // Assuming registration date is current date
 
       const query = `
-        INSERT INTO users (username, password, mail, registrationDate)
-        VALUES ($1, $2, $3, $4)
+        INSERT INTO users (username, password, mail, registrationDate,money,xp)
+        VALUES ($1, $2, $3, $4,0,0)
         RETURNING *
       `;
 
@@ -62,7 +62,7 @@ app.post('/register', async (req, res) => {
     console.log(mail , password);
     try {
       const query = `
-        SELECT userId, username
+        SELECT userId, username, money, xp
         FROM users
         WHERE mail = $1 AND password = $2
       `;
@@ -132,3 +132,23 @@ app.put('/updatePassword', async (req, res) => {
       res.status(500).json({ message: 'Internal server error' });
     }
   });
+
+
+
+
+
+
+/* 
+  
+Tactics sayfasi için:
+get all players (id) => {}//Okkes Alp
+get current formation (id) => [{},{},{},{}...] //Okkes Alp
+
+Market için:
+Openpackage (userId,Package type)
+  Casual Rare Legend
+
+SinglePlayer Mode
+playMatch(userID, rakip takim) //Omer(hoca)
+
+*/
