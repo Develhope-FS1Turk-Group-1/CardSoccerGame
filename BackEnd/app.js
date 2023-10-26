@@ -134,15 +134,15 @@ app.put('/updatePassword', async (req, res) => {
 });
 
 app.get('/players/:userID', async (req, res) => {
-  const userId = req.params.userId;
+  const userId = req.params.userID;
 
   try {
     const result = await pool.query(
-      `SELECT * FROM 
-      onlinePlayers JOIN basePlayers 
+      `SELECT * FROM
+      onlinePlayers JOIN basePlayers
       ON onlinePlayers.baseId = basePlayers.id
          WHERE userID = $1`,
-      [userID]
+      [userId]
     );
 
     res.json(result.rows);
@@ -173,8 +173,8 @@ app.get('/formation/:userID', async (req, res) => {
 
 
 
-/* 
-  
+/*
+
 Tactics sayfasi için:
 get all players (id) => {}//Okkes Alp
 get current formation (id) => [{},{},{},{}...] //Okkes Alp
