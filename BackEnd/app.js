@@ -181,9 +181,16 @@ get current formation (id) => [{},{},{},{}...] //Okkes Alp
 
 Market için:
 Openpackage (userId,Package type)
-  Casual Rare Legend
+  Casual Rare Legend //Sergen OmerCan
+
+
+
+BasePlayers to DB //Alp Omer DONE
 
 SinglePlayer Mode
-playMatch(userID, rakip takim) //Omer(hoca)
+playMatch(userID, rakip takim) //Omer(hoca) //Alp
+
+Multiplayer Mode
+playMatch(userID, rakip takim) //Omer(hoca) //Alp
 
 */
