@@ -15,7 +15,7 @@
 }
 .formationContainer .lineContainer {
   height: 100%;
-  width: 55%;
+  width: 40%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,8 +25,9 @@
   padding: 10px;
   background-color: black;
   background-image: url("../../Assets/Single/greenField.png");
-  background-position: center;
-  object-fit: contain;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  object-fit:cover;
   height: 100%;
 }
 .formationContainer .lineContainer .forward,
@@ -47,33 +48,79 @@
 }
 .formationContainer .formationBtn {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   flex-direction: column;
   height: 100%;
-  width: 15%;
+  width: 25%;
   justify-content: flex-start;
 }
 .formationContainer .formationBtn button {
   font-size: 18px;
   padding: 10px;
   margin-bottom: 10px;
+  border: none;
   border-radius: 100px;
-  border: 1px solid #fff;
-  background-color: #192655;
-  color: #DAFFFB;
+  background-color: #fe453b;
   cursor: pointer;
 }
 .formationContainer .formationBtn button:hover {
-  background-color: #176B87;
+  background-color: #ff2418;
 }
 .formationContainer .formationBtn button span {
   font-size: 15px;
   font-weight: 500;
 }
+
+.formationBtn .logo{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.formationBtn .logo .image{
+    width: 20%;
+}
+.formationBtn .logo .image img{
+    width: 100%;
+}
+
+.formationBtn .logo .scoreCard h2{
+    color: #A6A6A6;
+}
+
+.formationBtn .logo .scoreCard h2:first-child{
+    font-size: 18px;
+    color: #89AFC0;
+}
+
+.formationBtn .logo .scoreCard h1{
+    font-size: 25px;
+    color: #89AFC0;
+}
+
+
+
+.formationBtn .logo .scoreCard span:first-child{
+    font-size: 15px;
+    color: #7ED957;
+}
+
+.formationBtn .logo .scoreCard span:nth-child(2){
+    font-size: 15px;
+    color: #E20A17;
+}
+
+.formationBtn .logo .scoreCard span:nth-child(3){
+    font-size: 15px;
+    color: #A6A6A6;
+}
+
 .formationContainer .playerList {
   border: 1px solid #fff;
-  width: 30%;
+  width: 25%;
 }
 .formationContainer .playerList p {
   font-size: 18px;
