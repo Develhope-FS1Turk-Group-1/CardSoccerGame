@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './single.css';
+import '../../../public/css/main.css';
 import Header from '../../layouts/Header';
 import Footer from '../../layouts/Footer';
 import Fourfour from './components/Fourfour';
@@ -34,7 +34,6 @@ const Single = () => {
 	useEffect(() => {
 		axios.get(`http://localhost:3050/getAllPlayers/${userID}`)
 			.then(response => {
-				console.log('Response:', response.data);
 				setPlayerList(response.data);
 			})
 			.catch(error => {
@@ -91,7 +90,15 @@ const Single = () => {
 				</div>
 				<div className='playerList'>
 					{playerList.map((player, index) => (
-						<p key={index} onClick={() => choosePlayer(player)} >{player.name}</p>
+						<div
+							className='player'
+							key={index}
+							onClick={() => choosePlayer(player)}>
+							<p>{player.name}</p>
+							<p>
+								{player.position} &nbsp; {player.att}
+							</p>
+						</div>
 					))}
 				</div>
 				<div className='playerCards'>
@@ -101,7 +108,7 @@ const Single = () => {
 							className='playerDiv'
 							onClick={() => choosePlayer(player)}>
 							<img
-								src={""}
+								src={''}
 								alt=''
 							/>
 						</div>
