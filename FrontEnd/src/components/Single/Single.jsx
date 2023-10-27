@@ -102,6 +102,7 @@ const Single = () => {
 					))}
 				</div>
 				<div className='playerCards'>
+					
 					{playerList.map((player, index) => (
 						<div
 							key={index}
