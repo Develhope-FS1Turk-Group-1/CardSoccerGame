@@ -92,6 +92,7 @@ const Single = () => {
 					{playerList.map((player, index) => (
 						<div
 							className='player'
+
 							key={index}
 							onClick={() => choosePlayer(player)}>
 							<p>{player.name}</p>
@@ -102,6 +103,7 @@ const Single = () => {
 					))}
 				</div>
 				<div className='playerCards'>
+					
 					{playerList.map((player, index) => (
 						<div
 							key={index}
