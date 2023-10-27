@@ -133,23 +133,27 @@ app.put('/updatePassword', async (req, res) => {
   }
 });
 
-app.get('/players/:userID', async (req, res) => {
-  const userId = req.params.userID;
+app.get('/getAllPlayers/:userID', (req, res) => {
+  const { userID } = req.params;
 
-  try {
-    const result = await pool.query(
-      `SELECT * FROM
-      onlinePlayers JOIN basePlayers
-      ON onlinePlayers.baseId = basePlayers.id
-         WHERE userID = $1`,
-      [userId]
-    );
+  // Execute a SQL query to get all players for a specific user
+  pool.query(
+    `SELECT op.id, op.baseid, op.userid, op.level, op.cardcount, bp.* 
+     FROM onlinePlayers op
+     JOIN basePlayers bp ON op.baseid = bp.id
+     WHERE op.userid = $1`,
+    [userID],
+    (error, result) => {
+      if (error) {
+        console.error('Error executing query', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+        return;
+      }
 
-    res.json(result.rows);
-  } catch (error) {
-    console.error('Error executing query', error);
-    res.status(500).send('Internal Server Error');
-  }
+      const players = result.rows;
+      res.json(players);
+    }
+  );
 });
 
 app.get('/formation/:userID', async (req, res) => {
@@ -169,6 +173,10 @@ app.get('/formation/:userID', async (req, res) => {
     res.status(500).send('Internal Server Error');
   }
 });
+
+
+
+
 
 
 

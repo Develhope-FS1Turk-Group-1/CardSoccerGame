@@ -6,17 +6,20 @@ import Fourfour from './components/Fourfour';
 import Fourthree from './components/Fourthree';
 import Manchester_City from '../../../Assets/Single/Manchester_City.png';
 import axios from 'axios'
+import {useParams} from 'react-router-dom';
 
 const Single = () => {
 	const [formation, setFormation] = useState('FourFourTwo');
 	const [selectedPlayer, setSelectedPlayer] = useState();
-	const [playerList, setPlayerList] = useState()
+	const [playerList, setPlayerList] = useState([])
 	const [teamInfo, setTeamInfo] = useState({
 		logo: '',
 		name: '',
 		league: '',
 		scoreBoard: [],
 	});
+	const {userID} = useParams();
+
 
 	useEffect(() => {
 		const initialTeamData = {
@@ -29,13 +32,19 @@ const Single = () => {
 	}, []);
 
 	useEffect(() => {
-		axios.get('/single/:userID')
-			.then(response => console.log(response.data));
+		axios.get(`http://localhost:3050/getAllPlayers/${userID}`)
+			.then(response => {
+				console.log('Response:', response.data);
+				setPlayerList(response.data);
+			})
+			.catch(error => {
+				console.error('Error:', error);
+			});
 	}, []);
 
 
 	const choosePlayer = (player) => {
-		setSelectedPlayer(player);
+		setSelectedPlayer(player.name);
 	};
 
 	return (
@@ -82,7 +91,7 @@ const Single = () => {
 				</div>
 				<div className='playerList'>
 					{playerList.map((player, index) => (
-						<p key={index}>{player}</p>
+						<p key={index} onClick={() => choosePlayer(player)} >{player.name}</p>
 					))}
 				</div>
 				<div className='playerCards'>
@@ -92,7 +101,7 @@ const Single = () => {
 							className='playerDiv'
 							onClick={() => choosePlayer(player)}>
 							<img
-								src={player}
+								src={""}
 								alt=''
 							/>
 						</div>

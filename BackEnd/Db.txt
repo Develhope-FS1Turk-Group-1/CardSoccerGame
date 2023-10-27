@@ -20,7 +20,8 @@ CREATE TABLE basePlayers (
     MID INT NOT NULL,
     DEF INT NOT NULL,
     GK INT NOT NULL,
-    Team VARCHAR(50) NOT NULL
+    Team VARCHAR(50) NOT NULL,
+    img Text NOT NULL
 );
 
 
