@@ -17,6 +17,7 @@
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	gap: 10px;
+	position: relative;
 
 	.lineContainer {
 		display: flex;
@@ -30,6 +31,7 @@
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
 		width: 40%;
+		height: 80%;
 
 		& > div {
 			@include flex();
@@ -51,6 +53,7 @@
 			height: 110px;
 			background-color: antiquewhite;
 			gap: 10px;
+			cursor: pointer;
 		}
 	}
 
@@ -140,6 +143,9 @@
 		padding: 20px 30px;
 		color: #176b87;
 		margin-left: auto;
+		height: 80%;
+		overflow: scroll;
+
 
 		.player {
 			color: #fff;
@@ -148,6 +154,8 @@
 			background-color: #6FA26C;
 			padding: 5px 20px;
 			text-align: center;
+			cursor: pointer;
+
 
 			p {
 				&:last-child {
@@ -156,4 +164,34 @@
 			}
 		}
 	}
+
+
+	.playerCards{
+		position: absolute;
+		@include flex();
+		bottom: 0;
+		padding: 30px 50px;
+		gap: 20px;
+		overflow: scroll;
+		background-color: #46306f9e;
+		border-radius: 100px;
+		left: 50%;
+		transform:  translateX(-50%);
+
+		span{
+			transform: rotate(-90deg);
+			margin-right: 0;
+			color: #fff;
+			font-size:25px;
+		}
+
+		.playerDiv{
+			width: 90px;
+			height: 110px;
+			background-color: antiquewhite;
+			cursor: pointer;
+		}
+	}
+
+
 }

@@ -19,6 +19,7 @@
   background-repeat: no-repeat;
   background-size: 100% 100%;
   gap: 10px;
+  position: relative;
 }
 .formationContainer .lineContainer {
   display: flex;
@@ -32,6 +33,7 @@
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 40%;
+  height: 80%;
 }
 .formationContainer .lineContainer > div {
   display: flex;
@@ -55,6 +57,7 @@
   height: 110px;
   background-color: antiquewhite;
   gap: 10px;
+  cursor: pointer;
 }
 .formationContainer .formationBtn {
   display: flex;
@@ -129,6 +132,8 @@
   padding: 20px 30px;
   color: #176b87;
   margin-left: auto;
+  height: 80%;
+  overflow: scroll;
 }
 .formationContainer .playerList .player {
   color: #fff;
@@ -137,9 +142,36 @@
   background-color: #6FA26C;
   padding: 5px 20px;
   text-align: center;
+  cursor: pointer;
 }
 .formationContainer .playerList .player p:last-child {
   color: #000;
+}
+.formationContainer .playerCards {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  padding: 30px 50px;
+  gap: 20px;
+  overflow: scroll;
+  background-color: rgba(70, 48, 111, 0.6196078431);
+  border-radius: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.formationContainer .playerCards span {
+  transform: rotate(-90deg);
+  margin-right: 0;
+  color: #fff;
+  font-size: 25px;
+}
+.formationContainer .playerCards .playerDiv {
+  width: 90px;
+  height: 110px;
+  background-color: antiquewhite;
+  cursor: pointer;
 }
 
 .soccerMarket {

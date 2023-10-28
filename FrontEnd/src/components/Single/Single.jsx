@@ -32,11 +32,13 @@ const Single = () => {
 	}, []);
 
 	useEffect(() => {
-		axios.get(`http://localhost:3050/getAllPlayers/${userID}`)
-			.then(response => {
+		axios
+			.get(`http://localhost:3050/getAllPlayers/${userID}`)
+			.then((response) => {
+				console.log(Response.data);
 				setPlayerList(response.data);
 			})
-			.catch(error => {
+			.catch((error) => {
 				console.error('Error:', error);
 			});
 	}, []);
@@ -102,7 +104,7 @@ const Single = () => {
 					))}
 				</div>
 				<div className='playerCards'>
-					
+					<span>YEDEK</span>
 					{playerList.map((player, index) => (
 						<div
 							key={index}
@@ -112,6 +114,10 @@ const Single = () => {
 								src={''}
 								alt=''
 							/>
+							<p>{player.name}</p>
+							<p>
+								{player.position} &nbsp; {player.att}
+							</p>
 						</div>
 					))}
 				</div>
