@@ -5,6 +5,9 @@ const Fourfour = ({
 	setSelectedPlayer,
 	userFormation,
 	setUserFormation,
+	addPlayerToIndex, 
+	deletePlayerAtIndex,
+	playersOnBoard
 }) => {
 	return (
 		<div>
@@ -15,7 +18,9 @@ const Fourfour = ({
 					setSelectedPlayer={setSelectedPlayer}
 					userFormation={userFormation}
 					setUserFormation={setUserFormation}
-					 
+					addPlayerToIndex={addPlayerToIndex}
+					deletePlayerAtIndex={deletePlayerAtIndex}
+					playersOnBoard={playersOnBoard}
 				/>
 				<PlayerCards
 					id={2}
@@ -23,6 +28,9 @@ const Fourfour = ({
 					setSelectedPlayer={setSelectedPlayer}
 					userFormation={userFormation}
 					setUserFormation={setUserFormation}
+					addPlayerToIndex={addPlayerToIndex}
+					deletePlayerAtIndex={deletePlayerAtIndex}
+					playersOnBoard={playersOnBoard}
 
 				/>
 			</div>
@@ -33,6 +41,9 @@ const Fourfour = ({
 					setSelectedPlayer={setSelectedPlayer}
 					userFormation={userFormation}
 					setUserFormation={setUserFormation}
+					addPlayerToIndex={addPlayerToIndex}
+					deletePlayerAtIndex={deletePlayerAtIndex}
+					playersOnBoard={playersOnBoard}
 
 				/>
 				<PlayerCards
@@ -41,6 +52,9 @@ const Fourfour = ({
 					setSelectedPlayer={setSelectedPlayer}
 					userFormation={userFormation}
 					setUserFormation={setUserFormation}
+					addPlayerToIndex={addPlayerToIndex}
+					deletePlayerAtIndex={deletePlayerAtIndex}
+					playersOnBoard={playersOnBoard}
 
 				/>
 				<PlayerCards
@@ -49,6 +63,9 @@ const Fourfour = ({
 					setSelectedPlayer={setSelectedPlayer}
 					userFormation={userFormation}
 					setUserFormation={setUserFormation}
+					addPlayerToIndex={addPlayerToIndex}
+					deletePlayerAtIndex={deletePlayerAtIndex}
+					playersOnBoard={playersOnBoard}
 
 				/>
 				<PlayerCards
@@ -57,6 +74,9 @@ const Fourfour = ({
 					setSelectedPlayer={setSelectedPlayer}
 					userFormation={userFormation}
 					setUserFormation={setUserFormation}
+					addPlayerToIndex={addPlayerToIndex}
+					deletePlayerAtIndex={deletePlayerAtIndex}
+					playersOnBoard={playersOnBoard}
 
 				/>
 			</div>
@@ -67,6 +87,9 @@ const Fourfour = ({
 					setSelectedPlayer={setSelectedPlayer}
 					userFormation={userFormation}
 					setUserFormation={setUserFormation}
+					addPlayerToIndex={addPlayerToIndex}
+					deletePlayerAtIndex={deletePlayerAtIndex}
+					playersOnBoard={playersOnBoard}
 
 				/>
 				<PlayerCards
@@ -76,6 +99,10 @@ const Fourfour = ({
 					userFormation={userFormation}
 
 					setUserFormation={setUserFormation}
+					addPlayerToIndex={addPlayerToIndex}
+					deletePlayerAtIndex={deletePlayerAtIndex}
+					playersOnBoard={playersOnBoard}
+
 				/>
 				<PlayerCards
 					id={9}
@@ -83,6 +110,10 @@ const Fourfour = ({
 					setSelectedPlayer={setSelectedPlayer}
 					userFormation={userFormation}
 					setUserFormation={setUserFormation}
+					addPlayerToIndex={addPlayerToIndex}
+					deletePlayerAtIndex={deletePlayerAtIndex}
+					playersOnBoard={playersOnBoard}
+
 
 				/>
 				<PlayerCards
@@ -91,6 +122,9 @@ const Fourfour = ({
 					setSelectedPlayer={setSelectedPlayer}
 					userFormation={userFormation}
 					setUserFormation={setUserFormation}
+					addPlayerToIndex={addPlayerToIndex}
+					deletePlayerAtIndex={deletePlayerAtIndex}
+					playersOnBoard={playersOnBoard}
 
 				/>
 			</div>
@@ -101,7 +135,9 @@ const Fourfour = ({
 					setSelectedPlayer={setSelectedPlayer}
 					userFormation={userFormation}
 					setUserFormation={setUserFormation}
-
+					addPlayerToIndex={addPlayerToIndex}
+					deletePlayerAtIndex={deletePlayerAtIndex}
+					playersOnBoard={playersOnBoard}
 				/>
 			</div>
 		</div>

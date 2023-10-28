@@ -22,7 +22,22 @@ const Single = () => {
 	});
 	const { userID } = useParams();
 
-const localFormation = JSON.parse(localStorage.getItem('userFormation'))||[];
+	const[playersOnBoard,setPlayersOnBoard] = useState([null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]);
+
+	const addPlayerToIndex = (index,player) =>{
+		let players = playersOnBoard;
+		players[index] = player;
+		setPlayersOnBoard(players);
+	}
+
+
+	const deletePlayerAtIndex = (index) =>{
+		let players = playersOnBoard;
+		players[index] = null;
+		setPlayersOnBoard(players);
+	}
+
+	const localFormation = JSON.parse(localStorage.getItem('userFormation'))||[];
 
 	useEffect(() => {
 		const initialTeamData = {
@@ -39,25 +54,40 @@ const localFormation = JSON.parse(localStorage.getItem('userFormation'))||[];
 		axios
 			.get(`http://localhost:3050/getAllPlayers/${userID}`)
 			.then((response) => {
-				console.log(Response.data);
+				console.log(response.data);
 				setPlayerList(response.data);
 			})
 			.catch((error) => {
 				console.error('Error:', error);
 			});
+
+		let formation = localStorage.getItem("userFormation");
+		console.log(formation);
+		if(formation){
+			setPlayersOnBoard(JSON.parse(formation));
+		}
+
 	}, []);
+
+	useEffect(() => {console.log(playersOnBoard);},[playersOnBoard])
 
 
 	const choosePlayer = (player) => {
 		setSelectedPlayer(player.name);
-		localStorage.setItem('userFormation', JSON.stringify(userFormation));
+		//localStorage.setItem('userFormation', JSON.stringify(userFormation));
 	};
 
 	const saveFormation = () => {
-		const updatedFormation = [...userFormation, { id, selectedPlayer }];
+		console.log(playersOnBoard);
+		localStorage.setItem('userFormation', JSON.stringify(playersOnBoard));
+		/*const updatedFormation = [...userFormation, { id, selectedPlayer }];
 		setUserFormation(updatedFormation);
-		localStorage.setItem('userFormation', JSON.stringify(updatedFormation));
+		localStorage.setItem('userFormation', JSON.stringify(updatedFormation));*/
 	};
+
+	const loadInformation = () =>{
+
+	}
 
 	return (
 		<div>
@@ -97,6 +127,9 @@ const localFormation = JSON.parse(localStorage.getItem('userFormation'))||[];
 							userFormation={userFormation}
 							setUserFormation={setUserFormation}
 							saveFormation={saveFormation}
+							addPlayerToIndex={addPlayerToIndex}
+							deletePlayerAtIndex={deletePlayerAtIndex}
+							playersOnBoard={playersOnBoard}
 						/>
 					) : (
 						<Fourthree
@@ -104,6 +137,10 @@ const localFormation = JSON.parse(localStorage.getItem('userFormation'))||[];
 							setSelectedPlayer={setSelectedPlayer}
 							userFormation={userFormation}
 							setUserFormation={setUserFormation}
+							addPlayerToIndex={addPlayerToIndex}
+							deletePlayerAtIndex={deletePlayerAtIndex}
+							playersOnBoard={playersOnBoard}
+
 						/>
 					)}
 				</div>
