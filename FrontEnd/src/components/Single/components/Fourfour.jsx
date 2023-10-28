@@ -1,6 +1,14 @@
 import PlayerCards from './PlayerCards';
 
-const Fourfour = ({ selectedPlayer, setSelectedPlayer }) => {
+const Fourfour = ({
+	selectedPlayer,
+	setSelectedPlayer,
+	userFormation,
+	setUserFormation,
+	addPlayerToIndex,
+	deletePlayerAtIndex,
+	playersOnBoard
+}) => {
 	return (
 		<div>
 			<div className='forward'>
@@ -8,11 +16,16 @@ const Fourfour = ({ selectedPlayer, setSelectedPlayer }) => {
 					id={1}
 					selectedPlayer={selectedPlayer}
 					setSelectedPlayer={setSelectedPlayer}
+					addPlayerToIndex={addPlayerToIndex}
+					playersOnBoard={playersOnBoard}
 				/>
 				<PlayerCards
 					id={2}
 					selectedPlayer={selectedPlayer}
 					setSelectedPlayer={setSelectedPlayer}
+					addPlayerToIndex={addPlayerToIndex}
+					playersOnBoard={playersOnBoard}
+
 				/>
 			</div>
 			<div className='midField'>
@@ -20,21 +33,32 @@ const Fourfour = ({ selectedPlayer, setSelectedPlayer }) => {
 					id={3}
 					selectedPlayer={selectedPlayer}
 					setSelectedPlayer={setSelectedPlayer}
+					addPlayerToIndex={addPlayerToIndex}
+					playersOnBoard={playersOnBoard}
+
 				/>
 				<PlayerCards
 					id={4}
 					selectedPlayer={selectedPlayer}
 					setSelectedPlayer={setSelectedPlayer}
+					addPlayerToIndex={addPlayerToIndex}
+					playersOnBoard={playersOnBoard}
+
 				/>
 				<PlayerCards
 					id={5}
 					selectedPlayer={selectedPlayer}
 					setSelectedPlayer={setSelectedPlayer}
+					addPlayerToIndex={addPlayerToIndex}
+					playersOnBoard={playersOnBoard}
+
 				/>
 				<PlayerCards
 					id={6}
 					selectedPlayer={selectedPlayer}
 					setSelectedPlayer={setSelectedPlayer}
+					addPlayerToIndex={addPlayerToIndex}
+					playersOnBoard={playersOnBoard}
 				/>
 			</div>
 			<div className='defence'>
@@ -42,21 +66,33 @@ const Fourfour = ({ selectedPlayer, setSelectedPlayer }) => {
 					id={7}
 					selectedPlayer={selectedPlayer}
 					setSelectedPlayer={setSelectedPlayer}
+					addPlayerToIndex={addPlayerToIndex}
+					playersOnBoard={playersOnBoard}
 				/>
 				<PlayerCards
 					id={8}
 					selectedPlayer={selectedPlayer}
 					setSelectedPlayer={setSelectedPlayer}
+					addPlayerToIndex={addPlayerToIndex}
+					playersOnBoard={playersOnBoard}
+
 				/>
 				<PlayerCards
 					id={9}
 					selectedPlayer={selectedPlayer}
 					setSelectedPlayer={setSelectedPlayer}
+					addPlayerToIndex={addPlayerToIndex}
+					playersOnBoard={playersOnBoard}
+
+
 				/>
 				<PlayerCards
 					id={10}
 					selectedPlayer={selectedPlayer}
 					setSelectedPlayer={setSelectedPlayer}
+					addPlayerToIndex={addPlayerToIndex}
+					playersOnBoard={playersOnBoard}
+
 				/>
 			</div>
 			<div className='goalKeeper'>
@@ -64,6 +100,8 @@ const Fourfour = ({ selectedPlayer, setSelectedPlayer }) => {
 					id={11}
 					selectedPlayer={selectedPlayer}
 					setSelectedPlayer={setSelectedPlayer}
+					addPlayerToIndex={addPlayerToIndex}
+					playersOnBoard={playersOnBoard}
 				/>
 			</div>
 		</div>
