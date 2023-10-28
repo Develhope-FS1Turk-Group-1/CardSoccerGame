@@ -9,7 +9,9 @@ import axios from 'axios'
 import {useParams} from 'react-router-dom';
 
 const Single = () => {
+
 	const [formation, setFormation] = useState('FourFourTwo');
+	const [userFormation, setUserFormation] = useState([]);
 	const [selectedPlayer, setSelectedPlayer] = useState();
 	const [playerList, setPlayerList] = useState([])
 	const [teamInfo, setTeamInfo] = useState({
@@ -18,8 +20,9 @@ const Single = () => {
 		league: '',
 		scoreBoard: [],
 	});
-	const {userID} = useParams();
+	const { userID } = useParams();
 
+const localFormation = JSON.parse(localStorage.getItem('userFormation'))||[];
 
 	useEffect(() => {
 		const initialTeamData = {
@@ -29,6 +32,7 @@ const Single = () => {
 			scoreBoard: [5, 1, 0],
 		};
 		setTeamInfo(initialTeamData);
+		setUserFormation(localFormation || [])
 	}, []);
 
 	useEffect(() => {
@@ -46,6 +50,13 @@ const Single = () => {
 
 	const choosePlayer = (player) => {
 		setSelectedPlayer(player.name);
+		localStorage.setItem('userFormation', JSON.stringify(userFormation));
+	};
+
+	const saveFormation = () => {
+		const updatedFormation = [...userFormation, { id, selectedPlayer }];
+		setUserFormation(updatedFormation);
+		localStorage.setItem('userFormation', JSON.stringify(updatedFormation));
 	};
 
 	return (
@@ -76,17 +87,23 @@ const Single = () => {
 					<button onClick={() => setFormation('FourThreeThree')}>
 						<span>Type :</span> 4-3-3
 					</button>
+					<button onClick={saveFormation}>Save Formation</button>
 				</div>
 				<div className='lineContainer'>
 					{formation == 'FourFourTwo' ? (
 						<Fourfour
 							selectedPlayer={selectedPlayer}
 							setSelectedPlayer={setSelectedPlayer}
+							userFormation={userFormation}
+							setUserFormation={setUserFormation}
+							saveFormation={saveFormation}
 						/>
 					) : (
 						<Fourthree
 							selectedPlayer={selectedPlayer}
 							setSelectedPlayer={setSelectedPlayer}
+							userFormation={userFormation}
+							setUserFormation={setUserFormation}
 						/>
 					)}
 				</div>
@@ -104,22 +121,24 @@ const Single = () => {
 					))}
 				</div>
 				<div className='playerCards'>
-					<span>YEDEK</span>
-					{playerList.map((player, index) => (
-						<div
-							key={index}
-							className='playerDiv'
-							onClick={() => choosePlayer(player)}>
-							<img
-								src={''}
-								alt=''
-							/>
-							<p>{player.name}</p>
-							<p>
-								{player.position} &nbsp; {player.att}
-							</p>
-						</div>
-					))}
+					<div>
+						<span>YEDEK</span>
+						{playerList.map((player, index) => (
+							<div
+								key={index}
+								className='playerDiv'
+								onClick={() => choosePlayer(player)}>
+								<img
+									src={''}
+									alt=''
+								/>
+								<p>{player.name}</p>
+								<p>
+									{player.position} &nbsp; {player.att}
+								</p>
+							</div>
+						))}
+					</div>
 				</div>
 			</div>
 			<Footer />
