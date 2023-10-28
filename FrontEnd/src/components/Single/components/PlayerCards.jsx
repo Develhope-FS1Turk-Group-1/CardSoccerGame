@@ -4,11 +4,8 @@ const PlayerCards = ({
 	selectedPlayer,
 	setSelectedPlayer,
 	id,
-	userFormation,
-	setUserFormation,
 	addPlayerToIndex,
-	deletePlayerAtIndex,
-	playersOnBoard
+	playersOnBoard,
 }) => {
 	const [selectedCard, setSelectedCard] = useState(null);
 
@@ -21,9 +18,7 @@ const PlayerCards = ({
 	const handleClick = (cardId) => {
 		if (id === cardId) {
 			setSelectedCard(selectedPlayer);
-
 			addPlayerToIndex(id-1,selectedPlayer);
-			
 		}
 		setSelectedPlayer(null);
 	};
@@ -32,15 +27,9 @@ const PlayerCards = ({
 	return (
 		<div
 			className='player'
-			onClick={() => handleClick(id)}>
-			{/*userFormation.length > 0 &&
-			id === userFormation[userFormation.length - 1].id
-				? userFormation
-						.filter((formation) => formation.id === id)
-						.map((formation, index) => (
-							<div key={index}>{formation.selectedPlayer}</div>
-						))
-				:*/ selectedCard}
+			onClick={() => handleClick(id)}
+			>
+			{selectedCard}
 		</div>
 	);
 };

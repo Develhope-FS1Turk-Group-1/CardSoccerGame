@@ -74,20 +74,12 @@ const Single = () => {
 
 	const choosePlayer = (player) => {
 		setSelectedPlayer(player.name);
-		//localStorage.setItem('userFormation', JSON.stringify(userFormation));
 	};
 
 	const saveFormation = () => {
 		console.log(playersOnBoard);
 		localStorage.setItem('userFormation', JSON.stringify(playersOnBoard));
-		/*const updatedFormation = [...userFormation, { id, selectedPlayer }];
-		setUserFormation(updatedFormation);
-		localStorage.setItem('userFormation', JSON.stringify(updatedFormation));*/
 	};
-
-	const loadInformation = () =>{
-
-	}
 
 	return (
 		<div>
@@ -145,7 +137,7 @@ const Single = () => {
 					)}
 				</div>
 				<div className='playerList'>
-					{playerList.map((player, index) => (
+					{playerList.slice(0,11).map((player, index) => (
 						<div
 							className='player'
 							key={index}
@@ -160,7 +152,7 @@ const Single = () => {
 				<div className='playerCards'>
 					<div>
 						<span>YEDEK</span>
-						{playerList.map((player, index) => (
+						{playerList.slice(11).map((player, index) => (
 							<div
 								key={index}
 								className='playerDiv'
