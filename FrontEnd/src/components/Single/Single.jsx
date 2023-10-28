@@ -35,7 +35,7 @@ const Single = () => {
 		axios
 			.get(`http://localhost:3050/getAllPlayers/${userID}`)
 			.then((response) => {
-				console.log(Response.data);
+				console.log(response);
 				setPlayerList(response.data);
 			})
 			.catch((error) => {
