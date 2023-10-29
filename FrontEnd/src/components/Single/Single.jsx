@@ -6,7 +6,7 @@ import Fourfour from './components/Fourfour';
 import Fourthree from './components/Fourthree';
 import Manchester_City from '../../../Assets/Single/Manchester_City.png';
 import axios from 'axios'
-import {useParams} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const Single = () => {
 
@@ -81,6 +81,10 @@ const Single = () => {
 		localStorage.setItem('userFormation', JSON.stringify(playersOnBoard));
 	};
 
+	const handleDragStart = (event, data) => {
+		event.dataTransfer.setData('text/plain', data);
+	};
+
 	return (
 		<div>
 			<Header />
@@ -132,13 +136,14 @@ const Single = () => {
 							addPlayerToIndex={addPlayerToIndex}
 							deletePlayerAtIndex={deletePlayerAtIndex}
 							playersOnBoard={playersOnBoard}
-
 						/>
 					)}
 				</div>
 				<div className='playerList'>
-					{playerList.slice(0,11).map((player, index) => (
+					{playerList.slice(0, 11).map((player, index) => (
 						<div
+							onDragStart={(e) => handleDragStart(e, player.name)}
+							draggable
 							className='player'
 							key={index}
 							onClick={() => choosePlayer(player)}>
@@ -154,6 +159,8 @@ const Single = () => {
 						<span>YEDEK</span>
 						{playerList.slice(11).map((player, index) => (
 							<div
+								onDragStart={(e) => handleDragStart(e, player.name)}
+								draggable
 								key={index}
 								className='playerDiv'
 								onClick={() => choosePlayer(player)}>
