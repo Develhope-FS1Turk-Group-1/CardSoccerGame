@@ -3,14 +3,24 @@ import './DashboardStyle.css'
 import tactics from "../../../Assets/Dashboard/tactics.jpg"
 import playnow from "../../../Assets/Dashboard/playnow.jpg"
 import market from "../../../Assets/Dashboard/market.jpg"
+import { useUserProvider } from '../../Contexts/UserContext';
+import {Link,useNavigate} from 'react-router-dom';
+
 const Dashboard = () => {
   const [user, setUser] = useState();
+  const navigate = useNavigate();
+	const{setMoney,money,setLevel,level,userId,setUserId} = useUserProvider();
 
   useEffect(() => {
-    const userData = JSON.parse(localStorage.getItem('user'));
+    if(userId == 0){
+      navigate("/login");
+    }
+    /*const userData = JSON.parse(localStorage.getItem('user'));
     if (userData) {
       setUser(userData.user.username);
-    }
+    }*/
+
+
 
   }, [])
   console.log(user)
@@ -18,7 +28,9 @@ const Dashboard = () => {
     <div>
       <div className="DashboardBackground">
         <div className="Dashboarddiv">
-          <div className="tacticsDiv">
+          <div className="tacticsDiv" onClick={()=>{
+            navigate('/formation')
+          }}>
             <h1>Tactics</h1>
             <span><h1>Formation</h1></span>
             <img src={tactics} alt="" />
@@ -28,7 +40,9 @@ const Dashboard = () => {
             <span><h1>Now</h1></span>
             <img src={playnow} alt="" />
           </div>
-          <div className="marketDiv">
+          <div className="marketDiv" onClick={()=>{
+            navigate('/market');
+          }}>
             <h1>Card</h1>
             <span><h1>Market</h1></span>
             <img src={market} alt="" />

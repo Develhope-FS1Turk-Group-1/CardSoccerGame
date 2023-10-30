@@ -3,7 +3,7 @@ import './LoginPageStyle.css';
 import {Link,useNavigate} from 'react-router-dom';
 import * as yup from 'yup';
 import axios from 'axios';
-
+import { useUserProvider } from '../../Contexts/UserContext';
 
 
 const LoginPage = () => {
@@ -17,6 +17,7 @@ const LoginPage = () => {
         password: yup.string().required('Required'),
     });
     const navigate = useNavigate();
+    const{setMoney,setLevel,setUserId} = useUserProvider();
 
     const handleChange = (e) => {
         setFormData({
@@ -44,8 +45,11 @@ const LoginPage = () => {
             .then((response) => {
                if (response.data) {
                      console.log(response.data)
-                     localStorage.setItem('user', JSON.stringify(response.data.username));
-                    navigate('/dasboard');
+                     //localStorage.setItem('user', JSON.stringify(response.data.username));
+                     setMoney(response.data.money);
+                     setUserId(response.data.userId);
+                     setLevel(response.data.level);
+                     navigate('/dashboard');
                 } else {
                     console.log('User session not authorized');
                 }

@@ -8,6 +8,7 @@ const PORT = process.env.PORT || 3050;
 const { Pool } = require('pg');//backend's axios
 
 
+
 const connectionString = process.env.CONNECTION_URL;
 
 
@@ -72,7 +73,7 @@ app.post('/login', async (req, res) => {
     if (result.rows.length === 1) {
       console.log((result.rows[0]));
       const user = result.rows[0];
-      res.json({ userId: user.userid, username: user.username });
+      res.json({ userId: user.userid, username: user.username, money:user.money, level:user.xp });
     } else {
       res.status(401).json({ message: 'Invalid credentials' });
     }

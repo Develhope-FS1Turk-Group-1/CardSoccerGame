@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import '../../../public/css/main.css';
 import Header from '../../layouts/Header';
 import Footer from '../../layouts/Footer';
@@ -6,9 +6,11 @@ import Fourfour from './components/Fourfour';
 import Fourthree from './components/Fourthree';
 import Manchester_City from '../../../Assets/Single/Manchester_City.png';
 import axios from 'axios'
-import { useParams } from 'react-router-dom';
+import { useUserProvider } from '../../Contexts/UserContext';
+import {useNavigate} from 'react-router-dom';
 
 const Single = () => {
+	const navigate = useNavigate();
 
 	const [formation, setFormation] = useState('FourFourTwo');
 	const [userFormation, setUserFormation] = useState([]);
@@ -20,7 +22,7 @@ const Single = () => {
 		league: '',
 		scoreBoard: [],
 	});
-	const { userID } = useParams();
+	const{setMoney,money,setLevel,level,userId,setUserId} = useUserProvider();
 
 	const[playersOnBoard,setPlayersOnBoard] = useState([null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]);
 
@@ -40,19 +42,25 @@ const Single = () => {
 	const localFormation = JSON.parse(localStorage.getItem('userFormation'))||[];
 
 	useEffect(() => {
+		if(userId == 0){
+			navigate("/login");
+		}
+
 		const initialTeamData = {
 			logo: Manchester_City,
 			name: 'Team Name',
 			league: 'League Name',
 			scoreBoard: [5, 1, 0],
 		};
+		//setUserId(1);
+		console.log(userId);
 		setTeamInfo(initialTeamData);
 		setUserFormation(localFormation || [])
 	}, []);
 
 	useEffect(() => {
 		axios
-			.get(`http://localhost:3050/getAllPlayers/${userID}`)
+			.get(`http://localhost:3050/getAllPlayers/${userId}`)
 			.then((response) => {
 				console.log(response.data);
 				setPlayerList(response.data);

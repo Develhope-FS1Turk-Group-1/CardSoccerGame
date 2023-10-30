@@ -6,62 +6,65 @@ import Team from './components/Team/Team';
 import HomePage from './components/Home/Home';
 import LoginPage from './components/Login/Login';
 import RegisterPage from './components/Register/Register';
-import Dashboard from './components/Dashboard/Dashboard';
+import DashboardPage from './Pages/DashboardPage';
 import Single from './components/Single/Single';
+import { UserProvider } from './Contexts/UserContext';
 
 
 function App() {
     return (
-		<div>
-			<Router>
-				<Routes>
-					<Route
-						path='/'
-						exact
-						element={<HomePage />}
-					/>
-					<Route
-						path='/dashboard'
-						exact
-						element={<Dashboard />}
-					/>
-					<Route
-						path='/login'
-						exact
-						element={<LoginPage />}
-					/>
-					<Route
-						path='/register'
-						exact
-						element={<RegisterPage />}
-					/>
-					<Route
-						path='/audience'
-						element={<Audience />}
-					/>
-					<Route
-						path='/market'
-						element={<Market />}
-					/>
-					<Route
-						path='/online'
-						element={<Online />}
-					/>
-					<Route
-						path='/team'
-						element={<Team />}
-					/>
-					<Route
-						path='/single/:userID'
-						element={<Single />}
-					/>
-					<Route
-						path='/audience'
-						element={<Audience />}
-					/>
-				</Routes>
-			</Router>
-		</div>
+		<UserProvider>
+
+			<div>
+				<Router>
+					<Routes>
+						<Route
+							path='/'
+							exact
+							element={<HomePage />}
+						/>
+						<Route
+							path='/dashboard'
+							exact
+							element={<DashboardPage />}
+						/>
+						<Route
+							path='/login'
+							exact
+							element={<LoginPage />}
+						/>
+						<Route
+							path='/register'
+							exact
+							element={<RegisterPage />}
+						/>
+						<Route
+							path='/audience'
+							element={<Audience />}
+						/>
+						<Route
+							path='/market'
+							element={<Market />}
+						/>
+						<Route
+							path='/online'
+							element={<Online />}
+						/>
+						<Route
+							path='/team'
+							element={<Team />}
+						/>
+						<Route
+							path='/formation'
+							element={<Single />}
+						/>
+					</Routes>
+				</Router>
+			</div>
+
+		</UserProvider>
+		
+		
 	);
 }
 

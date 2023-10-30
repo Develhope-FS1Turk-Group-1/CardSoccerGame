@@ -5,16 +5,22 @@ import messageIcon from './Components/messageiconFooter.svg'
 import instagramFooter from './Components/instagramFooter.svg'
 import linkedinFooter from './Components/linkedinFooter.svg'
 import twitterFooter from './Components/twitterFooter.svg'
+import {Link,useNavigate} from 'react-router-dom';
+
 const Footer = () => {
+    const navigate = useNavigate();
     return (
         <div>
             <div className='MainFooterComponent'>
                 <div className="FooterButtonField">
                     <button>Online</button>
                     <button>Single</button>
-                    <button>Versus</button>
-                    <button>Market</button>
-                    <button>Button5</button>
+                    <button onClick={()=>{
+                        navigate('/formation');
+                    }}>Team</button>
+                    <button onClick={()=>{
+                        navigate('/market');
+                    }}>Market</button>
                     <div className='FooterTwoSideButton'>
                         <button><img src={ppIcon} alt="" /></button>
                         <button><img src={messageIcon} alt="" /></button>

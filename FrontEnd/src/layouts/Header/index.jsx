@@ -3,11 +3,14 @@ import './header.css';
 import coinImage from '../../assets/coin.png'
 import soccerBallImage from '../../assets/soccerBallImage.png'
 import logOutIcon from '../../assets/logOutIcon.png'
+import { useUserProvider } from '../../Contexts/UserContext';
+import { useNavigate } from 'react-router-dom';
 
 
 const Header = () => {
-    const [level, setLevel] = useState(5)
-    const [coin, setCoin] = useState(5000)
+    const{setMoney,money,setLevel,level,userId,setUserId} = useUserProvider();
+
+    const navigate = useNavigate();
     return (
         <div className='headerAllContainer'>
             <div className='headerSmallContainer'>
@@ -17,10 +20,15 @@ const Header = () => {
                     </div>
                     <div className='moneyContainer'>
                         <img id='headerCoinImage' src={coinImage} alt="" />
-                        <div className='moneyValue'>{coin}</div>
+                        <div className='moneyValue'>{money}</div>
                     </div>
                 </div>
-                <div className='rightSide'>
+                <div className='rightSide' onClick={()=>{
+                    console.log("Log Out")
+                    setUserId(0);
+                    navigate('/login');
+                }}>
+
                     <img id='soccerImage' src={soccerBallImage} alt="" />
                     Log Out
                     <img id='headerLogOutImage' src={logOutIcon} alt="" />
