@@ -178,6 +178,99 @@ app.get('/formation/:userID', async (req, res) => {
 
 
 
+// Assuming you have the PostgreSQL connection pool 'pool' defined.
+
+app.get('/buyPlayer', async (req, res) => {
+  const { type, userId } = req.query;
+  let minRating, count, price;
+
+  switch (type) {
+    case '1':
+      minRating = 40;
+      count = 10;
+      price = 10;
+      break;
+    case '2':
+      minRating = 65;
+      count = 5;
+      price = 35;
+      break;
+    case '3':
+      minRating = 75;
+      count = 3;
+      price = 70;
+      break;
+    default:
+      return res.status(400).json({ message: 'Invalid type provided' });
+  }
+
+  try {
+
+    const playerMoney = await pool.query(
+      `SELECT money FROM users WHERE userid = $1`,
+      [userId]
+    );
+
+    const money = playerMoney.rows[0];
+    /*console.log(playerMoney.rows)
+    console.log(playerMoney.rows[0])
+    console.log(Number(money));*/
+
+    if(Number(money.money) < price){
+      res.json({error:"Not enough money"});
+      return;
+    }
+    else{
+      await pool.query(
+        `UPDATE users SET money = money - $2 WHERE userId = $1`,
+        [userId,price]
+      );
+    }
+
+
+
+    const result = await pool.query(
+      `SELECT * FROM basePlayers WHERE power >= $1 ORDER BY RANDOM() LIMIT $2`,
+      [minRating,count]
+    );
+
+    const players = result.rows;
+    for(let i = 0 ; i < count;i++){
+      // Check if the user already exists for the provided userId
+      const existingUser = await pool.query(
+        `SELECT * FROM onlinePlayers WHERE userId = $1 and baseId = $2`,
+        [userId,players[i].id]
+      );
+
+      if (existingUser.rows.length > 0) {
+        // If user exists, increase cardCount
+        await pool.query(
+          `UPDATE onlinePlayers SET cardCount = cardCount + 1 WHERE userId = $1 and baseId = $2`,
+          [userId,players[i].id]
+        );
+      } else {
+
+        await pool.query(
+          `INSERT INTO onlinePlayers (baseId, userID, level, cardCount) VALUES ($1, $2, $3, $4)`,
+          [players[i].id, userId, 1, 1] 
+        );
+        
+      }
+
+    }
+
+    res.json(players);
+  } catch (error) {
+    console.error('Error fetching and adding players:', error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+
+
+
+
+
 
 
 
