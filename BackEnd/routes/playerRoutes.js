@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const playerController = require('../controllers/playerController');
+const playerController = require('../controllers/playerController.js');
 
 router.get('/getAllPlayers/:userID', playerController.getAllPlayers);
 

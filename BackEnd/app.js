@@ -24,7 +24,7 @@ app.use('/user', userRoutes);
 
 app.use('/player', playerRoutes);
 
-const PORT = process.env.PORT || 3050;
+const PORT = 3050;
 app.listen(PORT, () => {
 	connectDB();
 	console.log(`Server is running on http://localhost:${PORT}`);
