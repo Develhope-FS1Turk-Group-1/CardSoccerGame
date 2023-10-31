@@ -301,6 +301,36 @@ app.get('/getTeams', (req, res) => {
 });
 
 
+//FORMATION SAVE AND GET
+
+// Define a route to save a formation
+app.post('/saveFormation', (req, res) => {
+  const { userId, players } = req.body;
+
+  if (!userId || !players || !Array.isArray(players) || players.length !== 18) {
+    res.status(400).send('Bad Request: Invalid parameters');
+    return;
+  }
+
+  // Delete previous records for the given userId
+  pool.query('DELETE FROM formation WHERE userId = $1', [userId], (deleteError) => {
+    if (deleteError) {
+      res.status(500).send('Error deleting previous records');
+      return;
+    }
+
+    // Insert the new formation
+    const values = players.map((player, index) => [userId, index + 1, player.id]);
+    //console.log(values);
+    pool.query('INSERT INTO formation (userId, positionId, playerId) VALUES $1', [values], (insertError) => {
+      if (insertError) {
+        res.status(500).send('Error saving formation to database');
+      } else {
+        res.status(200).send('Formation saved successfully');
+      }
+    });
+  });
+});
 
 
 

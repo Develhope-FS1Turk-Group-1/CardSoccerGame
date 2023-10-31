@@ -11,13 +11,13 @@ const PlayerCards = ({
 
 	useEffect(() => {
 		if (playersOnBoard[id - 1] != null) {
-			setSelectedCard(playersOnBoard[id - 1]);
+			setSelectedCard(playersOnBoard[id - 1].name);
 		}
 	}, [playersOnBoard]);
 
 	const handleClick = (cardId) => {
 		if (id === cardId) {
-			setSelectedCard(selectedPlayer);
+			setSelectedCard(selectedPlayer.name);
 			addPlayerToIndex(id - 1, selectedPlayer);
 		}
 		setSelectedPlayer(null);

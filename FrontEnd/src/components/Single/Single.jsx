@@ -83,12 +83,23 @@ const Single = () => {
 
 
 	const choosePlayer = (player) => {
-		setSelectedPlayer(player.name);
+		setSelectedPlayer(player);
 	};
 
 	const saveFormation = () => {
 		console.log(playersOnBoard);
 		localStorage.setItem('userFormation', JSON.stringify(playersOnBoard));
+
+		axios
+			.post(`http://localhost:3050/saveFormation`,{ userId:userId, players:playersOnBoard })
+			.then((response) => {
+				console.log(response.data);
+				setPlayerList(response.data);
+			})
+			.catch((error) => {
+				console.error('Error:', error);
+			});
+
 	};
 
 	const handleDragStart = (event, data) => {
@@ -143,6 +154,7 @@ const Single = () => {
 							setSelectedPlayer={setSelectedPlayer}
 							userFormation={userFormation}
 							setUserFormation={setUserFormation}
+							saveFormation={saveFormation}
 							addPlayerToIndex={addPlayerToIndex}
 							deletePlayerAtIndex={deletePlayerAtIndex}
 							playersOnBoard={playersOnBoard}
