@@ -1,4 +1,4 @@
-import  { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import '../../../public/css/main.css';
 import Header from '../../layouts/Header';
 import Footer from '../../layouts/Footer';
@@ -7,7 +7,9 @@ import Fourthree from './components/Fourthree';
 import Manchester_City from '../../../Assets/Single/Manchester_City.png';
 import axios from 'axios'
 import { useUserProvider } from '../../Contexts/UserContext';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import PlayerCards from '../Single/components/PlayerCards';
+
 
 const Single = () => {
 	const navigate = useNavigate();
@@ -22,27 +24,27 @@ const Single = () => {
 		league: '',
 		scoreBoard: [],
 	});
-	const{setMoney,money,setLevel,level,userId,setUserId} = useUserProvider();
+	const { setMoney, money, setLevel, level, userId, setUserId } = useUserProvider();
 
-	const[playersOnBoard,setPlayersOnBoard] = useState([null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]);
+	const [playersOnBoard, setPlayersOnBoard] = useState([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]);
 
-	const addPlayerToIndex = (index,player) =>{
+	const addPlayerToIndex = (index, player) => {
 		let players = playersOnBoard;
 		players[index] = player;
 		setPlayersOnBoard(players);
 	}
 
 
-	const deletePlayerAtIndex = (index) =>{
+	const deletePlayerAtIndex = (index) => {
 		let players = playersOnBoard;
 		players[index] = null;
 		setPlayersOnBoard(players);
 	}
 
-	const localFormation = JSON.parse(localStorage.getItem('userFormation'))||[];
+	const localFormation = JSON.parse(localStorage.getItem('userFormation')) || [];
 
 	useEffect(() => {
-		if(userId == 0){
+		if (userId == 0) {
 			navigate("/login");
 		}
 
@@ -71,13 +73,13 @@ const Single = () => {
 
 		let formation = localStorage.getItem("userFormation");
 		console.log(formation);
-		if(formation){
+		if (formation) {
 			setPlayersOnBoard(JSON.parse(formation));
 		}
 
 	}, []);
 
-	useEffect(() => {console.log(playersOnBoard);},[playersOnBoard])
+	useEffect(() => { console.log(playersOnBoard); }, [playersOnBoard])
 
 
 	const choosePlayer = (player) => {
@@ -96,16 +98,16 @@ const Single = () => {
 	return (
 		<div>
 			<Header />
-			<div className="formationContainer">
-				<div className="formationBtn">
-					<div className="logo">
-						<div className="image">
+			<div className='formationContainer'>
+				<div className='formationBtn'>
+					<div className='logo'>
+						<div className='image'>
 							<img
 								src={teamInfo.logo}
-								alt="logo"
+								alt='logo'
 							/>
 						</div>
-						<div className="scoreCard">
+						<div className='scoreCard'>
 							<h2>{teamInfo.league}</h2>
 							<h1>{teamInfo.name}</h1>
 							<h2>
@@ -123,7 +125,7 @@ const Single = () => {
 					</button>
 					<button onClick={saveFormation}>Save Formation</button>
 				</div>
-				<div className="lineContainer">
+				<div className='lineContainer'>
 					{formation == 'FourFourTwo' ? (
 						<Fourfour
 							selectedPlayer={selectedPlayer}
@@ -147,15 +149,14 @@ const Single = () => {
 						/>
 					)}
 				</div>
-				<div className="playerList">
-					{playerList.slice(0, 11).map((player, index) => (
+				<div className='playerList'>
+					{playerList.map((player, index) => (
 						<div
 							onDragStart={(e) => handleDragStart(e, player.name)}
 							draggable
-							className="player"
+							className='player'
 							key={index}
-							onClick={() => choosePlayer(player)}
-						>
+							onClick={() => choosePlayer(player)}>
 							<p>{player.name}</p>
 							<p>
 								{player.position} &nbsp; {player.att}
@@ -163,182 +164,67 @@ const Single = () => {
 						</div>
 					))}
 				</div>
-				<div className="playerCards">
+				<div className='playerCards'>
 					<div>
-						<span>YEDEK</span>
-						<div
-							onDragStart={(e) =>
-								handleDragStart(e, playerList[11].name)
-							}
-							draggable
-							className="playerDiv"
-							onClick={() => choosePlayer(playerList[11])}
-						>
-							<img
-								src={''}
-								alt=""
+						<span>SUBTİTUTE</span>
+						<div className='forward'>
+							<PlayerCards
+								id={12}
+								selectedPlayer={selectedPlayer}
+								setSelectedPlayer={setSelectedPlayer}
+								addPlayerToIndex={addPlayerToIndex}
+								playersOnBoard={playersOnBoard}
 							/>
-							<p>{playerList[11].name}</p>
-							<p>
-								{playerList[11].position} &nbsp;{' '}
-								{playerList[11].att}
-							</p>
-						</div>
-
-						<div
-							onDragStart={(e) =>
-								handleDragStart(e, playerList[11].name)
-							}
-							draggable
-							className="playerDiv"
-							onClick={() => choosePlayer(playerList[11])}
-						>
-							<img
-								src={''}
-								alt=""
+							<PlayerCards
+								id={13}
+								selectedPlayer={selectedPlayer}
+								setSelectedPlayer={setSelectedPlayer}
+								addPlayerToIndex={addPlayerToIndex}
+								playersOnBoard={playersOnBoard}
 							/>
-							<p>{playerList[11].name}</p>
-							<p>
-								{playerList[11].position} &nbsp;{' '}
-								{playerList[11].att}
-							</p>
-						</div>
-
-						<div
-							onDragStart={(e) =>
-								handleDragStart(e, playerList[11].name)
-							}
-							draggable
-							className="playerDiv"
-							onClick={() => choosePlayer(playerList[11])}
-						>
-							<img
-								src={''}
-								alt=""
+							<PlayerCards
+								id={14}
+								selectedPlayer={selectedPlayer}
+								setSelectedPlayer={setSelectedPlayer}
+								addPlayerToIndex={addPlayerToIndex}
+								playersOnBoard={playersOnBoard}
 							/>
-							<p>{playerList[11].name}</p>
-							<p>
-								{playerList[11].position} &nbsp;{' '}
-								{playerList[11].att}
-							</p>
-						</div>
-
-
-						<div
-							onDragStart={(e) =>
-								handleDragStart(e, playerList[12].name)
-							}
-							draggable
-							className="playerDiv"
-							onClick={() => choosePlayer(playerList[12])}
-						>
-							<img
-								src={''}
-								alt=""
+							<PlayerCards
+								id={15}
+								selectedPlayer={selectedPlayer}
+								setSelectedPlayer={setSelectedPlayer}
+								addPlayerToIndex={addPlayerToIndex}
+								playersOnBoard={playersOnBoard}
 							/>
-							<p>{playerList[12].name}</p>
-							<p>
-								{playerList[12].position} &nbsp;{' '}
-								{playerList[12].att}
-							</p>
-						</div>
-
-						<div
-							onDragStart={(e) =>
-								handleDragStart(e, playerList[13].name)
-							}
-							draggable
-							className="playerDiv"
-							onClick={() => choosePlayer(playerList[13])}
-						>
-							<img
-								src={''}
-								alt=""
+							<PlayerCards
+								id={16}
+								selectedPlayer={selectedPlayer}
+								setSelectedPlayer={setSelectedPlayer}
+								addPlayerToIndex={addPlayerToIndex}
+								playersOnBoard={playersOnBoard}
 							/>
-							<p>{playerList[13].name}</p>
-							<p>
-								{playerList[13].position} &nbsp;{' '}
-								{playerList[13].att}
-							</p>
-						</div>
-
-						<div
-							onDragStart={(e) =>
-								handleDragStart(e, playerList[14].name)
-							}
-							draggable
-							className="playerDiv"
-							onClick={() => choosePlayer(playerList[14])}
-						>
-							<img
-								src={''}
-								alt=""
+							<PlayerCards
+								id={17}
+								selectedPlayer={selectedPlayer}
+								setSelectedPlayer={setSelectedPlayer}
+								addPlayerToIndex={addPlayerToIndex}
+								playersOnBoard={playersOnBoard}
 							/>
-							<p>{playerList[14].name}</p>
-							<p>
-								{playerList[14].position} &nbsp;{' '}
-								{playerList[14].att}
-							</p>
-						</div>
-
-						<div
-							onDragStart={(e) =>
-								handleDragStart(e, playerList[15].name)
-							}
-							draggable
-							className="playerDiv"
-							onClick={() => choosePlayer(playerList[15])}
-						>
-							<img
-								src={''}
-								alt=""
+							<PlayerCards
+								id={18}
+								selectedPlayer={selectedPlayer}
+								setSelectedPlayer={setSelectedPlayer}
+								addPlayerToIndex={addPlayerToIndex}
+								playersOnBoard={playersOnBoard}
 							/>
-							<p>{playerList[15].name}</p>
-							<p>
-								{playerList[15].position} &nbsp;{' '}
-								{playerList[15].att}
-							</p>
-						</div>
-
-						<div
-							onDragStart={(e) =>
-								handleDragStart(e, playerList[16].name)
-							}
-							draggable
-							className="playerDiv"
-							onClick={() => choosePlayer(playerList[16])}
-						>
-							<img
-								src={''}
-								alt=""
+							<PlayerCards
+								id={19}
+								selectedPlayer={selectedPlayer}
+								setSelectedPlayer={setSelectedPlayer}
+								addPlayerToIndex={addPlayerToIndex}
+								playersOnBoard={playersOnBoard}
 							/>
-							<p>{playerList[16].name}</p>
-							<p>
-								{playerList[16].position} &nbsp;{' '}
-								{playerList[16].att}
-							</p>
 						</div>
-
-						<div
-							onDragStart={(e) =>
-								handleDragStart(e, playerList[17].name)
-							}
-							draggable
-							className="playerDiv"
-							onClick={() => choosePlayer(playerList[17])}
-						>
-							<img
-								src={''}
-								alt=""
-							/>
-							<p>{playerList[17].name}</p>
-							<p>
-								{playerList[17].position} &nbsp;{' '}
-								{playerList[17].att}
-							</p>
-						</div>
-
-
 					</div>
 				</div>
 			</div>

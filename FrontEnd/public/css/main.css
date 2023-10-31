@@ -160,6 +160,23 @@
   bottom: 0;
   width: 100%;
 }
+.formationContainer .playerCards .forward {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 10px;
+  height: 100%;
+  width: 100%;
+}
+.formationContainer .playerCards .player {
+  width: 90px;
+  height: 110px;
+  background-color: antiquewhite;
+  gap: 10px;
+  cursor: pointer;
+  height: 100%;
+}
 .formationContainer .playerCards > div {
   display: flex;
   align-items: center;
@@ -176,12 +193,6 @@
   margin-right: 0;
   color: #fff;
   font-size: 25px;
-}
-.formationContainer .playerCards > div .playerDiv {
-  width: 90px;
-  height: 110px;
-  background-color: antiquewhite;
-  cursor: pointer;
 }
 
 .soccerMarket {
