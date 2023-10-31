@@ -134,14 +134,15 @@ app.put('/updatePassword', async (req, res) => {
   }
 });
 
+
 app.get('/getAllPlayers/:userID', (req, res) => {
   const { userID } = req.params;
 
   // Execute a SQL query to get all players for a specific user
   pool.query(
-    `SELECT op.id, op.baseid, op.userid, op.level, op.cardcount, bp.*
-     FROM onlinePlayers op
-     JOIN basePlayers bp ON op.baseid = bp.id
+    `SELECT op.id as onlinePlayerId, op.baseid, op.userid, op.level, op.cardcount, bp.*
+     FROM basePlayers bp
+     JOIN onlinePlayers op  ON op.baseid = bp.id
      WHERE op.userid = $1`,
     [userID],
     (error, result) => {
@@ -152,11 +153,11 @@ app.get('/getAllPlayers/:userID', (req, res) => {
       }
 
       const players = result.rows;
-      //console.log(players);
       res.json(players);
     }
   );
 });
+
 
 app.get('/formation/:userID', async (req, res) => {
   const userId = req.params.userID;
@@ -319,9 +320,8 @@ app.post('/saveFormation', async (req, res) => {
       res.status(500).send('Error deleting previous records');
       return;
     }
-
     // Insert the new formation
-    const values = players.map((player, index) => [userId, index + 1, player.id]);
+    const values = players.map((player, index) => [userId, index + 1, player.onlineplayerid]);
 
     for(let i = 0 ; i < 18;i++){
       let queryText = `INSERT INTO formation (userId, positionId, playerId) VALUES ('${values[i][0]}','${values[i][1]}','${values[i][2]}')`

@@ -163,10 +163,11 @@ const Single = () => {
 				<div className='playerList'>
 					{playerList.map((player, index) => (
 						<div
-							onDragStart={(e) => handleDragStart(e, player.name)}
+							onDragStart={(e) => handleDragStart(e, [player.name,player.onlineplayerid])}
 							draggable
 							className='player'
 							key={index}
+							id={player.onlineplayerid}
 							onClick={() => choosePlayer(player)}>
 							<p>{player.name}</p>
 							<p>

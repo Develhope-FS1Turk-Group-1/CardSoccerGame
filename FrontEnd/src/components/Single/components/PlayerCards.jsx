@@ -27,7 +27,12 @@ const PlayerCards = ({
 	const handleDrop = (event) => {
 		event.preventDefault();
 		const data = event.dataTransfer.getData('text/plain');
-		event.target.innerHTML = data;
+		const dataArray = data.split(',');
+		console.log(dataArray);
+		addPlayerToIndex(event.target.id-1,{onlineplayerid:dataArray[1],name:dataArray[0]})
+
+		event.target.innerHTML = dataArray[0];
+		
 	};
 
 	const handleDragOver = (event) => {
@@ -35,7 +40,7 @@ const PlayerCards = ({
 	};
 
 	return (
-		<div
+		<div id={id}
 			onDragOver={handleDragOver}
 			onDrop={handleDrop}
 			className='player'
