@@ -268,8 +268,37 @@ app.get('/buyPlayer', async (req, res) => {
 
 
 
+// Define a route to get the leagues
+app.get('/getLeagues', (req, res) => {
+  pool.query('SELECT DISTINCT league FROM teams', (error, results) => {
+    if (error) {
+      res.status(500).send('Error fetching leagues from database');
+    } else {
+      const leagues = results.rows.map(row => row.league);
+      res.json(leagues);
+    }
+  });
+});
 
 
+// Define a route to get teams by league
+app.get('/getTeams', (req, res) => {
+  const { league } = req.body;
+
+  if (!league) {
+    res.status(400).send('Bad Request: League parameter is missing');
+    return;
+  }
+
+  pool.query('SELECT * FROM teams WHERE league = $1', [league], (error, results) => {
+    if (error) {
+      res.status(500).send('Error fetching teams from database');
+    } else {
+      const teams = results.rows;
+      res.json(teams);
+    }
+  });
+});
 
 
 
@@ -278,13 +307,7 @@ app.get('/buyPlayer', async (req, res) => {
 /*
 
 Tactics sayfasi için:
-get all players (id) => {}//Okkes Alp
 get current formation (id) => [{},{},{},{}...] //Okkes Alp
-
-Market için:
-Openpackage (userId,Package type)
-  Casual Rare Legend //Sergen OmerCan
-
 
 
 BasePlayers to DB //Alp Omer DONE

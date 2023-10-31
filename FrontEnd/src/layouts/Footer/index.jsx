@@ -13,8 +13,12 @@ const Footer = () => {
         <div>
             <div className='MainFooterComponent'>
                 <div className="FooterButtonField">
-                    <button>Online</button>
-                    <button>Single</button>
+                    <button 
+                    >Online</button>
+                    <button onClick={()=>{
+                        navigate('/single');
+                    }}
+                    >Single</button>
                     <button onClick={()=>{
                         navigate('/formation');
                     }}>Team</button>

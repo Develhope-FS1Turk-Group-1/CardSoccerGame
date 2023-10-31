@@ -2,17 +2,18 @@ import { useEffect, useState } from 'react';
 import './Style.css'
 import arrow from "./arrow-right.svg"
 import stad from "./stad.png"
-const Teamselect = () => {
-    const [user, setUser] = useState();
+import { useUserProvider } from '../../Contexts/UserContext';
+import {Link,useNavigate} from 'react-router-dom';
 
+
+const Teamselect = () => {
+	const{setMoney,money,setLevel,level,userId,setUserId} = useUserProvider();
+    const navigate = useNavigate();
     useEffect(() => {
-        const userData = JSON.parse(localStorage.getItem('user'));
-        if (userData) {
-            setUser(userData.user.username);
-        }
+        if(userId == 0)
+            navigate("/login");
 
     }, [])
-    console.log(user)
     return (
         <div>
             <div className="DashboardBackground">
@@ -23,13 +24,13 @@ const Teamselect = () => {
                         <div className="TeamSelect">
                             <div className="TeamSide">
                                 <img id='lefttop' src={arrow} alt="" />
-                                <span class="dot"></span>
+                                <span className="dot"></span>
                                 <img src={arrow} alt="" />
                             </div>
-                            <span class="dotvs">VS</span>
+                            <span className="dotvs">VS</span>
                             <div className="TeamSide">
                                 <img id='leftbot' src={arrow} alt="" />
-                                <span class="dot"></span>
+                                <span className="dot"></span>
                                 <img src={arrow} alt="" />
                             </div>
                         </div>
@@ -38,7 +39,7 @@ const Teamselect = () => {
                             <h3>Takım2</h3>
                         </div>
                         <div className="ButtonClass">
-                            <button id='GrayButton'>GO BACK</button>
+                            <button id='GrayButton'>BACK</button>
                             <button id='GreenButton'>START</button>
                         </div>
                         <div className="stadClass">

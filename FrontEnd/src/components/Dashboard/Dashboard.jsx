@@ -40,8 +40,8 @@ const Dashboard = () => {
             <h1>Play</h1>
             <span><h1>Now</h1></span>
             <img src={playnow} alt="" onClick={()=>{
-            navigate('/Teamselect');
-          }}/>
+              navigate('/single');
+            }}/>
           </div>
           <div className="marketDiv" onClick={()=>{
             navigate('/market');

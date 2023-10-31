@@ -10,6 +10,14 @@ CREATE TABLE users (
     formation VARCHAR(100)
 );
 
+CREATE TABLE teams (
+  id SERIAL PRIMARY KEY,
+  team_name VARCHAR(255),
+  league VARCHAR(255),
+  img VARCHAR(255)
+);
+
+
 
 
 CREATE TABLE basePlayers (
@@ -216,3 +224,51 @@ VALUES
     ('Yusuf Karagöz', 'GK', 29.00, 28.88, 24.88, 58.00, 'Alanyaspor',58),
     ('Bahadir', 'DEF', 50.50, 54.25, 57.00, 20.00, 'Alanyaspor',57),
     ('Mert-Yusuf Torlak', 'MID', 52.50, 56.00, 46.00, 20.00, 'Alanyaspor',56);
+
+
+INSERT INTO teams (team_name, league)
+VALUES 
+  ('Fenerbahce', 'SuperLeague'),
+  ('Galatasaray', 'SuperLeague'),
+  ('Trabzonspor', 'SuperLeague'),
+  ('Basaksehir', 'SuperLeague'),
+  ('Alanyaspor', 'SuperLeague'),
+  ('Gaziantep', 'SuperLeague'),
+  ('Hatayspor', 'SuperLeague'),
+  ('Konyaspor', 'SuperLeague'),
+  ('Göztepe', 'SuperLeague'),
+  ('Sivasspor', 'SuperLeague'),
+  ('Antalyaspor', 'SuperLeague'),
+  ('Malatyaspor', 'SuperLeague'),
+  ('Denizlispor', 'SuperLeague'),
+  ('Rizespor', 'SuperLeague'),
+  ('ManchesterUnited', 'PremierLeague'),
+  ('Liverpool', 'PremierLeague'),
+  ('Chelsea', 'PremierLeague'),
+  ('ManchesterCity', 'PremierLeague'),
+  ('Arsenal', 'PremierLeague'),
+  ('TottenhamHotspur', 'PremierLeague'),
+  ('Everton', 'PremierLeague'),
+  ('LeicesterCity', 'PremierLeague'),
+  ('WolverhamptonWanderers', 'PremierLeague'),
+  ('WestHamUnited', 'PremierLeague'),
+  ('AstonVilla', 'PremierLeague'),
+  ('Southampton', 'PremierLeague'),
+  ('CrystalPalace', 'PremierLeague'),
+  ('NewcastleUnited', 'PremierLeague'),
+  ('BrightonHoveAlbion', 'PremierLeague'),
+  ('RealMadrid', 'LaLiga'),
+  ('Barcelona', 'LaLiga'),
+  ('AtleticoMadrid', 'LaLiga'),
+  ('Valencia', 'LaLiga'),
+  ('Sevilla', 'LaLiga'),
+  ('Villarreal', 'LaLiga'),
+  ('RealSociedad', 'LaLiga'),
+  ('AthleticBilbao', 'LaLiga'),
+  ('RealBetis', 'LaLiga'),
+  ('CeltaVigo', 'LaLiga'),
+  ('Levante', 'LaLiga'),
+  ('Getafe', 'LaLiga'),
+  ('Espanyol', 'LaLiga'),
+  ('Mallorca', 'LaLiga'),
+  ('Osasuna', 'LaLiga');
