@@ -217,13 +217,6 @@ const Single = () => {
 								addPlayerToIndex={addPlayerToIndex}
 								playersOnBoard={playersOnBoard}
 							/>
-							<PlayerCards
-								id={19}
-								selectedPlayer={selectedPlayer}
-								setSelectedPlayer={setSelectedPlayer}
-								addPlayerToIndex={addPlayerToIndex}
-								playersOnBoard={playersOnBoard}
-							/>
 						</div>
 					</div>
 				</div>

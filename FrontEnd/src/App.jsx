@@ -9,6 +9,7 @@ import RegisterPage from './components/Register/Register';
 import DashboardPage from './Pages/DashboardPage';
 import Single from './components/Single/Single';
 import { UserProvider } from './Contexts/UserContext';
+import Teamselect from './components/TeamSelect/Teamselect';
 
 
 function App() {
@@ -39,8 +40,8 @@ function App() {
 							element={<RegisterPage />}
 						/>
 						<Route
-							path='/audience'
-							element={<Audience />}
+							path='/single'
+							element={<Teamselect />}
 						/>
 						<Route
 							path='/market'
