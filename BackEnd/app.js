@@ -152,6 +152,7 @@ app.get('/getAllPlayers/:userID', (req, res) => {
       }
 
       const players = result.rows;
+      //console.log(players);
       res.json(players);
     }
   );
@@ -304,7 +305,7 @@ app.get('/getTeams', (req, res) => {
 //FORMATION SAVE AND GET
 
 // Define a route to save a formation
-app.post('/saveFormation', (req, res) => {
+app.post('/saveFormation', async (req, res) => {
   const { userId, players } = req.body;
 
   if (!userId || !players || !Array.isArray(players) || players.length !== 18) {
@@ -313,7 +314,7 @@ app.post('/saveFormation', (req, res) => {
   }
 
   // Delete previous records for the given userId
-  pool.query('DELETE FROM formation WHERE userId = $1', [userId], (deleteError) => {
+  pool.query('DELETE FROM formation WHERE userId = $1', [userId], async(deleteError) => {
     if (deleteError) {
       res.status(500).send('Error deleting previous records');
       return;
@@ -321,14 +322,28 @@ app.post('/saveFormation', (req, res) => {
 
     // Insert the new formation
     const values = players.map((player, index) => [userId, index + 1, player.id]);
-    //console.log(values);
-    pool.query('INSERT INTO formation (userId, positionId, playerId) VALUES $1', [values], (insertError) => {
-      if (insertError) {
-        res.status(500).send('Error saving formation to database');
-      } else {
-        res.status(200).send('Formation saved successfully');
+
+    for(let i = 0 ; i < 18;i++){
+      let queryText = `INSERT INTO formation (userId, positionId, playerId) VALUES ('${values[i][0]}','${values[i][1]}','${values[i][2]}')`
+      //console.log(queryText);
+      try{
+        const result = await client.query(queryText);
       }
-    });
+      catch(err){
+        res.status(500).send('Error deleting previous records');
+
+      }
+      
+
+      /*pool.query('INSERT INTO formation (userId, positionId, playerId) VALUES ($1,$2,$3)', [,,], (insertError) => {
+        if (insertError) {
+          console.log(insertError);
+          res.status(500).send('Error saving formation to database');
+          return;
+        } 
+      });*/
+    }
+    res.status(200).send('Formation saved successfully');
   });
 });
 
