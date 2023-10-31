@@ -3,6 +3,7 @@ import './DashboardStyle.css'
 import tactics from "../../../Assets/Dashboard/tactics.jpg"
 import playnow from "../../../Assets/Dashboard/playnow.jpg"
 import market from "../../../Assets/Dashboard/market.jpg"
+import Teamselect from '../TeamSelect/Teamselect';
 import { useUserProvider } from '../../Contexts/UserContext';
 import {Link,useNavigate} from 'react-router-dom';
 
@@ -38,7 +39,9 @@ const Dashboard = () => {
           <div className="playDiv">
             <h1>Play</h1>
             <span><h1>Now</h1></span>
-            <img src={playnow} alt="" />
+            <img src={playnow} alt="" onClick={()=>{
+            navigate('/Teamselect');
+          }}/>
           </div>
           <div className="marketDiv" onClick={()=>{
             navigate('/market');
