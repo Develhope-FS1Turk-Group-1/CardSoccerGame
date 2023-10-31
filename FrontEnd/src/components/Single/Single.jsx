@@ -96,16 +96,16 @@ const Single = () => {
 	return (
 		<div>
 			<Header />
-			<div className='formationContainer'>
-				<div className='formationBtn'>
-					<div className='logo'>
-						<div className='image'>
+			<div className="formationContainer">
+				<div className="formationBtn">
+					<div className="logo">
+						<div className="image">
 							<img
 								src={teamInfo.logo}
-								alt='logo'
+								alt="logo"
 							/>
 						</div>
-						<div className='scoreCard'>
+						<div className="scoreCard">
 							<h2>{teamInfo.league}</h2>
 							<h1>{teamInfo.name}</h1>
 							<h2>
@@ -123,7 +123,7 @@ const Single = () => {
 					</button>
 					<button onClick={saveFormation}>Save Formation</button>
 				</div>
-				<div className='lineContainer'>
+				<div className="lineContainer">
 					{formation == 'FourFourTwo' ? (
 						<Fourfour
 							selectedPlayer={selectedPlayer}
@@ -147,14 +147,15 @@ const Single = () => {
 						/>
 					)}
 				</div>
-				<div className='playerList'>
+				<div className="playerList">
 					{playerList.slice(0, 11).map((player, index) => (
 						<div
 							onDragStart={(e) => handleDragStart(e, player.name)}
 							draggable
-							className='player'
+							className="player"
 							key={index}
-							onClick={() => choosePlayer(player)}>
+							onClick={() => choosePlayer(player)}
+						>
 							<p>{player.name}</p>
 							<p>
 								{player.position} &nbsp; {player.att}
@@ -162,26 +163,182 @@ const Single = () => {
 						</div>
 					))}
 				</div>
-				<div className='playerCards'>
+				<div className="playerCards">
 					<div>
 						<span>YEDEK</span>
-						{playerList.slice(11).map((player, index) => (
-							<div
-								onDragStart={(e) => handleDragStart(e, player.name)}
-								draggable
-								key={index}
-								className='playerDiv'
-								onClick={() => choosePlayer(player)}>
-								<img
-									src={''}
-									alt=''
-								/>
-								<p>{player.name}</p>
-								<p>
-									{player.position} &nbsp; {player.att}
-								</p>
-							</div>
-						))}
+						<div
+							onDragStart={(e) =>
+								handleDragStart(e, playerList[11].name)
+							}
+							draggable
+							className="playerDiv"
+							onClick={() => choosePlayer(playerList[11])}
+						>
+							<img
+								src={''}
+								alt=""
+							/>
+							<p>{playerList[11].name}</p>
+							<p>
+								{playerList[11].position} &nbsp;{' '}
+								{playerList[11].att}
+							</p>
+						</div>
+
+						<div
+							onDragStart={(e) =>
+								handleDragStart(e, playerList[11].name)
+							}
+							draggable
+							className="playerDiv"
+							onClick={() => choosePlayer(playerList[11])}
+						>
+							<img
+								src={''}
+								alt=""
+							/>
+							<p>{playerList[11].name}</p>
+							<p>
+								{playerList[11].position} &nbsp;{' '}
+								{playerList[11].att}
+							</p>
+						</div>
+
+						<div
+							onDragStart={(e) =>
+								handleDragStart(e, playerList[11].name)
+							}
+							draggable
+							className="playerDiv"
+							onClick={() => choosePlayer(playerList[11])}
+						>
+							<img
+								src={''}
+								alt=""
+							/>
+							<p>{playerList[11].name}</p>
+							<p>
+								{playerList[11].position} &nbsp;{' '}
+								{playerList[11].att}
+							</p>
+						</div>
+
+
+						<div
+							onDragStart={(e) =>
+								handleDragStart(e, playerList[12].name)
+							}
+							draggable
+							className="playerDiv"
+							onClick={() => choosePlayer(playerList[12])}
+						>
+							<img
+								src={''}
+								alt=""
+							/>
+							<p>{playerList[12].name}</p>
+							<p>
+								{playerList[12].position} &nbsp;{' '}
+								{playerList[12].att}
+							</p>
+						</div>
+
+						<div
+							onDragStart={(e) =>
+								handleDragStart(e, playerList[13].name)
+							}
+							draggable
+							className="playerDiv"
+							onClick={() => choosePlayer(playerList[13])}
+						>
+							<img
+								src={''}
+								alt=""
+							/>
+							<p>{playerList[13].name}</p>
+							<p>
+								{playerList[13].position} &nbsp;{' '}
+								{playerList[13].att}
+							</p>
+						</div>
+
+						<div
+							onDragStart={(e) =>
+								handleDragStart(e, playerList[14].name)
+							}
+							draggable
+							className="playerDiv"
+							onClick={() => choosePlayer(playerList[14])}
+						>
+							<img
+								src={''}
+								alt=""
+							/>
+							<p>{playerList[14].name}</p>
+							<p>
+								{playerList[14].position} &nbsp;{' '}
+								{playerList[14].att}
+							</p>
+						</div>
+
+						<div
+							onDragStart={(e) =>
+								handleDragStart(e, playerList[15].name)
+							}
+							draggable
+							className="playerDiv"
+							onClick={() => choosePlayer(playerList[15])}
+						>
+							<img
+								src={''}
+								alt=""
+							/>
+							<p>{playerList[15].name}</p>
+							<p>
+								{playerList[15].position} &nbsp;{' '}
+								{playerList[15].att}
+							</p>
+						</div>
+
+						<div
+							onDragStart={(e) =>
+								handleDragStart(e, playerList[16].name)
+							}
+							draggable
+							className="playerDiv"
+							onClick={() => choosePlayer(playerList[16])}
+						>
+							<img
+								src={''}
+								alt=""
+							/>
+							<p>{playerList[16].name}</p>
+							<p>
+								{playerList[16].position} &nbsp;{' '}
+								{playerList[16].att}
+							</p>
+						</div>
+
+						<div
+							onDragStart={(e) =>
+								handleDragStart(e, playerList[17].name)
+							}
+							draggable
+							className="playerDiv"
+							onClick={() => choosePlayer(playerList[17])}
+						>
+							<img
+								src={''}
+								alt=""
+							/>
+							<p>{playerList[17].name}</p>
+							<p>
+								{playerList[17].position} &nbsp;{' '}
+								{playerList[17].att}
+							</p>
+						</div>
+
+
 					</div>
 				</div>
 			</div>

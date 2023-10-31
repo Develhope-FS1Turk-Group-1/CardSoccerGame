@@ -88,7 +88,7 @@ const LoginPage = () => {
                                 type='checkbox'
                                 id='remindMe'
                             />
-                            <label for='remindMe'>Remind me!</label>
+                            <label htmlFor='remindMe'>Remind me!</label>
                         </div>
                         <Link to='/passwordReset'>
                             <span className='forgottenPassword'>Forgot Password</span>

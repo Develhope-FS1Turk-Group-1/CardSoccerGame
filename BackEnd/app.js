@@ -139,7 +139,7 @@ app.get('/getAllPlayers/:userID', (req, res) => {
 
   // Execute a SQL query to get all players for a specific user
   pool.query(
-    `SELECT op.id, op.baseid, op.userid, op.level, op.cardcount, bp.* 
+    `SELECT op.id, op.baseid, op.userid, op.level, op.cardcount, bp.*
      FROM onlinePlayers op
      JOIN basePlayers bp ON op.baseid = bp.id
      WHERE op.userid = $1`,
@@ -158,14 +158,14 @@ app.get('/getAllPlayers/:userID', (req, res) => {
 });
 
 app.get('/formation/:userID', async (req, res) => {
-  const userId = req.params.userId;
+  const userId = req.params.userID;
 
   try {
     const result = await pool.query(
       `SELECT * FROM formation
          JOIN basePlayers ON onlinePlayers.baseId = basePlayers.id
          WHERE userID = $1`,
-      [userID]
+      [userId]
     );
 
     res.json(result.rows);
@@ -252,9 +252,9 @@ app.get('/buyPlayer', async (req, res) => {
 
         await pool.query(
           `INSERT INTO onlinePlayers (baseId, userID, level, cardCount) VALUES ($1, $2, $3, $4)`,
-          [players[i].id, userId, 1, 1] 
+          [players[i].id, userId, 1, 1]
         );
-        
+
       }
 
     }
