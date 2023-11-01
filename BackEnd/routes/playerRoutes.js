@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const playerController = require('../controllers/playerController.js');
-const auth = require('../middlewares');
+const auth = require('../middlewares/auth.js');
 
 
 router.get('/getAllPlayers/:userID', playerController.getAllPlayers);
