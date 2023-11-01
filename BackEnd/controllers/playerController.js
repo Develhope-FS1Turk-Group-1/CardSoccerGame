@@ -1,4 +1,7 @@
-const { pool } = require('pg');
+const { Pool } = require('pg');
+const connectionString = process.env.CONNECTION_URL;
+
+const pool = new Pool({ connectionString });
 
 const getAllPlayers = async (req, res) => {
 	const { userID } = req.params;
@@ -95,11 +98,12 @@ const buyPlayer = async (req, res) => {
 };
 
 const saveFormation = async (req, res) => {
-  const { userId, players } = req.body;
+	const { userId, players } = req.body;
 
   if (!userId || !Array.isArray(players) || players.length !== 18) {
-    res.status(400).send('Invalid Request: Invalid parameters');
-    return;
+	  res.status(400).send('Invalid Request: Invalid parameters');
+	  console.log(userId)
+	  return;
   }
 
   try {
@@ -127,8 +131,39 @@ const saveFormation = async (req, res) => {
 };
 
 
+const getMoney = async (req, res) => {
+	const { userId } = req.query;
+	console.log(userId);
+
+	if (!userId) {
+		return res.status(400).json({ message: 'userId parameter is missing' });
+	}
+
+	try {
+		const playerMoney = await pool.query(
+			'SELECT money FROM users WHERE userid = $1',
+			[userId],
+		);
+
+		if (playerMoney.rows.length === 1) {
+			const money = playerMoney.rows[ 0 ].money;
+			console.log(money)
+			return res.status(200).json({ money });
+		} else {
+			return res.status(404).json({ message: 'User Not Found' });
+		}
+	} catch (error) {
+		console.error('ERROR: ', error);
+		return res.status(500).json({ message: 'Internal Server Error' });
+	}
+};
+
+
+
+
 module.exports = {
 	getAllPlayers,
 	buyPlayer,
 	saveFormation,
+	getMoney,
 };

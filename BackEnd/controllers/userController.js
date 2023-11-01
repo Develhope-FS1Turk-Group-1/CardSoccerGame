@@ -1,4 +1,6 @@
-const { pool } = require('pg');
+const { Pool } = require('pg');
+const connectionString = process.env.CONNECTION_URL;
+const pool = new Pool({ connectionString });
 
 const registerUser = async (req, res) => {
 	const { username, password, mail } = req.body;
@@ -31,17 +33,16 @@ const registerUser = async (req, res) => {
 
 const loginUser = async (req, res) => {
 	const { mail, password } = req.body;
-
+	console.log(mail, password);
 	try {
 		const query = `
-        SELECT userId, username, money, xp
-        FROM users
-        WHERE mail = $1 AND password = $2
-      `;
-
+      SELECT userId, username, money, xp
+      FROM users
+      WHERE mail = $1 AND password = $2
+    `;
 		const result = await pool.query(query, [mail, password]);
-
 		if (result.rows.length === 1) {
+			console.log(result.rows[0]);
 			const user = result.rows[0];
 			res.json({
 				userId: user.userid,
@@ -53,11 +54,10 @@ const loginUser = async (req, res) => {
 			res.status(401).json({ message: 'Invalid credentials' });
 		}
 	} catch (error) {
-		console.error('Error logging in, error');
+		console.error('Error logging in', error);
 		res.status(500).json({ message: 'Internal server error' });
 	}
 };
-
 const getUsername = async (req, res) => {
 	const userId = req.params.userId;
 

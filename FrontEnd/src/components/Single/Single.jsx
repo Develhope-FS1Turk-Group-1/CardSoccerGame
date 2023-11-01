@@ -62,7 +62,7 @@ const Single = () => {
 
 	useEffect(() => {
 		axios
-			.get(`http://localhost:3050/getAllPlayers/${userId}`)
+			.get(`http://localhost:3050/player/getAllPlayers/${userId}`)
 			.then((response) => {
 				console.log(response.data);
 				setPlayerList(response.data);
@@ -87,11 +87,10 @@ const Single = () => {
 	};
 
 	const saveFormation = () => {
-		console.log(playersOnBoard);
 		localStorage.setItem('userFormation', JSON.stringify(playersOnBoard));
 
 		axios
-			.post(`http://localhost:3050/saveFormation`,{ userId:userId, players:playersOnBoard })
+			.post(`http://localhost:3050/player/saveFormation`,{ userId:userId, players:playersOnBoard })
 			.then((response) => {
 				console.log(response.data);
 			})

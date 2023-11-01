@@ -5,7 +5,8 @@ const MyContext = createContext();
 const UserProvider = ({ children }) => {
 	const [level, setLevel] = useState(0);
 	const [money, setMoney] = useState(0);
-	const [userId, setUserId] = useState(0);
+	const [ userId, setUserId ] = useState(0);
+
 
 	return (
 		<MyContext.Provider
