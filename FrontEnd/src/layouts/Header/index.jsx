@@ -16,9 +16,8 @@ const Header = () => {
      axios
 			.get(`http://localhost:3050/player/getMoney/${userId}`)
 			.then((response) => {
-				if (response.data) {
+                if (response.data) {
 					setMoney(response.data.money);
-					setLevel(response.data.level);
 				}
 			})
 			.catch((error) => {

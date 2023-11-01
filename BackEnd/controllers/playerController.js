@@ -1,26 +1,29 @@
 const { Pool } = require('pg');
 const connectionString = process.env.CONNECTION_URL;
-
 const pool = new Pool({ connectionString });
 
 const getAllPlayers = async (req, res) => {
 	const { userID } = req.params;
 
-	try {
-		const result = await pool.query(
-			`SELECT op.id as onlinePlayerId, op.baseid, op.userid, op.level, op.cardcount, bp.*
-       FROM basePlayers bp
-       JOIN onlinePlayers op  ON op.baseid = bp.id
-       WHERE op.userid = $1`,
-			[userID],
-		);
+	pool.query(
+		`SELECT op.id as onlinePlayerId, op.baseid, op.userid, op.level, op.cardcount, bp.*
+     FROM basePlayers bp
+     JOIN onlinePlayers op  ON op.baseid = bp.id
+     WHERE op.userid = $1`,
+		[userID],
+		(error, result) => {
+			if (error) {
+				console.error('Error executing query', error);
+				res.status(500).json({ error: 'Internal Server Error' });
+				return;
+			}
 
-		const players = result.rows;
-		res.json(players);
-	} catch (error) {
-		console.error('Error executing query', error);
-		res.status(500).json({ error: 'Internal Server Error' });
-	}
+			const players = result.rows;
+			res.json(players);
+
+		},
+	);
+
 };
 
 const buyPlayer = async (req, res) => {
@@ -132,8 +135,7 @@ const saveFormation = async (req, res) => {
 
 
 const getMoney = async (req, res) => {
-	const { userId } = req.query;
-	console.log(userId);
+	const { userId } = req.params;
 
 	if (!userId) {
 		return res.status(400).json({ message: 'userId parameter is missing' });
@@ -147,7 +149,6 @@ const getMoney = async (req, res) => {
 
 		if (playerMoney.rows.length === 1) {
 			const money = playerMoney.rows[ 0 ].money;
-			console.log(money)
 			return res.status(200).json({ money });
 		} else {
 			return res.status(404).json({ message: 'User Not Found' });

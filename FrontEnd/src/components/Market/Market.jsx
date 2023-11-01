@@ -33,7 +33,7 @@ const Market = () => {
 
   const buyPlayer = async (type, userId) => {
     try {
-      const response = await axios.get(`http://localhost:3050/buyPlayer`, {
+      const response = await axios.get(`http://localhost:3050/player/buyPlayer`, {
         params: { type, userId }
       });
       console.log(response.data);

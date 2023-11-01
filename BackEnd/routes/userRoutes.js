@@ -10,4 +10,5 @@ router.get('/getUsername/:userId', userController.getUsername);
 
 router.put('/updatePassword', userController.updatePassword);
 
+
 module.exports = router;

@@ -10,12 +10,12 @@ import DashboardPage from './Pages/DashboardPage';
 import Single from './components/Single/Single';
 import { UserProvider } from './Contexts/UserContext';
 import SinglePage from './Pages/SinglePage';
+import PasswordReset from './components/PasswordReset/passwordReset';
 
 
 function App() {
     return (
 		<UserProvider>
-
 			<div>
 				<Router>
 					<Routes>
@@ -59,13 +59,14 @@ function App() {
 							path='/formation'
 							element={<Single />}
 						/>
+						<Route
+							path='/passwordReset'
+							element={<PasswordReset />}
+						/>
 					</Routes>
 				</Router>
 			</div>
-
 		</UserProvider>
-		
-		
 	);
 }
 
