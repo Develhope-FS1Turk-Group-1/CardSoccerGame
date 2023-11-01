@@ -54,10 +54,10 @@ const loginUser = async (req, res) => {
 	try {
 		const enteredPassword = password;
 		const query = `
-      SELECT userId, username, password, money, xp
-      FROM users
-      WHERE mail = $1
-    `;
+      	SELECT userId, username, password, money, xp
+      	FROM users
+      	WHERE mail = $1
+    	`;
 
 		const result = await pool.query(query, [mail]);
 
@@ -67,7 +67,6 @@ const loginUser = async (req, res) => {
 			const same = bcrypt.compareSync(enteredPassword, user.password);
 
 			if (same) {
-				// Doğrulama başarılı, JWT oluştur ve kullanıcıya gönder
 				const token = creatToken(user.userId);
 
 				res.status(200).json({
