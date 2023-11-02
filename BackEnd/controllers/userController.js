@@ -67,10 +67,10 @@ const loginUser = async (req, res) => {
 			const same = bcrypt.compareSync(enteredPassword, user.password);
 
 			if (same) {
-				const token = creatToken(user.userId);
+				const token = creatToken(user.userid);
 
 				res.status(200).json({
-					userId: user.userId,
+					userId: user.userid,
 					username: user.username,
 					money: user.money,
 					level: user.xp,

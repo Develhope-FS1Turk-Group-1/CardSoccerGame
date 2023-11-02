@@ -1,0 +1,83 @@
+.landingAllContainer {
+    font-style: italic;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../../assets/backgroundLanding.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.landingSmallContainer {
+    color: white;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    gap: 50px;
+    padding: 50px 0 0px 100px;
+}
+
+.landingSmallContainer h1 {
+    font-size: 100px;
+}
+
+.landingSmallContainer h2 {
+    font-size: 40px;
+}
+
+.signUpContainer{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.signUpContainer button {
+    padding: 20px 30px;
+    border-radius: 100px;
+    border: 0;
+    font-size: 30px;
+    background-color: white;
+    color: #370466;
+    transform: translateY(5%);
+    cursor:pointer;
+}
+.signUpContainer img {
+height: 70px;
+}
+
+.loginContainer{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.loginContainer img {
+    color: white;
+    height: 90px;
+}
+
+
+#alreadyAccound {
+    font-size: 30px;
+    text-transform: capitalize;
+}
+
+.loginContainer button {
+    cursor:pointer;
+    border: 0px;
+    background-color: transparent;
+    background-color: white;
+    color: #370466;
+    font-size: 50px;
+    padding: 20px 30px;
+    border-radius: 100px;
+    border: 0;
+    font-size: 30px;
+    transform: translateY(5%);
+    cursor:pointer;
+}
+
+.landingCreateYourTeam{
+    font-size: 30px;
+}

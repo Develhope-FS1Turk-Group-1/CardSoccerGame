@@ -12,18 +12,18 @@ const Header = () => {
     const { setMoney, money, setLevel, level, userId, setUserId } = useUserProvider();
 
 
-    useEffect(() => {
-     axios
-			.get(`http://localhost:3050/player/getMoney/${userId}`)
-			.then((response) => {
-                if (response.data) {
-					setMoney(response.data.money);
-				}
-			})
-			.catch((error) => {
-				console.log(error);
-			});
-   }, [])
+//     useEffect(() => {
+//      axios
+// 			.get(`http://localhost:3050/player/getMoney/${userId}`)
+// 			.then((response) => {
+//                 if (response.data) {
+// 					setMoney(response.data.money);
+// 				}
+// 			})
+// 			.catch((error) => {
+// 				console.log(error);
+// 			});
+//    }, [])
 
     const navigate = useNavigate();
     return (

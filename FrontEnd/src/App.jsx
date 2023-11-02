@@ -3,7 +3,7 @@ import Audience from './components/Audience/Audience';
 import Market from './components/Market/Market';
 import Online from './components/Online/Online';
 import Team from './components/Team/Team';
-import HomePage from './components/Home/Home';
+import Landing from './components/Landing/Landing';
 import LoginPage from './components/Login/Login';
 import RegisterPage from './components/Register/Register';
 import DashboardPage from './Pages/DashboardPage';
@@ -22,7 +22,7 @@ function App() {
 						<Route
 							path='/'
 							exact
-							element={<HomePage />}
+							element={<Landing />}
 						/>
 						<Route
 							path='/dashboard'
