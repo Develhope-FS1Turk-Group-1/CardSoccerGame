@@ -1,0 +1,103 @@
+.player-card {
+    display: flex;
+    perspective: 1000px; /* Add perspective for 3D effect */
+    width: 230px; /* Adjust the width as needed */
+    background-color: #333;
+    color: white;
+    border: none;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .player-info {
+    display: flex;
+    flex-direction: column;
+    transform-origin: right;
+    width: inherit;
+  }
+  
+  .player-details {
+    display: flex;
+    align-items: center;
+    background-color: blue;
+  }
+
+  .player-image{
+    position: relative;
+    display: inline-block;
+    width: 200px; /* Set the width */
+    height: 254px; /* Set the height */
+  }
+  
+  .player-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .positions {
+    padding: 5px;
+    background-color: yellow;
+    color: blue;
+    font-weight: bold;
+  }
+  
+  .positions h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+    border-bottom: 1px solid white;
+    padding-bottom: 5px;
+  }
+  
+  .positions p {
+    margin: 5px 0;
+  }
+  
+  .positions {
+    display: flex;
+    justify-content: space-between; /* To space the left and right sections */
+  }
+  
+  .left,
+  .right {
+    width: 48%; /* Adjust width as needed */
+  }
+  
+
+  .player-details {
+    display: flex;
+    align-items: center;
+  }
+  
+  h2 {
+    writing-mode: vertical-rl; /* Rotate text by 90 degrees */
+    transform: rotate(-180deg); /* For cross-browser compatibility */
+    white-space: nowrap; /* Ensure the text doesn't wrap */
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+  
+
+  .number {
+    position: absolute;
+    top: 5px; /* Adjust as needed for the top position */
+    right: 5px; /* Adjust as needed for the right position */
+    padding: 4px 8px; /* Adjust padding as needed */
+    border-radius: 50%; /* For a circular background */
+    color: yellow;
+    font-weight: bold;
+    font-size: 30px;
+  }
+
+  .player-name{
+    height: 100%;
+    text-align: center;
+    margin: auto;
+    white-space: nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: blue;
+  }

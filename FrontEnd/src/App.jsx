@@ -11,6 +11,7 @@ import Single from './components/Single/Single';
 import { UserProvider } from './Contexts/UserContext';
 import SinglePage from './Pages/SinglePage';
 import PasswordReset from './components/PasswordReset/passwordReset';
+import Card from './components/Card/Card';
 
 
 function App() {
@@ -62,6 +63,11 @@ function App() {
 						<Route
 							path='/passwordReset'
 							element={<PasswordReset />}
+						/>
+						<Route
+							path='/card'
+							exact
+							element={<Card />}
 						/>
 					</Routes>
 				</Router>
