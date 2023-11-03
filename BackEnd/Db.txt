@@ -229,6 +229,7 @@ VALUES
 INSERT INTO teams (team_name, league)
 VALUES 
   ('Fenerbahce', 'SuperLeague'),
+  ('Besiktas','SuperLeague'),
   ('Galatasaray', 'SuperLeague'),
   ('Trabzonspor', 'SuperLeague'),
   ('Basaksehir', 'SuperLeague'),

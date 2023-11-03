@@ -32,7 +32,7 @@ const Teamselect = () => {
             navigate("/login");
 
             axios
-			.get(`http://localhost:3050/getLeagues`)
+			.get(`http://localhost:3050/play/getLeagues`)
 			.then((response) => {
 				console.log(response.data);
 				setLeagues(response.data);
@@ -48,7 +48,7 @@ const Teamselect = () => {
 
     useEffect(() => {
         axios
-            .get('http://localhost:3050/getTeams/'+selectedLeague)
+            .get('http://localhost:3050/play/getTeams/'+selectedLeague)
             .then((response) => {
                 console.log(response.data);
                 setTeams(response.data);
@@ -97,7 +97,18 @@ const Teamselect = () => {
                         </div>
                         <div className="ButtonClass">
                             <button id='GrayButton'>BACK</button>
-                            <button id='GreenButton'>START</button>
+                            <button id='GreenButton' onClick={()=>{
+
+                            axios
+                                .post(`http://localhost:3050/play/playSingle/${selectedTeam}/${userId}`)
+                                .then((response) => {
+                                    console.log(response.data);
+                                })
+                                .catch((error) => {
+                                    console.error('Error:', error);
+                                });
+
+                            }}>START</button>
                         </div>
                         <div className="stadClass">
                             <img src={stad} alt="" />
