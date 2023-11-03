@@ -7,7 +7,7 @@ import Landing from './components/Landing/Landing';
 import LoginPage from './components/Login/Login';
 import RegisterPage from './components/Register/Register';
 import DashboardPage from './Pages/DashboardPage';
-import Single from './components/Single/Single';
+import Single from './components/Single/Formation';
 import { UserProvider } from './Contexts/UserContext';
 import SinglePage from './Pages/SinglePage';
 import PasswordReset from './components/PasswordReset/passwordReset';

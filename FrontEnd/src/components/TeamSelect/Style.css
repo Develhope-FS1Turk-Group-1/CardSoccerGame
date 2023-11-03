@@ -38,6 +38,7 @@
     flex-direction: row;
     width: 100%;
     align-items: center;
+    justify-content: center;
 
 }
 
@@ -111,7 +112,7 @@
     display: flex;
     align-items: center;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .NameClass h3{

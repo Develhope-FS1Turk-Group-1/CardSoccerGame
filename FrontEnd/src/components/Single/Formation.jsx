@@ -8,7 +8,7 @@ import Manchester_City from '../../../Assets/Single/Manchester_City.png';
 import axios from 'axios'
 import { useUserProvider } from '../../Contexts/UserContext';
 import { useNavigate } from 'react-router-dom';
-import PlayerCards from '../Single/components/PlayerCards';
+import PlayerCards from './components/PlayerCards';
 
 
 const Single = () => {
