@@ -15,7 +15,6 @@ const Single = () => {
 	const navigate = useNavigate();
 
 	const [formation, setFormation] = useState('FourFourTwo');
-	const [userFormation, setUserFormation] = useState([]);
 	const [selectedPlayer, setSelectedPlayer] = useState();
 	const [playerList, setPlayerList] = useState([])
 	const [teamInfo, setTeamInfo] = useState({
@@ -41,7 +40,6 @@ const Single = () => {
 		setPlayersOnBoard(players);
 	}
 
-	const localFormation = JSON.parse(localStorage.getItem('userFormation')) || [];
 
 	useEffect(() => {
 
@@ -59,7 +57,6 @@ const Single = () => {
 		//setUserId(1);
 		console.log(userId);
 		setTeamInfo(initialTeamData);
-		setUserFormation(localFormation || [])
 	}, []);
 
 	useEffect(() => {
@@ -73,11 +70,21 @@ const Single = () => {
 				console.error('Error:', error);
 			});
 
-		let formation = localStorage.getItem("userFormation");
+		axios
+			.post(`http://localhost:3050/player/loadFormation`,{ userId:userId})
+			.then((response) => {
+				console.log(response.data);
+				setPlayersOnBoard(response.data.formation);
+			})
+			.catch((error) => {
+				console.error('Error:', error);
+			});
+
+		/*let formation = localStorage.getItem("userFormation");
 		console.log(formation);
 		if (formation) {
 			setPlayersOnBoard(JSON.parse(formation));
-		}
+		}*/
 		
 
 	}, []);
@@ -142,8 +149,7 @@ const Single = () => {
 						<Fourfour
 							selectedPlayer={selectedPlayer}
 							setSelectedPlayer={setSelectedPlayer}
-							userFormation={userFormation}
-							setUserFormation={setUserFormation}
+
 							saveFormation={saveFormation}
 							addPlayerToIndex={addPlayerToIndex}
 							deletePlayerAtIndex={deletePlayerAtIndex}
@@ -153,8 +159,7 @@ const Single = () => {
 						<Fourthree
 							selectedPlayer={selectedPlayer}
 							setSelectedPlayer={setSelectedPlayer}
-							userFormation={userFormation}
-							setUserFormation={setUserFormation}
+
 							saveFormation={saveFormation}
 							addPlayerToIndex={addPlayerToIndex}
 							deletePlayerAtIndex={deletePlayerAtIndex}

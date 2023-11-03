@@ -3,8 +3,6 @@ import PlayerCards from './PlayerCards';
 const Fourfour = ({
 	selectedPlayer,
 	setSelectedPlayer,
-	userFormation,
-	setUserFormation,
 	addPlayerToIndex,
 	deletePlayerAtIndex,
 	playersOnBoard
