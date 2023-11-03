@@ -1,3 +1,4 @@
+
 .DashboardBackground {
     display: flex;
     background-image: url("../../Assets/Market/Default_soccer_stadium_view_full_of_crowd_night_time_ray_traci_0_d6bb2c97-38a0-444f-8a16-15375f76b1ba_1.jpg");
@@ -9,131 +10,46 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+.mySwiper{
+    width: 300px;
+    justify-content: center;
+}
+.swiper-slide-active{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
 
 .Dashboarddiv {
+    background-color: white;
+    z-index: 10;;
     display: flex;
-    flex-direction: row;
-    width: 50%;
-    height: 100%;
-    background-color: rgba(2, 0, 0, 0.396);
-    align-items: center;
-    justify-content: center;
-}
-
-.dot {
-    height: 155px;
-    width: 155px;
-    background-color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: black;
-}
-
-.TeamSelect{
-    margin-top: 40px;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-
-}
-
-.TeamSelect span{
-    color: black;
-    -webkit-text-stroke: 0px #fff;
-    /* You can adjust the width and color of the outline */
-    text-stroke: 0px #fff;
-    font-size: 20px;
-    font-weight: bold;
-}
-.dotvs{
-    height: 40px;
-    width: 40px;
-    background-color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: black;
-}
-
-.TeamSide{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-}
-
-.TeamSide img{
-    height: 90px;
-    width: 90px;
-    border-radius: 50%;
-    border: none;
-}
-
-.TeamSide img:hover{
-    filter: invert(100%);
-    transition: 1s ease-in-out;
-}
-
-.stadClass{
-    margin-top: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
     flex-direction: column;
-}
-.stadClass img{
-    border: none;
-    width: 70px;
-    height: 70px;
-    filter: invert(100%);
-}
-.stadClass img:hover{
-    width: 70px;
-    height: 70px;
-    filter: invert(100%);
-}
-
-.stadClass h3{
-    margin-top: 10px;
-    font-size: 25px;
-    font-weight: bold;
-}
-
-.NameClass{
-    width: 70%;
-    display: flex;
     align-items: center;
-    flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
+
+}
+.leaugeTeamSelect{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
 }
 
-.NameClass h3{
-    font-size: 40px;
-}
+
 .ButtonClass{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 100px;
-    width: 50%;
-    height: 12%;
 }
-#TitleText{
-    font-size: 18px;
-    font-weight: bold;
-}
+
+
 .ButtonClass button{
+    padding: 20px 50px;
     background-color: white;
     border-radius: 12px;
-    width: 50%;
     font-size: 36px;
     text-align: center;
     font-weight: bold;
@@ -148,33 +64,5 @@
 
 #GrayButton{color: gray;}
 #GreenButton{color: green;}
-.tacticsDiv,
-.playDiv,
-.marketDiv {
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    height: 70%;
-    width: 85%;
-}
 
 
-.playDiv h1 span {
-    color: transparent;
-    -webkit-text-stroke: 1px #fff;
-    /* You can adjust the width and color of the outline */
-    text-stroke: 1px #fff;
-}
-
-#lefttop, #leftbot{
-    transform: scaleX(-1);
-} 
-
-.playDiv h1,
-.playDiv h1 span {
-    font-size: 90px;
-    font-weight: bold;
-}
