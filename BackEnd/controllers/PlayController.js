@@ -79,6 +79,13 @@ const getLeagues = (req, res) => {
         LIMIT 1
     `;
 
+    const userTeam = `
+        SELECT * FROM formation
+        WHERE Team = $1 AND Position = 'GK'
+        ORDER BY GK DESC
+        LIMIT 1
+    `;
+
     pool.query(bestAttackersQuery, [team], (err, attackers) => {
         if (err) {
             console.error('Error selecting best attackers', err);
@@ -100,19 +107,57 @@ const getLeagues = (req, res) => {
                     return;
                 }
 
-                pool.query(bestGoalkeeperQuery, [team], (err, goalkeeper) => {
+                pool.query(bestGoalkeeperQuery, [team], async (err, goalkeeper) => {
                     if (err) {
                         console.error('Error selecting best goalkeeper', err);
                         res.status(500).send('Database error');
                         return;
                     }
+                    const teamPowerValue = calculateTotalAtt(attackers.rows) + calculateTotalDef(defenders.rows) + calculateTotalMid(midfielders.rows)+goalkeeper.rows[0].gk
+                    
 
-                    const bestPlayers = {
+                    const result = await pool.query(
+                        `SELECT formation.positionId, formation.playerId, basePlayers.*, onlinePlayers.*
+                         FROM formation
+                         JOIN onlinePlayers ON formation.playerId = onlinePlayers.id
+                         JOIN basePlayers ON onlinePlayers.baseId = basePlayers.id
+                         WHERE formation.userId = $1
+                         ORDER BY formation.positionId`,
+                        [userId]
+                      );
+                  
+                      if (result.rows.length === 0) {
+                        res.status(404).send('Formation not found for the specified user');
+                        return;
+                      }
+                      const attPower = calculateTotalAtt(result.rows.slice(0, 3));
+                      //console.log(result.rows.slice(0, 3));
+                      const midPower = calculateTotalMid(result.rows.slice(3, 6));
+                      //console.log(result.rows.slice(3, 6));
+
+                      const defPower = calculateTotalDef(result.rows.slice(6, 10));
+                      //console.log(result.rows.slice(6, 10));
+
+                      const gkPower = result.rows[10].gk;
+                      //console.log(result.rows[10]);
+
+
+
+                      const userTeamPower = attPower+midPower+defPower+gkPower;
+                      const userGoal = Math.floor((Math.random()*userTeamPower/100));
+                      const opponentGoal = Math.floor((Math.random()*teamPowerValue/100));
+
+                      const bestPlayers = {
+                        userGoal: userGoal,
+                        opponentGoal: opponentGoal,
+                        result: userGoal > opponentGoal ? "WIN": userGoal == opponentGoal ? "DRAW" : "LOSE",
+                        userTeamPower:userTeamPower,
+                        opponentTeamPower: teamPowerValue,
                         attackers: attackers.rows,
                         midfielders: midfielders.rows,
                         defenders: defenders.rows,
                         goalkeeper: goalkeeper.rows[0],
-                        teamPower: calculateTotalAtt(attackers.rows) + calculateTotalDef(defenders.rows) + calculateTotalMid(midfielders.rows)+goalkeeper.rows[0].gk
+                        
 
                     };
 

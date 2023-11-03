@@ -74,7 +74,11 @@ const Single = () => {
 			.post(`http://localhost:3050/player/loadFormation`,{ userId:userId})
 			.then((response) => {
 				console.log(response.data);
-				setPlayersOnBoard(response.data.formation);
+				let tempData = response.data.formation;
+				for(let i = 0 ; i < 18;i++){
+					tempData[i].onlineplayerid = tempData[i].playerId;
+				}
+				setPlayersOnBoard(tempData);
 			})
 			.catch((error) => {
 				console.error('Error:', error);
