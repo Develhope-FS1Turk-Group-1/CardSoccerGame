@@ -71,7 +71,7 @@
     align-items: center;
   }
   
-  h2 {
+  .player-name h2 {
     writing-mode: vertical-rl; /* Rotate text by 90 degrees */
     transform: rotate(-180deg); /* For cross-browser compatibility */
     white-space: nowrap; /* Ensure the text doesn't wrap */

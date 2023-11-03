@@ -44,9 +44,11 @@ const Single = () => {
 	const localFormation = JSON.parse(localStorage.getItem('userFormation')) || [];
 
 	useEffect(() => {
+
 		if (userId == 0) {
 			navigate("/login");
 		}
+		
 
 		const initialTeamData = {
 			logo: Manchester_City,
@@ -76,6 +78,7 @@ const Single = () => {
 		if (formation) {
 			setPlayersOnBoard(JSON.parse(formation));
 		}
+		
 
 	}, []);
 
