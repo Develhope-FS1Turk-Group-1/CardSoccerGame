@@ -13,6 +13,53 @@
 .soccerMarket {
     width: 100%;
     height: 100%;
+    position: relative;
+
+    .boughtPlayersPopUp {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .errorPopUpOff{
+        display: none;
+    }
+
+    .popUpOn, .errorPopUpOn {
+        color: white;
+        display: flex;
+        position: absolute;
+        z-index: 1;
+        flex-direction: column;
+        top: 30%;
+        align-items: center;
+        justify-content: space-around;
+        background-color: rgba(137, 163, 163, 0.717);
+        width: 100%;
+        margin: auto;
+
+        .playerBought{
+            display: flex;
+            width: 20%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+    }
+
+    .popUpOff {
+        display: none;
+    }
+
+
+
+    .playerBought img {
+        width: 100px;
+    }
 
     .marketAllContainer {
         color: aliceblue;

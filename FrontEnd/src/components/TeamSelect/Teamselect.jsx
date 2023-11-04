@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react';
 import './Style.css'
-import arrow from "./arrow-right.svg"
-import stad from "./stad.png"
 import { useUserProvider } from '../../Contexts/UserContext';
 import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
+import { useRef } from "react"
+import LeftArrowBlue from "../../../Assets/TeamSelect/LeftArrowBlue.svg"
+import RightArrowBlue from "../../../Assets/TeamSelect/RightArrowBlue.svg"
+import LeftArrow from "../../../Assets/TeamSelect/Vector 14.svg"
+import RightArrow from "../../../Assets/TeamSelect/Vector 17.svg"
 
 
 // Import Swiper styles
@@ -66,42 +69,110 @@ const Teamselect = () => {
             });
     }, [selectedLeague])
 
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1
-    };
+    const swiper = useRef(null)
+    const goNext = () => {
+        if (swiper.current && swiper.current.swiper) {
+            swiper.current.swiper.slideNext()
+        }
+    }
+    const goPrev = () => {
+        if (swiper.current && swiper.current.swiper) {
+            swiper.current.swiper.slidePrev()
+        }
+    }
+
+    const swiper1 = useRef(null)
+    const goNext1 = () => {
+        if (swiper1.current && swiper1.current.swiper) {
+            swiper1.current.swiper.slideNext()
+        }
+    }
+    const goPrev1 = () => {
+        if (swiper1.current && swiper1.current.swiper) {
+            swiper1.current.swiper.slidePrev()
+        }
+    }
+
+    const [currentSlide, setCurrentSlide] = useState(0)
+    const [currentSlide1, setCurrentSlide1] = useState(0)
 
     return (
         <div>
-            <div className="DashboardBackground">
-                <div className="Dashboarddiv">
-                    <div onClick={handleLeagueChange}>
-                    <Swiper
-                        navigation={true}
-                        modules={[Pagination, Navigation]}
-                        className="mySwiper"
-                    >
-                        {leagues.map((league, index) => (
-                            <SwiperSlide key={index} value={league}>
-                                {league}
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
+            <div className="teamSelectAllContainer">
+                <div className="teamSelectDiv">
+                    <div className="leaugeSwiperContainer">
+                        <button
+                            aria-label="Previous"
+                            onClick={() => {
+                                currentSlide > 0 && setCurrentSlide(currentSlide - 1)
+                                goPrev();
+                                setSelectedLeague(leagues[currentSlide]);
+                                console.log(currentSlide)
+                            }}
+                            className="prev-button"
+                        >
+                            <img src={currentSlide == !1 ? LeftArrow : LeftArrowBlue} alt="Sol Ok" width={100} height={100} />
+                        </button>
+                        <Swiper ref={swiper} slidesPerView="1" spaceBetween="10px">
+                            {leagues.map((league, index) => (
+                                <SwiperSlide key={index} value={league}>
+                                    {league}
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                        <button
+                            aria-label="Next"
+                            onClick={() => {
+                                currentSlide < leagues.length - 1 && setCurrentSlide(currentSlide + 1)
+                                goNext();
+                                setSelectedLeague(leagues[currentSlide]);
+                                console.log(currentSlide)
+
+                            }}
+                            className="next-button"
+                        >
+                            <img src={currentSlide == leagues.length-1 ? RightArrow : RightArrowBlue} alt="Sag Ok" width={100} height={100} />
+
+                        </button>
                     </div>
-                    <Swiper
-                        navigation={true}
-                        modules={[Pagination, Navigation]}
-                        className="mySwiper"
-                    >
-                        {teams.map((team, index) => (
-                                    <SwiperSlide key={index} value={team.team_name}>
-                                        {team.team_name}
-                                    </SwiperSlide>
-                                ))}
-                    </Swiper>
+
+                    <div className="teamSwiperContainer">
+                        <button
+                            aria-label="Previous"
+                            onClick={() => {
+                                currentSlide1 > 0 && setCurrentSlide1(currentSlide1 - 1)
+                                goPrev1();
+                                setSelectedTeam(teams[currentSlide1]);
+                                console.log(selectedTeam, currentSlide1)
+                            }}
+                            className="prev-button"
+                        >
+                            <img src={currentSlide1 == !1 ? LeftArrow : LeftArrowBlue} alt="Sol Ok" width={100} height={100} />
+                        </button>
+                        <Swiper ref={swiper1} slidesPerView="1" spaceBetween="10px">
+                            {teams.map((team, index) => (
+                                <SwiperSlide key={index} value={team.team_name}>
+                                    {team.team_name}
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                        <button
+                            aria-label="Next"
+                            onClick={() => {
+                                currentSlide1 < teams.length - 1 && setCurrentSlide1(currentSlide1 + 1)
+                                goNext1();
+                                setSelectedTeam(teams[currentSlide1].team_name);
+                                console.log(selectedTeam)
+
+                            }}
+                            className="next-button"
+                        >
+                            <img src={currentSlide1 == teams.length-1 ? RightArrow : RightArrowBlue} alt="Sag Ok" width={100} height={100} />
+
+                        </button>
+                    </div>
+
+
 
 
                     <div className='leaugeTeamSelect'>
@@ -134,6 +205,7 @@ const Teamselect = () => {
                     <div className="ButtonClass">
                         <button id='GrayButton'>BACK</button>
                         <button id='GreenButton' onClick={() => {
+                            console.log(selectedTeam, userId)
                             axios
                                 .post(`http://localhost:3050/play/playSingle/${selectedTeam}/${userId}`)
                                 .then((response) => {

@@ -8,6 +8,7 @@ import Header from '../../layouts/Header';
 import Footer from '../../layouts/Footer';
 import { useUserProvider } from '../../Contexts/UserContext';
 import { Link, useNavigate } from 'react-router-dom';
+import Card from '../Card/Card';
 
 import axios from 'axios';
 
@@ -16,6 +17,9 @@ const Market = () => {
   const { setMoney, money, setLevel, level, userId, setUserId } = useUserProvider();
 
   const [bought, setBought] = useState([])
+  const [boughtPlayers, setBoughtPlayers] = useState([]);
+  const [buyPopUp, setBuyPopUp] = useState('popUpOff');
+  const [errorPopUp, setErrorPopUp] = useState('errorPopUpOff');
 
   const navigate = useNavigate();
 
@@ -38,6 +42,7 @@ const Market = () => {
         params: { type, userId }
       });
       console.log(response);
+      setBoughtPlayers(response.data);
       return response.data;
     } catch (error) {
       console.error('Error buying player:', error);
@@ -47,32 +52,56 @@ const Market = () => {
 
   const buyCasual = () => {
     if (money < 10) {
-      alert("You need money");
+      setErrorPopUp('errorPopUpOn');
       return;
     }
     buyPlayer(1, userId);
+    setBuyPopUp('popUpOn');
     setMoney(money - 10);
   }
   const buyRare = () => {
     if (money < 35) {
-      alert("You need money");
+      setErrorPopUp('errorPopUpOn');
       return;
     }
     buyPlayer(2, userId);
+    setBuyPopUp('popUpOn');
     setMoney(money - 35);
   }
   const buyLegend = () => {
     if (money < 70) {
-      alert("You need money");
+      setErrorPopUp('errorPopUpOn');
       return;
     }
     buyPlayer(3, userId);
+    setBuyPopUp('popUpOn');
     setMoney(money - 70);
   }
 
   return (
     <div className='soccerMarket'>
       <Header />
+      <div className={errorPopUp}>
+        You Need Money
+        <button onClick={() => setErrorPopUp('errorPopUpOff')}>OK..</button>
+
+      </div>
+      <div className={buyPopUp}>
+        <div className='boughtPlayersPopUp'>
+          {boughtPlayers.map((player) => (
+              <div key={player.id} className='playerBought'>
+                <img src={player.img} alt={player.name} />
+                <h3>{player.name}</h3>
+                <div>
+                  <h5>{player.position}</h5>
+                  <h5>{player.power}</h5>
+                </div>
+              </div>
+            ))}
+        </div>
+        <button onClick={() => { setBuyPopUp('popUpOff'); setBoughtPlayers([]) }}>CLAIM</button>
+      </div>
+
       <div className='marketAllContainer'>
         <div className='marketSmallContainer'>
           <h1>CARD MARKET</h1>

@@ -14,7 +14,9 @@ CREATE TABLE teams (
   id SERIAL PRIMARY KEY,
   team_name VARCHAR(255),
   league VARCHAR(255),
-  img VARCHAR(255)
+  img VARCHAR(255),
+  color1 VARCHAR(255),
+  color2 VARCHAR(255);
 );
 
 

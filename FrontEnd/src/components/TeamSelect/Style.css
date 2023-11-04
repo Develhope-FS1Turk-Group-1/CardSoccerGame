@@ -1,5 +1,5 @@
 
-.DashboardBackground {
+.teamSelectAllContainer {
     display: flex;
     background-image: url("../../Assets/Market/Default_soccer_stadium_view_full_of_crowd_night_time_ray_traci_0_d6bb2c97-38a0-444f-8a16-15375f76b1ba_1.jpg");
     height: 80vh;
@@ -22,8 +22,8 @@
 }
 
 
-.Dashboarddiv {
-    background-color: white;
+.teamSelectDiv {
+    background-color: rgba(2, 0, 0, 0.516);
     z-index: 10;;
     display: flex;
     flex-direction: column;
@@ -55,14 +55,21 @@
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s ease-in-out;
-}
-
-.ButtonClass button:hover{
-    font-size: 10px;
-    transition: 0.3s ease-in-out;
-}
+} e
 
 #GrayButton{color: gray;}
 #GreenButton{color: green;}
 
 
+
+.leaugeSwiperContainer,
+.teamSwiperContainer{
+    color: white;
+    width: 600px;
+    display: flex;
+    align-items: center;
+}
+.leaugeSwiperContainer img,
+.teamSwiperContainer img{
+    background-color: transparent
+}
