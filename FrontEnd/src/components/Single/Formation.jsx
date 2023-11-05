@@ -9,6 +9,7 @@ import axios from 'axios'
 import { useUserProvider } from '../../Contexts/UserContext';
 import { useNavigate } from 'react-router-dom';
 import PlayerCards from './components/PlayerCards';
+import Card from '../Card/Card';
 
 
 const Single = () => {
@@ -153,7 +154,6 @@ const Single = () => {
 						<Fourfour
 							selectedPlayer={selectedPlayer}
 							setSelectedPlayer={setSelectedPlayer}
-
 							saveFormation={saveFormation}
 							addPlayerToIndex={addPlayerToIndex}
 							deletePlayerAtIndex={deletePlayerAtIndex}
@@ -191,49 +191,49 @@ const Single = () => {
 					<div>
 						<span>SUBTİTUTE</span>
 						<div className='forward'>
-							<PlayerCards
+							<Card
 								id={12}
 								selectedPlayer={selectedPlayer}
 								setSelectedPlayer={setSelectedPlayer}
 								addPlayerToIndex={addPlayerToIndex}
 								playersOnBoard={playersOnBoard}
 							/>
-							<PlayerCards
+							<Card
 								id={13}
 								selectedPlayer={selectedPlayer}
 								setSelectedPlayer={setSelectedPlayer}
 								addPlayerToIndex={addPlayerToIndex}
 								playersOnBoard={playersOnBoard}
 							/>
-							<PlayerCards
+							<Card
 								id={14}
 								selectedPlayer={selectedPlayer}
 								setSelectedPlayer={setSelectedPlayer}
 								addPlayerToIndex={addPlayerToIndex}
 								playersOnBoard={playersOnBoard}
 							/>
-							<PlayerCards
+							<Card
 								id={15}
 								selectedPlayer={selectedPlayer}
 								setSelectedPlayer={setSelectedPlayer}
 								addPlayerToIndex={addPlayerToIndex}
 								playersOnBoard={playersOnBoard}
 							/>
-							<PlayerCards
+							<Card
 								id={16}
 								selectedPlayer={selectedPlayer}
 								setSelectedPlayer={setSelectedPlayer}
 								addPlayerToIndex={addPlayerToIndex}
 								playersOnBoard={playersOnBoard}
 							/>
-							<PlayerCards
+							<Card
 								id={17}
 								selectedPlayer={selectedPlayer}
 								setSelectedPlayer={setSelectedPlayer}
 								addPlayerToIndex={addPlayerToIndex}
 								playersOnBoard={playersOnBoard}
 							/>
-							<PlayerCards
+							<Card
 								id={18}
 								selectedPlayer={selectedPlayer}
 								setSelectedPlayer={setSelectedPlayer}

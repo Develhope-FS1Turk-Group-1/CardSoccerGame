@@ -33,6 +33,7 @@
   background-size: 100% 100%;
   width: 40%;
   height: 80%;
+  border-radius: 10px;
 }
 .formationContainer .lineContainer > div {
   display: flex;
@@ -187,12 +188,6 @@
   border-radius: 100px;
   margin: auto;
   height: 100%;
-}
-.formationContainer .playerCards > div span {
-  transform: rotate(-90deg);
-  margin-right: 0;
-  color: #fff;
-  font-size: 25px;
 }
 
 .soccerMarket {

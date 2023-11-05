@@ -31,6 +31,7 @@
 		background-size: 100% 100%;
 		width: 40%;
 		height: 80%;
+		border-radius: 10px;
 
 		& > div {
 			@include flex();
@@ -202,12 +203,6 @@
 			height: 100%;
 			
 
-			span {
-				transform: rotate(-90deg);
-				margin-right: 0;
-				color: #fff;
-				font-size: 25px;
-			}
 
 			
 		}

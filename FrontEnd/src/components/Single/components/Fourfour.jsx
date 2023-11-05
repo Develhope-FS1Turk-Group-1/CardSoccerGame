@@ -1,4 +1,5 @@
 import PlayerCards from './PlayerCards';
+import Card from '../../Card/Card';
 
 const Fourfour = ({
 	selectedPlayer,
@@ -10,14 +11,14 @@ const Fourfour = ({
 	return (
 		<div>
 			<div className='forward'>
-				<PlayerCards
+				<Card
 					id={1}
 					selectedPlayer={selectedPlayer}
 					setSelectedPlayer={setSelectedPlayer}
 					addPlayerToIndex={addPlayerToIndex}
 					playersOnBoard={playersOnBoard}
 				/>
-				<PlayerCards
+				<Card
 					id={2}
 					selectedPlayer={selectedPlayer}
 					setSelectedPlayer={setSelectedPlayer}
@@ -27,7 +28,7 @@ const Fourfour = ({
 				/>
 			</div>
 			<div className='midField'>
-				<PlayerCards
+				<Card
 					id={3}
 					selectedPlayer={selectedPlayer}
 					setSelectedPlayer={setSelectedPlayer}
@@ -35,7 +36,7 @@ const Fourfour = ({
 					playersOnBoard={playersOnBoard}
 
 				/>
-				<PlayerCards
+				<Card
 					id={4}
 					selectedPlayer={selectedPlayer}
 					setSelectedPlayer={setSelectedPlayer}
@@ -43,7 +44,7 @@ const Fourfour = ({
 					playersOnBoard={playersOnBoard}
 
 				/>
-				<PlayerCards
+				<Card
 					id={5}
 					selectedPlayer={selectedPlayer}
 					setSelectedPlayer={setSelectedPlayer}
@@ -51,7 +52,7 @@ const Fourfour = ({
 					playersOnBoard={playersOnBoard}
 
 				/>
-				<PlayerCards
+				<Card
 					id={6}
 					selectedPlayer={selectedPlayer}
 					setSelectedPlayer={setSelectedPlayer}
@@ -60,14 +61,14 @@ const Fourfour = ({
 				/>
 			</div>
 			<div className='defence'>
-				<PlayerCards
+				<Card
 					id={7}
 					selectedPlayer={selectedPlayer}
 					setSelectedPlayer={setSelectedPlayer}
 					addPlayerToIndex={addPlayerToIndex}
 					playersOnBoard={playersOnBoard}
 				/>
-				<PlayerCards
+				<Card
 					id={8}
 					selectedPlayer={selectedPlayer}
 					setSelectedPlayer={setSelectedPlayer}
@@ -75,7 +76,7 @@ const Fourfour = ({
 					playersOnBoard={playersOnBoard}
 
 				/>
-				<PlayerCards
+				<Card
 					id={9}
 					selectedPlayer={selectedPlayer}
 					setSelectedPlayer={setSelectedPlayer}
@@ -84,7 +85,7 @@ const Fourfour = ({
 
 
 				/>
-				<PlayerCards
+				<Card
 					id={10}
 					selectedPlayer={selectedPlayer}
 					setSelectedPlayer={setSelectedPlayer}
@@ -94,7 +95,7 @@ const Fourfour = ({
 				/>
 			</div>
 			<div className='goalKeeper'>
-				<PlayerCards
+				<Card
 					id={11}
 					selectedPlayer={selectedPlayer}
 					setSelectedPlayer={setSelectedPlayer}

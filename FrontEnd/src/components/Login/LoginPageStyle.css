@@ -71,6 +71,7 @@ a{
     color: #9611BD;
 }
 .logInButton{
+    cursor: pointer;
     color: white;
     background-color: #370466;
     padding: 10px 100px;

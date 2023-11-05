@@ -1,7 +1,7 @@
 .player-card {
     display: flex;
-    perspective: 1000px; /* Add perspective for 3D effect */
-    width: 230px; /* Adjust the width as needed */
+    width: 90px; /* Adjust the width as needed */
+    height: 110px;
     background-color: #333;
     color: white;
     border: none;
@@ -9,60 +9,47 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    border-radius: 10px;
   }
   
   .player-info {
     display: flex;
     flex-direction: column;
     transform-origin: right;
-    width: inherit;
   }
   
   .player-details {
     display: flex;
     align-items: center;
-    background-color: blue;
+    background-color: #A5160A;
   }
 
   .player-image{
     position: relative;
     display: inline-block;
-    width: 200px; /* Set the width */
-    height: 254px; /* Set the height */
   }
   
   .player-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
   }
   
   .positions {
     padding: 5px;
-    background-color: yellow;
-    color: blue;
+    background-color: #FFDD00;
+    color: #A5160A;
     font-weight: bold;
   }
-  
-  .positions h3 {
-    margin-top: 0;
-    font-size: 1.2em;
-    border-bottom: 1px solid white;
-    padding-bottom: 5px;
-  }
+
   
   .positions p {
-    margin: 5px 0;
+    font-size: 10px;
+    margin: 0;
   }
   
   .positions {
     display: flex;
-    justify-content: space-between; /* To space the left and right sections */
-  }
-  
-  .left,
-  .right {
-    width: 48%; /* Adjust width as needed */
+    justify-content: space-around; /* To space the left and right sections */
   }
   
 
@@ -77,18 +64,20 @@
     white-space: nowrap; /* Ensure the text doesn't wrap */
     padding-left: 6px;
     padding-right: 6px;
+    font-size: 10px;
+    overflow: hidden;
   }
   
 
   .number {
     position: absolute;
-    top: 5px; /* Adjust as needed for the top position */
-    right: 5px; /* Adjust as needed for the right position */
-    padding: 4px 8px; /* Adjust padding as needed */
+    top: 2px; /* Adjust as needed for the top position */
+    right: 2px; /* Adjust as needed for the right position */
+    padding: 4px 4px; /* Adjust padding as needed */
     border-radius: 50%; /* For a circular background */
-    color: yellow;
+    color: #FFDD00;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 10px;
   }
 
   .player-name{
@@ -99,5 +88,5 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: blue;
+    background-color: #A5160A;
   }

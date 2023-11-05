@@ -31,7 +31,7 @@
   
   .tacticsDiv img:hover, .playDiv img:hover, .marketDiv img:hover{
     filter: blur(0);
-    transition: 2s ease;
+    transition: 0.3s ease;
     cursor: pointer;
     height: 75%;
   }
