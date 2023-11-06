@@ -93,7 +93,7 @@ const Card = ({
             </div>
           </div>
         </>
-        :<></> }
+        :<>DRAG SOMEONE</> }
         
       </div>
   );

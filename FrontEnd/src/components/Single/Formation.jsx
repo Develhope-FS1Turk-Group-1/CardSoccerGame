@@ -121,13 +121,17 @@ const Single = () => {
 	return (
 		<div>
 			<Header />
-			{playerList.length == 0 ? 
-				<div className='formationLoading'>
-					<div className='lineContainer'>
+			{playerList.length == 0 ?
+				<div className='formationLoadingAllContainer'>
+					<div className='formationLoading'>
+					</div>
+					<div className='formationLoadingError'>
+						<h1>PLEASE BUY SOME CARD TO CREATE YOUR TEAM</h1>
+						<button onClick={()=>navigate('/market')} className='button-9'>GO MARKET</button>
 					</div>
 				</div>
-				 :
-				 
+				:
+
 				<div className='formationContainer'>
 					<div className='formationBtn'>
 						<div className='logo'>
