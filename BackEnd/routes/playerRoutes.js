@@ -12,6 +12,7 @@ router.get('/getMoney/:userId', playerController.getMoney);
 
 router.post('/saveFormation', playerController.saveFormation);
 router.post('/loadFormation', playerController.loadFormation);
+router.get('/getPlayerById/:playerId', playerController.getPlayerById);
 
 
 module.exports = router;

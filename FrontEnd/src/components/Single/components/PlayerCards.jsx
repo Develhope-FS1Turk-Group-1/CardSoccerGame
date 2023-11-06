@@ -28,10 +28,13 @@ const PlayerCards = ({
 		event.preventDefault();
 		const data = event.dataTransfer.getData('text/plain');
 		const dataArray = data.split(',');
-		console.log(dataArray,"sA");
+		console.log(dataArray);
 		addPlayerToIndex(event.target.id-1,{onlineplayerid:dataArray[1],name:dataArray[0]})
 
 		event.target.innerHTML = dataArray[0];
+
+		
+
 		
 	};
 

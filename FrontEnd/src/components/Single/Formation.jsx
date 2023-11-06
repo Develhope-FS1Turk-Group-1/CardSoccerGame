@@ -121,10 +121,13 @@ const Single = () => {
 	return (
 		<div>
 			<Header />
-			{playerList.length == 0 ? <div className='formationLoading'>
-				<div className='lineContainer'>
+			{playerList.length == 0 ? 
+				<div className='formationLoading'>
+					<div className='lineContainer'>
+					</div>
 				</div>
-			</div> :
+				 :
+				 
 				<div className='formationContainer'>
 					<div className='formationBtn'>
 						<div className='logo'>
