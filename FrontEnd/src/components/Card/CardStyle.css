@@ -1,92 +1,91 @@
 .player-card {
-    display: flex;
-    width: 90px; /* Adjust the width as needed */
-    height: 110px;
-    background-color: #333;
-    color: white;
-    border: none;
-    overflow: hidden;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border-radius: 10px;
-  }
-  
-  .player-info {
-    display: flex;
-    flex-direction: column;
-    transform-origin: right;
-  }
-  
-  .player-details {
-    display: flex;
-    align-items: center;
-    background-color: #A5160A;
-  }
+  display: flex;
 
-  .player-image{
-    position: relative;
-    display: inline-block;
-  }
-  
-  .player-image img {
-    width: 100%;
-    height: 100%;
-  }
-  
-  .positions {
-    padding: 5px;
-    background-color: #FFDD00;
-    color: #A5160A;
-    font-weight: bold;
-  }
+  background-color: #333;
+  color: white;
+  border: none;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 10px;
+  width: 120px;
+  /* Adjust the width as needed */
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  transform-origin: right;
+}
 
-  
-  .positions p {
-    font-size: 10px;
-    margin: 0;
-  }
-  
-  .positions {
-    display: flex;
-    justify-content: space-around; /* To space the left and right sections */
-  }
-  
 
-  .player-details {
-    display: flex;
-    align-items: center;
-  }
-  
-  .player-name h2 {
-    writing-mode: vertical-rl; /* Rotate text by 90 degrees */
-    transform: rotate(-180deg); /* For cross-browser compatibility */
-    white-space: nowrap; /* Ensure the text doesn't wrap */
-    padding-left: 6px;
-    padding-right: 6px;
-    font-size: 10px;
-    overflow: hidden;
-  }
-  
+.player-details {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #A5160A;
+  overflow: hidden;
+}
 
-  .number {
-    position: absolute;
-    top: 2px; /* Adjust as needed for the top position */
-    right: 2px; /* Adjust as needed for the right position */
-    padding: 4px 4px; /* Adjust padding as needed */
-    border-radius: 50%; /* For a circular background */
-    color: #FFDD00;
-    font-weight: bold;
-    font-size: 10px;
-  }
+.player-image {
+  position: relative;
+  display: inline-block;
+}
 
-  .player-name{
-    height: 100%;
-    text-align: center;
-    margin: auto;
-    white-space: nowrap;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: #A5160A;
-  }
+.player-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.positions {
+  padding: 5px;
+  background-color: #FFDD00;
+  color: #A5160A;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+
+.positions p {
+  font-size: 10px;
+  margin: 0;
+}
+
+
+.player-name h2 {
+  writing-mode: vertical-rl;
+  /* Rotate text by 90 degrees */
+  transform: rotate(-180deg);
+  white-space: nowrap;
+  padding-right: 3px;
+  font-size: 10px;
+  overflow: hidden;
+  text-align: start;
+}
+
+
+.number {
+  position: absolute;
+  top: 2px;
+  /* Adjust as needed for the top position */
+  right: 2px;
+  /* Adjust as needed for the right position */
+  padding: 4px 4px;
+  /* Adjust padding as needed */
+  border-radius: 50%;
+  /* For a circular background */
+  background-color: #FFDD00;
+  font-weight: bold;
+  font-size: 15px;
+  color: black;
+}
+
+.player-name {
+  text-align: start;
+  white-space: nowrap;
+  justify-content: start;
+  align-items: start;
+  text-align: start;
+  background-color: #A5160A;
+}

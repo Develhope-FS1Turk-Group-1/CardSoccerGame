@@ -47,7 +47,7 @@ const Single = () => {
 		if (userId == 0) {
 			navigate("/login");
 		}
-		
+
 
 		const initialTeamData = {
 			logo: Manchester_City,
@@ -64,7 +64,6 @@ const Single = () => {
 		axios
 			.get(`http://localhost:3050/player/getAllPlayers/${userId}`)
 			.then((response) => {
-				console.log(response.data);
 				setPlayerList(response.data);
 			})
 			.catch((error) => {
@@ -72,11 +71,11 @@ const Single = () => {
 			});
 
 		axios
-			.post(`http://localhost:3050/player/loadFormation`,{ userId:userId})
+			.post(`http://localhost:3050/player/loadFormation`, { userId: userId })
 			.then((response) => {
 				console.log(response.data);
 				let tempData = response.data.formation;
-				for(let i = 0 ; i < 18;i++){
+				for (let i = 0; i < 18; i++) {
 					tempData[i].onlineplayerid = tempData[i].playerId;
 				}
 				setPlayersOnBoard(tempData);
@@ -90,11 +89,11 @@ const Single = () => {
 		if (formation) {
 			setPlayersOnBoard(JSON.parse(formation));
 		}*/
-		
+
 
 	}, []);
 
-	useEffect(() => { console.log(playersOnBoard); }, [playersOnBoard])
+
 
 
 	const choosePlayer = (player) => {
@@ -105,7 +104,7 @@ const Single = () => {
 		localStorage.setItem('userFormation', JSON.stringify(playersOnBoard));
 
 		axios
-			.post(`http://localhost:3050/player/saveFormation`,{ userId:userId, players:playersOnBoard })
+			.post(`http://localhost:3050/player/saveFormation`, { userId: userId, players: playersOnBoard })
 			.then((response) => {
 				console.log(response.data);
 			})
@@ -122,128 +121,131 @@ const Single = () => {
 	return (
 		<div>
 			<Header />
-			<div className='formationContainer'>
-				<div className='formationBtn'>
-					<div className='logo'>
-						<div className='image'>
-							<img
-								src={teamInfo.logo}
-								alt='logo'
-							/>
-						</div>
-						<div className='scoreCard'>
-							<h2>{teamInfo.league}</h2>
-							<h1>{teamInfo.name}</h1>
-							<h2>
-								<span>{teamInfo.scoreBoard[0]}</span> -{' '}
-								<span>{teamInfo.scoreBoard[1]}</span> -{' '}
-								<span>{teamInfo.scoreBoard[2]}</span>
-							</h2>
-						</div>
-					</div>
-					<button onClick={() => setFormation('FourFourTwo')}>
-						<span>Type :</span> 4-4-2
-					</button>
-					<button onClick={() => setFormation('FourThreeThree')}>
-						<span>Type :</span> 4-3-3
-					</button>
-					<button onClick={saveFormation}>Save Formation</button>
-				</div>
+			{playerList.length == 0 ? <div className='formationLoading'>
 				<div className='lineContainer'>
-					{formation == 'FourFourTwo' ? (
-						<Fourfour
-							selectedPlayer={selectedPlayer}
-							setSelectedPlayer={setSelectedPlayer}
-							saveFormation={saveFormation}
-							addPlayerToIndex={addPlayerToIndex}
-							deletePlayerAtIndex={deletePlayerAtIndex}
-							playersOnBoard={playersOnBoard}
-						/>
-					) : (
-						<Fourthree
-							selectedPlayer={selectedPlayer}
-							setSelectedPlayer={setSelectedPlayer}
-
-							saveFormation={saveFormation}
-							addPlayerToIndex={addPlayerToIndex}
-							deletePlayerAtIndex={deletePlayerAtIndex}
-							playersOnBoard={playersOnBoard}
-						/>
-					)}
 				</div>
-				<div className='playerList'>
-					{playerList.map((player, index) => (
-						<div
-							onDragStart={(e) => handleDragStart(e, [player.name,player.onlineplayerid])}
-							draggable
-							className='player'
-							key={index}
-							id={player.onlineplayerid}
-							onClick={() => choosePlayer(player)}>
-							<p>{player.name}</p>
-							<p>
-								{player.position} &nbsp; {player.att}
-							</p>
+			</div> :
+				<div className='formationContainer'>
+					<div className='formationBtn'>
+						<div className='logo'>
+							<div className='image'>
+								<img
+									src={teamInfo.logo}
+									alt='logo'
+								/>
+							</div>
+							<div className='scoreCard'>
+								<h2>{teamInfo.league}</h2>
+								<h1>{teamInfo.name}</h1>
+								<h2>
+									<span>{teamInfo.scoreBoard[0]}</span> -{' '}
+									<span>{teamInfo.scoreBoard[1]}</span> -{' '}
+									<span>{teamInfo.scoreBoard[2]}</span>
+								</h2>
+							</div>
 						</div>
-					))}
-				</div>
-				<div className='playerCards'>
-					<div>
-						<span>SUBTİTUTE</span>
-						<div className='forward'>
-							<Card
-								id={12}
+						<button onClick={() => setFormation('FourFourTwo')}>
+							<span>Type :</span> 4-4-2
+						</button>
+						<button onClick={() => setFormation('FourThreeThree')}>
+							<span>Type :</span> 4-3-3
+						</button>
+						<button onClick={saveFormation}>Save Formation</button>
+					</div>
+					<div className='lineContainer'>
+						{formation == 'FourFourTwo' ? (
+							<Fourfour
 								selectedPlayer={selectedPlayer}
 								setSelectedPlayer={setSelectedPlayer}
+								saveFormation={saveFormation}
 								addPlayerToIndex={addPlayerToIndex}
+								deletePlayerAtIndex={deletePlayerAtIndex}
 								playersOnBoard={playersOnBoard}
 							/>
-							<Card
-								id={13}
+						) : (
+							<Fourthree
 								selectedPlayer={selectedPlayer}
 								setSelectedPlayer={setSelectedPlayer}
+
+								saveFormation={saveFormation}
 								addPlayerToIndex={addPlayerToIndex}
+								deletePlayerAtIndex={deletePlayerAtIndex}
 								playersOnBoard={playersOnBoard}
 							/>
-							<Card
-								id={14}
-								selectedPlayer={selectedPlayer}
-								setSelectedPlayer={setSelectedPlayer}
-								addPlayerToIndex={addPlayerToIndex}
-								playersOnBoard={playersOnBoard}
-							/>
-							<Card
-								id={15}
-								selectedPlayer={selectedPlayer}
-								setSelectedPlayer={setSelectedPlayer}
-								addPlayerToIndex={addPlayerToIndex}
-								playersOnBoard={playersOnBoard}
-							/>
-							<Card
-								id={16}
-								selectedPlayer={selectedPlayer}
-								setSelectedPlayer={setSelectedPlayer}
-								addPlayerToIndex={addPlayerToIndex}
-								playersOnBoard={playersOnBoard}
-							/>
-							<Card
-								id={17}
-								selectedPlayer={selectedPlayer}
-								setSelectedPlayer={setSelectedPlayer}
-								addPlayerToIndex={addPlayerToIndex}
-								playersOnBoard={playersOnBoard}
-							/>
-							<Card
-								id={18}
-								selectedPlayer={selectedPlayer}
-								setSelectedPlayer={setSelectedPlayer}
-								addPlayerToIndex={addPlayerToIndex}
-								playersOnBoard={playersOnBoard}
-							/>
+						)}
+					</div>
+					<div className='playerList'>
+						{playerList.map((player, index) => (
+							<div
+								onDragStart={(e) => handleDragStart(e, [player.name, player.onlineplayerid])}
+								draggable
+								className='player'
+								key={index}
+								id={player.onlineplayerid}
+								onClick={() => choosePlayer(player)}>
+								<p>{player.name}</p>
+								<p>
+									{player.position} &nbsp; {player.power}
+								</p>
+							</div>
+						))}
+					</div>
+					<div className='playerCards'>
+						<div>
+							<div className='forward'>
+								<Card
+									id={12}
+									selectedPlayer={selectedPlayer}
+									setSelectedPlayer={setSelectedPlayer}
+									addPlayerToIndex={addPlayerToIndex}
+									playersOnBoard={playersOnBoard}
+								/>
+								<Card
+									id={13}
+									selectedPlayer={selectedPlayer}
+									setSelectedPlayer={setSelectedPlayer}
+									addPlayerToIndex={addPlayerToIndex}
+									playersOnBoard={playersOnBoard}
+								/>
+								<Card
+									id={14}
+									selectedPlayer={selectedPlayer}
+									setSelectedPlayer={setSelectedPlayer}
+									addPlayerToIndex={addPlayerToIndex}
+									playersOnBoard={playersOnBoard}
+								/>
+								<Card
+									id={15}
+									selectedPlayer={selectedPlayer}
+									setSelectedPlayer={setSelectedPlayer}
+									addPlayerToIndex={addPlayerToIndex}
+									playersOnBoard={playersOnBoard}
+								/>
+								<Card
+									id={16}
+									selectedPlayer={selectedPlayer}
+									setSelectedPlayer={setSelectedPlayer}
+									addPlayerToIndex={addPlayerToIndex}
+									playersOnBoard={playersOnBoard}
+								/>
+								<Card
+									id={17}
+									selectedPlayer={selectedPlayer}
+									setSelectedPlayer={setSelectedPlayer}
+									addPlayerToIndex={addPlayerToIndex}
+									playersOnBoard={playersOnBoard}
+								/>
+								<Card
+									id={18}
+									selectedPlayer={selectedPlayer}
+									setSelectedPlayer={setSelectedPlayer}
+									addPlayerToIndex={addPlayerToIndex}
+									playersOnBoard={playersOnBoard}
+								/>
+							</div>
 						</div>
 					</div>
-				</div>
-			</div>
+				</div>}
 			<Footer />
 		</div>
 	);

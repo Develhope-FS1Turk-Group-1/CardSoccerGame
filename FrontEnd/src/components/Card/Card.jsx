@@ -13,7 +13,6 @@ const Card = ({
 
   const [selectedCard, setSelectedCard] = useState(null);
 
-
   useEffect(() => {
     if (playersOnBoard[id - 1] != null) {
       setSelectedCard(playersOnBoard[id - 1]);
@@ -50,7 +49,7 @@ const Card = ({
       onDragOver={handleDragOver}
       onDrop={handleDrop}
       >
-      <div className="player-info">
+
         <div className="player-details">
           <div class="player-name">
             <h2>{selectedCard?.name}</h2>
@@ -72,7 +71,6 @@ const Card = ({
           </div>
         </div>
       </div>
-    </div>
   );
 };
 

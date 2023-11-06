@@ -4,6 +4,22 @@
 	justify-content: center;
 }
 
+.formationLoading{
+	filter: blur(8px);
+	height: calc(100vh - 170px);
+	@include flex;
+	justify-content: flex-start;
+	align-items: normal;
+	padding: 20px;
+	margin: auto;
+	background-image: url('../../Assets/Single/loginBackground.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	gap: 10px;
+	position: relative;
+}
+
 .formationContainer {
 	height: calc(100vh - 170px);
 	@include flex;
@@ -36,7 +52,6 @@
 		& > div {
 			@include flex();
 			flex-direction: column;
-			gap: 30px;
 			height: 100%;
 		}
 
@@ -84,10 +99,6 @@
 				background-color: #ff2418;
 			}
 
-			span {
-				font-size: 15px;
-				font-weight: 500;
-			}
 		}
 
 		.logo {

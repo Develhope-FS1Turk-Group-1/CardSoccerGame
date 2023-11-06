@@ -20,6 +20,7 @@ const Market = () => {
   const [boughtPlayers, setBoughtPlayers] = useState([]);
   const [buyPopUp, setBuyPopUp] = useState('popUpOff');
   const [errorPopUp, setErrorPopUp] = useState('errorPopUpOff');
+  const [blur, setBlur] = useState('');
 
   const navigate = useNavigate();
 
@@ -57,6 +58,7 @@ const Market = () => {
     }
     buyPlayer(1, userId);
     setBuyPopUp('popUpOn');
+    setBlur('blurOn');
     setMoney(money - 10);
   }
   const buyRare = () => {
@@ -66,11 +68,14 @@ const Market = () => {
     }
     buyPlayer(2, userId);
     setBuyPopUp('popUpOn');
+    setBlur('blurOn');
+
     setMoney(money - 35);
   }
   const buyLegend = () => {
     if (money < 70) {
       setErrorPopUp('errorPopUpOn');
+      setBlur('blurOn');
       return;
     }
     buyPlayer(3, userId);
@@ -88,21 +93,20 @@ const Market = () => {
       </div>
       <div className={buyPopUp}>
         <div className='boughtPlayersPopUp'>
-          {boughtPlayers.map((player) => (
-              <div key={player.id} className='playerBought'>
-                <img src={player.img} alt={player.name} />
-                <h3>{player.name}</h3>
-                <div>
-                  <h5>{player.position}</h5>
-                  <h5>{player.power}</h5>
-                </div>
-              </div>
-            ))}
+          {boughtPlayers.length ==0 ? <h1>LOADING...</h1> : boughtPlayers.map((index, player) => (
+            <div key={player.id} className='playerBought'>
+              {
+              <Card
+                id={player+1}
+                playersOnBoard={boughtPlayers}
+              />}
+            </div>
+          )) }
         </div>
-        <button onClick={() => { setBuyPopUp('popUpOff'); setBoughtPlayers([]) }}>CLAIM</button>
+        <button className='button-9' onClick={() => {setBlur(''); setBuyPopUp('popUpOff'); setBoughtPlayers([]) }}>CLAIM</button>
       </div>
 
-      <div className='marketAllContainer'>
+      <div className='marketAllContainer' id={blur}>
         <div className='marketSmallContainer'>
           <h1>CARD MARKET</h1>
           <div className='marketCardContainer'>
