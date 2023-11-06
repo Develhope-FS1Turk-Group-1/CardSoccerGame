@@ -755,7 +755,7 @@
                 "Country": "Turkey",
                 "Stadium": "Medical Park Stadium",
                 "Manager": "Eddie Newton",
-                "Players":[
+                "Players": [
                     [
                         {
                             "Name": "Edin Višća",
@@ -998,197 +998,196 @@
                 "Country": "Turkey",
                 "Stadium": "Fatih Terim Stadium",
                 "Manager": "Aykut Kocaman",
-                "Players":[
-                    
-                        {
-                            "Name": "Leonardo Duarte da Silva",
-                            "Position": "DEF",
-                            "ATT": "57.75",
-                            "MID": "61.00",
-                            "DEF": "75.00",
-                            "GK": "20.00",
-                            "img": "https://cdn.futbin.com/content/fifa24/img/players/233926.png?v=23"
-                        },
-                        {
-                            "Name": "Emmanuel Dennis",
-                            "Position": "ATT",
-                            "ATT": "75.00",
-                            "MID": "73.00",
-                            "DEF": "63.50",
-                            "GK": "20.00",
-                            "img": "https://cdn.futbin.com/content/fifa24/img/players/239015.png?v=23"
-                        },
-                        {
-                            "Name": "Léo Dubois",
-                            "Position": "DEF",
-                            "ATT": "66.75",
-                            "MID": "70.50",
-                            "DEF": "74.00",
-                            "GK": "20.00",
-                            "img": "https://cdn.futbin.com/content/fifa24/img/players/216643.png?v=23"
-                        },
-                        {
-                            "Name": "Mehdi Abeid",
-                            "Position": "DEF",
-                            "ATT": "69.00",
-                            "MID": "69.50",
-                            "DEF": "73.00",
-                            "GK": "20.00",
-                            "img": "https://cdn.futbin.com/content/fifa24/img/players/188600.png?v=23"
-                        },
-                        {
-                            "Name": "Krzysztof Piątek",
-                            "Position": "ATT",
-                            "ATT": "73.00",
-                            "MID": "66.00",
-                            "DEF": "57.50",
-                            "GK": "20.00",
-                            "img": "https://cdn.futbin.com/content/fifa24/img/players/223113.png?v=23"
-                        },
-                        {
-                            "Name": "Deniz Türüç",
-                            "Position": "MID",
-                            "ATT": "72.75",
-                            "MID": "73.00",
-                            "DEF": "69.00",
-                            "GK": "20.00",
-                            "img": "https://cdn.futbin.com/content/fifa24/img/players/215531.png?v=23"
-                        },
-                        {
-                            "Name": "Danijel Aleksić",
-                            "Position": "MID",
-                            "ATT": "73.25",
-                            "MID": "72.00",
-                            "DEF": "66.25",
-                            "GK": "20.00",
-                            "img": "https://cdn.futbin.com/content/fifa24/img/players/190593.png?v=23"
-                        },
-                        {
-                            "Name": "Serdar Gürler",
-                            "Position": "MID",
-                            "ATT": "69.25",
-                            "MID": "72.00",
-                            "DEF": "62.25",
-                            "GK": "20.00",
-                            "img": "https://cdn.futbin.com/content/fifa24/img/players/196318.png?v=23"
-                        },
-                        {
-                            "Name": "Edgar Miguel Ié",
-                            "Position": "DEF",
-                            "ATT": "64.75",
-                            "MID": "68.50",
-                            "DEF": "72.00",
-                            "GK": "20.00",
-                            "img": "https://cdn.futbin.com/content/fifa24/img/players/210520.png?v=23"
-                        },
-                        {
-                            "Name": "Berkay Özcan",
-                            "Position": "MID",
-                            "ATT": "69.25",
-                            "MID": "72.00",
-                            "DEF": "66.25",
-                            "GK": "20.00",
-                            "img": "https://cdn.futbin.com/content/fifa24/img/players/235717.png?v=23"
-                        },
-                        {
-                            "Name": "Dimitrios Pelkas",
-                            "Position": "MID",
-                            "ATT": "68.75",
-                            "MID": "72.00",
-                            "DEF": "62.00",
-                            "GK": "20.00",
-                            "img": "https://cdn.futbin.com/content/fifa24/img/players/208053.png?v=23"
-                        },
-                        {
-                            "Name": "Lucas Lima",
-                            "Position": "DEF",
-                            "ATT": "67.50",
-                            "MID": "70.75",
-                            "DEF": "71.00",
-                            "GK": "20.00",
-                            "img": "https://cdn.futbin.com/content/fifa24/img/players/207924.png?v=23"
-                        },
-                        {
-                            "Name": "Jerome Opoku",
-                            "Position": "DEF",
-                            "ATT": "59.75",
-                            "MID": "62.00",
-                            "DEF": "71.00",
-                            "GK": "20.00",
-                            "img": "https://cdn.futbin.com/content/fifa24/img/players/241710.png?v=23"
-                        },
-                        {
-                            "Name": "Volkan Babacan",
-                            "Position": "GK",
-                            "ATT": "35.13",
-                            "MID": "35.00",
-                            "DEF": "32.88",
-                            "GK": "70.00",
-                            "img": "https://cdn.futbin.com/content/fifa24/img/players/188524.png?v=23"
-                        },
-                        {
-                            "Name": "Mahmut Tekdemir",
-                            "Position": "MID",
-                            "ATT": "61.25",
-                            "MID": "70.00",
-                            "DEF": "63.25",
-                            "GK": "20.00",
-                            "img": "https://cdn.futbin.com/content/fifa24/img/players/182670.png?v=23"
-                        },
-                        {
-                            "Name": "Ömer Ali Şahiner",
-                            "Position": "DEF",
-                            "ATT": "70.50",
-                            "MID": "70.25",
-                            "DEF": "68.00",
-                            "GK": "20.00",
-                            "img": "https://cdn.futbin.com/content/fifa24/img/players/223017.png?v=23"
-                        },
-                        {
-                            "Name": "Muhammed Şengezer",
-                            "Position": "GK",
-                            "ATT": "33.63",
-                            "MID": "33.50",
-                            "DEF": "29.13",
-                            "GK": "68.00",
-                            "img": "asda"
-                        },
-                        {
-                            "Name": "Şener Özbayraklı",
-                            "Position": "DEF",
-                            "ATT": "65.00",
-                            "MID": "66.75",
-                            "DEF": "67.00",
-                            "GK": "20.00",
-                            "img": "https://cdn.futbin.com/content/fifa24/img/players/235931.png?v=23"
-                        },
-                        {
-                            "Name": "Philippe Paulin Keny",
-                            "Position": "ATT",
-                            "ATT": "66.00",
-                            "MID": "67.25",
-                            "DEF": "58.75",
-                            "GK": "20.00",
-                            "img": "https://cdn.futbin.com/content/fifa24/img/players/251381.png?v=23"
-                        },
-                        {
-                            "Name": "Cemali Sertel",
-                            "Position": "DEF",
-                            "ATT": "59.75",
-                            "MID": "65.00",
-                            "DEF": "66.00",
-                            "GK": "20.00",
-                            "img": "https://cdn.futbin.com/content/fifa24/img/players/247159.png?v=23"
-                        },
-                        {
-                            "Name": "Emirhan İlkhan",
-                            "Position": "MID",
-                            "ATT": "60.50",
-                            "MID": "64.00",
-                            "DEF": "56.75",
-                            "GK": "20.00",
-                            "img": "https://cdn.futbin.com/content/fifa24/img/players/266257.png?v=23"
-                        }
+                "Players": [
+                    {
+                        "Name": "Leonardo Duarte da Silva",
+                        "Position": "DEF",
+                        "ATT": "57.75",
+                        "MID": "61.00",
+                        "DEF": "75.00",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/233926.png?v=23"
+                    },
+                    {
+                        "Name": "Emmanuel Dennis",
+                        "Position": "ATT",
+                        "ATT": "75.00",
+                        "MID": "73.00",
+                        "DEF": "63.50",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/239015.png?v=23"
+                    },
+                    {
+                        "Name": "Léo Dubois",
+                        "Position": "DEF",
+                        "ATT": "66.75",
+                        "MID": "70.50",
+                        "DEF": "74.00",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/216643.png?v=23"
+                    },
+                    {
+                        "Name": "Mehdi Abeid",
+                        "Position": "DEF",
+                        "ATT": "69.00",
+                        "MID": "69.50",
+                        "DEF": "73.00",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/188600.png?v=23"
+                    },
+                    {
+                        "Name": "Krzysztof Piątek",
+                        "Position": "ATT",
+                        "ATT": "73.00",
+                        "MID": "66.00",
+                        "DEF": "57.50",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/223113.png?v=23"
+                    },
+                    {
+                        "Name": "Deniz Türüç",
+                        "Position": "MID",
+                        "ATT": "72.75",
+                        "MID": "73.00",
+                        "DEF": "69.00",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/215531.png?v=23"
+                    },
+                    {
+                        "Name": "Danijel Aleksić",
+                        "Position": "MID",
+                        "ATT": "73.25",
+                        "MID": "72.00",
+                        "DEF": "66.25",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/190593.png?v=23"
+                    },
+                    {
+                        "Name": "Serdar Gürler",
+                        "Position": "MID",
+                        "ATT": "69.25",
+                        "MID": "72.00",
+                        "DEF": "62.25",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/196318.png?v=23"
+                    },
+                    {
+                        "Name": "Edgar Miguel Ié",
+                        "Position": "DEF",
+                        "ATT": "64.75",
+                        "MID": "68.50",
+                        "DEF": "72.00",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/210520.png?v=23"
+                    },
+                    {
+                        "Name": "Berkay Özcan",
+                        "Position": "MID",
+                        "ATT": "69.25",
+                        "MID": "72.00",
+                        "DEF": "66.25",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/235717.png?v=23"
+                    },
+                    {
+                        "Name": "Dimitrios Pelkas",
+                        "Position": "MID",
+                        "ATT": "68.75",
+                        "MID": "72.00",
+                        "DEF": "62.00",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/208053.png?v=23"
+                    },
+                    {
+                        "Name": "Lucas Lima",
+                        "Position": "DEF",
+                        "ATT": "67.50",
+                        "MID": "70.75",
+                        "DEF": "71.00",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/207924.png?v=23"
+                    },
+                    {
+                        "Name": "Jerome Opoku",
+                        "Position": "DEF",
+                        "ATT": "59.75",
+                        "MID": "62.00",
+                        "DEF": "71.00",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/241710.png?v=23"
+                    },
+                    {
+                        "Name": "Volkan Babacan",
+                        "Position": "GK",
+                        "ATT": "35.13",
+                        "MID": "35.00",
+                        "DEF": "32.88",
+                        "GK": "70.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/188524.png?v=23"
+                    },
+                    {
+                        "Name": "Mahmut Tekdemir",
+                        "Position": "MID",
+                        "ATT": "61.25",
+                        "MID": "70.00",
+                        "DEF": "63.25",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/182670.png?v=23"
+                    },
+                    {
+                        "Name": "Ömer Ali Şahiner",
+                        "Position": "DEF",
+                        "ATT": "70.50",
+                        "MID": "70.25",
+                        "DEF": "68.00",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/223017.png?v=23"
+                    },
+                    {
+                        "Name": "Muhammed Şengezer",
+                        "Position": "GK",
+                        "ATT": "33.63",
+                        "MID": "33.50",
+                        "DEF": "29.13",
+                        "GK": "68.00",
+                        "img": "asda"
+                    },
+                    {
+                        "Name": "Şener Özbayraklı",
+                        "Position": "DEF",
+                        "ATT": "65.00",
+                        "MID": "66.75",
+                        "DEF": "67.00",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/235931.png?v=23"
+                    },
+                    {
+                        "Name": "Philippe Paulin Keny",
+                        "Position": "ATT",
+                        "ATT": "66.00",
+                        "MID": "67.25",
+                        "DEF": "58.75",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/251381.png?v=23"
+                    },
+                    {
+                        "Name": "Cemali Sertel",
+                        "Position": "DEF",
+                        "ATT": "59.75",
+                        "MID": "65.00",
+                        "DEF": "66.00",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/247159.png?v=23"
+                    },
+                    {
+                        "Name": "Emirhan İlkhan",
+                        "Position": "MID",
+                        "ATT": "60.50",
+                        "MID": "64.00",
+                        "DEF": "56.75",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/266257.png?v=23"
+                    }
                 ]
             },
             "Alanyaspor": {
@@ -1417,7 +1416,207 @@
             "Gaziantep": {
                 "Country": "Turkey",
                 "Stadium": "Kalyon Stadyumu",
-                "Manager": "Ricardo Sá Pinto"
+                "Manager": "Ricardo Sá Pinto",
+                "Players": [
+                    {
+                        "Name": "Alexandru Maxim",
+                        "Position": "ATT",
+                        "ATT": "76.00",
+                        "MID": "71.25",
+                        "DEF": "59.50",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/211061.png?v=23"
+                    },
+                    {
+                        "Name": "Max-Alain Gradel",
+                        "Position": "ATT",
+                        "ATT": "74.00",
+                        "MID": "70.75",
+                        "DEF": "62.00",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/182945.png?v=23"
+                    },
+                    {
+                        "Name": "Lazar Markovic",
+                        "Position": "ATT",
+                        "ATT": "73.00",
+                        "MID": "70.25",
+                        "DEF": "61.00",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/212125.png?v=23"
+                    },
+                    {
+                        "Name": "Papy Djilobodji",
+                        "Position": "DEF",
+                        "ATT": "60.50",
+                        "MID": "62.25",
+                        "DEF": "71.00",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/197937.png?v=23"
+                    },
+                    {
+                        "Name": "Marko Jevtovic",
+                        "Position": "MID",
+                        "ATT": "60.75",
+                        "MID": "69.00",
+                        "DEF": "63.50",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/244709.png?v=23"
+                    },
+                    {
+                        "Name": "Brayan Riascos",
+                        "Position": "ATT",
+                        "ATT": "69.00",
+                        "MID": "73.25",
+                        "DEF": "65.25",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/235077.png?v=23"
+                    },
+                    {
+                        "Name": "Salem M'Bakata",
+                        "Position": "DEF",
+                        "ATT": "66.50",
+                        "MID": "68.25",
+                        "DEF": "68.00",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/243602.png?v=23"
+                    },
+                    {
+                        "Name": "Furkan Soyalp",
+                        "Position": "MID",
+                        "ATT": "66.50",
+                        "MID": "68.00",
+                        "DEF": "64.25",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/224488.png?v=23"
+                    },
+                    {
+                        "Name": "Morais Júnior",
+                        "Position": "DEF",
+                        "ATT": "67.50",
+                        "MID": "67.75",
+                        "DEF": "68.00",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/233871.png?v=23"
+                    },
+                    {
+                        "Name": "Mustafa Eskihellac",
+                        "Position": "MID",
+                        "ATT": "66.75",
+                        "MID": "67.00",
+                        "DEF": "63.25",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/244486.png?v=23"
+                    },
+                    {
+                        "Name": "Naoufel Khacef",
+                        "Position": "DEF",
+                        "ATT": "61.50",
+                        "MID": "62.75",
+                        "DEF": "67.00",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/258598.png?v=23"
+                    },
+                    {
+                        "Name": "Denis Dragu",
+                        "Position": "ATT",
+                        "ATT": "67.00",
+                        "MID": "68.75",
+                        "DEF": "55.75",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/245770.png?v=23"
+                    },
+                    {
+                        "Name": "Abdulkerim Çakar",
+                        "Position": "MID",
+                        "ATT": "67.50",
+                        "MID": "66.00",
+                        "DEF": "56.50",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/271386.png?v=23"
+                    },
+                    {
+                        "Name": "Batuhan Sen",
+                        "Position": "GK",
+                        "ATT": "33.38",
+                        "MID": "33.00",
+                        "DEF": "27.38",
+                        "GK": "66.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/237232.png?v=23"
+                    },
+                    {
+                        "Name": "Ertuğrul Ersoy",
+                        "Position": "DEF",
+                        "ATT": "51.75",
+                        "MID": "55.00",
+                        "DEF": "65.00",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/224489.png?v=23"
+                    },
+                    {
+                        "Name": "Arda Kizildag",
+                        "Position": "DEF",
+                        "ATT": "54.00",
+                        "MID": "56.75",
+                        "DEF": "65.00",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/252753.png?v=23"
+                    },
+                    {
+                        "Name": "Onurhan Babuşcu",
+                        "Position": "MID",
+                        "ATT": "60.75",
+                        "MID": "60.00",
+                        "DEF": "51.00",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/256832.png?v=23"
+                    },
+                    {
+                        "Name": "Mustafa Burak Bozan",
+                        "Position": "GK",
+                        "ATT": "29.63",
+                        "MID": "30.25",
+                        "DEF": "24.88",
+                        "GK": "60.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/250897.png?v=23"
+                    },
+                    {
+                        "Name": "Mirza Cihan",
+                        "Position": "MID",
+                        "ATT": "56.25",
+                        "MID": "60.00",
+                        "DEF": "49.25",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/260559.png?v=23"
+                    },
+                    {
+                        "Name": "Ekrem Kılıçarslan",
+                        "Position": "GK",
+                        "ATT": "29.00",
+                        "MID": "29.63",
+                        "DEF": "27.75",
+                        "GK": "59.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/260933.png?v=23"
+                    },
+                    {
+                        "Name": "Ulaş Zengin",
+                        "Position": "DEF",
+                        "ATT": "44.25",
+                        "MID": "46.00",
+                        "DEF": "59.00",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/252447.png?v=23"
+                    },
+                    {
+                        "Name": "İlker Karakaş",
+                        "Position": "ATT",
+                        "ATT": "57.00",
+                        "MID": "55.25",
+                        "DEF": "48.75",
+                        "GK": "20.00",
+                        "img": "https://cdn.futbin.com/content/fifa24/img/players/243274.png?v=23"
+                    }
+                ]
             },
             "Hatayspor": {
                 "Country": "Turkey",
