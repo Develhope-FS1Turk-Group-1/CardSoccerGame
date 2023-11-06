@@ -47,6 +47,7 @@ const Teamselect = () => {
             .then((response) => {
                 console.log(response.data);
                 setLeagues(response.data);
+                setSelectedLeague(response.data[0]);
             })
             .catch((error) => {
                 console.error('Error:', error);
@@ -63,6 +64,7 @@ const Teamselect = () => {
             .then((response) => {
                 console.log(response.data);
                 setTeams(response.data);
+                setSelectedTeam(response.data[0].team_name);
             })
             .catch((error) => {
                 console.error('Error:', error);
@@ -104,10 +106,14 @@ const Teamselect = () => {
                         <button
                             aria-label="Previous"
                             onClick={() => {
-                                currentSlide > 0 && setCurrentSlide(currentSlide - 1)
-                                goPrev();
-                                setSelectedLeague(leagues[currentSlide]);
-                                console.log(currentSlide)
+                                if(currentSlide > 0) {
+                                    setCurrentSlide(currentSlide - 1)
+                                    goPrev();
+                                    setSelectedLeague(leagues[currentSlide-1]);
+                                    console.log(currentSlide-1)
+
+                                }
+                                    
                             }}
                             className="prev-button"
                         >
@@ -123,10 +129,12 @@ const Teamselect = () => {
                         <button
                             aria-label="Next"
                             onClick={() => {
-                                currentSlide < leagues.length - 1 && setCurrentSlide(currentSlide + 1)
-                                goNext();
-                                setSelectedLeague(leagues[currentSlide]);
-                                console.log(currentSlide)
+                                if(currentSlide < leagues.length - 1){
+                                    setCurrentSlide(currentSlide + 1)
+                                    goNext();
+                                    setSelectedLeague(leagues[currentSlide+1]);
+                                    console.log(currentSlide+1)
+                                }
 
                             }}
                             className="next-button"
@@ -140,10 +148,13 @@ const Teamselect = () => {
                         <button
                             aria-label="Previous"
                             onClick={() => {
-                                currentSlide1 > 0 && setCurrentSlide1(currentSlide1 - 1)
-                                goPrev1();
-                                setSelectedTeam(teams[currentSlide1]);
-                                console.log(selectedTeam, currentSlide1)
+                                if(currentSlide1 > 0){
+                                    setCurrentSlide1(currentSlide1 - 1)
+                                    goPrev1();
+                                    setSelectedTeam(teams[currentSlide1-1].team_name);
+                                    console.log(teams[currentSlide1-1].team_name, currentSlide1-1)
+                                }
+                                
                             }}
                             className="prev-button"
                         >
@@ -159,10 +170,13 @@ const Teamselect = () => {
                         <button
                             aria-label="Next"
                             onClick={() => {
-                                currentSlide1 < teams.length - 1 && setCurrentSlide1(currentSlide1 + 1)
-                                goNext1();
-                                setSelectedTeam(teams[currentSlide1].team_name);
-                                console.log(selectedTeam)
+                                if(currentSlide1 < teams.length - 1){
+                                    setCurrentSlide1(currentSlide1 + 1)
+                                    goNext1();
+                                    setSelectedTeam(teams[currentSlide1+1].team_name);
+                                    console.log(teams[currentSlide1+1].team_name)
+                                }
+                                
 
                             }}
                             className="next-button"
