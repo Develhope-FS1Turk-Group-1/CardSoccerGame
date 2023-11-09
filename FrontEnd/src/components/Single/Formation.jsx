@@ -105,8 +105,8 @@ const Single = () => {
 
 		const notify = () =>
 			toast.success('Formation saved succesfully!', {
-				position: 'top-center',
-				autoClose: 500,
+				position: 'top-left',
+				autoClose: 200,
 				hideProgressBar: true,
 				closeOnClick: true,
 				pauseOnHover: true,
@@ -136,18 +136,7 @@ const Single = () => {
 	return (
 		<div>
 			<Header />
-			<ToastContainer
-				position='top-center'
-				autoClose={500}
-				hideProgressBar
-				newestOnTop={false}
-				closeOnClick
-				rtl={false}
-				pauseOnFocusLoss
-				draggable
-				pauseOnHover
-				theme='colored'
-			/>
+			<ToastContainer/>
 
 			{playerList.length == 0 ? (
 				<div className='formationLoading'>
