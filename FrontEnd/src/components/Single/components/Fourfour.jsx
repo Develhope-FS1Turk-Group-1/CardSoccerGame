@@ -6,7 +6,8 @@ const Fourfour = ({
 	setSelectedPlayer,
 	addPlayerToIndex,
 	deletePlayerAtIndex,
-	playersOnBoard
+	playersOnBoard,playerList,
+									setPlayerList
 }) => {
 	return (
 		<div>
@@ -17,6 +18,8 @@ const Fourfour = ({
 					setSelectedPlayer={setSelectedPlayer}
 					addPlayerToIndex={addPlayerToIndex}
 					playersOnBoard={playersOnBoard}
+					playerList={playerList}
+					setPlayerList={setPlayerList}
 				/>
 				<Card
 					id={2}
@@ -24,7 +27,6 @@ const Fourfour = ({
 					setSelectedPlayer={setSelectedPlayer}
 					addPlayerToIndex={addPlayerToIndex}
 					playersOnBoard={playersOnBoard}
-
 				/>
 			</div>
 			<div className='midField'>
@@ -34,7 +36,6 @@ const Fourfour = ({
 					setSelectedPlayer={setSelectedPlayer}
 					addPlayerToIndex={addPlayerToIndex}
 					playersOnBoard={playersOnBoard}
-
 				/>
 				<Card
 					id={4}
@@ -42,7 +43,6 @@ const Fourfour = ({
 					setSelectedPlayer={setSelectedPlayer}
 					addPlayerToIndex={addPlayerToIndex}
 					playersOnBoard={playersOnBoard}
-
 				/>
 				<Card
 					id={5}
@@ -50,7 +50,6 @@ const Fourfour = ({
 					setSelectedPlayer={setSelectedPlayer}
 					addPlayerToIndex={addPlayerToIndex}
 					playersOnBoard={playersOnBoard}
-
 				/>
 				<Card
 					id={6}
@@ -74,7 +73,6 @@ const Fourfour = ({
 					setSelectedPlayer={setSelectedPlayer}
 					addPlayerToIndex={addPlayerToIndex}
 					playersOnBoard={playersOnBoard}
-
 				/>
 				<Card
 					id={9}
@@ -82,8 +80,6 @@ const Fourfour = ({
 					setSelectedPlayer={setSelectedPlayer}
 					addPlayerToIndex={addPlayerToIndex}
 					playersOnBoard={playersOnBoard}
-
-
 				/>
 				<Card
 					id={10}
@@ -91,7 +87,6 @@ const Fourfour = ({
 					setSelectedPlayer={setSelectedPlayer}
 					addPlayerToIndex={addPlayerToIndex}
 					playersOnBoard={playersOnBoard}
-
 				/>
 			</div>
 			<div className='goalKeeper'>

@@ -5,49 +5,65 @@ import Footer from '../../layouts/Footer';
 import Fourfour from './components/Fourfour';
 import Fourthree from './components/Fourthree';
 import Manchester_City from '../../../Assets/Single/Manchester_City.png';
-import axios from 'axios'
+import axios from 'axios';
 import { useUserProvider } from '../../Contexts/UserContext';
 import { useNavigate } from 'react-router-dom';
 import PlayerCards from './components/PlayerCards';
 import Card from '../Card/Card';
-
+import { ToastContainer, toast } from 'react-toastify';
+import '/node_modules/react-toastify/dist/ReactToastify.css';
 
 const Single = () => {
 	const navigate = useNavigate();
 
 	const [formation, setFormation] = useState('FourFourTwo');
 	const [selectedPlayer, setSelectedPlayer] = useState();
-	const [playerList, setPlayerList] = useState([])
+	const [playerList, setPlayerList] = useState([]);
 	const [teamInfo, setTeamInfo] = useState({
 		logo: '',
 		name: '',
 		league: '',
 		scoreBoard: [],
 	});
-	const { setMoney, money, setLevel, level, userId, setUserId } = useUserProvider();
-
-	const [playersOnBoard, setPlayersOnBoard] = useState([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]);
+	const { setMoney, money, setLevel, level, userId, setUserId } =
+		useUserProvider();
+	const [playersOnBoard, setPlayersOnBoard] = useState([
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+	]);
 
 	const addPlayerToIndex = (index, player) => {
 		let players = playersOnBoard;
 		players[index] = player;
 		setPlayersOnBoard(players);
-	}
-
+	};
 
 	const deletePlayerAtIndex = (index) => {
 		let players = playersOnBoard;
 		players[index] = null;
 		setPlayersOnBoard(players);
-	}
-
+	};
 
 	useEffect(() => {
-
 		if (userId == 0) {
-			navigate("/login");
+			navigate('/login');
 		}
-
 
 		const initialTeamData = {
 			logo: Manchester_City,
@@ -56,7 +72,6 @@ const Single = () => {
 			scoreBoard: [5, 1, 0],
 		};
 		//setUserId(1);
-		console.log(userId);
 		setTeamInfo(initialTeamData);
 	}, []);
 
@@ -71,7 +86,9 @@ const Single = () => {
 			});
 
 		axios
-			.post(`http://localhost:3050/player/loadFormation`, { userId: userId })
+			.post(`http://localhost:3050/player/loadFormation`, {
+				userId: userId,
+			})
 			.then((response) => {
 				console.log(response.data);
 				let tempData = response.data.formation;
@@ -89,38 +106,59 @@ const Single = () => {
 		if (formation) {
 			setPlayersOnBoard(JSON.parse(formation));
 		}*/
-
-
 	}, []);
-
-
-
 
 	const choosePlayer = (player) => {
 		setSelectedPlayer(player);
 	};
 
+	const notify = () =>
+		toast.success('Formation saved succesfully!', {
+			position: 'top-left',
+			autoClose: 300,
+			hideProgressBar: true,
+			closeOnClick: true,
+			pauseOnHover: true,
+			draggable: true,
+			progress: false,
+			theme: 'colored',
+		});
+
 	const saveFormation = () => {
 		localStorage.setItem('userFormation', JSON.stringify(playersOnBoard));
 
 		axios
-			.post(`http://localhost:3050/player/saveFormation`, { userId: userId, players: playersOnBoard })
+			.post(`http://localhost:3050/player/saveFormation`, {
+				userId: userId,
+				players: playersOnBoard,
+			})
 			.then((response) => {
 				console.log(response.data);
 			})
 			.catch((error) => {
 				console.error('Error:', error);
 			});
-
+		notify();
 	};
 
 	const handleDragStart = (event, data) => {
 		event.dataTransfer.setData('text/plain', data);
 	};
 
+	/*
+	const newlist = playerList.filter(
+			(player) =>
+				!playersOnBoard.some(
+					(formPlayer) =>
+						formPlayer.playerId === player.onlineplayerid,
+				),
+		);
+		setPlayerList(newlist);
+	*/
 	return (
 		<div>
 			<Header />
+<<<<<<< HEAD
 			{playerList.length == 0 ?
 				<div className='formationLoadingAllContainer'>
 					<div className='formationLoading'>
@@ -132,6 +170,14 @@ const Single = () => {
 				</div>
 				:
 
+=======
+			<ToastContainer />
+			{playerList.length == 0 ? (
+				<div className='formationLoading'>
+					<div className='lineContainer'></div>
+				</div>
+			) : (
+>>>>>>> 84f0adaef97f15802591e01c00857d9b718b12ad
 				<div className='formationContainer'>
 					<div className='formationBtn'>
 						<div className='logo'>
@@ -168,12 +214,13 @@ const Single = () => {
 								addPlayerToIndex={addPlayerToIndex}
 								deletePlayerAtIndex={deletePlayerAtIndex}
 								playersOnBoard={playersOnBoard}
+								playerList={playerList}
+								setPlayerList={setPlayerList}
 							/>
 						) : (
 							<Fourthree
 								selectedPlayer={selectedPlayer}
 								setSelectedPlayer={setSelectedPlayer}
-
 								saveFormation={saveFormation}
 								addPlayerToIndex={addPlayerToIndex}
 								deletePlayerAtIndex={deletePlayerAtIndex}
@@ -184,7 +231,12 @@ const Single = () => {
 					<div className='playerList'>
 						{playerList.map((player, index) => (
 							<div
-								onDragStart={(e) => handleDragStart(e, [player.name, player.onlineplayerid])}
+								onDragStart={(e) =>
+									handleDragStart(e, [
+										player.name,
+										player.onlineplayerid,
+									])
+								}
 								draggable
 								className='player'
 								key={index}
@@ -252,7 +304,8 @@ const Single = () => {
 							</div>
 						</div>
 					</div>
-				</div>}
+				</div>
+			)}
 			<Footer />
 		</div>
 	);

@@ -44,6 +44,87 @@ const getLeagues = (req, res) => {
     return players.reduce((total, player) => total + player.def, 0);
   }
 
+
+  const playOnlineMatch = async (req, res) =>{
+    const{userId, opponentId} = req.body;
+
+    const result = await pool.query(
+      `SELECT formation.positionId, formation.playerId, basePlayers.*, onlinePlayers.*
+       FROM formation
+       JOIN onlinePlayers ON formation.playerId = onlinePlayers.id
+       JOIN basePlayers ON onlinePlayers.baseId = basePlayers.id
+       WHERE formation.userId = $1
+       ORDER BY formation.positionId`,
+      [userId]
+    );
+
+    if (result.rows.length === 0) {
+      res.status(404).send('Formation not found for the specified user');
+      return;
+    }
+    const attPower = calculateTotalAtt(result.rows.slice(0, 3));
+    //console.log(result.rows.slice(0, 3));
+    const midPower = calculateTotalMid(result.rows.slice(3, 6));
+    //console.log(result.rows.slice(3, 6));
+
+    const defPower = calculateTotalDef(result.rows.slice(6, 10));
+    //console.log(result.rows.slice(6, 10));
+
+    const gkPower = result.rows[10].gk;
+    //console.log(result.rows[10]);
+
+
+
+    const userTeamPower = attPower+midPower+defPower+gkPower;
+    const userGoal = Math.floor((Math.random()*userTeamPower/100));
+    
+    
+    
+    const resultOpponent = await pool.query(
+      `SELECT formation.positionId, formation.playerId, basePlayers.*, onlinePlayers.*
+       FROM formation
+       JOIN onlinePlayers ON formation.playerId = onlinePlayers.id
+       JOIN basePlayers ON onlinePlayers.baseId = basePlayers.id
+       WHERE formation.userId = $1
+       ORDER BY formation.positionId`,
+      [opponentId]
+    );
+
+    if (resultOpponent.rows.length === 0) {
+      res.status(404).send('Formation not found for the specified user');
+      return;
+    }
+    const attPowerOpponent = calculateTotalAtt(resultOpponent.rows.slice(0, 3));
+    //console.log(result.rows.slice(0, 3));
+    const midPowerOpponent = calculateTotalMid(resultOpponent.rows.slice(3, 6));
+    //console.log(result.rows.slice(3, 6));
+
+    const defPowerOpponent = calculateTotalDef(resultOpponent.rows.slice(6, 10));
+    //console.log(result.rows.slice(6, 10));
+
+    const gkPowerOpponent = resultOpponent.rows[10].gk;
+    //console.log(result.rows[10]);
+    
+    
+    const opponentPower = attPowerOpponent+midPowerOpponent+defPowerOpponent+gkPowerOpponent;
+    const opponentGoal = Math.floor((Math.random()*opponentPower/100));
+    
+    
+
+    const matchResult = {
+      userGoal: userGoal,
+      opponentGoal: opponentGoal,
+      result: userGoal > opponentGoal ? "WIN": userGoal == opponentGoal ? "DRAW" : "LOSE",
+      userTeamPower:userTeamPower,
+      opponentTeamPower: opponentPower,
+  };
+
+  res.status(200).json(matchResult);
+
+
+  }
+
+
   const playSingleMatch = (req, res) => {
     const { team, userId } = req.params;
 
@@ -157,8 +238,6 @@ const getLeagues = (req, res) => {
                         midfielders: midfielders.rows,
                         defenders: defenders.rows,
                         goalkeeper: goalkeeper.rows[0],
-                        
-
                     };
 
                     res.status(200).json(bestPlayers);
@@ -171,5 +250,6 @@ const getLeagues = (req, res) => {
 module.exports = {
 	getLeagues,
     getTeams,
-    playSingleMatch
+    playSingleMatch,
+    playOnlineMatch
 };
