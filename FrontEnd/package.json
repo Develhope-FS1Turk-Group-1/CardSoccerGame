@@ -16,8 +16,9 @@
         "react-beautiful-dnd": "^13.1.1",
         "react-dom": "^18.2.0",
         "react-router-dom": "^6.16.0",
-        "yup": "^1.3.2",
-        "swiper": "^10.0.0"
+        "react-toastify": "^9.1.3",
+        "swiper": "^10.0.0",
+        "yup": "^1.3.2"
     },
     "devDependencies": {
         "@types/react": "^18.2.15",

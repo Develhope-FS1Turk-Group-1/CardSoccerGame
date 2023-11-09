@@ -54,7 +54,7 @@ const Card = ({
     }
 
 
-    
+
 
 
 
@@ -70,7 +70,7 @@ const Card = ({
       onDragOver={handleDragOver}
       onDrop={handleDrop}
       >
-        {selectedCard?.name ? 
+        {selectedCard?.name ?
         <>
           <div className="player-details">
             <div className="player-name">
@@ -94,7 +94,7 @@ const Card = ({
           </div>
         </>
         :<></> }
-        
+
       </div>
   );
 };

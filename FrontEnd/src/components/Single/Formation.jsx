@@ -10,6 +10,8 @@ import { useUserProvider } from '../../Contexts/UserContext';
 import { useNavigate } from 'react-router-dom';
 import PlayerCards from './components/PlayerCards';
 import Card from '../Card/Card';
+import { ToastContainer, toast } from 'react-toastify';
+import '/node_modules/react-toastify/dist/ReactToastify.css';
 
 
 const Single = () => {
@@ -100,6 +102,19 @@ const Single = () => {
 		setSelectedPlayer(player);
 	};
 
+
+		const notify = () =>
+			toast.success('Formation saved succesfully!', {
+				position: 'top-center',
+				autoClose: 500,
+				hideProgressBar: true,
+				closeOnClick: true,
+				pauseOnHover: true,
+				draggable: true,
+				progress: false,
+				theme: 'colored',
+			});
+
 	const saveFormation = () => {
 		localStorage.setItem('userFormation', JSON.stringify(playersOnBoard));
 
@@ -111,7 +126,7 @@ const Single = () => {
 			.catch((error) => {
 				console.error('Error:', error);
 			});
-
+		notify();
 	};
 
 	const handleDragStart = (event, data) => {
@@ -121,13 +136,24 @@ const Single = () => {
 	return (
 		<div>
 			<Header />
-			{playerList.length == 0 ? 
+			<ToastContainer
+				position='top-center'
+				autoClose={500}
+				hideProgressBar
+				newestOnTop={false}
+				closeOnClick
+				rtl={false}
+				pauseOnFocusLoss
+				draggable
+				pauseOnHover
+				theme='colored'
+			/>
+
+			{playerList.length == 0 ? (
 				<div className='formationLoading'>
-					<div className='lineContainer'>
-					</div>
+					<div className='lineContainer'></div>
 				</div>
-				 :
-				 
+			) : (
 				<div className='formationContainer'>
 					<div className='formationBtn'>
 						<div className='logo'>
@@ -169,7 +195,6 @@ const Single = () => {
 							<Fourthree
 								selectedPlayer={selectedPlayer}
 								setSelectedPlayer={setSelectedPlayer}
-
 								saveFormation={saveFormation}
 								addPlayerToIndex={addPlayerToIndex}
 								deletePlayerAtIndex={deletePlayerAtIndex}
@@ -180,7 +205,12 @@ const Single = () => {
 					<div className='playerList'>
 						{playerList.map((player, index) => (
 							<div
-								onDragStart={(e) => handleDragStart(e, [player.name, player.onlineplayerid])}
+								onDragStart={(e) =>
+									handleDragStart(e, [
+										player.name,
+										player.onlineplayerid,
+									])
+								}
 								draggable
 								className='player'
 								key={index}
@@ -248,7 +278,8 @@ const Single = () => {
 							</div>
 						</div>
 					</div>
-				</div>}
+				</div>
+			)}
 			<Footer />
 		</div>
 	);
