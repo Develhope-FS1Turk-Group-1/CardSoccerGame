@@ -33,9 +33,9 @@ const Card = ({
 		event.preventDefault();
 		const data = event.dataTransfer.getData('text/plain');
 		const dataArray = data.split(',');
-    //console.log(dataArray, "bıraktım gitti");
+		//console.log(dataArray, "bıraktım gitti");
 
-    
+
 
 		try {
 			const response = await axios.get(
@@ -57,7 +57,7 @@ const Card = ({
 				console.error(
 					`Error fetching player details: ${response.data}`,
 				);
-      }
+			}
 
 		} catch (error) {
 			console.error('Error fetching player details:', error);
@@ -81,26 +81,25 @@ const Card = ({
 							<h2>{selectedCard?.name}</h2>
 						</div>
 
-            <div className="player-image">
-              <img src={selectedCard?.img} alt="Football Player" />
-              <span className="number">{selectedCard?.power}</span>
-            </div>
-          </div>
-          <div className="positions">
-            <div className="left">
-              <p> {selectedCard?.att} DEF </p>
-              <p> {selectedCard?.def} ATT </p>
-            </div>
-            <div className="right">
-              <p> {selectedCard?.mid} MID </p>
-              <p> {selectedCard?.gk} GK </p>
-            </div>
-          </div>
-        </>
-        :<>DRAG SOMEONE</> }
-        
-      </div>
-  );
+						<div className="player-image">
+							<img src={selectedCard?.img} alt="Football Player" />
+							<span className="number">{selectedCard?.power}</span>
+						</div>
+					</div>
+					<div className="positions">
+						<div className="left">
+							<p> {selectedCard?.att} ATT </p>
+							<p> {selectedCard?.def} DEF </p>
+						</div>
+						<div className="right">
+							<p> {selectedCard?.mid} MID </p>
+							<p> {selectedCard?.gk} GK </p>
+						</div>
+					</div>
+				</>)
+        : <>DRAG SOMEONE</>}
+		</div>
+	);
 };
 
 export default Card;
