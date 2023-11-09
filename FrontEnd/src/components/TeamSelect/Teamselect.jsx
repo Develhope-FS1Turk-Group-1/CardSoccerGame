@@ -111,7 +111,6 @@ const Teamselect = () => {
                                     goPrev();
                                     setSelectedLeague(leagues[currentSlide-1]);
                                     console.log(currentSlide-1)
-
                                 }
                                     
                             }}
@@ -163,7 +162,10 @@ const Teamselect = () => {
                         <Swiper ref={swiper1} slidesPerView="1" spaceBetween="10px">
                             {teams.map((team, index) => (
                                 <SwiperSlide key={index} value={team.team_name}>
+                                    <div className='teamSelectLogoTeam'>
+                                    <img src={team.img} alt="" />
                                     {team.team_name}
+                                    </div>
                                 </SwiperSlide>
                             ))}
                         </Swiper>
@@ -189,35 +191,8 @@ const Teamselect = () => {
 
 
 
-                    <div className='leaugeTeamSelect'>
-
-                        <label>
-                            Select League:
-                            <select value={selectedLeague} onChange={handleLeagueChange}>
-                                <option value="">--Select League--</option>
-                                {leagues.map((league, index) => (
-                                    <option key={index} value={league}>
-                                        {league}
-                                    </option>
-                                ))}
-                            </select>
-                        </label>
-
-
-                        <label>
-                            Select Team:
-                            <select value={selectedTeam} onChange={handleTeamChange}>
-                                <option value="">--Select Team--</option>
-                                {teams.map((team, index) => (
-                                    <option key={index} value={team.team_name}>
-                                        {team.team_name}
-                                    </option>
-                                ))}
-                            </select>
-                        </label>
-                    </div>
                     <div className="ButtonClass">
-                        <button id='GrayButton'>BACK</button>
+                        <button id='GrayButton' onClick={()=>{navigate('/dashboard')}} >BACK</button>
                         <button id='GreenButton' onClick={() => {
                             console.log(selectedTeam, userId)
                             axios
@@ -229,7 +204,7 @@ const Teamselect = () => {
                                     console.error('Error:', error);
                                 });
 
-                        }}>START</button>
+                        }}>START MATCH!</button>
                     </div>
                 </div>
             </div>

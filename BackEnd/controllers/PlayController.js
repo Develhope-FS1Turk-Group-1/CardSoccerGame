@@ -25,7 +25,7 @@ const getLeagues = (req, res) => {
 	  return;
 	}
   
-	pool.query('SELECT * FROM teams WHERE league = $1', [league], (error, results) => {
+	pool.query('SELECT * FROM teams WHERE league = $1 ORDER BY team_name ASC', [league], (error, results) => {
 	  if (error) {
 		res.status(500).send('Error fetching teams from database');
 	  } else {

@@ -9,7 +9,7 @@ const getAllPlayers = async (req, res) => {
 		`SELECT op.id as onlinePlayerId, op.baseid, op.userid, op.level, op.cardcount, bp.*
      FROM basePlayers bp
      JOIN onlinePlayers op  ON op.baseid = bp.id
-     WHERE op.userid = $1`,
+     WHERE op.userid = $1 order by bp.power desc`,
 		[userID],
 		(error, result) => {
 			if (error) {
