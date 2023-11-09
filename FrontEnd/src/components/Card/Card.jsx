@@ -84,8 +84,8 @@ const Card = ({
           </div>
           <div className="positions">
             <div className="left">
-              <p> {selectedCard?.att} DEF </p>
-              <p> {selectedCard?.def} ATT </p>
+              <p> {selectedCard?.def} DEF </p>
+              <p> {selectedCard?.att} ATT </p>
             </div>
             <div className="right">
               <p> {selectedCard?.mid} MID </p>
