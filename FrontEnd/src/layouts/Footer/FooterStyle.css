@@ -1,7 +1,7 @@
 .MainFooterComponent{
     display: flex;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.886);
+    background-color: black;
     height: 100px;
 }
 
@@ -15,27 +15,28 @@
 
 .FooterButtonField button {
     width: 20%;
-    background-color: #3f234dca;
+    background-color: #000000ca;
     color: white;
     font-weight: 700;
     border-radius: 5%;
     font-size: 100%;
     position: relative;
-    transition: 1s ease;
+    transition: 1.3s ease;
 }
 
 .FooterButtonField button:hover{
-    transition: 0.5s ease;
+    transition: 0.7s ease;
     border: solid 2px #fff;
     box-shadow:
-      inset 60px 0 120px #269355,  /* left magenta */
+      inset 60px 0 120px #BB00FF,  /* left magenta */
       inset -60px 0 120px rgb(145, 13, 130); /* right cyan */
     cursor: pointer;
+    text-shadow: 3px 4px 6px rgba(255, 255, 255, 1);
 }
 
 .FooterTwoSideButton{
     width: 20%;
-    background-color: #3f234dca;
+    background-color:black;
     color: white;
     font-weight: 700;
     border-radius: 15%;
@@ -49,7 +50,7 @@
 .FooterTwoSideButton button{
     width: 50%;
     height: 100%;
-    background-color: #3f234dca;
+    background-color: black;
     color: white;
     font-weight: 700;
     border-radius: 5%;

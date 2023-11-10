@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -20,6 +24,7 @@
   gap: 10px;
   position: relative;
 }
+
 .formationLoadingAllContainer .formationLoadingError {
   position: fixed;
   top: 50%;
@@ -36,6 +41,7 @@
   flex-direction: column;
   text-align: center;
 }
+
 .formationLoadingAllContainer .formationLoadingError .button-9 {
   appearance: button;
   backface-visibility: hidden;
@@ -55,9 +61,11 @@
   transition: all 0.2s, box-shadow 0.08s ease-in;
   width: 100%;
 }
+
 .formationLoadingAllContainer .formationLoadingError .button-9:disabled {
   cursor: default;
 }
+
 .formationLoadingAllContainer .formationLoadingError .button-9:hover {
   box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset, rgba(50, 50, 93, 0.2) 0 6px 15px 0, rgba(0, 0, 0, 0.1) 0 2px 2px 0, rgba(50, 151, 211, 0.3) 0 0 0 4px;
 }
@@ -78,6 +86,7 @@
   gap: 10px;
   position: relative;
 }
+
 .formationContainer .lineContainer {
   display: flex;
   align-items: center;
@@ -93,13 +102,15 @@
   height: 80%;
   border-radius: 10px;
 }
-.formationContainer .lineContainer > div {
+
+.formationContainer .lineContainer>div {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   height: 100%;
 }
+
 .formationContainer .lineContainer .forward,
 .formationContainer .lineContainer .midField,
 .formationContainer .lineContainer .defence,
@@ -112,6 +123,7 @@
   height: 100%;
   width: 100%;
 }
+
 .formationContainer .lineContainer .player {
   width: 90px;
   height: 110px;
@@ -120,6 +132,7 @@
   cursor: pointer;
   height: 100%;
 }
+
 .formationContainer .formationBtn {
   display: flex;
   align-items: center;
@@ -130,6 +143,7 @@
   width: 25%;
   justify-content: flex-start;
 }
+
 .formationContainer .formationBtn button {
   font-size: 18px;
   padding: 10px;
@@ -139,9 +153,11 @@
   background-color: #fe453b;
   cursor: pointer;
 }
+
 .formationContainer .formationBtn button:hover {
   background-color: #ff2418;
 }
+
 .formationContainer .formationBtn .logo {
   display: flex;
   align-items: center;
@@ -149,35 +165,44 @@
   gap: 10px;
   margin-bottom: 20px;
 }
+
 .formationContainer .formationBtn .logo .image {
   width: 20%;
 }
+
 .formationContainer .formationBtn .logo .image img {
   width: 100%;
 }
+
 .formationContainer .formationBtn .logo .scoreCard h1 {
   font-size: 25px;
   color: #89afc0;
 }
+
 .formationContainer .formationBtn .logo .scoreCard h2 {
   color: #a6a6a6;
 }
+
 .formationContainer .formationBtn .logo .scoreCard h2:first-child {
   font-size: 18px;
   color: #89afc0;
 }
+
 .formationContainer .formationBtn .logo .scoreCard span:first-child {
   font-size: 15px;
   color: #7ed957;
 }
+
 .formationContainer .formationBtn .logo .scoreCard span:nth-child(2) {
   font-size: 15px;
   color: #e20a17;
 }
+
 .formationContainer .formationBtn .logo .scoreCard span:nth-child(3) {
   font-size: 15px;
   color: #a6a6a6;
 }
+
 .formationContainer .playerList {
   display: flex;
   flex-direction: column;
@@ -192,6 +217,7 @@
   height: 80%;
   overflow: auto;
 }
+
 .formationContainer .playerList .player {
   color: #fff;
   border: none;
@@ -201,9 +227,11 @@
   text-align: center;
   cursor: pointer;
 }
+
 .formationContainer .playerList .player p:last-child {
   color: #000;
 }
+
 .formationContainer .playerCards {
   display: flex;
   align-items: center;
@@ -214,6 +242,7 @@
   bottom: 0;
   width: 100%;
 }
+
 .formationContainer .playerCards .forward {
   display: flex;
   align-items: center;
@@ -223,6 +252,7 @@
   height: 100%;
   width: 100%;
 }
+
 .formationContainer .playerCards .player {
   width: 90px;
   height: 110px;
@@ -231,7 +261,8 @@
   cursor: pointer;
   height: 100%;
 }
-.formationContainer .playerCards > div {
+
+.formationContainer .playerCards>div {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -248,9 +279,11 @@
   height: 100%;
   position: relative;
 }
+
 .soccerMarket h1 {
   color: #3f234d;
 }
+
 .soccerMarket .button-9 {
   appearance: button;
   backface-visibility: hidden;
@@ -270,12 +303,15 @@
   transition: all 0.2s, box-shadow 0.08s ease-in;
   width: 100%;
 }
+
 .soccerMarket .button-9:disabled {
   cursor: default;
 }
+
 .soccerMarket .button-9:hover {
   box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset, rgba(50, 50, 93, 0.2) 0 6px 15px 0, rgba(0, 0, 0, 0.1) 0 2px 2px 0, rgba(50, 151, 211, 0.3) 0 0 0 4px;
 }
+
 .soccerMarket .boughtPlayersPopUp {
   display: flex;
   align-items: center;
@@ -284,10 +320,13 @@
   flex-wrap: wrap;
   height: 80%;
 }
+
 .soccerMarket .errorPopUpOff {
   display: none;
 }
-.soccerMarket .popUpOn, .soccerMarket .errorPopUpOn {
+
+.soccerMarket .popUpOn,
+.soccerMarket .errorPopUpOn {
   color: white;
   display: flex;
   position: absolute;
@@ -301,7 +340,9 @@
   margin: auto;
   height: 40%;
 }
-.soccerMarket .popUpOn .playerBought, .soccerMarket .errorPopUpOn .playerBought {
+
+.soccerMarket .popUpOn .playerBought,
+.soccerMarket .errorPopUpOn .playerBought {
   display: flex;
   width: 20%;
   flex-direction: column;
@@ -309,15 +350,19 @@
   justify-content: center;
   text-align: center;
 }
+
 .soccerMarket .popUpOff {
   display: none;
 }
+
 .soccerMarket .playerBought img {
   width: 100px;
 }
+
 .soccerMarket #blurOn {
   filter: blur(8px);
 }
+
 .soccerMarket .marketAllContainer {
   color: aliceblue;
   background-image: url("../../Assets/Market/Default_soccer_stadium_view_full_of_crowd_night_time_ray_traci_0_d6bb2c97-38a0-444f-8a16-15375f76b1ba_1.jpg");
@@ -330,6 +375,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .soccerMarket .marketAllContainer .marketSmallContainer {
   background-color: rgba(0, 0, 0, 0.608);
   display: flex;
@@ -341,9 +387,13 @@
   height: 90%;
   border-radius: 20px;
 }
+
 .soccerMarket .marketAllContainer .marketSmallContainer h1 {
+  font-family: 'Permanent Marker', cursive;
   font-size: 50px;
+  color: #bb00ff;
 }
+
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer {
   display: flex;
   align-items: center;
@@ -352,6 +402,7 @@
   height: 90%;
   justify-content: space-around;
 }
+
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .cardContainer {
   display: flex;
   align-items: center;
@@ -362,22 +413,28 @@
   overflow: hidden;
   gap: 20px;
 }
+
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .cardContainer h3 {
   font-size: 50px;
 }
+
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .cardContainer h5 {
   font-size: 20px;
 }
+
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .marketCardPrice {
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 50px;
   gap: 10px;
+  font-family: 'Courgette', cursive;
 }
+
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .marketCardPrice #marketCoinImage {
   width: 40px;
 }
+
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .casualUpperCard {
   display: flex;
   align-items: center;
@@ -388,14 +445,26 @@
   width: 100%;
   height: 100%;
 }
+
+.casualUpperCard h3,
+.casualUpperCard h5,
+.rareUpperCard h3,
+.rareUpperCard h5,
+.legendUpperCard h3,
+.legendUpperCard h5 {
+  font-family: 'Kalam', cursive;
+}
+
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .casualUpperCard h3,
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .casualUpperCard h5,
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .casualUpperCard b {
   color: blue;
 }
+
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .casualUpperCard .marketCardPrice {
   cursor: pointer;
 }
+
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .casualUpperCard #cardImage {
   height: 60%;
   width: 90%;
@@ -408,14 +477,21 @@
   background-image: url("../../Assets/Market/casual.jpg");
   background-position: center top;
   background-size: cover;
+  box-shadow: 1px 0px 28px -1px blue;
+  -webkit-box-shadow: 1px 0px 28px -1px blue;
+  -moz-box-shadow: 1px 0px 28px -1px blue;
 }
+
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .casualUpperCard #cardImage:hover {
   filter: blur(0);
-  transition: 2s ease;
+  transition: 1s ease;
   cursor: pointer;
   height: 100%;
-  width: 100%;
+  box-shadow: 1px 0px 28px 6px blue;
+  -webkit-box-shadow: 1px 0px 28px 6px blue;
+  -moz-box-shadow: 1px 0px 28px 6px blue;
 }
+
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .rareUpperCard {
   display: flex;
   align-items: center;
@@ -426,14 +502,17 @@
   width: 100%;
   height: 100%;
 }
+
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .rareUpperCard h3,
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .rareUpperCard h5,
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .rareUpperCard b {
   color: yellow;
 }
+
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .rareUpperCard .marketCardPrice {
   cursor: pointer;
 }
+
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .rareUpperCard #cardImage {
   border: 2px solid yellow;
   border-radius: 10px;
@@ -446,14 +525,21 @@
   background-position: center top;
   background-size: cover;
   cursor: pointer;
+  box-shadow: 1px 8px 28px -12px rgba(255, 255, 0, 1);
+  -webkit-box-shadow: 1px 8px 28px -12px rgba(255, 255, 0, 1);
+  -moz-box-shadow: 1px 8px 28px -12px rgba(255, 255, 0, 1);
 }
+
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .rareUpperCard #cardImage:hover {
   filter: blur(0);
-  transition: 2s ease;
+  transition: 1s ease;
   cursor: pointer;
   height: 100%;
-  width: 100%;
+  box-shadow: 1px 0px 28px 6px rgba(255, 255, 0, 1);
+  -webkit-box-shadow: 1px 0px 28px 6px rgba(255, 255, 0, 1);
+  -moz-box-shadow: 1px 0px 28px 6px rgba(255, 255, 0, 1);
 }
+
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .legendUpperCard {
   display: flex;
   align-items: center;
@@ -464,14 +550,17 @@
   width: 100%;
   height: 100%;
 }
+
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .legendUpperCard h3,
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .legendUpperCard h5,
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .legendUpperCard b {
   color: red;
 }
+
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .legendUpperCard .marketCardPrice {
   cursor: pointer;
 }
+
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .legendUpperCard #cardImage {
   height: 60%;
   width: 90%;
@@ -484,13 +573,19 @@
   background-position: center top;
   background-size: cover;
   cursor: pointer;
+  box-shadow: 1px 8px 28px -12px red;
+  -webkit-box-shadow: 1px 8px 28px -12px red;
+  -moz-box-shadow: 1px 8px 28px -12px red;
 }
+
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .legendUpperCard #cardImage:hover {
   filter: blur(0);
-  transition: 2s ease;
+  transition: 1s ease;
   cursor: pointer;
   height: 100%;
-  width: 100%;
+  box-shadow: 1px 0px 28px 6px red;
+  -webkit-box-shadow: 1px 0px 28px 6px red;
+  -moz-box-shadow: 1px 0px 28px 6px red;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -87,7 +87,7 @@ const Market = () => {
     <div className='soccerMarket'>
       <Header />
       <div className={errorPopUp}>
-        You Need Money
+        Not Enough Money...
         <button onClick={() => setErrorPopUp('errorPopUpOff')}>OK..</button>
 
       </div>
