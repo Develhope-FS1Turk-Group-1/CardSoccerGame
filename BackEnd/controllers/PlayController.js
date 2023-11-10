@@ -5,11 +5,11 @@ const pool = new Pool({ connectionString });
 
 // Define a route to get the leagues
 const getLeagues = (req, res) => {
-	pool.query('SELECT DISTINCT league FROM teams', (error, results) => {
+	pool.query('SELECT DISTINCT league, leaguelogo FROM teams ORDER BY league ASC', (error, results) => {
 	  if (error) {
 		res.status(500).send('Error fetching leagues from database');
 	  } else {
-		const leagues = results.rows.map(row => row.league);
+		const leagues = results.rows;
 		res.json(leagues);
 	  }
 	});

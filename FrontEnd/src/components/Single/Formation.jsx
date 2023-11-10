@@ -158,7 +158,7 @@ const Single = () => {
 	return (
 		<div>
 			<Header />
-<<<<<<< HEAD
+
 			{playerList.length == 0 ?
 				<div className='formationLoadingAllContainer'>
 					<div className='formationLoading'>
@@ -170,14 +170,15 @@ const Single = () => {
 				</div>
 				:
 
-=======
-			<ToastContainer />
-			{playerList.length == 0 ? (
-				<div className='formationLoading'>
-					<div className='lineContainer'></div>
-				</div>
-			) : (
->>>>>>> 84f0adaef97f15802591e01c00857d9b718b12ad
+
+			// <ToastContainer />
+			// {playerList.length == 0 ? (
+			// 	<div className='formationLoading'>
+			// 		<div className='lineContainer'></div>
+			// 	</div>
+			// ) : 
+			(
+
 				<div className='formationContainer'>
 					<div className='formationBtn'>
 						<div className='logo'>

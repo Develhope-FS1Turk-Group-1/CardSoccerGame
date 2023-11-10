@@ -22,38 +22,48 @@ import axios from 'axios';
 const Teamselect = () => {
     const { setMoney, money, setLevel, level, userId, setUserId } = useUserProvider();
     const [leagues, setLeagues] = useState([]);
+    const [leaguelogos, setLeagueLogos] = useState([]);
     const [teams, setTeams] = useState([]);
     const [selectedLeague, setSelectedLeague] = useState('');
+    const [selectedLeagueLogo, setSelectedLeagueLogo] = useState('');
     const [selectedTeam, setSelectedTeam] = useState('');
-
-    const handleLeagueChange = (event) => {
-        setSelectedLeague(event.target.value);
-        // Perform any additional actions based on the selected league if needed
-    };
-
-    const handleTeamChange = (event) => {
-        console.log(event.target);
-        setSelectedTeam(event.target.value);
-        // Perform any additional actions based on the selected team if needed
-    };
-
+    const [resultScreen, setResultScreen] = useState('none');
+    const [result, setResult] = useState('none');
+    const [blur, setBlur] = useState('blur(0px)');
+    const [earnedMoney, setEarnedMoney] = useState('20');
+    //blur(10px)
     const navigate = useNavigate();
-    useEffect(() => {
-        if (userId == 0)
-            navigate("/login");
 
+    const startMatch = () => {
+        setResultScreen('flex');
+        setBlur('blur(10px)');
+        console.log(selectedTeam, userId)
         axios
-            .get(`http://localhost:3050/play/getLeagues`)
+            .post(`http://localhost:3050/play/playSingle/${selectedTeam}/${userId}`)
             .then((response) => {
-                console.log(response.data);
-                setLeagues(response.data);
-                setSelectedLeague(response.data[0]);
+                setResult(response.data);
+                console.log(result);
             })
             .catch((error) => {
                 console.error('Error:', error);
             });
+    }
 
-
+    useEffect(() => {
+        if (userId == 0)
+            navigate("/login");
+        axios
+            .get(`http://localhost:3050/play/getLeagues`)
+            .then((response) => {
+                setLeagues(response.data.map(row => row.league));
+                setLeagueLogos(response.data.map(row => row.leaguelogo));
+                console.log(leagues);
+                setSelectedLeague(response.data[0].league);
+                setSelectedLeagueLogo(response.data[0].leaguelogo);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
     }, [])
 
 
@@ -62,7 +72,7 @@ const Teamselect = () => {
         axios
             .get('http://localhost:3050/play/getTeams/' + selectedLeague)
             .then((response) => {
-                console.log(response.data);
+                console.log(selectedLeague);
                 setTeams(response.data);
                 setSelectedTeam(response.data[0].team_name);
             })
@@ -101,18 +111,20 @@ const Teamselect = () => {
     return (
         <div>
             <div className="teamSelectAllContainer">
-                <div className="teamSelectDiv">
-                    <div className="leaugeSwiperContainer">
+                <div style={{ filter: blur }} className="teamSelectDiv">
+                    <h1>SELECT OPPONENT TEAM</h1>
+                    <div className="leagueSwiperContainer">
                         <button
                             aria-label="Previous"
                             onClick={() => {
-                                if(currentSlide > 0) {
+                                if (currentSlide > 0) {
                                     setCurrentSlide(currentSlide - 1)
                                     goPrev();
-                                    setSelectedLeague(leagues[currentSlide-1]);
-                                    console.log(currentSlide-1)
+                                    setSelectedLeague(leagues[currentSlide - 1]);
+                                    setSelectedLeagueLogo(leaguelogos[currentSlide - 1]);
+                                    console.log(currentSlide - 1)
                                 }
-                                    
+
                             }}
                             className="prev-button"
                         >
@@ -121,24 +133,28 @@ const Teamselect = () => {
                         <Swiper ref={swiper} slidesPerView="1" spaceBetween="10px">
                             {leagues.map((league, index) => (
                                 <SwiperSlide key={index} value={league}>
-                                    {league}
+                                    <div className='teamSelectLogoLeague'>
+                                        <img src={selectedLeagueLogo} alt="" />
+                                        {league}
+                                    </div>
                                 </SwiperSlide>
                             ))}
                         </Swiper>
                         <button
                             aria-label="Next"
                             onClick={() => {
-                                if(currentSlide < leagues.length - 1){
+                                if (currentSlide < leagues.length - 1) {
                                     setCurrentSlide(currentSlide + 1)
                                     goNext();
-                                    setSelectedLeague(leagues[currentSlide+1]);
-                                    console.log(currentSlide+1)
+                                    setSelectedLeague(leagues[currentSlide + 1]);
+                                    setSelectedLeagueLogo(leaguelogos[currentSlide + 1]);
+                                    console.log(currentSlide + 1)
                                 }
 
                             }}
                             className="next-button"
                         >
-                            <img src={currentSlide == leagues.length-1 ? RightArrow : RightArrowBlue} alt="Sag Ok" width={100} height={100} />
+                            <img src={currentSlide == leagues.length - 1 ? RightArrow : RightArrowBlue} alt="Sag Ok" width={100} height={100} />
 
                         </button>
                     </div>
@@ -147,13 +163,13 @@ const Teamselect = () => {
                         <button
                             aria-label="Previous"
                             onClick={() => {
-                                if(currentSlide1 > 0){
+                                if (currentSlide1 > 0) {
                                     setCurrentSlide1(currentSlide1 - 1)
                                     goPrev1();
-                                    setSelectedTeam(teams[currentSlide1-1].team_name);
-                                    console.log(teams[currentSlide1-1].team_name, currentSlide1-1)
+                                    setSelectedTeam(teams[currentSlide1 - 1].team_name);
+                                    console.log(teams[currentSlide1 - 1].team_name, currentSlide1 - 1)
                                 }
-                                
+
                             }}
                             className="prev-button"
                         >
@@ -163,8 +179,8 @@ const Teamselect = () => {
                             {teams.map((team, index) => (
                                 <SwiperSlide key={index} value={team.team_name}>
                                     <div className='teamSelectLogoTeam'>
-                                    <img src={team.img} alt="" />
-                                    {team.team_name}
+                                        <img src={team.img} alt="" />
+                                        {team.team_name}
                                     </div>
                                 </SwiperSlide>
                             ))}
@@ -172,134 +188,46 @@ const Teamselect = () => {
                         <button
                             aria-label="Next"
                             onClick={() => {
-                                if(currentSlide1 < teams.length - 1){
+                                if (currentSlide1 < teams.length - 1) {
                                     setCurrentSlide1(currentSlide1 + 1)
                                     goNext1();
-                                    setSelectedTeam(teams[currentSlide1+1].team_name);
-                                    console.log(teams[currentSlide1+1].team_name)
+                                    setSelectedTeam(teams[currentSlide1 + 1].team_name);
+                                    console.log(teams[currentSlide1 + 1].team_name)
                                 }
-                                
+
 
                             }}
                             className="next-button"
                         >
-                            <img src={currentSlide1 == teams.length-1 ? RightArrow : RightArrowBlue} alt="Sag Ok" width={100} height={100} />
-
+                            <img src={currentSlide1 == teams.length - 1 ? RightArrow : RightArrowBlue} alt="Sag Ok" width={100} height={100} />
                         </button>
                     </div>
 
 
 
-
                     <div className="ButtonClass">
-                        <button id='GrayButton' onClick={()=>{navigate('/dashboard')}} >BACK</button>
+                        <button id='GrayButton' onClick={() => { navigate('/dashboard') }} >BACK</button>
                         <button id='GreenButton' onClick={() => {
-                            console.log(selectedTeam, userId)
-                            axios
-                                .post(`http://localhost:3050/play/playSingle/${selectedTeam}/${userId}`)
-                                .then((response) => {
-                                    console.log(response.data);
-                                })
-                                .catch((error) => {
-                                    console.error('Error:', error);
-                                });
+                            startMatch();
 
                         }}>START MATCH!</button>
                     </div>
                 </div>
-            </div>
-        </div>
-    );
-};
 
-export default Teamselect;
-
-
-/*
-
-<div className="playDiv">
-                        <h1>Game <span>Day</span></h1>
-                        <div className="TeamSelect">
-                            <div className="TeamSide">
-                                <img id='leftbot' src={arrow} alt="" />
-                                <span className="dot"></span>
-                                <img src={arrow} alt="" />
-                            </div>
-                        </div>
-                        <div className="TeamSelect">
-                            <div className="TeamSide">
-                                <img id='leftbot' src={arrow} alt="" />
-                                <span className="dot"></span>
-                                <img src={arrow} alt="" />
-                            </div>
-                        </div>
-                        </div>
-
-*/
-
-/*
-
-    return (
-        <div>
-            <div className="DashboardBackground">
-                <div className="Dashboarddiv">
-                <div>
-                <label>
-                    Select League:
-                    <select value={selectedLeague} onChange={handleLeagueChange}>
-                    <option value="">--Select League--</option>
-                    {leagues.map((league, index) => (
-                        <option key={index} value={league}>
-                        {league}
-                        </option>
-                    ))}
-                    </select>
-                </label>
-                <br />
-
-                <label>
-                    Select Team:
-                    <select value={selectedTeam} onChange={handleTeamChange}>
-                    <option value="">--Select Team--</option>
-                    {teams.map((team, index) => (
-                        <option key={index} value={team.team_name}>
-                        {team.team_name}
-                        </option>
-                    ))}
-                    </select>
-                </label>
-
-
+                <div className='resultScreen' style={{ display: resultScreen, color: result.userGoal === result.opponentGoal ? 'gray' : result.userGoal > result.opponentGoal ? 'green' : 'red' }}>
+                    <h1>{result.userGoal} - {result.opponentGoal}</h1>
+                    {result =='' ? 'The match is ongoing' : result.userGoal > result.opponentGoal ? <div id='winAlert'><h1>YOU WON!</h1><p>Money Earned: {earnedMoney}$ </p></div> : result.userGoal < result.opponentGoal ? <h1>YOU LOST!</h1> : <h1>IT'S A DRAW!</h1> }
                     
-                        <div className="NameClass">
-                            <h3>Opponent</h3>
-                        </div>
-                        <div className="ButtonClass">
-                            <button id='GrayButton'>BACK</button>
-                            <button id='GreenButton' onClick={()=>{
-
-                            axios
-                                .post(`http://localhost:3050/play/playSingle/${selectedTeam}/${userId}`)
-                                .then((response) => {
-                                    console.log(response.data);
-                                })
-                                .catch((error) => {
-                                    console.error('Error:', error);
-                                });
-
-                            }}>START</button>
-                        </div>
-                        <div className="stadClass">
-                            <img src={stad} alt="" />
-                            <h3>Stad İsmi</h3>
-                        </div>
-                    </div>
+                   <button id='GreenButton' onClick={() => {
+                        setResult('');
+                        setResultScreen('none');
+                        setBlur('blur(0px)');
+                    }}>OK</button>
                 </div>
+
             </div>
         </div>
     );
 };
 
 export default Teamselect;
-
-*/

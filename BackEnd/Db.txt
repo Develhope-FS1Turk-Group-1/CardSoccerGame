@@ -17,6 +17,7 @@ CREATE TABLE teams (
   img VARCHAR(255),
   color1 VARCHAR(255),
   color2 VARCHAR(255);
+  leaguelogo VARCHAR(255);
 );
 
 
