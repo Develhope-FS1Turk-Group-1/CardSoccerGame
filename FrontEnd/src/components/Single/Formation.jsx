@@ -158,27 +158,25 @@ const Single = () => {
 	return (
 		<div>
 			<Header />
-
-			{playerList.length == 0 ?
+			<ToastContainer />
+			{playerList.length == 0 ? (
 				<div className='formationLoadingAllContainer'>
-					<div className='formationLoading'>
-					</div>
+					<div className='formationLoading'></div>
 					<div className='formationLoadingError'>
 						<h1>PLEASE BUY SOME CARD TO CREATE YOUR TEAM</h1>
-						<button onClick={()=>navigate('/market')} className='button-9'>GO MARKET</button>
+						<button
+							onClick={() => navigate('/market')}
+							className='button-9'>
+							GO MARKET
+						</button>
 					</div>
 				</div>
-				:
-
-
-			// <ToastContainer />
-			// {playerList.length == 0 ? (
-			// 	<div className='formationLoading'>
-			// 		<div className='lineContainer'></div>
-			// 	</div>
-			// ) : 
-			(
-
+			) : (
+				// {playerList.length == 0 ? (
+				// 	<div className='formationLoading'>
+				// 		<div className='lineContainer'></div>
+				// 	</div>
+				// ) :
 				<div className='formationContainer'>
 					<div className='formationBtn'>
 						<div className='logo'>
