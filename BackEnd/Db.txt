@@ -34,7 +34,6 @@ CREATE TABLE basePlayers (
     GK INT NOT NULL,
     Team VARCHAR(50) NOT NULL,
     img Text NOT NULL,
-
 );
 
 
@@ -264,6 +263,173 @@ VALUES
     ('Ekrem Kılıçarslan', 'GK', 59.00, 29.00, 29.63, 27.75, 59.00, 'Gaziantep', 'https://cdn.futbin.com/content/fifa24/img/players/260933.png?v=23'),
     ('Ulaş Zengin', 'DEF', 59.00, 44.25, 46.00, 59.00, 20.00, 'Gaziantep', 'https://cdn.futbin.com/content/fifa24/img/players/252447.png?v=23'),
     ('İlker Karakaş', 'ATT', 57.00, 57.00, 55.25, 48.75, 20.00, 'Gaziantep', 'https://cdn.futbin.com/content/fifa24/img/players/243274.png?v=23');
+
+Hatayspor
+INSERT INTO basePlayers (Name, Position, ATT, MID, DEF, GK, Power, Team, img)
+VALUES
+    ('Didier Lamkel Zé', 'ATT', 72, 74, 68, 20, 72, 'Hatayspor', 'https://cdn.futbin.com/content/fifa24/img/players/234710.png?v=23'),
+    ('Carlos Strandberg', 'ATT', 71, 69.75, 61, 20, 71, 'Hatayspor', 'https://cdn.futbin.com/content/fifa24/img/players/215965.png?v=23'),
+    ('Ognjen Vranješ', 'DEF', 58, 59, 71, 20, 71, 'Hatayspor', 'https://cdn.futbin.com/content/fifa24/img/players/203624.png?v=23'),
+    ('Kamil Çörekçi', 'DEF', 69.50, 71, 70, 20, 70, 'Hatayspor', 'https://cdn.futbin.com/content/fifa24/img/players/199683.png?v=23'),
+    ('Erce Kardeşler', 'GK', 34.88, 34.63, 30.75, 70, 70, 'Hatayspor', 'https://cdn.futbin.com/content/fifa24/img/players/252081.png?v=23'),
+    ('Rayane Aabid', 'MID', 66.25, 69, 66.25, 20, 69, 'Hatayspor', 'https://cdn.futbin.com/content/fifa24/img/players/240053.png?v=23'),
+    ('Rúben Ribeiro', 'MID', 66, 69, 64.50, 20, 69, 'Hatayspor', 'https://cdn.futbin.com/content/fifa24/img/players/182632.png?v=23'),
+    ('Giorgi Aburjania', 'MID', 63.50, 67, 63.50, 20, 67, 'Hatayspor', 'https://cdn.futbin.com/content/fifa24/img/players/232090.png?v=23'),
+    ('Nikola Maksimovic', 'DEF', 49.50, 53.25, 67, 20, 67, 'Hatayspor', 'https://cdn.futbin.com/content/fifa24/img/players/215466.png?v=23'),
+    ('Joelson Augusto Mendes Mango', 'MID', 66.50, 67, 53.25, 20, 67, 'Hatayspor', 'https://cdn.futbin.com/content/fifa24/img/players/255257.png?v=23'),
+    ('Guy-Marcelin Kilama', 'MID', 66.50, 67, 53.25, 20, 67, 'Hatayspor', 'https://cdn.futbin.com/content/fifa24/img/players/245092.png?v=23'),
+    ('Görkem Sağlam', 'MID', 64.75, 66, 63, 20, 66, 'Hatayspor', 'https://cdn.futbin.com/content/fifa24/img/players/229176.png?v=23'),
+    ('Renat Dadashov', 'ATT', 66, 63.25, 53.75, 20, 66, 'Hatayspor', 'https://cdn.futbin.com/content/fifa24/img/players/238736.png?v=23'),
+    ('Kerim Alıcı', 'DEF', 64.25, 61.75, 65, 20, 65, 'Hatayspor', 'https://cdn.futbin.com/content/fifa24/img/players/259164.png?v=23'),
+    ('Fisayo Dele-Bashiru', 'MID', 72, 65, 67.50, 20, 65, 'Hatayspor', 'https://cdn.futbin.com/content/fifa24/img/players/258890.png?v=23'),
+    ('Musa Çağıran', 'MID', 60.75, 63, 59.75, 20, 63, 'Hatayspor', 'https://cdn.futbin.com/content/fifa24/img/players/199601.png?v=23'),
+    ('Burak Bekaroglu', 'DEF', 48, 51.75, 62, 20, 62, 'Hatayspor', 'https://cdn.futbin.com/content/fifa24/img/players/264283.png?v=23'),
+    ('Ömer Beyaz', 'MID', 56, 62, 53, 20, 62, 'Hatayspor', 'https://cdn.futbin.com/content/fifa24/img/players/256306.png?v=23'),
+    ('Mehdi Boudjemaa', 'MID', 62.25, 62, 64.25, 20, 62, 'Hatayspor', 'https://cdn.futbin.com/content/fifa24/img/players/246229.png?v=23');
+
+Konyaspor
+INSERT INTO basePlayers (Name, Position, ATT, MID, DEF, GK, Power, Team, img)
+VALUES
+    ('Guilherme Haubert Sityá', 'DEF', 73, 76.25, 75, 20, 75, 'Konyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/224885.png?v=23'),
+    ('Paul Bernardoni', 'GK', 36.38, 36.50, 30.63, 73, 73, 'Konyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/223898.png?v=23'),
+    ('Alexandru Cicâldău', 'MID', 68.25, 72, 67.50, 20, 72, 'Konyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/243001.png?v=23'),
+    ('Ahmet Oğuz', 'DEF', 71.50, 73.50, 72, 20, 72, 'Konyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/225555.png?v=23'),
+    ('Francisco Calvo', 'DEF', 63.25, 67.25, 71, 20, 71, 'Konyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/213064.png?v=23'),
+    ('Muhammet Demir', 'ATT', 70, 68.50, 60.75, 20, 70, 'Konyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/143809.png?v=23'),
+    ('Yunus Mallı', 'MID', 64, 70, 215.50, 20, 70, 'Konyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/192565.png?v=23'),
+    ('Soner Dikmen', 'MID', 68.50, 68, 66.75, 20, 68, 'Konyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/252807.png?v=23'),
+    ('Marlos Moreno', 'ATT', 68, 66.25, 55.50, 20, 68, 'Konyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/225811.png?v=23'),
+    ('Sokol Çikalleshi', 'ATT', 67, 63, 56.50, 20, 67, 'Konyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/210521.png?v=23'),
+    ('Adil Demirbag', 'DEF', 50.75, 54, 67, 20, 67, 'Konyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/258777.png?v=23'),
+    ('Konrad Michalak', 'ATT', 67, 69.50, 61.50, 20, 67, 'Konyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/240119.png?v=23'),
+    ('Robert Muric', 'ATT', 67, 68.25, 57.75, 20, 67, 'Konyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/224148.png?v=23'),
+    ('Bruno Lourenço Pinto Almeida Paz', 'MID', 67.25, 67, 68.75, 20, 67, 'Konyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/246674.png?v=23'),
+    ('Cebrail Karayel', 'DEF', 63.25, 66.75, 66, 20, 66, 'Konyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/235495.png?v=23'),
+    ('Demirtapa', 'DEF', 57, 61.25, 64, 20, 64, 'Konyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/234947.png?v=23'),
+    ('Ugurcan Yazgili', 'DEF', 51.75, 53.75, 64, 20, 64, 'Konyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/245355.png?v=23'),
+    ('Mehmet Ali Büyüksayar', 'ATT', 61, 59.25, 49.75, 20, 61, 'Konyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/274562.png?v=23'),
+    ('Yasir Subaşı', 'DEF', 56.75, 59, 61, 20, 61, 'Konyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/228918.png?v=23');
+
+Ankaragücü
+INSERT INTO basePlayers (Name, Position, ATT, MID, DEF, GK, Power, Team, img)
+VALUES
+    ('Rafał Gikiewicz', 'GK', 38, 37.50, 31.13, 77, 77, 'Ankaragucu', 'https://cdn.futbin.com/content/fifa24/img/players/194333.png?v=23'),
+    ('Pedrinho', 'MID', 70.75, 74, 67.75, 20, 74, 'Ankaragucu', 'https://cdn.futbin.com/content/fifa24/img/players/235210.png?v=23'),
+    ('Ali Sowe', 'ATT', 71, 69.75, 59.75, 20, 71, 'Ankaragucu', 'https://cdn.futbin.com/content/fifa24/img/players/215323.png?v=23'),
+    ('Yıldırım Mert Çetin', 'DEF', 58.50, 61, 70, 20, 70, 'Ankaragucu', 'https://cdn.futbin.com/content/fifa24/img/players/240671.png?v=23'),
+    ('Chatzigiovanis', 'MID', 67.75, 70, 59.75, 20, 70, 'Ankaragucu', 'https://cdn.futbin.com/content/fifa24/img/players/236696.png?v=23'),
+    ('Olimpiu Moruțan', 'ATT', 70, 67.50, 60.75, 20, 70, 'Ankaragucu', 'https://cdn.futbin.com/content/fifa24/img/players/241278.png?v=23'),
+    ('Enock Kwateng', 'DEF', 58.50, 64.50, 69, 20, 69, 'Ankaragucu', 'https://cdn.futbin.com/content/fifa24/img/players/230074.png?v=23'),
+    ('Riad Bajic', 'ATT', 68, 61.50, 52.25, 20, 68, 'Ankaragucu', 'https://cdn.futbin.com/content/fifa24/img/players/230072.png?v=23'),
+    ('Stelios Kitsiou', 'MID', 66.25, 68, 67.25, 20, 68, 'Ankaragucu', 'https://cdn.futbin.com/content/fifa24/img/players/204030.png?v=23'),
+    ('Nihad Mujakic', 'DEF', 55.50, 59, 68, 20, 68, 'Ankaragucu', 'https://cdn.futbin.com/content/fifa24/img/players/251168.png?v=23'),
+    ('Uroš Radakovic', 'DEF', 50.75, 53.75, 68, 20, 68, 'Ankaragucu', 'https://cdn.futbin.com/content/fifa24/img/players/211250.png?v=23'),
+    ('Efkan Bekiroglu', 'MID', 67.50, 67, 62.50, 20, 67, 'Ankaragucu', 'https://cdn.futbin.com/content/fifa24/img/players/243914.png?v=23'),
+    ('Giorgi Beridze', 'MID', 65.75, 67, 54.75, 20, 67, 'Ankaragucu', 'https://cdn.futbin.com/content/fifa24/img/players/244297.png?v=23'),
+    ('Matěj Hanousek', 'DEF', 65, 69, 67, 20, 67, 'Ankaragucu', 'https://cdn.futbin.com/content/fifa24/img/players/247203.png?v=23'),
+    ('Atakan Çankaya', 'DEF', 58, 60.75, 65, 20, 65, 'Ankaragucu', 'https://cdn.futbin.com/content/fifa24/img/players/258725.png?v=23'),
+    ('Hayrullah Bilazer', 'DEF', 59.75, 62.75, 64, 20, 64, 'Ankaragucu', 'https://cdn.futbin.com/content/fifa24/img/players/262617.png?v=23'),
+    ('Cem Türkmen', 'MID', 57.25, 64, 59.50, 20, 64, 'Ankaragucu', 'https://cdn.futbin.com/content/fifa24/img/players/258899.png?v=23'),
+    ('Alper Uludağ', 'DEF', 64.75, 64.75, 64, 20, 64, 'Ankaragucu', 'https://cdn.futbin.com/content/fifa24/img/players/194092.png?v=23'),
+    ('Tolga Ciğerci', 'MID', 61.75, 73, 63.25, 20, 73, 'Ankaragucu', 'https://cdn.futbin.com/content/fifa24/img/players/200754.png?v=23');
+
+Sivasspor
+INSERT INTO basePlayers (Name, Position, ATT, MID, DEF, GK, Power, Team, img)
+VALUES
+    ('Samuel Sáiz Alonso', 'MID', 73.75, 74, 62.25, 20, 74, 'Sivasspor', 'https://cdn.futbin.com/content/fifa24/img/players/198143.png?v=23'),
+    ('Roman Květ', 'MID', 71.75, 71, 68.25, 20, 71, 'Sivasspor', 'https://cdn.futbin.com/content/fifa24/img/players/272872.png?v=23'),
+    ('Modou Barrow', 'MID', 71, 70, 61.75, 20, 70, 'Sivasspor', 'https://cdn.futbin.com/content/fifa24/img/players/207645.png?v=23'),
+    ('Hakan Arslan', 'MID', 68, 69, 67.25, 20, 69, 'Sivasspor', 'https://cdn.futbin.com/content/fifa24/img/players/223313.png?v=23'),
+    ('Clinton Njie', 'ATT', 71, 70.50, 60.25, 20, 71, 'Sivasspor', 'https://cdn.futbin.com/content/fifa24/img/players/212273.png?v=23'),
+    ('Gerson Rodrigues Gouveia', 'ATT', 70, 73.25, 67.50, 20, 70, 'Sivasspor', 'https://cdn.futbin.com/content/fifa24/img/players/246929.png?v=23'),
+    ('Ahmed Musa', 'ATT', 67, 65, 54.75, 20, 67, 'Sivasspor', 'https://cdn.futbin.com/content/fifa24/img/players/201818.png?v=23'),
+    ('Abdulkadir Parmak', 'MID', 69.75, 69, 70, 20, 69, 'Sivasspor', 'https://cdn.futbin.com/content/fifa24/img/players/245535.png?v=23'),
+    ('Emrah Bassan', 'ATT', 68, 67.25, 55.75, 20, 68, 'Sivasspor', 'https://cdn.futbin.com/content/fifa24/img/players/204372.png?v=23'),
+    ('Uğur Çiftçi', 'ATT', 68, 68, 67, 20, 68, 'Sivasspor', 'https://cdn.futbin.com/content/fifa24/img/players/223045.png?v=23'),
+    ('Samba Camara', 'DEF', 55.75, 58.75, 67, 20, 67, 'Sivasspor', 'https://cdn.futbin.com/content/fifa24/img/players/233643.png?v=23'),
+    ('Charilaos Charisis', 'MID', 64.25, 67, 64.50, 20, 67, 'Sivasspor', 'https://cdn.futbin.com/content/fifa24/img/players/229247.png?v=23'),
+    ('Caner Osmanpaşa', 'DEF', 48.75, 53.25, 67, 20, 67, 'Sivasspor', 'https://cdn.futbin.com/content/fifa24/img/players/223122.png?v=23'),
+    ('Ali Şaşal Vural', 'GK', 33.50, 32.88, 29.88, 66, 66, 'Sivasspor', 'https://cdn.futbin.com/content/fifa24/img/players/223709.png?v=23'),
+    ('Ziya Erdal', 'DEF', 59.75, 61.25, 65, 20, 65, 'Sivasspor', 'https://cdn.futbin.com/content/fifa24/img/players/202356.png?v=23'),
+    ('Murat Paluli', 'DEF', 61.25, 64.75, 65, 20, 65, 'Sivasspor', 'https://cdn.futbin.com/content/fifa24/img/players/252716.png?v=23'),
+    ('Burak Kapacak', 'MID', 66.50, 65, 62.50, 20, 65, 'Sivasspor', 'https://cdn.futbin.com/content/fifa24/img/players/244134.png?v=23'),
+    ('Muammer Yıldırım', 'GK', 32.25, 31.63, 26.75, 64, 64, 'Sivasspor', 'https://cdn.futbin.com/content/fifa24/img/players/223107.png?v=23'),
+    ('Kader Kei¨ta', 'MID', 59.25, 63, 62.25, 20, 63, 'Sivasspor', 'https://cdn.futbin.com/content/fifa24/img/players/264696.png?v=23'),
+    ('Armin Đerlek', 'MID', 57.50, 59, 49.50, 20, 59, 'Sivasspor', 'https://cdn.futbin.com/content/fifa24/img/players/252560.png?v=23');
+
+Antalyaspor
+INSERT INTO basePlayers (Name, Position, ATT, MID, DEF, GK, Power, Team, img)
+VALUES
+    ('Helton Leite', 'GK', 37.63, 37.25, 34.13, 76, 76, 'Antalyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/213951.png?v=23'),
+    ('Sam Larsson', 'ATT', 75, 72.75, 62.25, 20, 75, 'Antalyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/209782.png?v=23'),
+    ('Ömer Toprak', 'DEF', 60, 65, 74, 20, 74, 'Antalyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/185239.png?v=23'),
+    ('Adam Buksa', 'ATT', 72, 65.25, 55.75, 20, 72, 'Antalyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/224438.png?v=23'),
+    ('Alfredo Kulembe Ribeiro', 'MID', 71, 71, 68, 20, 71, 'Antalyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/193461.png?v=23'),
+    ('Britt Assombalonga', 'ATT', 70, 70, 62, 20, 70, 'Antalyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/203304.png?v=23'),
+    ('Zymer Bytyqi', 'MID', 71.25, 70, 62.50, 20, 70, 'Antalyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/208581.png?v=23'),
+    ('Gerrit Holtmann', 'MID', 70.25, 70, 67, 20, 70, 'Antalyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/228614.png?v=23'),
+    ('Dario Šarić', 'MID', 68.25, 69, 64.75, 20, 69, 'Antalyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/240628.png?v=23'),
+    ('Güray Vural', 'DEF', 69.75, 70.25, 69, 20, 69, 'Antalyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/186651.png?v=23'),
+    ('Bünyamin Balcı', 'DEF', 62, 66, 68, 20, 68, 'Antalyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/253463.png?v=23'),
+    ('Erdal Rakip', 'MID', 66.75, 68, 66.50, 20, 68, 'Antalyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/215574.png?v=23'),
+    ('Veysel Sarı', 'DEF', 56.25, 57, 67, 20, 67, 'Antalyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/194077.png?v=23'),
+    ('Erdoğan Yeşilyurt', 'MID', 67, 67, 63.25, 20, 67, 'Antalyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/211739.png?v=23'),
+    ('Ufuk Akyol', 'MID', 63.75, 66, 65.25, 20, 66, 'Antalyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/251800.png?v=23'),
+    ('Deni Milošević', 'MID', 62.75, 65, 56.75, 20, 65, 'Antalyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/221367.png?v=23'),
+    ('Bahadır Öztürk', 'DEF', 46, 49, 65, 20, 65, 'Antalyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/240333.png?v=23'),
+    ('Jakub Kałuziński', 'MID', 61.25, 64, 61, 20, 64, 'Antalyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/255776.png?v=23'),
+    ('Ataberk Dadakdeniz', 'GK', 31.25, 30.88, 26.50, 63, 63, 'Antalyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/235932.png?v=23'),
+    ('Mert Yılmaz', 'DEF', 63, 64.50, 63, 20, 63, 'Antalyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/240055.png?v=23'),
+    ('Doğukan Özkan', 'GK', 31, 30.75, 30.13, 62, 62, 'Antalyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/259153.png?v=23'),
+    ('Erkan Eyibil', 'MID', 55, 59, 51.25, 20, 59, 'Antalyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/252264.png?v=23');
+
+Kayserispor
+INSERT INTO basePlayers (Name, Position, ATT, MID, DEF, GK, Power, Team, img)
+VALUES
+    ('Carlos Mané', 'MID', 71.25, 73.00, 61.50, 20.00, 73, 'Kayserispor', 'https://cdn.futbin.com/content/fifa24/img/players/216749.png?v=23'),
+    ('Mame Thiam', 'ATT', 72.00, 70.50, 59.00, 20.00, 72, 'Kayserispor', 'https://cdn.futbin.com/content/fifa24/img/players/217007.png?v=23'),
+    ('Olivier Kemen', 'MID', 74.00, 71.00, 72.00, 20.00, 71, 'Kayserispor', 'https://cdn.futbin.com/content/fifa24/img/players/220175.png?v=23'),
+    ('Lionel Carole', 'DEF', 64.00, 69.00, 70.00, 20.00, 70, 'Kayserispor', 'https://cdn.futbin.com/content/fifa24/img/players/201041.png?v=23'),
+    ('Majid Hosseini', 'DEF', 55.25, 59.75, 70.00, 20.00, 70, 'Kayserispor', 'https://cdn.futbin.com/content/fifa24/img/players/243549.png?v=23'),
+    ('Miguel Cardoso', 'MID', 68.25, 70.00, 59.50, 20.00, 70, 'Kayserispor', 'https://cdn.futbin.com/content/fifa24/img/players/224890.png?v=23'),
+    ('Bilal Bayazit', 'GK', 34.00, 33.50, 27.63, 67.00, 67, 'Kayserispor', 'https://cdn.futbin.com/content/fifa24/img/players/240856.png?v=23'),
+    ('Joseph Attamah', 'MID', 60.00, 67.00, 64.25, 20.00, 67, 'Kayserispor', 'https://cdn.futbin.com/content/fifa24/img/players/234716.png?v=23'),
+    ('Ramazan Civelek', 'MID', 65.25, 67.00, 65.25, 20.00, 67, 'Kayserispor', 'https://cdn.futbin.com/content/fifa24/img/players/228283.png?v=23'),
+    ('Ali Karimi', 'MID', 64.00, 67.00, 64.25, 20.00, 67, 'Kayserispor', 'https://cdn.futbin.com/content/fifa24/img/players/241793.png?v=23'),
+    ('Kartal Yilmaz', 'MID', 62.75, 67.00, 66.75, 20.00, 67, 'Kayserispor', 'https://cdn.futbin.com/content/fifa24/img/players/254296.png?v=23'),
+    ('Ackah', 'MID', 59.75, 66.00, 61.50, 20.00, 66, 'Kayserispor', 'https://cdn.futbin.com/content/fifa24/img/players/248812.png?v=23'),
+    ('Dimitrios Kolovetsios', 'DEF', 51.50, 55.75, 66.00, 20.00, 66, 'Kayserispor', 'https://cdn.futbin.com/content/fifa24/img/players/240409.png?v=23'),
+    ('Gökhan Sazdagi', 'DEF', 65.25, 64.75, 66.00, 20.00, 66, 'Kayserispor', 'https://cdn.futbin.com/content/fifa24/img/players/263808.png?v=23'),
+    ('Anthony Uzodimma', 'DEF', 62.75, 63.25, 61.00, 20.00, 61, 'Kayserispor', 'https://cdn.futbin.com/content/fifa24/img/players/255693.png?v=23'),
+    ('Nurettin Korkmaz', 'MID', 56.50, 58.00, 47.75, 20.00, 58, 'Kayserispor', 'https://cdn.futbin.com/content/fifa24/img/players/248814.png?v=23');
+
+Karagumruk
+INSERT INTO basePlayers (Name, Position, ATT, MID, DEF, GK, Power, Team, img)
+VALUES
+    ('Matías Dituro', 'GK', 37.13, 37.75, 32.88, 75.00, 75, 'Karagümrük', 'https://cdn.futbin.com/content/fifa24/img/players/207935.png?v=23'),
+    ('Federico Ceccherini', 'DEF', 61.75, 64.25, 74.00, 20.00, 74, 'Karagümrük', 'https://cdn.futbin.com/content/fifa24/img/players/210964.png?v=23'),
+    ('Serdar Dursun', 'ATT', 73.00, 65.25, 58.00, 20.00, 73, 'Karagümrük', 'https://cdn.futbin.com/content/fifa24/img/players/206104.png?v=23'),
+    ('Sofiane Feghouli', 'MID', 65.75, 71.00, 57.00, 20.00, 71, 'Karagümrük', 'https://cdn.futbin.com/content/fifa24/img/players/184881.png?v=23'),
+    ('Kevin Lasagna', 'ATT', 71.00, 72.00, 63.50, 20.00, 71, 'Karagümrük', 'https://cdn.futbin.com/content/fifa24/img/players/224933.png?v=23'),
+    ('Marcus Rohdén', 'MID', 73.00, 71.00, 70.75, 20.00, 71, 'Karagümrük', 'https://cdn.futbin.com/content/fifa24/img/players/207553.png?v=23'),
+    ('Otabek Shukurov', 'MID', 69.75, 71.00, 70.00, 20.00, 71, 'Karagümrük', 'https://cdn.futbin.com/content/fifa24/img/players/271294.png?v=23'),
+    ('Ibrahim Drešević', 'DEF', 60.00, 63.00, 70.00, 20.00, 70, 'Karagümrük', 'https://cdn.futbin.com/content/fifa24/img/players/235519.png?v=23'),
+    ('Güven Yalçin', 'ATT', 70.00, 68.00, 56.00, 20.00, 70, 'Karagümrük', 'https://cdn.futbin.com/content/fifa24/img/players/245368.png?v=23'),
+    ('Davide Biraschi', 'DEF', 58.50, 64.50, 70.00, 20.00, 70, 'Karagümrük', 'https://cdn.futbin.com/content/fifa24/img/players/213938.png?v=23'),
+    ('Adem Ljajić', 'MID', 62.25, 69.00, 57.50, 20.00, 69, 'Karagümrük', 'https://cdn.futbin.com/content/fifa24/img/players/190544.png?v=23'),
+    ('Brahim Darri', 'ATT', 68.00, 65.75, 53.50, 20.00, 68, 'Karagümrük', 'https://cdn.futbin.com/content/fifa24/img/players/205557.png?v=23'),
+    ('Levent Mercan', 'DEF', 64.00, 64.75, 67.00, 20.00, 67, 'Karagümrük', 'https://cdn.futbin.com/content/fifa24/img/players/252544.png?v=23'),
+    ('Kerem Kesgin', 'MID', 65.00, 66.00, 60.50, 20.00, 66, 'Karagümrük', 'https://cdn.futbin.com/content/fifa24/img/players/242994.png?v=23'),
+    ('Frédéric Veseli', 'DEF', 59.50, 63.00, 66.00, 20.00, 66, 'Karagümrük', 'https://cdn.futbin.com/content/fifa24/img/players/203780.png?v=23'),
+    ('Salih Dursun', 'DEF', 57.00, 59.75, 64.00, 20.00, 64, 'Karagümrük', 'https://cdn.futbin.com/content/fifa24/img/players/220089.png?v=23'),
+    ('Can Keles', 'MID', 64.00, 64.00, 56.25, 20.00, 64, 'Karagümrük', 'https://cdn.futbin.com/content/fifa24/img/players/263132.png?v=23'),
+    ('Adnan Ugur', 'MID', 63.75, 64.00, 64.75, 20.00, 64, 'Karagümrük', 'https://cdn.futbin.com/content/fifa24/img/players/251628.png?v=23'),
+    ('Efe Tatlı', 'MID', 59.00, 63.00, 61.75, 20.00, 63, 'Karagümrük', 'https://cdn.futbin.com/content/fifa24/img/players/257822.png?v=23'),
+    ('Emre Bilgin', 'GK', 31.63, 31.38, 27.13, 62.00, 62, 'Karagümrük', 'https://cdn.futbin.com/content/fifa24/img/players/258511.png?v=23'),
+    ('Samed Onur', 'MID', 58.25, 60.00, 49.50, 20.00, 60, 'Karagümrük', 'https://cdn.futbin.com/content/fifa24/img/players/258897.png?v=23'),
+    ('Emir Tintiş', 'DEF', 59.50, 60.75, 60.00, 20.00, 60, 'Karagümrük', 'https://cdn.futbin.com/content/fifa24/img/players/269714.png?v=23'),
+    ('Pehlivan', 'MID', 53.75, 56.00, 53.00, 20.00, 56, 'Karagümrük', 'https://cdn.futbin.com/content/fifa24/img/players/257824.png?v=23'),
+    ('Furkan Bekleviç', 'GK', 27.38, 26.88, 23.75, 55.00, 55, 'Karagümrük', 'https://cdn.futbin.com/content/fifa24/img/players/252281.png?v=23');
 
 
 INSERT INTO teams (team_name, league)
