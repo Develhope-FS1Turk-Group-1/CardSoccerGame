@@ -48,6 +48,8 @@ const Single = () => {
 		null,
 	]);
 
+	const [ listedPlayers, setListedPlayers ] = useState([]);
+
 	const addPlayerToIndex = (index, player) => {
 		let players = playersOnBoard;
 		players[index] = player;
@@ -145,15 +147,28 @@ const Single = () => {
 		event.dataTransfer.setData('text/plain', data);
 	};
 
+
+	useEffect(() => {
+		const newListing = async () => {
+			if (playerList.length !== 0) {
+				const newlist = await playerList.filter(
+					(player) =>
+						!playersOnBoard.some(
+							(formPlayer) =>
+								formPlayer.playerId === player.onlineplayerid,
+						),
+				);
+				setListedPlayers(newlist);
+			}
+		};
+
+		newListing();
+		addPlayerToIndex();
+	}, [ playersOnBoard, playerList ]);
+
+
 	/*
-	const newlist = playerList.filter(
-			(player) =>
-				!playersOnBoard.some(
-					(formPlayer) =>
-						formPlayer.playerId === player.onlineplayerid,
-				),
-		);
-		setPlayerList(newlist);
+
 	*/
 	return (
 		<div>
@@ -228,7 +243,7 @@ const Single = () => {
 						)}
 					</div>
 					<div className='playerList'>
-						{playerList.map((player, index) => (
+						{listedPlayers.map((player, index) => (
 							<div
 								onDragStart={(e) =>
 									handleDragStart(e, [
@@ -237,8 +252,7 @@ const Single = () => {
 									])
 								}
 								draggable
-								className='player'
-								key={index}
+								className='player' key={index}
 								id={player.onlineplayerid}
 								onClick={() => choosePlayer(player)}>
 								<p>{player.name}</p>
@@ -256,6 +270,7 @@ const Single = () => {
 									selectedPlayer={selectedPlayer}
 									setSelectedPlayer={setSelectedPlayer}
 									addPlayerToIndex={addPlayerToIndex}
+									deletePlayerAtIndex={deletePlayerAtIndex}
 									playersOnBoard={playersOnBoard}
 								/>
 								<Card
@@ -263,6 +278,7 @@ const Single = () => {
 									selectedPlayer={selectedPlayer}
 									setSelectedPlayer={setSelectedPlayer}
 									addPlayerToIndex={addPlayerToIndex}
+									deletePlayerAtIndex={deletePlayerAtIndex}
 									playersOnBoard={playersOnBoard}
 								/>
 								<Card
@@ -270,6 +286,7 @@ const Single = () => {
 									selectedPlayer={selectedPlayer}
 									setSelectedPlayer={setSelectedPlayer}
 									addPlayerToIndex={addPlayerToIndex}
+									deletePlayerAtIndex={deletePlayerAtIndex}
 									playersOnBoard={playersOnBoard}
 								/>
 								<Card
@@ -277,6 +294,7 @@ const Single = () => {
 									selectedPlayer={selectedPlayer}
 									setSelectedPlayer={setSelectedPlayer}
 									addPlayerToIndex={addPlayerToIndex}
+									deletePlayerAtIndex={deletePlayerAtIndex}
 									playersOnBoard={playersOnBoard}
 								/>
 								<Card
@@ -284,18 +302,21 @@ const Single = () => {
 									selectedPlayer={selectedPlayer}
 									setSelectedPlayer={setSelectedPlayer}
 									addPlayerToIndex={addPlayerToIndex}
+									deletePlayerAtIndex={deletePlayerAtIndex}
 									playersOnBoard={playersOnBoard}
 								/>
 								<Card
 									id={17}
 									selectedPlayer={selectedPlayer}
 									setSelectedPlayer={setSelectedPlayer}
+									deletePlayerAtIndex={deletePlayerAtIndex}
 									addPlayerToIndex={addPlayerToIndex}
 									playersOnBoard={playersOnBoard}
 								/>
 								<Card
 									id={18}
 									selectedPlayer={selectedPlayer}
+									deletePlayerAtIndex={deletePlayerAtIndex}
 									setSelectedPlayer={setSelectedPlayer}
 									addPlayerToIndex={addPlayerToIndex}
 									playersOnBoard={playersOnBoard}

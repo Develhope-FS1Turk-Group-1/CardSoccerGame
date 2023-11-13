@@ -8,6 +8,7 @@ const Card = ({
 	setSelectedPlayer,
 	id,
 	addPlayerToIndex,
+	deletePlayerAtIndex,
 	playersOnBoard,
 	playerList,
 	setPlayerList,
@@ -48,7 +49,11 @@ const Card = ({
 				player.playerId = dataArray[1];
 				player.positionId = id;
 				setSelectedCard(player);
+				console.log('player',player)
 				addPlayerToIndex(id - 1, player);
+				console.log(selectedCard.positionId);
+				deletePlayerAtIndex(selectedCard.positionId-1);
+
 				//console.log(playersOnBoard);
 				//event.target.innerHTML = dataArray[0];
 
@@ -67,9 +72,19 @@ const Card = ({
 	const handleDragOver = (event) => {
 		event.preventDefault();
 	};
+	const handleDragStart = (event, data) => {
+		event.dataTransfer.setData('text/plain', data);
+	};
 
 	return (
 		<div
+			onDragStart={(e) =>
+				handleDragStart(e, [
+					selectedCard.name,
+					selectedCard.onlineplayerid,
+				])
+			}
+			draggable
 			className='player-card'
 			id={id}
 			onDragOver={handleDragOver}
@@ -81,23 +96,30 @@ const Card = ({
 							<h2>{selectedCard?.name}</h2>
 						</div>
 
-						<div className="player-image">
-							<img src={selectedCard?.img} alt="Football Player" />
-							<span className="number">{selectedCard?.power}</span>
+						<div className='player-image'>
+							<img
+								src={selectedCard?.img}
+								alt='Football Player'
+							/>
+							<span className='number'>
+								{selectedCard?.power}
+							</span>
 						</div>
 					</div>
-					<div className="positions">
-						<div className="left">
+					<div className='positions'>
+						<div className='left'>
 							<p> {selectedCard?.att} ATT </p>
 							<p> {selectedCard?.def} DEF </p>
 						</div>
-						<div className="right">
+						<div className='right'>
 							<p> {selectedCard?.mid} MID </p>
 							<p> {selectedCard?.gk} GK </p>
 						</div>
 					</div>
-				</>)
-        : <>DRAG SOMEONE</>}
+				</>
+			) : (
+				<>DRAG SOMEONE</>
+			)}
 		</div>
 	);
 };

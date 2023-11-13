@@ -13,12 +13,14 @@ const Fourthree = ({ selectedPlayer, setSelectedPlayer, addPlayerToIndex, delete
 					selectedPlayer={selectedPlayer}
 					setSelectedPlayer={setSelectedPlayer}
 					addPlayerToIndex={addPlayerToIndex}
+					deletePlayerAtIndex={deletePlayerAtIndex}
 					playersOnBoard={playersOnBoard}
 				/>
 				<Card
 					id={2}
 					selectedPlayer={selectedPlayer}
 					setSelectedPlayer={setSelectedPlayer}
+					deletePlayerAtIndex={deletePlayerAtIndex}
 					addPlayerToIndex={addPlayerToIndex}
 					playersOnBoard={playersOnBoard}
 				/>
@@ -26,6 +28,7 @@ const Fourthree = ({ selectedPlayer, setSelectedPlayer, addPlayerToIndex, delete
 					id={3}
 					selectedPlayer={selectedPlayer}
 					setSelectedPlayer={setSelectedPlayer}
+					deletePlayerAtIndex={deletePlayerAtIndex}
 					addPlayerToIndex={addPlayerToIndex}
 					playersOnBoard={playersOnBoard}
 				/>
@@ -35,6 +38,7 @@ const Fourthree = ({ selectedPlayer, setSelectedPlayer, addPlayerToIndex, delete
 					id={4}
 					selectedPlayer={selectedPlayer}
 					setSelectedPlayer={setSelectedPlayer}
+					deletePlayerAtIndex={deletePlayerAtIndex}
 					addPlayerToIndex={addPlayerToIndex}
 					playersOnBoard={playersOnBoard}
 				/>
@@ -42,6 +46,7 @@ const Fourthree = ({ selectedPlayer, setSelectedPlayer, addPlayerToIndex, delete
 					id={5}
 					selectedPlayer={selectedPlayer}
 					setSelectedPlayer={setSelectedPlayer}
+					deletePlayerAtIndex={deletePlayerAtIndex}
 					addPlayerToIndex={addPlayerToIndex}
 					playersOnBoard={playersOnBoard}
 				/>
@@ -49,6 +54,7 @@ const Fourthree = ({ selectedPlayer, setSelectedPlayer, addPlayerToIndex, delete
 					id={6}
 					selectedPlayer={selectedPlayer}
 					setSelectedPlayer={setSelectedPlayer}
+					deletePlayerAtIndex={deletePlayerAtIndex}
 					addPlayerToIndex={addPlayerToIndex}
 					playersOnBoard={playersOnBoard}
 				/>
@@ -58,6 +64,7 @@ const Fourthree = ({ selectedPlayer, setSelectedPlayer, addPlayerToIndex, delete
 					id={7}
 					selectedPlayer={selectedPlayer}
 					setSelectedPlayer={setSelectedPlayer}
+					deletePlayerAtIndex={deletePlayerAtIndex}
 					addPlayerToIndex={addPlayerToIndex}
 					playersOnBoard={playersOnBoard}
 				/>
@@ -65,6 +72,7 @@ const Fourthree = ({ selectedPlayer, setSelectedPlayer, addPlayerToIndex, delete
 					id={8}
 					selectedPlayer={selectedPlayer}
 					setSelectedPlayer={setSelectedPlayer}
+					deletePlayerAtIndex={deletePlayerAtIndex}
 					addPlayerToIndex={addPlayerToIndex}
 					playersOnBoard={playersOnBoard}
 				/>
@@ -72,6 +80,7 @@ const Fourthree = ({ selectedPlayer, setSelectedPlayer, addPlayerToIndex, delete
 					id={9}
 					selectedPlayer={selectedPlayer}
 					setSelectedPlayer={setSelectedPlayer}
+					deletePlayerAtIndex={deletePlayerAtIndex}
 					addPlayerToIndex={addPlayerToIndex}
 					playersOnBoard={playersOnBoard}
 				/>
@@ -79,6 +88,7 @@ const Fourthree = ({ selectedPlayer, setSelectedPlayer, addPlayerToIndex, delete
 					id={10}
 					selectedPlayer={selectedPlayer}
 					setSelectedPlayer={setSelectedPlayer}
+					deletePlayerAtIndex={deletePlayerAtIndex}
 					addPlayerToIndex={addPlayerToIndex}
 					playersOnBoard={playersOnBoard}
 				/>
@@ -88,6 +98,7 @@ const Fourthree = ({ selectedPlayer, setSelectedPlayer, addPlayerToIndex, delete
 					id={11}
 					selectedPlayer={selectedPlayer}
 					setSelectedPlayer={setSelectedPlayer}
+					deletePlayerAtIndex={deletePlayerAtIndex}
 					addPlayerToIndex={addPlayerToIndex}
 					playersOnBoard={playersOnBoard}
 				/>
