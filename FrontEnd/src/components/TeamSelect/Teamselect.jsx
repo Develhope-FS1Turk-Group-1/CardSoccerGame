@@ -124,7 +124,6 @@ const Teamselect = () => {
                                     setSelectedLeagueLogo(leaguelogos[currentSlide - 1]);
                                     console.log(currentSlide - 1)
                                 }
-
                             }}
                             className="prev-button"
                         >

@@ -15,7 +15,7 @@ const Dashboard = () => {
                     <h2>Build Your Own Soccer Empire</h2>
                     <div className='signUpContainer'>
                         <img src={star} alt="star" />
-                        <button onClick={() => {
+                        <button className='landingSignUpButton' onClick={() => {
                             navigate('/register')
                         }}>SIGN UP RIGHT NOW</button>
                         <img src={star} alt="star" />
@@ -24,7 +24,7 @@ const Dashboard = () => {
                     <div className='loginContainer'>
 
                         <img src={ball} alt="ball" />
-                        <button onClick={() => {
+                        <button className='landingLoginButton' onClick={() => {
                             navigate('/login')
                         }} >LOGİN</button>
 

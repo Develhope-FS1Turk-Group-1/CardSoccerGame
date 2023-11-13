@@ -17,7 +17,7 @@ a{
     height: 100vh;
     background-image: url("../../../Assets/Login/loginBackground.png");
     background-repeat: no-repeat;
-    background-size:fill;
+    background-size:cover;
     background-position:center;
 }
 

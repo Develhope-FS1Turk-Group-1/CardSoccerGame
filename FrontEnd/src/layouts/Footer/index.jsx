@@ -13,7 +13,9 @@ const Footer = () => {
         <div>
             <div className='MainFooterComponent'>
                 <div className="FooterButtonField">
-                    <button 
+                    <button onClick={()=>{
+                        navigate('/online');
+                    }}
                     >Online</button>
                     <button onClick={()=>{
                         navigate('/single');

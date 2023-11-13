@@ -1,7 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Audience from './components/Audience/Audience';
 import Market from './components/Market/Market';
-import Online from './components/Online/Online';
 import Team from './components/Team/Team';
 import Landing from './components/Landing/Landing';
 import LoginPage from './components/Login/Login';
@@ -10,12 +8,13 @@ import DashboardPage from './Pages/DashboardPage';
 import Single from './components/Single/Formation';
 import { UserProvider } from './Contexts/UserContext';
 import SinglePage from './Pages/SinglePage';
+import OnlinePage from './Pages/OnlinePage';
 import PasswordReset from './components/PasswordReset/passwordReset';
 import Card from './components/Card/Card';
 
 
 function App() {
-    return (
+	return (
 		<UserProvider>
 			<div>
 				<Router>
@@ -50,7 +49,7 @@ function App() {
 						/>
 						<Route
 							path='/online'
-							element={<Online />}
+							element={<OnlinePage />}
 						/>
 						<Route
 							path='/team'
