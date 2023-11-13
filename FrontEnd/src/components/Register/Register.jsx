@@ -17,6 +17,7 @@ const RegisterPage = () => {
         password: '',
     });
     const [errors, setErrors] = useState({});
+    const [exceptionErrors, setExceptionErrors] = useState('');
     const navigate = useNavigate();
 
     const handleChange = (e) => {
@@ -27,6 +28,7 @@ const RegisterPage = () => {
     };
 
     const HandleSubmit = (e) => {
+        setExceptionErrors('');
         e.preventDefault();
         validationSchema
             .validate(formdata, {abortEarly: true})
@@ -43,12 +45,17 @@ const RegisterPage = () => {
         axios
             .post('http://localhost:3050/register', formdata)
             .then((response) => {
-
-                console.log(response.data)
+                // console.log(response.data)
+                
                 localStorage.setItem('user', JSON.stringify(response.data.username));
                 navigate("/dashboard");
+                
             })
             .catch((error) => {
+                console.log(error);
+                if(error.response.status == 409){
+                    setExceptionErrors('User already exists. Please choose a different username or email!!!')
+                }
                 console.log(error);
             });
     };
@@ -57,6 +64,7 @@ const RegisterPage = () => {
         <div className='soccerHomepage'>
             <div className='soccerAllContainer'>
                 <div className='soccerSmallContainer'>
+                    {exceptionErrors && <div className='userExceptionError'>{exceptionErrors}</div>}
                     <h1>Free Sign Up!</h1>
                     <input
                         className='logInInput'

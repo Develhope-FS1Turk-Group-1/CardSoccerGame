@@ -2,14 +2,20 @@ const { Pool } = require('pg');
 const connectionString = process.env.CONNECTION_URL;
 const pool = new Pool({ connectionString });
 const bcrypt = require('bcrypt');
-const jwt =require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
+const { sendRegistrationEmail } = require('./EmailController');
+const crypto = require('crypto');
+
+const generateActivationToken = () => {
+	return crypto.randomBytes(20).toString('hex');
+};
 
 const registerUser = async (req, res) => {
 	const { username, password, mail } = req.body;
 
 	try {
 		const registrationDate = new Date();
-
+		const activationToken = generateActivationToken();
 		bcrypt.hash(password, 10, async (err, hash) => {
 			if (err) {
 				res.status(500).json({
@@ -17,20 +23,42 @@ const registerUser = async (req, res) => {
 					err,
 				});
 			} else {
+				const queryCheck = `
+					SELECT username FROM users WHERE mail = $1 or username = $2
+				`;
+
+				try{
+					const checkUserIfExist = await pool.query(queryCheck, [mail, username]);
+					if (checkUserIfExist.rows.length > 0) {
+						return res.status(409).json({
+							message: 'User registered before please control your information!!!',
+						});
+					}
+				} catch(error){
+					res.status(500).json({ message: 'Internal server error' });
+				}
+
+
 				const query = `
-					INSERT INTO users (username, password, mail, registrationDate, money, xp)
-					VALUES ($1, $2, $3, $4, 0, 0)
+					INSERT INTO users (username, password, mail, registrationDate, money, xp, is_activated, activation_token)
+					VALUES ($1, $2, $3, $4, 0, 0, false, $5)
 					RETURNING *
 				`;
 
 				try {
+					await sendRegistrationEmail({
+						username: username,
+						mail: mail,
+						activation_token: activationToken,
+					});
+
 					const result = await pool.query(query, [
 						username,
 						hash,
 						mail,
 						registrationDate,
+						activationToken
 					]);
-
 					res.status(201).json({
 						message: 'User registered successfully',
 						user: result.rows[0],
@@ -47,14 +75,13 @@ const registerUser = async (req, res) => {
 	}
 };
 
-
 const loginUser = async (req, res) => {
 	const { mail, password } = req.body;
 
 	try {
 		const enteredPassword = password;
 		const query = `
-      	SELECT userId, username, password, money, xp
+      	SELECT userId, username, password, money, xp, is_activated, activation_token
       	FROM users
       	WHERE mail = $1
     	`;
@@ -65,20 +92,23 @@ const loginUser = async (req, res) => {
 			const user = result.rows[0];
 
 			const same = bcrypt.compareSync(enteredPassword, user.password);
-
-			if (same) {
-				const token = creatToken(user.userid);
-
-				res.status(200).json({
-					userId: user.userid,
-					username: user.username,
-					money: user.money,
-					level: user.xp,
-					token: token,
-				});
+			if (user.is_activated) {
+				if (same) {
+					const token = creatToken(user.userid);
+					res.status(200).json({
+						userId: user.userid,
+						username: user.username,
+						money: user.money,
+						level: user.xp,
+						token: token,
+					});
+				} else {
+					res.status(401).json({ message: 'Invalid Credentials' });
+				}
 			} else {
-				res.status(401).json({ message: 'Invalid Credentials' });
+				res.status(401).json({ message: 'You have not been activated your account. Please activate it first' })
 			}
+
 		} else {
 			res.status(401).json({ message: 'Invalid Credentials' });
 		}
@@ -88,12 +118,30 @@ const loginUser = async (req, res) => {
 	}
 };
 
+const activateUser = async (activationToken) => {
+	try {
+		const query = `
+		UPDATE users
+		SET is_activated = true
+		WHERE activation_token = $1
+		RETURNING *
+	  `;
 
+		const result = await pool.query(query, [activationToken]);
 
+		if (result.rows.length === 1) {
+			return { success: true, user: result.rows[0] };
+		} else {
+			return { success: false };
+		}
+	} catch (error) {
+		console.error('Error activating user', error);
+		throw error;
+	}
+};
 
 const getUsername = async (req, res) => {
 	const userId = req.params.userId;
-
 	try {
 		const query = `
       SELECT username
@@ -149,11 +197,11 @@ const updatePassword = async (req, res) => {
 
 const creatToken = (userId) => {
 
-const secretKey = process.env.JWT_KEY;
+	const secretKey = process.env.JWT_KEY;
 
 	return jwt.sign({ userId }, secretKey, {
-	expiresIn:'1d'
-}	)
+		expiresIn: '1d'
+	})
 
 }
 
@@ -162,4 +210,5 @@ module.exports = {
 	loginUser,
 	getUsername,
 	updatePassword,
+	activateUser
 };

@@ -54,12 +54,18 @@ const Single = () => {
 		let players = playersOnBoard;
 		players[index] = player;
 		setPlayersOnBoard(players);
+
 	};
 
 	const deletePlayerAtIndex = (index) => {
+		console.log(index);
 		let players = playersOnBoard;
 		players[index] = null;
+		console.log(players);
+
 		setPlayersOnBoard(players);
+		console.log(playersOnBoard);
+
 	};
 
 	useEffect(() => {

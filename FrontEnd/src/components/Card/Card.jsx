@@ -44,6 +44,9 @@ const Card = ({
 			);
 
 			if (response.status === 200) {
+
+				
+				
 				let player = response.data.player;
 				player.onlineplayerid = dataArray[1];
 				player.playerId = dataArray[1];
@@ -51,8 +54,8 @@ const Card = ({
 				setSelectedCard(player);
 				console.log('player',player)
 				addPlayerToIndex(id - 1, player);
-				console.log(selectedCard.positionId);
-				deletePlayerAtIndex(selectedCard.positionId-1);
+				console.log(dataArray);
+				deletePlayerAtIndex(dataArray[2]-1);
 
 				//console.log(playersOnBoard);
 				//event.target.innerHTML = dataArray[0];
@@ -73,7 +76,10 @@ const Card = ({
 		event.preventDefault();
 	};
 	const handleDragStart = (event, data) => {
-		event.dataTransfer.setData('text/plain', data);
+		let obj = data;
+		obj.push(id);
+		event.dataTransfer.setData('text/plain', obj);
+		
 	};
 
 	return (
