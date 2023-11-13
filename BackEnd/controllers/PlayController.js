@@ -47,6 +47,7 @@ const getLeagues = (req, res) => {
 
   const playOnlineMatch = async (req, res) =>{
     const{userId, opponentId} = req.body;
+    console.log(userId,opponentId)
 
     const result = await pool.query(
       `SELECT formation.positionId, formation.playerId, basePlayers.*, onlinePlayers.*
