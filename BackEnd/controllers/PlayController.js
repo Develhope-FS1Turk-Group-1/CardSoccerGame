@@ -49,29 +49,33 @@ function calculateTotalDef(players) {
   return players.reduce((total, player) => total + player.def, 0);
 }
 
-const updateUserXp = async (userId, result) => {
+const updateUserXpAndMoney = async (userId, result) => {
   let userXpIncrease;
+  let userMoneyIncrease;
 
   if (result === "WIN") {
     userXpIncrease = 150;
+    userMoneyIncrease = 10;
   } else if (result === "DRAW") {
     userXpIncrease = 75;
+    userMoneyIncrease = 5;
   } else if (result === "LOSE") {
     userXpIncrease = 30;
+    userMoneyIncrease = 3;
   }
 
   const query = `
     UPDATE users
-    SET xp = xp + $1
-    WHERE userid = $2
+    SET xp = xp + $1, money = money + $2
+    WHERE userid = $3
   `;
 
-  const values = [userXpIncrease, userId];
+  const values = [userXpIncrease, userMoneyIncrease, userId];
 
   try {
     await pool.query(query, values);
     console.log(
-      `The XP of the user with ID number ${userId} has been increased by ${userXpIncrease}.`
+      `The XP of the user with ID number ${userId} has been increased by ${userXpIncrease}, and their money has been increased by ${userMoneyIncrease}.`
     );
   } catch (error) {
     console.error(error);
@@ -152,7 +156,7 @@ const playOnlineMatch = async (req, res) => {
     opponentTeamPower: opponentPower,
   };
 
-  updateUserXp(userId, matchResult.result);
+  updateUserXpAndMoney(userId, matchResult.result);
 
   res.status(200).json(matchResult);
 };
@@ -280,6 +284,8 @@ const playSingleMatch = (req, res) => {
             goalkeeper: goalkeeper.rows[0],
           };
 
+          updateUserXpAndMoney(userId, bestPlayers.result);
+
           res.status(200).json(bestPlayers);
         });
       });
@@ -290,7 +296,7 @@ const playSingleMatch = (req, res) => {
 module.exports = {
   getLeagues,
   getTeams,
-  updateUserXp,
+  updateUserXpAndMoney,
   playSingleMatch,
   playOnlineMatch,
 };
