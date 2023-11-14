@@ -2,7 +2,7 @@
   display: flex;
 
   background-color: #333;
-  color: white;
+  color: gray;
   border: none;
   overflow: hidden;
   justify-content: center;
@@ -10,7 +10,6 @@
   text-align: center;
   border-radius: 10px;
   width: 120px;
-  /* Adjust the width as needed */
   height: 140px;
   display: flex;
   flex-direction: column;
@@ -22,7 +21,7 @@
   width: 100%;
   display: flex;
   align-items: center;
-  background-color: #A5160A;
+  background-color:rgb(147, 135, 117);
   overflow: hidden;
 }
 
@@ -38,8 +37,8 @@
 
 .positions {
   padding: 5px;
-  background-color: #FFDD00;
-  color: #A5160A;
+  background-color: rgb(193, 57, 57);
+  color: blanchedalmond;
   font-weight: bold;
   display: flex;
   justify-content: space-around;
@@ -75,7 +74,7 @@
   /* Adjust padding as needed */
   border-radius: 50%;
   /* For a circular background */
-  background-color: #FFDD00;
+  background-color: blanchedalmond ;
   font-weight: bold;
   font-size: 15px;
   color: black;
@@ -87,5 +86,5 @@
   justify-content: start;
   align-items: start;
   text-align: start;
-  background-color: #A5160A;
+  color: blanchedalmond;
 }

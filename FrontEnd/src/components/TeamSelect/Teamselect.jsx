@@ -30,8 +30,7 @@ const Teamselect = () => {
     const [resultScreen, setResultScreen] = useState('none');
     const [result, setResult] = useState('none');
     const [blur, setBlur] = useState('blur(0px)');
-    const [earnedMoney, setEarnedMoney] = useState('20');
-    //blur(10px)
+    const [earnedMoney, setEarnedMoney] = useState('10');
     const navigate = useNavigate();
 
     const startMatch = () => {
@@ -214,14 +213,23 @@ const Teamselect = () => {
                 </div>
 
                 <div className='resultScreen' style={{ display: resultScreen, color: result.userGoal === result.opponentGoal ? 'gray' : result.userGoal > result.opponentGoal ? 'green' : 'red' }}>
-                    <h1>{result.userGoal} - {result.opponentGoal}</h1>
-                    {result =='' ? 'The match is ongoing' : result.userGoal > result.opponentGoal ? <div id='winAlert'><h1>YOU WON!</h1><p>Money Earned: {earnedMoney}$ </p></div> : result.userGoal < result.opponentGoal ? <h1>YOU LOST!</h1> : <h1>IT'S A DRAW!</h1> }
-                    
-                   <button id='GreenButton' onClick={() => {
+
+                    {result == '' ? 'The match is ongoing' : 
+                    result.userGoal > result.opponentGoal ? <div id='winAlert'><div><h1>{result.userGoal} - {result.opponentGoal}</h1><h1>YOU WON!</h1><p>Money Earned: {earnedMoney}$ </p><button id='GreenButton' onClick={() => {
                         setResult('');
                         setResultScreen('none');
                         setBlur('blur(0px)');
-                    }}>OK</button>
+                    }}>OK</button></div></div>: 
+                    result.userGoal < result.opponentGoal ? <div id='lostAlert'><div><h1>{result.userGoal} - {result.opponentGoal}</h1><h1>YOU LOST!</h1><button id='GreenButton' onClick={() => {
+                        setResult('');
+                        setResultScreen('none');
+                        setBlur('blur(0px)');
+                    }}>OK</button></div></div> : 
+                    <div id='drawAlert'><div><h1>{result.userGoal} - {result.opponentGoal}</h1><h1>IT'S A DRAW!</h1><button id='GreenButton' onClick={() => {
+                        setResult('');
+                        setResultScreen('none');
+                        setBlur('blur(0px)');
+                    }}>OK</button></div></div> }
                 </div>
 
             </div>
