@@ -2,7 +2,7 @@ const { Pool } = require('pg');
 const connectionString = process.env.CONNECTION_URL;
 const pool = new Pool({ connectionString });
 const bcrypt = require('bcrypt');
-const jwt =require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
 
 const registerUser = async (req, res) => {
 	const { username, password, mail } = req.body;
@@ -17,36 +17,65 @@ const registerUser = async (req, res) => {
 					err,
 				});
 			} else {
-				const query = `
-					INSERT INTO users (username, password, mail, registrationDate, money, xp)
-					VALUES ($1, $2, $3, $4, 0, 0)
-					RETURNING *
-				`;
+				const usernameExistsQuery ='SELECT COUNT(*) FROM users WHERE username = $1';
+				const mailExistsQuery ='SELECT COUNT(*) FROM users WHERE mail = $1';
 
-				try {
-					const result = await pool.query(query, [
-						username,
-						hash,
-						mail,
-						registrationDate,
-					]);
+				const usernameExistsResult = await pool.query(
+					usernameExistsQuery,
+					[username],
+				);
+				const mailExistsResult = await pool.query(mailExistsQuery, [
+					mail,
+				]);
 
-					res.status(201).json({
-						message: 'User registered successfully',
-						user: result.rows[0],
+				const usernameExists =parseInt(usernameExistsResult.rows[0].count) > 0;
+				const mailExists = parseInt(mailExistsResult.rows[0].count) > 0;
+
+				if (usernameExists && mailExists) {
+					res.status(400).json({
+						message: 'Username and email are already in use',
 					});
-				} catch (error) {
-					console.error('Error registering user', error);
-					res.status(500).json({ message: 'Internal server error' });
+				} else if (usernameExists) {
+					res.status(400).json({
+						message: 'Username is already in use',
+					});
+				} else if (mailExists) {
+					res.status(400).json({
+						message: 'Email is already in use',
+					});
+				} else {
+					const query = `
+            INSERT INTO users (username, password, mail, registrationDate, money, xp)
+            VALUES ($1, $2, $3, $4, 0, 0)
+            RETURNING *
+          `;
+
+					try {
+						const result = await pool.query(query, [
+							username,
+							hash,
+							mail,
+							registrationDate,
+						]);
+
+						res.status(201).json({
+							message: 'User registered successfully',
+							user: result.rows[0],
+						});
+					} catch (error) {
+						console.log('Error registering user', error);
+						res.status(500).json({
+							message: 'Internal server error',
+						});
+					}
 				}
 			}
 		});
 	} catch (error) {
-		console.error('Error registering user', error);
+		console.log('Error registering user', error);
 		res.status(500).json({ message: 'Internal server error' });
 	}
 };
-
 
 const loginUser = async (req, res) => {
 	const { mail, password } = req.body;
@@ -87,9 +116,6 @@ const loginUser = async (req, res) => {
 		res.status(500).json({ message: 'Internal Server Error' });
 	}
 };
-
-
-
 
 const getUsername = async (req, res) => {
 	const userId = req.params.userId;
@@ -148,14 +174,12 @@ const updatePassword = async (req, res) => {
 };
 
 const creatToken = (userId) => {
-
-const secretKey = process.env.JWT_KEY;
+	const secretKey = process.env.JWT_KEY;
 
 	return jwt.sign({ userId }, secretKey, {
-	expiresIn:'1d'
-}	)
-
-}
+		expiresIn: '1d',
+	});
+};
 
 module.exports = {
 	registerUser,

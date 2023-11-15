@@ -80,3 +80,8 @@ a{
 .registerText{
     color: #9611BD;
 }
+
+
+.soccerSmallContainer .error{
+    color: red;
+}
