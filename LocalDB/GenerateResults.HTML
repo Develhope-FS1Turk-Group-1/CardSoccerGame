@@ -64,7 +64,7 @@
             const DEF = parseFloat(document.getElementById('DEF').value) || defaultValue;
             const PHY = parseFloat(document.getElementById('PHY').value) || defaultValue;
 
-            let ATT, MID, DEFValue, GKValue;
+            let ATT, MID, DEFValue, GKValue, Power;
 
             
             ATT = Number((SHO + DRI + PAC + PHY) / 4);
@@ -78,16 +78,19 @@
                 ATT/=2;
                 MID/=2;
                 DEFValue/=2;
-
+                Power = defaultValue
             }
             else if(position === "ATT"){
                 ATT = defaultValue;
+                Power = defaultValue
             }
             else if(position === "MID"){
                 MID = defaultValue;
+                Power = defaultValue
             }
             else if(position === "DEF"){
                 DEFValue = defaultValue;
+                Power = defaultValue
             }
 
             document.getElementById('ATTResult').textContent = ATT.toFixed(2);
@@ -102,7 +105,9 @@
                 ATT: ATT.toFixed(2),
                 MID: MID.toFixed(2),
                 DEF: DEFValue.toFixed(2),
-                GK: GKValue.toFixed(2)
+                GK: GKValue.toFixed(2),
+                Power: defaultValue,
+                img: "aaaaaaa"
             };
             results.push(jsonResult);
             console.log(results);

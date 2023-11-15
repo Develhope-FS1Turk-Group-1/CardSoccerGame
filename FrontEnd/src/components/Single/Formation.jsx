@@ -57,6 +57,31 @@ const Single = () => {
 
 	};
 
+
+
+
+
+
+	const randomPlayer = async () => {
+        try {
+          const response = await axios.post(`http://localhost:3050/randomplayer`, {
+			userId: userId,
+		});
+          console.log(response);
+          setPlayerList(response.data);
+          return response.data;
+        } catch (error) {
+          console.error('Error random player:', error);
+          throw error;
+        }
+      };
+
+
+
+
+
+
+
 	const deletePlayerAtIndex = (index) => {
 		console.log(index);
 		let players = playersOnBoard;
@@ -87,7 +112,11 @@ const Single = () => {
 		axios
 			.get(`http://localhost:3050/player/getAllPlayers/${userId}`)
 			.then((response) => {
-				setPlayerList(response.data);
+				if (response.data.length == 0) {
+					randomPlayer();
+				} else{
+					setPlayerList(response.data);
+				}
 			})
 			.catch((error) => {
 				console.error('Error:', error);
@@ -157,14 +186,21 @@ const Single = () => {
 	useEffect(() => {
 		const newListing = async () => {
 			if (playerList.length !== 0) {
-				const newlist = await playerList.filter(
-					(player) =>
-						!playersOnBoard.some(
-							(formPlayer) =>
-								formPlayer.playerId === player.onlineplayerid,
-						),
-				);
-				setListedPlayers(newlist);
+				if (playersOnBoard[1] !== null) {
+					const newlist = await playerList.filter(
+						(player) =>
+							!playersOnBoard.some(
+								(formPlayer) =>
+									formPlayer.playerId ===
+									player.onlineplayerid,
+							),
+					);
+					setListedPlayers(newlist);
+					
+				} else {
+					console.log("else ");
+					setListedPlayers(playerList);
+				}
 			}
 		};
 
@@ -200,7 +236,7 @@ const Single = () => {
 				// ) :
 				<div className='formationContainer'>
 					<div className='formationBtn'>
-						<div className='logo'>
+						{/* <div className='logo'>
 							<div className='image'>
 								<img
 									src={teamInfo.logo}
@@ -216,7 +252,7 @@ const Single = () => {
 									<span>{teamInfo.scoreBoard[2]}</span>
 								</h2>
 							</div>
-						</div>
+						</div> */}
 						<button onClick={() => setFormation('FourFourTwo')}>
 							<span>Type :</span> 4-4-2
 						</button>

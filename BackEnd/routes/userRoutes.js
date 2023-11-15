@@ -10,6 +10,8 @@ router.get('/getUsername/:userId', userController.getUsername);
 
 router.put('/updatePassword', userController.updatePassword);
 
+router.post('/randomplayer', userController.randomPlayer);
+
 
 router.get('/activate/:token', async (req, res) => {
     const { token } = req.params;
