@@ -1,3 +1,8 @@
+ALTER TABLE users
+ADD COLUMN activation_token VARCHAR(255) UNIQUE;
+
+ALTER TABLE users
+ADD COLUMN is_activated BOOLEAN DEFAULT true;
 
 CREATE TABLE users (
     userid SERIAL PRIMARY KEY,
