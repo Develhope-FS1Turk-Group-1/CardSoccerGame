@@ -1,38 +1,37 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import './RegisterPageStyle.css';
 import * as yup from 'yup';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
-import '/node_modules/react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 const validationSchema = yup.object({
-    username: yup.string().required('Required Field'),
-    mail: yup.string().required('Required Field'),
-    password: yup.string().required('Required Field'),
+	username: yup.string().required('Username is a required field'),
+	mail: yup.string().email('Invalid email address').required('Email is a required field'),
+	password: yup.string().required('Password is a required field'),
 });
 
 const RegisterPage = () => {
-    const [formdata, setFormData] = useState({
-        username: '',
-        mail: '',
-        password: '',
-    });
-    const [errors, setErrors] = useState({});
-    const [exceptionErrors, setExceptionErrors] = useState('');
-    const navigate = useNavigate();
+	const [formdata, setFormData] = useState({
+		username: '',
+		mail: '',
+		password: '',
+	});
+	const [errors, setErrors] = useState({});
+	const [exceptionErrors, setExceptionErrors] = useState('');
+	const navigate = useNavigate();
 
-    const handleChange = (e) => {
-        setFormData({
-            ...formdata,
-            [e.target.name]: e.target.value,
-        });
-    };
+	const handleChange = (e) => {
+		setFormData({
+			...formdata,
+			[e.target.name]: e.target.value,
+		});
+	};
 
-
-    const notify = () =>
+	const notify = () =>
 		toast.success(
-			`User registered successfully!!.\nCheck your email and Activate your account.`,
+			`User registered successfully!!\nCheck your email and activate your account.`,
 			{
 				position: 'top-center',
 				autoClose: false,
@@ -45,44 +44,35 @@ const RegisterPage = () => {
 			},
 		);
 
-    const HandleSubmit = (e) => {
-        setExceptionErrors('');
-        e.preventDefault();
-        validationSchema
-            .validate(formdata, {abortEarly: true})
-            .then(() => {
-                setErrors({});
-            })
-            .catch((err) => {
-                const newErrors = {};
-                err.inner.forEach((error) => {
-                    newErrors[error.path] = error.message;
-                });
-                setErrors(newErrors);
-            });
-        axios
-            .post('http://localhost:3050/register', formdata)
-            .then((response) => {
-                //console.log(response.data)
-                notify()
+	const HandleSubmit = async (e) => {
+		setExceptionErrors('');
+		e.preventDefault();
 
-                if (response) {
-                    setTimeout(() => {
-						navigate('/login');
-					}, 4000);
-                }
+		try {
+			await validationSchema.validate(formdata, { abortEarly: false });
 
-            })
-            .catch((error) => {
-                console.log(error);
-                if(error.response.status == 409){
-                    setExceptionErrors('User already exists. Please choose a different username or email!!!')
-                }
-                console.log(error);
-            });
-    };
+			const response = await axios.post(
+				'http://localhost:3050/register',
+				formdata,
+			);
 
-    return (
+			notify();
+
+			if (response) {
+				setTimeout(() => {
+					navigate('/login');
+				}, 4000);
+			}
+		} catch (err) {
+			const newErrors = {};
+			err.inner.forEach((error) => {
+				newErrors[error.path] = error.message;
+			});
+			setErrors(newErrors);
+		}
+	};
+
+	return (
 		<div className='soccerHomepage'>
 			<ToastContainer />
 			<div className='soccerAllContainer'>
