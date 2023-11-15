@@ -38,7 +38,7 @@ const Footer = () => {
                         <img src={twitterFooter} alt="" />
                         <img src={linkedinFooter} alt="" />
                     </div>
-                    <h5>@2023 Şirket İsimi</h5>
+                    <h5>@2023 SoccerCard</h5>
                 </div>
             </div>
         </div>
