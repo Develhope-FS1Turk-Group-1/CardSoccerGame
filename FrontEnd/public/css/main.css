@@ -1,7 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.button-9 {
+  appearance: button;
+  backface-visibility: hidden;
+  background-color: #3f234d;
+  border-radius: 6px;
+  border-width: 0;
+  box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset, rgba(50, 50, 93, 0.1) 0 2px 5px 0, rgba(0, 0, 0, 0.07) 0 1px 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-size: 100%;
+  height: 44px;
+  line-height: 1.15;
+  margin: 12px 0 0;
+  padding: 0 25px;
+  text-align: center;
+  transition: all 0.2s, box-shadow 0.08s ease-in;
+  width: 100%;
+}
+
+.button-9:disabled {
+  cursor: default;
+}
+
+.button-9:hover {
+  box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset, rgba(50, 50, 93, 0.2) 0 6px 15px 0, rgba(0, 0, 0, 0.1) 0 2px 2px 0, rgba(50, 151, 211, 0.3) 0 0 0 4px;
+}
+
+.giftAlertOff {
+  display: none;
+}
+
+.giftAlertOn {
+  color: white;
+  display: flex;
+  position: absolute;
+  z-index: 4;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgba(137, 163, 163, 0.717);
+  width: 100%;
+  margin: auto;
+  height: 80%;
+}
+.giftAlertOn h3 {
+  color: #3f234d;
+}
+.giftAlertOn .playerBought {
+  display: flex;
+  width: 20%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.giftAlertOn .boughtPlayersPopUp {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  flex-wrap: wrap;
+  height: 80%;
+}
+
+.playerBought img {
+  width: 100px;
+}
+
+#blurOn {
+  filter: blur(8px);
 }
 
 .formationLoadingAllContainer .formationLoading {
@@ -196,7 +272,7 @@
   color: #fff;
   border: none;
   border-radius: 50px;
-  background-color: rgb(147, 135, 117);
+  background-color: #6fa26c;
   padding: 5px 20px;
   text-align: center;
   cursor: pointer;
@@ -287,7 +363,8 @@
 .soccerMarket .errorPopUpOff {
   display: none;
 }
-.soccerMarket .popUpOn, .soccerMarket .errorPopUpOn {
+.soccerMarket .popUpOn,
+.soccerMarket .errorPopUpOn {
   color: white;
   display: flex;
   position: absolute;
@@ -301,7 +378,8 @@
   margin: auto;
   height: 40%;
 }
-.soccerMarket .popUpOn .playerBought, .soccerMarket .errorPopUpOn .playerBought {
+.soccerMarket .popUpOn .playerBought,
+.soccerMarket .errorPopUpOn .playerBought {
   display: flex;
   width: 20%;
   flex-direction: column;
@@ -342,7 +420,9 @@
   border-radius: 20px;
 }
 .soccerMarket .marketAllContainer .marketSmallContainer h1 {
+  color: #9d17df;
   font-size: 50px;
+  font-family: "Permanent Marker", cursive;
 }
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer {
   display: flex;
@@ -391,6 +471,7 @@
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .casualUpperCard h3,
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .casualUpperCard h5,
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .casualUpperCard b {
+  font-family: "Kalam", cursive;
   color: blue;
 }
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .casualUpperCard .marketCardPrice {
@@ -414,7 +495,9 @@
   transition: 2s ease;
   cursor: pointer;
   height: 100%;
-  width: 100%;
+  box-shadow: 1px 0px 28px 6px blue;
+  -webkit-box-shadow: 1px 0px 28px 6px blue;
+  -moz-box-shadow: 1px 0px 28px 6px blue;
 }
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .rareUpperCard {
   display: flex;
@@ -429,6 +512,7 @@
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .rareUpperCard h3,
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .rareUpperCard h5,
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .rareUpperCard b {
+  font-family: "Kalam", cursive;
   color: yellow;
 }
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .rareUpperCard .marketCardPrice {
@@ -452,7 +536,9 @@
   transition: 2s ease;
   cursor: pointer;
   height: 100%;
-  width: 100%;
+  box-shadow: 1px 0px 28px 6px rgb(255, 255, 0);
+  -webkit-box-shadow: 1px 0px 28px 6px rgb(255, 255, 0);
+  -moz-box-shadow: 1px 0px 28px 6px rgb(255, 255, 0);
 }
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .legendUpperCard {
   display: flex;
@@ -468,6 +554,7 @@
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .legendUpperCard h5,
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .legendUpperCard b {
   color: red;
+  font-family: "Kalam", cursive;
 }
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .legendUpperCard .marketCardPrice {
   cursor: pointer;
@@ -490,7 +577,9 @@
   transition: 2s ease;
   cursor: pointer;
   height: 100%;
-  width: 100%;
+  box-shadow: 1px 0px 28px 6px red;
+  -webkit-box-shadow: 1px 0px 28px 6px red;
+  -moz-box-shadow: 1px 0px 28px 6px red;
 }
 
 /*# sourceMappingURL=main.css.map */
