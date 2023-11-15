@@ -9,7 +9,8 @@ import Single from './components/Single/Formation';
 import { UserProvider } from './Contexts/UserContext';
 import SinglePage from './Pages/SinglePage';
 import OnlinePage from './Pages/OnlinePage';
-import PasswordReset from './components/PasswordReset/passwordReset';
+import ResetPassword from './components/ResetPassword/ResetPassword';
+import PasswordReset from './components/PasswordReset/PasswordReset';
 import Card from './components/Card/Card';
 
 
@@ -62,6 +63,10 @@ function App() {
 						<Route
 							path='/passwordReset'
 							element={<PasswordReset />}
+						/>
+						<Route
+							path='/reset-password/:resetToken'
+							element={<ResetPassword />}
 						/>
 						<Route
 							path='/card'

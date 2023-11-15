@@ -11,12 +11,14 @@ const LoginPage = () => {
 		password: '',
 	});
 	const [errors, setErrors] = useState({});
+	const [exceptionErrors, setExceptionErrors] = useState('');
+
 	const validationSchema = yup.object({
 		mail: yup.string().required('Required'),
 		password: yup.string().required('Required'),
 	});
 	const navigate = useNavigate();
-	const { setMoney, setLevel, setUserId } = useUserProvider();
+	const { setMoney, setLevel, setUserId, setEnergy } = useUserProvider();
 
 	const handleChange = (e) => {
 		setFormData({
@@ -33,28 +35,36 @@ const LoginPage = () => {
 				setErrors({});
 			})
 			.catch((err) => {
-				const newErrors = {};
-				err.inner.forEach((error) => {
-					newErrors[error.path] = error.message;
-				});
-				setErrors(newErrors);
+				if (err.inner) {
+					// Handle Yup validation errors
+					const newErrors = {};
+					err.inner.forEach((error) => {
+						newErrors[error.path] = error.message;
+					});
+					setErrors(newErrors);
+				} else {
+					// Handle other errors, such as network errors or server errors
+					setExceptionErrors(err.response.data.message);
+				}
 			});
 		axios
 			.post('http://localhost:3050/login', formdata)
 			.then((response) => {
+				console.log(response.data);
 				if (response.data) {
 					console.log(response.data);
-					//localStorage.setItem('user', JSON.stringify(response.data.username));
+					localStorage.setItem('user', JSON.stringify(response.data.userId));
 					setMoney(response.data.money);
 					setUserId(response.data.userId);
 					setLevel(response.data.level);
+					setEnergy(response.data.energy);
 					navigate('/dashboard');
 				} else {
 					console.log('User session not authorized');
 				}
 			})
 			.catch((error) => {
-				console.log(error);
+				setExceptionErrors(error.response.data.message);
 			});
 	};
 
@@ -62,6 +72,11 @@ const LoginPage = () => {
 		<div className='soccerHomepage'>
 			<div className='soccerAllContainer'>
 				<div className='soccerSmallContainer'>
+					{exceptionErrors && (
+						<div className='userExceptionError'>
+							{exceptionErrors}
+						</div>
+					)}
 					<h1>Welcome</h1>
 					<input
 						className='logInInput'

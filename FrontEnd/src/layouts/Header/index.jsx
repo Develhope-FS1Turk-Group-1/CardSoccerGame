@@ -9,22 +9,17 @@ import axios from 'axios';
 
 
 const Header = () => {
-    const { setMoney, money, setLevel, level, userId, setUserId } = useUserProvider();
+    const { setMoney, money, setLevel, level, userId, setUserId, energy, setEnergy } = useUserProvider();
 
-
-//     useEffect(() => {
-//      axios
-// 			.get(`http://localhost:3050/player/getMoney/${userId}`)
-// 			.then((response) => {
-//                 if (response.data) {
-// 					setMoney(response.data.money);
-// 				}
-// 			})
-// 			.catch((error) => {
-// 				console.log(error);
-// 			});
-//    }, [])
-
+    const getColorClass = () => {
+        if (energy > 70) {
+            return 'green';
+        } else if (energy > 40) {
+            return 'yellow';
+        } else {
+            return 'red';
+        }
+    };
     const navigate = useNavigate();
     return (
         <div className='headerAllContainer'>
@@ -36,6 +31,9 @@ const Header = () => {
                     <div className='moneyContainer'>
                         <img id='headerCoinImage' src={coinImage} alt="" />
                         <div className='moneyValue'>{money}</div>
+                    </div>
+                    <div className={`energyContainer ${getColorClass()}`}>
+                        <h3>Energy:{energy}/100</h3>
                     </div>
                 </div>
                 <div className='rightSide' onClick={()=>{

@@ -12,6 +12,16 @@ router.put('/updatePassword', userController.updatePassword);
 
 router.post('/randomplayer', userController.randomPlayer);
 
+router.post('/updateCountdownPowers', userController.updateCountdownPowers);
+
+router.post('/passwordReset', userController.sendUserResetPassword);
+
+router.post('/reset-password', userController.resetPassword);
+
+router.get('/reset-password/:resetToken', (req, res) => {
+  const { resetToken } = req.params;
+  res.render('reset-password', { resetToken });
+});
 
 router.get('/activate/:token', async (req, res) => {
     const { token } = req.params;
@@ -27,7 +37,7 @@ router.get('/activate/:token', async (req, res) => {
       console.error('Error activating user', error);
       res.status(500).send('Internal Server Error');
     }
-  });
+});
   
 
 

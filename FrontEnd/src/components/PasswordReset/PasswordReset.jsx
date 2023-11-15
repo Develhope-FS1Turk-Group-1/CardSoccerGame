@@ -38,10 +38,10 @@ const PasswordReset = () => {
                 });
                 setErrors(newErrors);
             });
+
         axios
             .post('http://localhost:3050/passwordReset', formdata)
             .then((response) => {
-
                 console.log(response.data)
                 alert('Password Successfully Updated.')
                 navigate("/dashboard");

@@ -50,7 +50,7 @@
     font-size: 25px;
 }
 
-
+.energyContainer,
 .rightSide{
     display: flex;
     align-items: center;
@@ -60,6 +60,22 @@
     font-size: 25px;
     gap: 10px;
     cursor: pointer;
+}
+
+.energyContainer {
+    color: white;
+}
+
+.energyContainer.green{
+    background-color: green;
+}
+
+.energyContainer.yellow{
+    background-color: yellow
+}
+
+.energyContainer.red{
+    background-color: red;
 }
 
 #soccerImage {

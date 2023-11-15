@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './RegisterPageStyle.css';
 import * as yup from 'yup';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -64,11 +64,17 @@ const RegisterPage = () => {
 				}, 4000);
 			}
 		} catch (err) {
-			const newErrors = {};
-			err.inner.forEach((error) => {
-				newErrors[error.path] = error.message;
-			});
-			setErrors(newErrors);
+			if (err.inner) {
+				// Handle Yup validation errors
+				const newErrors = {};
+				err.inner.forEach((error) => {
+				  newErrors[error.path] = error.message;
+				});
+				setErrors(newErrors);
+			} else {
+				// Handle other errors, such as network errors or server errors
+				setExceptionErrors(err.response.data.message);
+			}
 		}
 	};
 
@@ -118,6 +124,11 @@ const RegisterPage = () => {
 						onClick={HandleSubmit}>
 						Sign up
 					</button>
+					<Link to='/login'>
+						<span className='loginText'>
+							Go to Login Page!
+						</span>
+					</Link>
 				</div>
 			</div>
 		</div>

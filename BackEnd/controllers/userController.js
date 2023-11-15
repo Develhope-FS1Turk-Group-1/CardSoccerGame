@@ -3,7 +3,7 @@ const connectionString = process.env.CONNECTION_URL;
 const pool = new Pool({ connectionString });
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const { sendRegistrationEmail } = require('./EmailController');
+const { sendRegistrationEmail, sendResetPassword } = require('./EmailController');
 const crypto = require('crypto');
 
 const generateActivationToken = () => {
@@ -24,15 +24,22 @@ const registerUser = async (req, res) => {
 				});
 			} else {
 				const queryCheck = `
-					SELECT username FROM users WHERE mail = $1 or username = $2
+					SELECT mail, username FROM users WHERE mail = $1 or username = $2
 				`;
 
 				try {
 					const checkUserIfExist = await pool.query(queryCheck, [mail, username]);
 					if (checkUserIfExist.rows.length > 0) {
+						if (checkUserIfExist.rows[0].mail == mail){
+							return res.status(409).json({
+								message: 'Your email address is registered before. Please try again with another emails!!!',
+							});
+						}
+
 						return res.status(409).json({
-							message: 'User registered before please control your information!!!',
+							message: 'Your username is registered before. Please try again with another username!!!',
 						});
+						
 					}
 				} catch (error) {
 					res.status(500).json({ message: 'Internal server error' });
@@ -40,8 +47,8 @@ const registerUser = async (req, res) => {
 
 
 				const query = `
-					INSERT INTO users (username, password, mail, registrationDate, money, xp, is_activated, activation_token)
-					VALUES ($1, $2, $3, $4, 0, 0, false, $5)
+					INSERT INTO users (username, password, mail, registrationDate, money, xp, is_activated, activation_token, energy)
+					VALUES ($1, $2, $3, $4, 0, 0, false, $5, 100)
 					RETURNING *
 				`;
 
@@ -116,19 +123,13 @@ const randomPlayer = async (req, res) => {
 };
 
 
-
-
-
-
-
-
 const loginUser = async (req, res) => {
 	const { mail, password } = req.body;
 
 	try {
 		const enteredPassword = password;
 		const query = `
-      	SELECT userId, username, password, money, xp, is_activated, activation_token
+      	SELECT userId, username, password, money, xp, is_activated, activation_token, energy
       	FROM users
       	WHERE mail = $1
     	`;
@@ -148,6 +149,7 @@ const loginUser = async (req, res) => {
 						money: user.money,
 						level: user.xp,
 						token: token,
+						energy: user.energy
 					});
 				} else {
 					res.status(401).json({ message: 'Invalid Credentials' });
@@ -249,7 +251,79 @@ const creatToken = (userId) => {
 	return jwt.sign({ userId }, secretKey, {
 		expiresIn: '1d'
 	})
+}
 
+
+const updateCountupPowers = () => {
+	pool.query('UPDATE users SET energy = LEAST(energy + 10, 100) RETURNING *', [], (error, result) => {
+	  if (error) {
+		console.error('Error updating countdown energy:', error);
+	  } else {
+		result.rows.forEach((user) => {
+		  console.log(`Updated energy for user ${user.id}. New energy: ${user.power}.`);
+		});
+	  }
+	});
+};
+
+
+const updateCountdownPowers = async (req, res) => {
+	const { userId } = req.body;
+	try {
+	  const result = await pool.query(
+		'UPDATE users SET energy = GREATEST(energy - 30, 0) WHERE userId = $1 RETURNING *',
+		[userId]
+	  );
+  
+	  res.status(200).json({
+		message: 'Updated energy successfully',
+		data: result.rows,
+	  });
+
+	} catch (error) {
+	  console.error('Error updating countdown energy:', error);
+	  res.status(500).json({
+		message: 'Internal server error',
+		error: error.message,
+	  });
+	}
+  };
+  
+
+const resetPassword = async (req, res) => {
+	const { resetToken, newPassword } = req.body;  
+	try {
+		const userResult = await pool.query('SELECT * FROM users WHERE reset_token = $1', [resetToken]);
+		const user = userResult.rows[0];
+		if (!user) {
+			return res.status(400).json({ success: false, message: 'Invalid reset token.' });
+		}
+		const hashedPassword = await bcrypt.hash(newPassword, 10);
+		console.log(user);
+		console.log('sergen is asking');
+		await pool.query('UPDATE users SET password = $1, reset_token = NULL WHERE userid = $2', [hashedPassword, user.userid]);
+		res.status(200).json({ success: true, message: 'Password reset successful.' });
+	} catch (error) {
+		console.error('Error resetting password:', error);
+		res.status(500).json({ success: false, message: 'Internal server error.' });
+	}
+}
+
+
+const sendUserResetPassword = async (req, res) => {
+	const { mail } = req.body;
+	sendResetPassword(mail)
+}
+
+
+async function saveResetToken(userMail, resetToken) {
+	try {
+	  await db.query('UPDATE users SET reset_token = $1 WHERE mail = $2', [resetToken, userMail]);
+	  console.log(`Reset token saved for user with ID ${userMail}`);
+	} catch (error) {
+	  console.error('Error saving reset token:', error);
+	  throw error;
+	}
 }
 
 module.exports = {
@@ -258,5 +332,10 @@ module.exports = {
 	getUsername,
 	updatePassword,
 	activateUser, 
-	randomPlayer
+	randomPlayer,
+	updateCountupPowers,
+	updateCountdownPowers,
+	resetPassword,
+	sendUserResetPassword,
+	saveResetToken
 };

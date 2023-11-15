@@ -5,7 +5,7 @@ import axios from 'axios';
 
 
 const Online = () => {
-  const { setMoney, money, setLevel, level, userId, setUserId } = useUserProvider();
+  const { setMoney, money, setLevel, level, userId, setUserId, energy, setEnergy } = useUserProvider();
   const [opponentId, setOpponentId] = useState()
 
   const [resultScreen, setResultScreen] = useState('none');
@@ -28,6 +28,19 @@ const Online = () => {
       });
   }
 
+  const updateEnergy = async() => {
+    console.log(result);
+    console.log('Inside fetchData function');
+    if (result !== '' && userId !== '') {
+        try {
+            const response = await axios.post(`http://localhost:3050/updateCountdownPowers`, { userId: userId });
+            setEnergy(response.data.data[0].energy);
+            console.log(response.data);
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+};
 
   return (
     <div>
@@ -41,7 +54,7 @@ const Online = () => {
               <input onChange={(e) => {
                 setOpponentId(e.target.value);
               }} type="text" placeholder='Enter Your Friend Username' />
-              <button onClick={() => { startFriendMatch() }} id='PlayFriendButton'>PLAY!</button>
+              <button onClick={() => { startFriendMatch(); updateEnergy(); }} id='PlayFriendButton'>PLAY!</button>
             </div>
           </div>
         </div>
