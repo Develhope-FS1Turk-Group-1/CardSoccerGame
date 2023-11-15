@@ -103,10 +103,15 @@ const buyPlayer = async (req, res) => {
 const saveFormation = async (req, res) => {
 	const { userId, players } = req.body;
 
-  if (!userId || !Array.isArray(players) || players.length !== 18) {
-	  res.status(400).send('Invalid Request: Invalid parameters');
-	  console.log(userId)
-	  return;
+  if (!userId || !Array.isArray(players) || players.length < 18) {
+		if (players.length < 18) {
+			console.error('Error saving formation');
+			res.status(400).send('Fill all positions, including substitutes');
+		} else {
+			res.status(400).send('Invalid Request: Invalid parameters');
+		}
+		console.log(userId);
+		return;
   }
 
   try {
@@ -136,12 +141,12 @@ const saveFormation = async (req, res) => {
 
 const loadFormation = async (req, res) => {
 	const { userId } = req.body;
-  
+
 	if (!userId) {
 	  res.status(400).send('Invalid Request: Missing userId');
 	  return;
 	}
-  
+
 	try {
 	  const result = await pool.query(
 		`SELECT formation.positionId, formation.playerId, basePlayers.*, onlinePlayers.*
@@ -152,12 +157,12 @@ const loadFormation = async (req, res) => {
 		 ORDER BY formation.positionId`,
 		[userId]
 	  );
-  
+
 	  if (result.rows.length === 0) {
 		res.status(404).send('Formation not found for the specified user');
 		return;
 	  }
-  
+
 	  const formation = result.rows.map(row => {
 		return {
 		  positionId: row.positionid,
@@ -175,7 +180,7 @@ const loadFormation = async (req, res) => {
 		  cardCount:row.cardcount
 		};
 	  });
-  
+
 	  res.status(200).json({ formation });
 	} catch (error) {
 	  console.error('Error loading formation', error);
@@ -183,7 +188,7 @@ const loadFormation = async (req, res) => {
 	}
   };
 
-  
+
 
 
 
@@ -214,12 +219,12 @@ const getMoney = async (req, res) => {
 
 const getPlayerById = async (req, res) => {
 	const { playerId } = req.params; // Assuming playerId is provided in the request parameters
-  
+
 	if (!playerId) {
 	  res.status(400).send('Invalid Request: Missing playerId');
 	  return;
 	}
-  
+
 	try {
 	  const result = await pool.query(
 		`SELECT basePlayers.*, onlinePlayers.*
@@ -228,14 +233,14 @@ const getPlayerById = async (req, res) => {
 		 WHERE onlinePlayers.id = $1`,
 		[playerId]
 	  );
-  
+
 	  if (result.rows.length === 0) {
 		res.status(404).send('Player not found for the specified id');
 		return;
 	  }
-  
+
 	  const player = result.rows[0];
-  
+
 	  const playerInfo = {
 		id: player.id,
 		name: player.name,
@@ -250,14 +255,14 @@ const getPlayerById = async (req, res) => {
 		level: player.level,
 		cardCount: player.cardcount
 	  };
-  
+
 	  res.status(200).json({ player: playerInfo });
 	} catch (error) {
 	  console.error('Error loading player information', error);
 	  res.status(500).send('Database error');
 	}
   };
-  
+
 
 
 module.exports = {

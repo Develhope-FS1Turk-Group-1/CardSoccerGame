@@ -48,13 +48,12 @@ const Single = () => {
 		null,
 	]);
 
-	const [ listedPlayers, setListedPlayers ] = useState([]);
+	const [listedPlayers, setListedPlayers] = useState([]);
 
 	const addPlayerToIndex = (index, player) => {
 		let players = playersOnBoard;
 		players[index] = player;
 		setPlayersOnBoard(players);
-
 	};
 
 	const deletePlayerAtIndex = (index) => {
@@ -65,7 +64,6 @@ const Single = () => {
 
 		setPlayersOnBoard(players);
 		console.log(playersOnBoard);
-
 	};
 
 	useEffect(() => {
@@ -142,17 +140,18 @@ const Single = () => {
 			})
 			.then((response) => {
 				console.log(response.data);
+				notify();
 			})
 			.catch((error) => {
 				console.error('Error:', error);
+				alert(error)
 			});
-		notify();
+
 	};
 
 	const handleDragStart = (event, data) => {
 		event.dataTransfer.setData('text/plain', data);
 	};
-
 
 	useEffect(() => {
 		const newListing = async () => {
@@ -173,9 +172,7 @@ const Single = () => {
 	}, [ playersOnBoard, playerList ]);
 
 
-	/*
 
-	*/
 	return (
 		<div>
 			<Header />
@@ -258,7 +255,8 @@ const Single = () => {
 									])
 								}
 								draggable
-								className='player' key={index}
+								className='player'
+								key={index}
 								id={player.onlineplayerid}
 								onClick={() => choosePlayer(player)}>
 								<p>{player.name}</p>
