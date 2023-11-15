@@ -163,6 +163,12 @@ const Single = () => {
 
 	const saveFormation = () => {
 		localStorage.setItem('userFormation', JSON.stringify(playersOnBoard));
+		for (const player of playersOnBoard) {
+			if (player == null) {
+				alert('Fill all positions, including substitutes!!');
+				return;
+			}
+		}
 
 		axios
 			.post(`http://localhost:3050/player/saveFormation`, {
@@ -171,11 +177,12 @@ const Single = () => {
 			})
 			.then((response) => {
 				console.log(response.data);
+				notify();
 			})
 			.catch((error) => {
 				console.error('Error:', error);
 			});
-		notify();
+
 	};
 
 	const handleDragStart = (event, data) => {
@@ -196,7 +203,7 @@ const Single = () => {
 							),
 					);
 					setListedPlayers(newlist);
-					
+
 				} else {
 					console.log("else ");
 					setListedPlayers(playerList);
