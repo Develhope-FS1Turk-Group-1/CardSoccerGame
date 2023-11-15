@@ -5,12 +5,9 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const validationSchema = yup.object({
-	username: yup.string().required('Username is a required field'),
-	mail: yup
-		.string()
-		.email('Invalid email')
-		.required('Email is a required field'),
-	password: yup.string().required('Password is a required field'),
+	username: yup.string().required('Required Field'),
+	mail: yup.string().required('Required Field'),
+	password: yup.string().required('Required Field'),
 });
 
 const RegisterPage = () => {
@@ -20,6 +17,7 @@ const RegisterPage = () => {
 		password: '',
 	});
 	const [errors, setErrors] = useState({});
+	const [exceptionErrors, setExceptionErrors] = useState('');
 	const navigate = useNavigate();
 
 	const handleChange = (e) => {
@@ -30,47 +28,39 @@ const RegisterPage = () => {
 	};
 
 	const HandleSubmit = (e) => {
+		setExceptionErrors('');
 		e.preventDefault();
-
 		validationSchema
-			.validate(formdata, { abortEarly: false })
+			.validate(formdata, { abortEarly: true })
 			.then(() => {
 				setErrors({});
-				axios
-					.post('http://localhost:3050/register', formdata)
-					.then((response) => {
-						console.log(response.data);
-						localStorage.setItem(
-							'user',
-							JSON.stringify(response.data.username),
-						);
-						navigate('/dashboard');
-					})
-					.catch((error) => {
-						if (error.response) {
-							console.error(
-								'Server responded with an error:',
-								error.response.data,
-							);
-							setErrors(error.response.data);
-						} else if (error.request) {
-							console.error(
-								'No response received from the server',
-                            );
-						} else {
-							console.error(
-								'Error setting up the request:',
-								error.message,
-							);
-						}
-					});
 			})
-			.catch((validationErrors) => {
-				const formattedErrors = {};
-				validationErrors.inner.forEach((err) => {
-					formattedErrors[err.path] = err.message;
+			.catch((err) => {
+				const newErrors = {};
+				err.inner.forEach((error) => {
+					newErrors[error.path] = error.message;
 				});
-                setErrors(formattedErrors);
+				setErrors(newErrors);
+			});
+		axios
+			.post('http://localhost:3050/register', formdata)
+			.then((response) => {
+				// console.log(response.data)
+
+				localStorage.setItem(
+					'user',
+					JSON.stringify(response.data.username),
+				);
+				navigate('/dashboard');
+			})
+			.catch((error) => {
+				console.log(error);
+				if (error.response.status == 409) {
+					setExceptionErrors(
+						'User already exists. Please choose a different username or email!!!',
+					);
+				}
+				console.log(error);
 			});
 	};
 
@@ -78,10 +68,12 @@ const RegisterPage = () => {
 		<div className='soccerHomepage'>
 			<div className='soccerAllContainer'>
 				<div className='soccerSmallContainer'>
-					<h1>Free Sign Up!</h1>
-					{errors.message && (
-						<div className='error'>{errors.message}</div>
+					{exceptionErrors && (
+						<div className='userExceptionError'>
+							{exceptionErrors}
+						</div>
 					)}
+					<h1>Free Sign Up!</h1>
 					<input
 						className='logInInput'
 						type='text'
@@ -90,9 +82,7 @@ const RegisterPage = () => {
 						value={formdata.username}
 						onChange={handleChange}
 					/>
-					{errors.username && (
-						<div className='error'>{errors.username}</div>
-					)}
+					{errors.username && <div>{errors.username}</div>}
 
 					<input
 						className='logInInput'
@@ -102,7 +92,7 @@ const RegisterPage = () => {
 						value={formdata.mail}
 						onChange={handleChange}
 					/>
-					{errors.mail && <div className='error'>{errors.mail}</div>}
+					{errors.mail && <div>{errors.mail}</div>}
 
 					<input
 						className='logInInput'
@@ -112,9 +102,7 @@ const RegisterPage = () => {
 						value={formdata.password}
 						onChange={handleChange}
 					/>
-					{errors.password && (
-						<div className='error'>{errors.password}</div>
-					)}
+					{errors.password && <div>{errors.password}</div>}
 
 					<button
 						className='logInButton'
