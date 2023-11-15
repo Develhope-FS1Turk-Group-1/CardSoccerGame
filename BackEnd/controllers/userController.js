@@ -27,14 +27,14 @@ const registerUser = async (req, res) => {
 					SELECT username FROM users WHERE mail = $1 or username = $2
 				`;
 
-				try{
+				try {
 					const checkUserIfExist = await pool.query(queryCheck, [mail, username]);
 					if (checkUserIfExist.rows.length > 0) {
 						return res.status(409).json({
 							message: 'User registered before please control your information!!!',
 						});
 					}
-				} catch(error){
+				} catch (error) {
 					res.status(500).json({ message: 'Internal server error' });
 				}
 
@@ -74,6 +74,52 @@ const registerUser = async (req, res) => {
 		res.status(500).json({ message: 'Internal server error' });
 	}
 };
+
+
+
+const randomPlayer = async (req, res) => {
+	const { userId } = req.body;
+	console.log(userId, 'userId')
+	try {
+		const result = await pool.query(
+			`WITH ranked_players AS (
+                SELECT 
+                    basePlayers.*, 
+                    ROW_NUMBER() OVER (PARTITION BY basePlayers.position ORDER BY RANDOM()) AS position_rank
+                FROM basePlayers 
+                WHERE basePlayers.power >= 40 AND basePlayers.power <= 70
+            )
+            SELECT * 
+            FROM ranked_players
+            WHERE 
+                (position = 'ATT' AND position_rank <= 4)
+                OR (position = 'MID' AND position_rank <= 6)
+                OR (position = 'DEF' AND position_rank <= 6)
+                OR (position = 'GK' AND position_rank <= 2)
+            ORDER BY RANDOM()
+            LIMIT 18;`,
+		);
+		const players = result.rows;
+		for (let i = 0; i < players.length; i++) {
+			await pool.query(
+				`INSERT INTO onlinePlayers (baseId, userId, level, cardCount) VALUES ($1, $2, $3, $4)`,
+				[players[i].id, userId, 1, 1],
+			);
+		}
+		console.log(players)
+		res.json(players);
+	} catch (error) {
+		console.error('Error fetching and adding players', error);
+		res.status(500).json({ message: 'Internal server error' });
+	}
+};
+
+
+
+
+
+
+
 
 const loginUser = async (req, res) => {
 	const { mail, password } = req.body;
@@ -210,5 +256,6 @@ module.exports = {
 	loginUser,
 	getUsername,
 	updatePassword,
-	activateUser
+	activateUser, 
+	randomPlayer
 };
