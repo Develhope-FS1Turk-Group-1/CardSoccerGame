@@ -19,6 +19,8 @@ const Single = () => {
 	const [formation, setFormation] = useState('FourFourTwo');
 	const [selectedPlayer, setSelectedPlayer] = useState();
 	const [playerList, setPlayerList] = useState([]);
+	const [giftAlert, setGiftAlert] = useState('giftAlertOff');
+	const [blur, setBlur] = useState('');
 	const [teamInfo, setTeamInfo] = useState({
 		logo: '',
 		name: '',
@@ -48,7 +50,7 @@ const Single = () => {
 		null,
 	]);
 
-	const [ listedPlayers, setListedPlayers ] = useState([]);
+	const [listedPlayers, setListedPlayers] = useState([]);
 
 	const addPlayerToIndex = (index, player) => {
 		let players = playersOnBoard;
@@ -63,18 +65,18 @@ const Single = () => {
 
 
 	const randomPlayer = async () => {
-        try {
-          const response = await axios.post(`http://localhost:3050/randomplayer`, {
-			userId: userId,
-		});
-          console.log(response);
-          setPlayerList(response.data);
-          return response.data;
-        } catch (error) {
-          console.error('Error random player:', error);
-          throw error;
-        }
-      };
+		try {
+			const response = await axios.post(`http://localhost:3050/randomplayer`, {
+				userId: userId,
+			});
+			console.log(response);
+			setPlayerList(response.data);
+			return response.data;
+		} catch (error) {
+			console.error('Error random player:', error);
+			throw error;
+		}
+	};
 
 
 
@@ -114,7 +116,8 @@ const Single = () => {
 			.then((response) => {
 				if (response.data.length == 0) {
 					randomPlayer();
-				} else{
+					setGiftAlert('giftAlertOn');
+				} else {
 					setPlayerList(response.data);
 				}
 			})
@@ -213,7 +216,7 @@ const Single = () => {
 
 		newListing();
 		addPlayerToIndex();
-	}, [ playersOnBoard, playerList ]);
+	}, [playersOnBoard, playerList]);
 
 
 	/*
@@ -223,17 +226,24 @@ const Single = () => {
 		<div>
 			<Header />
 			<ToastContainer />
+			<div className={giftAlert}>
+				<div className='boughtPlayersPopUp'>
+					{playerList.length == 0 ? <h1>LOADING...</h1> : playerList.map((index, player) => (
+						<div key={player.id} className='playerBought'>
+							{
+								<Card
+									id={player + 1}
+									playersOnBoard={playerList}
+								/>}
+						</div>
+					))}
+				</div>
+				<h3>Embark on an unforgettable journey with our football game, starting with a special gift of 18 players just for you; enjoy the thrill of victory!</h3>
+				<button className='button-9' onClick={() => { setBlur(''); setGiftAlert('giftAlertOff'); setBoughtPlayers([]) }}>CLAIM</button>
+			</div>
 			{playerList.length == 0 ? (
 				<div className='formationLoadingAllContainer'>
 					<div className='formationLoading'></div>
-					<div className='formationLoadingError'>
-						<h1>PLEASE BUY SOME CARD TO CREATE YOUR TEAM</h1>
-						<button
-							onClick={() => navigate('/market')}
-							className='button-9'>
-							GO MARKET
-						</button>
-					</div>
 				</div>
 			) : (
 				// {playerList.length == 0 ? (
