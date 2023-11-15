@@ -45,6 +45,7 @@ const registerUser = async (req, res) => {
 					RETURNING *
 				`;
 
+				
 				try {
 					await sendRegistrationEmail({
 						username: username,
