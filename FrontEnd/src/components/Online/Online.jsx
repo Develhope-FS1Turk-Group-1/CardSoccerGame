@@ -32,8 +32,8 @@ const Online = () => {
       .get(`http://localhost:3050/player/getXP/${userId}`)
       .then((response) => {
         if (response.data) {
-          setLevel(response.data.xp);
-          console.log(response.data.xp);
+          setLevel(response.data.level);
+          console.log(response.data.level);
         }
       })
       .catch((error) => {
