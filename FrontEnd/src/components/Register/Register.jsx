@@ -3,6 +3,8 @@ import './RegisterPageStyle.css';
 import * as yup from 'yup';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import '/node_modules/react-toastify/dist/ReactToastify.css';
 
 const validationSchema = yup.object({
     username: yup.string().required('Required Field'),
@@ -27,6 +29,22 @@ const RegisterPage = () => {
         });
     };
 
+
+    const notify = () =>
+		toast.success(
+			`User registered successfully!!.\nCheck your email and Activate your account.`,
+			{
+				position: 'top-center',
+				autoClose: false,
+				hideProgressBar: true,
+				closeOnClick: true,
+				pauseOnHover: true,
+				draggable: true,
+				progress: false,
+				theme: 'colored',
+			},
+		);
+
     const HandleSubmit = (e) => {
         setExceptionErrors('');
         e.preventDefault();
@@ -45,11 +63,15 @@ const RegisterPage = () => {
         axios
             .post('http://localhost:3050/register', formdata)
             .then((response) => {
-                // console.log(response.data)
-                
-                localStorage.setItem('user', JSON.stringify(response.data.username));
-                navigate("/dashboard");
-                
+                //console.log(response.data)
+                notify()
+
+                if (response) {
+                    setTimeout(() => {
+						navigate('/login');
+					}, 4000);
+                }
+
             })
             .catch((error) => {
                 console.log(error);
@@ -61,50 +83,55 @@ const RegisterPage = () => {
     };
 
     return (
-        <div className='soccerHomepage'>
-            <div className='soccerAllContainer'>
-                <div className='soccerSmallContainer'>
-                    {exceptionErrors && <div className='userExceptionError'>{exceptionErrors}</div>}
-                    <h1>Free Sign Up!</h1>
-                    <input
-                        className='logInInput'
-                        type='text'
-                        placeholder='Username'
-                        name='username'
-                        value={formdata.username}
-                        onChange={handleChange}
-                    />
-                    {errors.username && <div>{errors.username}</div>}
+		<div className='soccerHomepage'>
+			<ToastContainer />
+			<div className='soccerAllContainer'>
+				<div className='soccerSmallContainer'>
+					{exceptionErrors && (
+						<div className='userExceptionError'>
+							{exceptionErrors}
+						</div>
+					)}
+					<h1>Free Sign Up!</h1>
+					<input
+						className='logInInput'
+						type='text'
+						placeholder='Username'
+						name='username'
+						value={formdata.username}
+						onChange={handleChange}
+					/>
+					{errors.username && <div>{errors.username}</div>}
 
-                    <input
-                        className='logInInput'
-                        type='email'
-                        placeholder='Email'
-                        name='mail'
-                        value={formdata.mail}
-                        onChange={handleChange}
-                    />
-                    {errors.mail && <div>{errors.mail}</div>}
+					<input
+						className='logInInput'
+						type='email'
+						placeholder='Email'
+						name='mail'
+						value={formdata.mail}
+						onChange={handleChange}
+					/>
+					{errors.mail && <div>{errors.mail}</div>}
 
-                    <input
-                        className='logInInput'
-                        type='password'
-                        placeholder='Password'
-                        name='password'
-                        value={formdata.password}
-                        onChange={handleChange}
-                    />
-                    {errors.password && <div>{errors.password}</div>}
+					<input
+						className='logInInput'
+						type='password'
+						placeholder='Password'
+						name='password'
+						value={formdata.password}
+						onChange={handleChange}
+					/>
+					{errors.password && <div>{errors.password}</div>}
 
-                    <button
-                        className='logInButton'
-                        onClick={HandleSubmit}>
-                        Sign up
-                    </button>
-                </div>
-            </div>
-        </div>
-    );
+					<button
+						className='logInButton'
+						onClick={HandleSubmit}>
+						Sign up
+					</button>
+				</div>
+			</div>
+		</div>
+	);
 };
 
 export default RegisterPage;
