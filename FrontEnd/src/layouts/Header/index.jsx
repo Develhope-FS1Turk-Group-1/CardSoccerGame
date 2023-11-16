@@ -37,6 +37,13 @@ const Header = () => {
             <div className="levelContainer">
               <h3>Level:{Math.floor(level / 1000)}</h3>
             </div>
+
+            <div className='rightSide'>
+              <h3>XP:{Math.floor(level % 1000)}/1000</h3>
+            </div>
+
+
+
             <div className="moneyContainer">
               <img id="headerCoinImage" src={coinImage} alt="" />
               <div className="moneyValue">{money}</div>
