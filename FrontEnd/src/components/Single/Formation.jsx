@@ -108,9 +108,27 @@ const Single = () => {
 		};
 		//setUserId(1);
 		setTeamInfo(initialTeamData);
+
+
+		
+
+
+
 	}, []);
 
 	useEffect(() => {
+		axios
+			.post(`http://localhost:3050/getFormationType`, {
+				userId: userId
+			})
+			.then((response) => {
+				console.log(response.data.formation);
+				setFormation(response.data.formation);
+			})
+			.catch((error) => {
+				console.error('Error:', error);
+			});
+
 		axios
 			.get(`http://localhost:3050/player/getAllPlayers/${userId}`)
 			.then((response) => {
@@ -177,6 +195,21 @@ const Single = () => {
 			.post(`http://localhost:3050/player/saveFormation`, {
 				userId: userId,
 				players: playersOnBoard,
+			})
+			.then((response) => {
+				console.log(response.data);
+				notify();
+			})
+			.catch((error) => {
+				console.error('Error:', error);
+			});
+
+
+
+			axios
+			.post(`http://localhost:3050/updateFormationType`, {
+				userId: userId,
+				newFormation: formation,
 			})
 			.then((response) => {
 				console.log(response.data);

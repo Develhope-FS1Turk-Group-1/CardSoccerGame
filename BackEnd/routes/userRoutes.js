@@ -39,6 +39,8 @@ router.get('/activate/:token', async (req, res) => {
     }
 });
   
+router.post('/updateFormationType', userController.updateFormation);
+router.post('/getFormationType', userController.getFormationType);
 
 
 module.exports = router;
