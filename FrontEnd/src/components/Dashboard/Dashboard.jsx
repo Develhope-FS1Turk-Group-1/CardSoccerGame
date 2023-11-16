@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './DashboardStyle.css'
 import tactics from "../../../Assets/Dashboard/tactics.jpg"
 import playnow from "../../../Assets/Dashboard/playnow.jpg"
+import online from "../../../images/bellingham.jpeg"
 import market from "../../../Assets/Dashboard/market.jpg"
 import Teamselect from '../TeamSelect/Teamselect';
 import { useUserProvider } from '../../Contexts/UserContext';
@@ -38,9 +39,16 @@ const Dashboard = () => {
           </div>
           <div className="playDiv">
             <h1>Play</h1>
-            <span><h1>Now</h1></span>
+            <span><h1>Single</h1></span>
             <img src={playnow} alt="" onClick={()=>{
               navigate('/single');
+            }}/>
+          </div>
+          <div id="onlineDiv" className="playDiv">
+            <h1>Play</h1>
+            <span><h1>Online</h1></span>
+            <img src={online} alt="" onClick={()=>{
+              navigate('/online');
             }}/>
           </div>
           <div className="marketDiv" onClick={()=>{
