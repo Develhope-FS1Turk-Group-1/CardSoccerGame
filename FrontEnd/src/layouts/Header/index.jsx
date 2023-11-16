@@ -59,17 +59,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div
-        className="rightSide"
-        onClick={() => {
-          setUserId(0);
-          navigate("/login");
-        }}
-      >
-        <img id="soccerImage" src={soccerBallImage} alt="" />
-        Log Out
-        <img id="headerLogOutImage" src={logOutIcon} alt="" />
-      </div>
+      
     </>
   );
 };
