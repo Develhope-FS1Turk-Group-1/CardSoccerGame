@@ -110,7 +110,8 @@ const Online = () => {
                   {result.userGoal} - {result.opponentGoal}
                 </h1>
                 <h1>YOU WON!</h1>
-                <p>Money Earned: {earnedMoney}$ </p>
+                <p>Money Earned: 10$ </p>
+                <p>XP Earned:150</p>
                 <button
                   id="GreenButton"
                   onClick={() => {
@@ -132,6 +133,8 @@ const Online = () => {
                   {result.userGoal} - {result.opponentGoal}
                 </h1>
                 <h1>YOU LOST!</h1>
+                <p>Money Earned: 3$ </p>
+                <p>XP Earned:30</p>
                 <button
                   id="GreenButton"
                   onClick={() => {
@@ -153,6 +156,8 @@ const Online = () => {
                   {result.userGoal} - {result.opponentGoal}
                 </h1>
                 <h1>IT'S A DRAW!</h1>
+                <p>Money Earned: 5$ </p>
+                <p>XP Earned:75</p>
                 <button
                   id="GreenButton"
                   onClick={() => {
