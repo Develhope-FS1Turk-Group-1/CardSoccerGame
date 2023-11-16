@@ -46,7 +46,7 @@ const Online = () => {
     console.log(opponentId, userId);
     axios
       .post(`http://localhost:3050/play/playOnline`, {
-        opponentId: opponentId,
+        username: opponentId,
         userId: userId,
       })
       .then((response) => {

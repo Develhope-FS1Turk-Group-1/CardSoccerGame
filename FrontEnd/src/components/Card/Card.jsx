@@ -16,10 +16,19 @@ const Card = ({
 	const [selectedCard, setSelectedCard] = useState(null);
 
 	useEffect(() => {
+		console.log(id);
+		console.log(playersOnBoard);
 		if (playersOnBoard[id - 1] != null) {
 			setSelectedCard(playersOnBoard[id - 1]);
 		}
-	}, [playersOnBoard]);
+		else{
+			setSelectedCard(null);
+		}
+	}, [playersOnBoard[id-1]]);
+
+	/*useEffect(() => {
+		console.log("saaaa");
+	}, [playersOnBoard[id-1]]);*/
 
 	// const handleClick = (cardId) => {
 	//   console.log(selectedPlayer)

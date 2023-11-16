@@ -82,16 +82,39 @@ const updateUserXpAndMoney = async (userId, result) => {
   }
 };
 
-const playOnlineMatch = async (req, res) => {
-  const { userId, opponentId } = req.body;
-  console.log(userId, opponentId);
+async function getPlayerIdByUsername(username) {
+  console.log(username , "username check");
+  try {
+    const query = 'SELECT userid FROM users WHERE username = $1';
+    const result = await pool.query(query, [username]);
+    
+    console.log(result.rows);
 
+
+    if (result.rows.length > 0) {
+      return result.rows[0].userid;
+    } 
+    else {
+      return null; // If no user found with that username
+    }
+  }
+  catch(e){
+    console.log("Couldnt get username by id");
+  }
+}
+
+const playOnlineMatch = async (req, res) => {
+  const { userId, username } = req.body;
+  console.log(userId, username);
+  const opponentId = await getPlayerIdByUsername(username);
+
+ console.log(userId, "BABBA");
   const result = await pool.query(
     `SELECT formation.positionId, formation.playerId, basePlayers.*, onlinePlayers.*
        FROM formation
        JOIN onlinePlayers ON formation.playerId = onlinePlayers.id
        JOIN basePlayers ON onlinePlayers.baseId = basePlayers.id
-       WHERE formation.userId = $1
+       WHERE formation.userid = $1
        ORDER BY formation.positionId`,
     [userId]
   );
