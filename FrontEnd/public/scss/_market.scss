@@ -141,6 +141,22 @@ $Courgette: 'Courgette', cursive;
                 height: 90%;
                 justify-content: space-around;
 
+                button {
+                    background-color: transparent;
+                    border: none;
+                    cursor: pointer;
+                }
+
+
+                .prev-button img:hover,
+                .next-button img:hover {
+                    height: 150px;
+                }
+
+                #cardSwiper {
+                    height: 100%;
+                }
+
                 .cardContainer {
                     @include flex;
                     flex-direction: column;
