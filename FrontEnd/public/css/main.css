@@ -432,6 +432,18 @@
   height: 90%;
   justify-content: space-around;
 }
+.soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .prev-button img:hover,
+.soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .next-button img:hover {
+  height: 150px;
+}
+.soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer #cardSwiper {
+  height: 100%;
+}
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .cardContainer {
   display: flex;
   align-items: center;
