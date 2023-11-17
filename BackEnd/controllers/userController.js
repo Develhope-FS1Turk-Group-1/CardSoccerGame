@@ -332,15 +332,14 @@ async function updateFormation(req, res) {
 
 	console.log(userId,newFormation,"Formation type");
 
-	const client = await pool.connect();
+	
 	try {
 	  const query = 'UPDATE users SET formation = $1 WHERE userid = $2 RETURNING *';
-	  const result = await client.query(query, [newFormation, userId]);
+	  const result = await pool.query(query, [newFormation, userId]);
   
 	  if (result.rows.length > 0) {
 		res.json(result.rows[0].formation);
 		} 
-	  client.release();
 	}
 	catch (error) {
 		console.error('Error fetching and adding players', error);
@@ -353,15 +352,13 @@ async function updateFormation(req, res) {
 async function getFormationType(req, res) {
 	const {userId} = req.body;
 
-	const client = await pool.connect();
 	try {
 	  const query = 'select formation from users  WHERE userid = $1';
-	  const result = await client.query(query, [userId]);
+	  const result = await pool.query(query, [userId]);
   
 	  if (result.rows.length > 0) {
 		res.json(result.rows[0]);
 		} 
-	  client.release();
 	}
 	catch (error) {
 		console.error('Error fetching and adding players', error);
