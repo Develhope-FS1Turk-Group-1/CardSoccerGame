@@ -252,7 +252,7 @@ VALUES
 ('Mert-Yusuf Torlak', 'MID', 52.5, 56, 46, 20, 'Alanyaspor', 'https://cdn.futbin.com/content/fifa24/img/players/258721.png?v=23', 56);
 
 
---Gaziantep    
+--Gaziantep
 INSERT INTO basePlayers (Name, Position, power, ATT, MID, DEF, GK, Team, img)
 VALUES
     ('Alexandru Maxim', 'ATT', 76.00, 76.00, 71.25, 59.50, 20.00, 'Gaziantep', 'https://cdn.futbin.com/content/fifa24/img/players/211061.png?v=23'),
@@ -447,7 +447,7 @@ VALUES
 
 
 INSERT INTO teams (team_name, league)
-VALUES 
+VALUES
   ('Fenerbahce', 'SuperLeague'),
   ('Besiktas','SuperLeague'),
   ('Galatasaray', 'SuperLeague'),
