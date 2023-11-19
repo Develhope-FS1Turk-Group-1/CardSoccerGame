@@ -16,8 +16,6 @@ const Card = ({
 	const [selectedCard, setSelectedCard] = useState(null);
 
 	useEffect(() => {
-		console.log(id);
-		console.log(playersOnBoard);
 		if (playersOnBoard[id - 1] != null) {
 			setSelectedCard(playersOnBoard[id - 1]);
 		}
@@ -61,9 +59,7 @@ const Card = ({
 				player.playerId = dataArray[1];
 				player.positionId = id;
 				setSelectedCard(player);
-				console.log('player',player)
 				addPlayerToIndex(id - 1, player);
-				console.log(dataArray);
 				deletePlayerAtIndex(dataArray[2]-1);
 
 				//console.log(playersOnBoard);
