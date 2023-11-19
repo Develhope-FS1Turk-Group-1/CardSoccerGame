@@ -85,7 +85,7 @@ const Teamselect = () => {
   const updateEnergy = async () => {
     console.log(result);
     console.log("Inside fetchData function");
-    if (result !== "" && userId !== "") {
+    if (userId !== "") {
       try {
         const response = await axios.post(
           `http://localhost:3050/updateCountdownPowers`,
