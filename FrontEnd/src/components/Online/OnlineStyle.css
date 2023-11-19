@@ -167,3 +167,32 @@
 #drawAlert {
     background-image: url("../../../Assets/Single/draw.jpg");
 }
+
+/* Add these styles to your Style.css file or equivalent */
+.energyErrorPopup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-color: #3f234d;
+  }
+  
+  .energyErrorPopup p {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  
+  .energyErrorPopup button {
+    margin-top: 10px;
+  }
+  
