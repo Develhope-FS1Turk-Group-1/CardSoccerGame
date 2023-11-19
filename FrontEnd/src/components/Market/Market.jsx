@@ -17,6 +17,9 @@ import RightArrowBlue from "../../../Assets/TeamSelect/RightArrowBlue.svg";
 import LeftArrow from "../../../Assets/TeamSelect/Vector 14.svg";
 import RightArrow from "../../../Assets/TeamSelect/Vector 17.svg";
 import axios from 'axios';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 const Market = () => {
   const { setMoney, money, setLevel, level, userId, setUserId } = useUserProvider();
 
@@ -86,9 +89,8 @@ const Market = () => {
     setBuyPopUp('popUpOn');
     setMoney(money - 70);
   }
-
   const buyOther = () => {
-console.log("buyother run")
+    console.log("buyother run")
   }
 
   const cardOptions = [
@@ -97,7 +99,7 @@ console.log("buyother run")
       title2: "40 - 99 PLAYER",
       className: "casualUpperCard",
       price: 10,
-      onClick: buyCasual
+      onClick: buyCasual,
     },
     {
       title: 'RARE',
@@ -193,7 +195,8 @@ console.log("buyother run")
                 height={100}
               />
             </button>
-            <Swiper id='cardSwiper' ref={swiper} slidesPerView="3" spaceBetween="10px">
+            <Swiper id='cardSwiper' ref={swiper} slidesPerView="3"
+              spaceBetween="10px">
               {cardOptions.map((card, index) => (
                 <SwiperSlide key={index} value={card}>
                   <div className={card.className}>
@@ -212,7 +215,7 @@ console.log("buyother run")
             <button
               aria-label="Next"
               onClick={() => {
-                if (currentSlide < cardOptions.length - 1) {
+                if (currentSlide < cardOptions.length - 3) {
                   setCurrentSlide(currentSlide + 1);
                   goNext();
                   console.log(currentSlide + 1);
@@ -222,7 +225,7 @@ console.log("buyother run")
             >
               <img
                 src={
-                  currentSlide == cardOptions.length - 1
+                  currentSlide == cardOptions.length - 3
                     ? RightArrow
                     : RightArrowBlue
                 }

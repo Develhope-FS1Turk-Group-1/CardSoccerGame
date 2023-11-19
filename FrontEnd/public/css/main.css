@@ -368,7 +368,7 @@
   color: white;
   display: flex;
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   flex-direction: column;
   top: 30%;
   align-items: center;
@@ -431,6 +431,11 @@
   width: 100%;
   height: 90%;
   justify-content: space-around;
+}
+.soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .swiper-backface-hidden .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer button {
   background-color: transparent;
