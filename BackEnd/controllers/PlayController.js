@@ -316,10 +316,15 @@ const playSingleMatch = (req, res) => {
   });
 };
 
+
+
+
+
+
 module.exports = {
   getLeagues,
   getTeams,
   updateUserXpAndMoney,
   playSingleMatch,
-  playOnlineMatch,
+  playOnlineMatch
 };
