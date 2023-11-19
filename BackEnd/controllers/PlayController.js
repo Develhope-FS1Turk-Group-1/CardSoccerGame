@@ -82,6 +82,8 @@ const updateUserXpAndMoney = async (userId, result) => {
   }
 };
 
+
+
 async function getPlayerIdByUsername(username) {
   console.log(username , "username check");
   try {
@@ -115,8 +117,7 @@ const calculateTeamPower = async (userId)=>{
   );
 
   if (result.rows.length === 0) {
-    res.status(404).send("Formation not found for the specified user");
-    return;
+    return 0;
   }
   const attPower = calculateTotalAtt(result.rows.slice(0, 3));
   //console.log(result.rows.slice(0, 3));
@@ -367,6 +368,70 @@ const getMatchHistoryById = async (req, res) => {
 
 
 
+const getUserById = async (userId) => {
+
+  try {
+    const query = `
+      SELECT * FROM users
+      WHERE userid = $1
+    `;
+
+    const result = await pool.query(query, [userId]);
+
+    if (result.rows.length === 0) {
+      return null;
+    }
+
+    const user = result.rows[0];
+    return user;
+  } catch (error) {
+    console.error("Error fetching user by ID:", error);
+    return null;
+  }
+};
+
+
+
+const getAllUsersTeamPowerAndSort = async (req, res) => {
+  try {
+    // Get distinct userIds from the formation table
+    const distinctUserIdsQuery = `
+      SELECT DISTINCT userId FROM formation
+    `;
+    const distinctUserIds = await pool.query(distinctUserIdsQuery);
+
+    if (distinctUserIds.rows.length === 0) {
+      return [];
+    }
+
+    // Calculate team power for each user
+    const usersTeamPower = [];
+
+    for (const user of distinctUserIds.rows) {
+      const userId = user.userid;
+      const allUserInfo = await getUserById(userId);
+      const userTeamPower = await calculateTeamPower(userId); // Replace this with your team power calculation logic
+
+      usersTeamPower.push({
+        username: allUserInfo.username,
+        userId: userId,
+        xp:allUserInfo.xp,
+        teamPower: userTeamPower
+      });
+    }
+
+    // Sort users by their team power in ascending order
+    usersTeamPower.sort((a, b) => b.teamPower - a.teamPower);
+
+    res.status(200).json({  usersTeamPower });
+  } catch (error) {
+    console.error("Error fetching and sorting users' team power:", error);
+    res.status(500).send("Database error");
+  }
+};
+
+
+
 
 
 module.exports = {
@@ -376,5 +441,6 @@ module.exports = {
   playSingleMatch,
   playOnlineMatch,
   addMatchHistory,
-  getMatchHistoryById
+  getMatchHistoryById,
+  getAllUsersTeamPowerAndSort
 };

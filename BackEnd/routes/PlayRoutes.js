@@ -8,7 +8,7 @@ router.post('/playSingle/:team/:userId', PlayController.playSingleMatch);
 router.post('/playOnline',PlayController.playOnlineMatch);
 router.post('/addMatchHistory', PlayController.addMatchHistory);
 router.post('/history/:userId', PlayController.getMatchHistoryById);
-
+router.get('/rank', PlayController.getAllUsersTeamPowerAndSort);
 
 
 module.exports = router;
