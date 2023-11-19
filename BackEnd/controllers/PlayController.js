@@ -103,12 +103,7 @@ async function getPlayerIdByUsername(username) {
   }
 }
 
-const playOnlineMatch = async (req, res) => {
-  const { userId, username } = req.body;
-  console.log(userId, username);
-  const opponentId = await getPlayerIdByUsername(username);
-
- console.log(userId, "BABBA");
+const calculateTeamPower = async (userId)=>{
   const result = await pool.query(
     `SELECT formation.positionId, formation.playerId, basePlayers.*, onlinePlayers.*
        FROM formation
@@ -134,36 +129,26 @@ const playOnlineMatch = async (req, res) => {
   const gkPower = result.rows[10].gk;
   //console.log(result.rows[10]);
 
-  const userTeamPower = attPower + midPower + defPower + gkPower;
+  const teamPower = attPower + midPower + defPower + gkPower;
+
+  return teamPower;
+}
+
+
+
+
+
+const playOnlineMatch = async (req, res) => {
+  const { userId, username } = req.body;
+  console.log(userId, username);
+  const opponentId = await getPlayerIdByUsername(username);
+
+ 
+  const userTeamPower = await calculateTeamPower(userId);
   const userGoal = Math.floor((Math.random() * userTeamPower) / 100);
 
-  const resultOpponent = await pool.query(
-    `SELECT formation.positionId, formation.playerId, basePlayers.*, onlinePlayers.*
-       FROM formation
-       JOIN onlinePlayers ON formation.playerId = onlinePlayers.id
-       JOIN basePlayers ON onlinePlayers.baseId = basePlayers.id
-       WHERE formation.userId = $1
-       ORDER BY formation.positionId`,
-    [opponentId]
-  );
-
-  if (resultOpponent.rows.length === 0) {
-    res.status(404).send("Formation not found for the specified user");
-    return;
-  }
-  const attPowerOpponent = calculateTotalAtt(resultOpponent.rows.slice(0, 3));
-  //console.log(result.rows.slice(0, 3));
-  const midPowerOpponent = calculateTotalMid(resultOpponent.rows.slice(3, 6));
-  //console.log(result.rows.slice(3, 6));
-
-  const defPowerOpponent = calculateTotalDef(resultOpponent.rows.slice(6, 10));
-  //console.log(result.rows.slice(6, 10));
-
-  const gkPowerOpponent = resultOpponent.rows[10].gk;
-  //console.log(result.rows[10]);
-
-  const opponentPower =
-    attPowerOpponent + midPowerOpponent + defPowerOpponent + gkPowerOpponent;
+ 
+  const opponentPower = await calculateTeamPower(opponentId);
   const opponentGoal = Math.floor((Math.random() * opponentPower) / 100);
 
   const matchResult = {
@@ -259,32 +244,9 @@ const playSingleMatch = (req, res) => {
             calculateTotalMid(midfielders.rows) +
             goalkeeper.rows[0].gk;
 
-          const result = await pool.query(
-            `SELECT formation.positionId, formation.playerId, basePlayers.*, onlinePlayers.*
-                         FROM formation
-                         JOIN onlinePlayers ON formation.playerId = onlinePlayers.id
-                         JOIN basePlayers ON onlinePlayers.baseId = basePlayers.id
-                         WHERE formation.userId = $1
-                         ORDER BY formation.positionId`,
-            [userId]
-          );
+         
 
-          if (result.rows.length === 0) {
-            res.status(404).send("Formation not found for the specified user");
-            return;
-          }
-          const attPower = calculateTotalAtt(result.rows.slice(0, 3));
-          //console.log(result.rows.slice(0, 3));
-          const midPower = calculateTotalMid(result.rows.slice(3, 6));
-          //console.log(result.rows.slice(3, 6));
-
-          const defPower = calculateTotalDef(result.rows.slice(6, 10));
-          //console.log(result.rows.slice(6, 10));
-
-          const gkPower = result.rows[10].gk;
-          //console.log(result.rows[10]);
-
-          const userTeamPower = attPower + midPower + defPower + gkPower;
+          const userTeamPower = await calculateTeamPower(userId);
           const userGoal = Math.floor((Math.random() * userTeamPower) / 100);
           const opponentGoal = Math.floor(
             (Math.random() * teamPowerValue) / 100
