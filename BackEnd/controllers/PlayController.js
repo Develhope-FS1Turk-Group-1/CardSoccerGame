@@ -317,6 +317,92 @@ const playSingleMatch = (req, res) => {
 };
 
 
+const addMatchHistory =  async (req, res) => {
+  const {
+    userId,
+    opponentId,
+    opponentType,
+    userGoal,
+    opponentGoal,
+    result
+  } = req.body;
+
+  if (
+    userId === undefined ||
+    opponentId === undefined ||
+    userGoal === undefined ||
+    opponentGoal === undefined ||
+    result === undefined
+  ) {
+    res.status(400).send("Missing required fields");
+    return;
+  }
+
+  try {
+    const insertQuery = `
+      INSERT INTO game_results (userId, opponentId, opponentType, userGoal, opponentGoal, result)
+      VALUES ($1, $2, $3, $4, $5, $6)
+      RETURNING *;
+    `;
+
+    const values = [
+      userId,
+      opponentId,
+      opponentType,
+      userGoal,
+      opponentGoal,
+      result
+    ];
+
+    const result = await pool.query(insertQuery, values);
+
+    if (result.rows.length === 0) {
+      res.status(500).send("Failed to save game result");
+      return;
+    }
+
+    const savedGameResult = result.rows[0];
+    res.status(201).json({ gameResult: savedGameResult });
+  } catch (error) {
+    console.error("Error saving game result", error);
+    res.status(500).send("Database error");
+  }
+};
+
+
+
+
+
+
+const getMatchHistoryById = async (req, res) => {
+  const userId = req.params.userId;
+
+  if (!userId) {
+    res.status(400).send("Missing userId");
+    return;
+  }
+
+  try {
+    const query = `
+      SELECT * FROM matchhistory
+      WHERE userId = $1
+    `;
+
+    const result = await pool.query(query, [userId]);
+
+    if (result.rows.length === 0) {
+      res.status(404).send("No game history found for this user");
+      return;
+    }
+
+    const gameHistory = result.rows;
+    res.status(200).json({ history: gameHistory });
+  } catch (error) {
+    console.error("Error fetching game history", error);
+    res.status(500).send("Database error");
+  }
+};
+
 
 
 
@@ -326,5 +412,7 @@ module.exports = {
   getTeams,
   updateUserXpAndMoney,
   playSingleMatch,
-  playOnlineMatch
+  playOnlineMatch,
+  addMatchHistory,
+  getMatchHistoryById
 };
