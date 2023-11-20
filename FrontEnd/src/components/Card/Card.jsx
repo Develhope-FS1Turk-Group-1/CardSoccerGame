@@ -12,12 +12,14 @@ const Card = ({
 	playersOnBoard,
 	playerList,
 	setPlayerList,
+	addPlayerToListedPlayers,
+
 }) => {
 	const [selectedCard, setSelectedCard] = useState(null);
 
 	useEffect(() => {
 		//console.log(playersOnBoard[id-1]);
-		console.log(id);
+		//console.log(id);
 		//console.log(playersOnBoard);
 		if (playersOnBoard[id - 1] != null) {
 			setSelectedCard(playersOnBoard[id - 1]);
@@ -56,6 +58,8 @@ const Card = ({
 			if (response.status === 200) {
 
 				
+				console.log("sa over");
+				//await addPlayerToListedPlayers(selectedCard);
 				
 				let player = response.data.player;
 				player.onlineplayerid = dataArray[1];
@@ -67,7 +71,6 @@ const Card = ({
 
 				//console.log(playersOnBoard);
 				//event.target.innerHTML = dataArray[0];
-
 
 			} else {
 				console.error(
@@ -86,8 +89,11 @@ const Card = ({
 	};
 	const handleDragEnd = async (event) => {
 		event.preventDefault();
+		
 		await deletePlayerAtIndex(id-1);
 		setSelectedCard(playersOnBoard[id-1]);
+
+
 	};
 	const handleDragStart = (event, data) => {
 		let obj = data;
