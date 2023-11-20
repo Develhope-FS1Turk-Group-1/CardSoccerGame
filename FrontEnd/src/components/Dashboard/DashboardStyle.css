@@ -1,7 +1,7 @@
 .DashboardBackground {
     display: flex;
     background-image: url("../../Assets/Market/Default_soccer_stadium_view_full_of_crowd_night_time_ray_traci_0_d6bb2c97-38a0-444f-8a16-15375f76b1ba_1.jpg");
-    height: 80vh;
+    height: calc(100vh - 170px);
     background-size: 100% 110%;
     background-repeat: no-repeat;
     align-items: center;
