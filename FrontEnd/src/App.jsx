@@ -78,7 +78,9 @@ function App() {
 
 							path='/userInfo'
 							exact
-							element={<UserInfoPage />}
+							element={<UserInfoPage />} />
+							
+						<Route
 							path='/leaderboard'
 							exact
 							element={<LeaderboardPage />}
