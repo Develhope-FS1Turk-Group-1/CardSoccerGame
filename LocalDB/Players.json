@@ -3092,15 +3092,689 @@
         "Stadium": "Emirates Stadium",
         "Manager": "Mikel Arteta"
       },
-      "TottenhamHotspur": {
+      "Tottenham Hotspur": {
         "Country": "England",
         "Stadium": "Tottenham Hotspur Stadium",
-        "Manager": "Nuno Espirito Santo"
+        "Manager": "Nuno Espirito Santo",
+        "players":[
+          {
+            "Name": "Heung Min Son",
+            "Position": "ATT",
+            "ATT": "87.00",
+            "MID": "80.25",
+            "DEF": "69.75",
+            "GK": "20.00",
+            "Power": 87,
+            "img": "https://cdn.futbin.com/content/fifa24/img/players/200104.png?v=23"
+          },
+          {
+              "Name": "Pierre-Emile Højbjerg",
+              "Position": "MID",
+              "ATT": "72.00",
+              "MID": "84.00",
+              "DEF": "74.00",
+              "GK": "20.00",
+              "Power": 84,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/213648.png?v=23"
+          },
+          {
+              "Name": "James Maddison",
+              "Position": "MID",
+              "ATT": "75.25",
+              "MID": "84.00",
+              "DEF": "68.50",
+              "GK": "20.00",
+              "Power": 84,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/220697.png?v=23"
+          },
+          {
+              "Name": "Ashleigh Neville",
+              "Position": "DEF",
+              "ATT": "77.25",
+              "MID": "79.00",
+              "DEF": "84.00",
+              "GK": "20.00",
+              "Power": 84,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/265252.png?v=23"
+          },
+          {
+              "Name": "Hugo Lloris",
+              "Position": "GK",
+              "ATT": "41.50",
+              "MID": "40.25",
+              "DEF": "37.00",
+              "GK": "83.00",
+              "Power": 83,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/167948.png?v=23"
+          },
+          {
+              "Name": "Cristian Romero",
+              "Position": "DEF",
+              "ATT": "65.50",
+              "MID": "68.75",
+              "DEF": "82.00",
+              "GK": "20.00",
+              "Power": 82,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/232488.png?v=23"
+          },
+          {
+              "Name": "Rodrigo Bentancur",
+              "Position": "MID",
+              "ATT": "74.25",
+              "MID": "82.00",
+              "DEF": "76.75",
+              "GK": "20.00",
+              "Power": 82,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/227535.png?v=23"
+          },
+          {
+              "Name": "Guglielmo Vicario",
+              "Position": "GK",
+              "ATT": "41.50",
+              "MID": "41.25",
+              "DEF": "34.88",
+              "GK": "82.00",
+              "Power": 82,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/240091.png?v=23"
+          },
+          {
+              "Name": "Pedro Porro",
+              "Position": "DEF",
+              "ATT": "78.25",
+              "MID": "79.25",
+              "DEF": "81.00",
+              "GK": "20.00",
+              "Power": 81,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/243576.png?v=23"
+          },
+          {
+              "Name": "Giovani Lo Celso",
+              "Position": "MID",
+              "ATT": "75.50",
+              "MID": "81.00",
+              "DEF": "73.25",
+              "GK": "20.00",
+              "Power": 81,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/226226.png?v=23"
+          },
+          {
+              "Name": "Dejan Kulusevski",
+              "Position": "ATT",
+              "ATT": "81.00",
+              "MID": "78.75",
+              "DEF": "71.75",
+              "GK": "20.00",
+              "Power": 81,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/247394.png?v=23"
+          },
+          {
+              "Name": "Richarlison",
+              "Position": "ATT",
+              "ATT": "80.00",
+              "MID": "77.25",
+              "DEF": "70.00",
+              "GK": "20.00",
+              "Power": 80,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/231943.png?v=23"
+          },
+          {
+              "Name": "Yves Bissouma",
+              "Position": "MID",
+              "ATT": "73.00",
+              "MID": "79.00",
+              "DEF": "74.75",
+              "GK": "20.00",
+              "Power": 79,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/236480.png?v=23"
+          },
+          {
+              "Name": "Ivan Perišić",
+              "Position": "ATT",
+              "ATT": "79.00",
+              "MID": "76.25",
+              "DEF": "74.75",
+              "GK": "20.00",
+              "Power": 79,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/181458.png?v=23"
+          },
+          {
+              "Name": "Emerson",
+              "Position": "DEF",
+              "ATT": "71.00",
+              "MID": "73.25",
+              "DEF": "78.00",
+              "GK": "20.00",
+              "Power": 78,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/247204.png?v=23"
+          },
+          {
+              "Name": "Tanguy Ndombele",
+              "Position": "MID",
+              "ATT": "72.00",
+              "MID": "78.00",
+              "DEF": "69.50",
+              "GK": "20.00",
+              "Power": 78,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/235569.png?v=23"
+          },
+          {
+              "Name": "Sergio Reguilón Rodríguez",
+              "Position": "DEF",
+              "ATT": "71.50",
+              "MID": "75.75",
+              "DEF": "78.00",
+              "GK": "20.00",
+              "Power": 78,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/245279.png?v=23"
+          },
+          {
+              "Name": "Micky van de Ven",
+              "Position": "DEF",
+              "ATT": "69.00",
+              "MID": "73.00",
+              "DEF": "78.00",
+              "GK": "20.00",
+              "Power": 78,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/264453.png?v=23"
+          },
+          {
+              "Name": "Ben Davies",
+              "Position": "DEF",
+              "ATT": "66.50",
+              "MID": "70.00",
+              "DEF": "77.00",
+              "GK": "20.00",
+              "Power": 77,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/205923.png?v=23"
+          },
+          {
+              "Name": "Eric Dier",
+              "Position": "DEF",
+              "ATT": "64.50",
+              "MID": "65.75",
+              "DEF": "77.00",
+              "GK": "20.00",
+              "Power": 77,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/202335.png?v=23"
+          },
+          {
+              "Name": "Bryan Gil Salvatierra",
+              "Position": "ATT",
+              "ATT": "77.00",
+              "MID": "67.75",
+              "DEF": "55.25",
+              "GK": "20.00",
+              "Power": 77,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/246785.png?v=23"
+          },
+          {
+              "Name": "Davinson Sánchez",
+              "Position": "DEF",
+              "ATT": "65.50",
+              "MID": "67.25",
+              "DEF": "77.00",
+              "GK": "20.00",
+              "Power": 77,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/220793.png?v=23"
+          },
+          {
+              "Name": "Oliver Skipp",
+              "Position": "MID",
+              "ATT": "63.25",
+              "MID": "77.00",
+              "DEF": "69.50",
+              "GK": "20.00",
+              "Power": 77,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/241042.png?v=23"
+          },
+          {
+              "Name": "Manor Solomon",
+              "Position": "ATT",
+              "ATT": "77.00",
+              "MID": "74.25",
+              "DEF": "64.75",
+              "GK": "20.00",
+              "Power": 77,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/246791.png?v=23"
+          },
+          {
+              "Name": "Destiny Iyenoma Udogie",
+              "Position": "DEF",
+              "ATT": "76.00",
+              "MID": "77.25",
+              "DEF": "77.00",
+              "GK": "20.00",
+              "Power": 77,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/259583.png?v=23"
+          },
+          {
+              "Name": "Fraser Forster",
+              "Position": "GK",
+              "ATT": "38.00",
+              "MID": "37.38",
+              "DEF": "30.75",
+              "GK": "76.00",
+              "Power": 76,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/172203.png?v=23"
+          },
+          {
+              "Name": "Brennan Johnson",
+              "Position": "ATT",
+              "ATT": "76.00",
+              "MID": "73.00",
+              "DEF": "64.00",
+              "GK": "20.00",
+              "Power": 76,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/251421.png?v=23"
+          },
+          {
+              "Name": "Ryan Sessegnon",
+              "Position": "DEF",
+              "ATT": "70.75",
+              "MID": "72.75",
+              "DEF": "75.00",
+              "GK": "20.00",
+              "Power": 75,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/235883.png?v=23"
+          },
+          {
+              "Name": "Alejo Veliz",
+              "Position": "ATT",
+              "ATT": "75.00",
+              "MID": "67.00",
+              "DEF": "55.75",
+              "GK": "20.00",
+              "Power": 75,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/269176.png?v=23"
+          },
+          {
+              "Name": "Japhet Tanganga",
+              "Position": "DEF",
+              "ATT": "63.25",
+              "MID": "70.75",
+              "DEF": "74.00",
+              "GK": "20.00",
+              "Power": 74,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/236600.png?v=23"
+          },
+          {
+              "Name": "Pape Matar Sarr",
+              "Position": "MID",
+              "ATT": "67.25",
+              "MID": "72.00",
+              "DEF": "67.00",
+              "GK": "20.00",
+              "Power": 72,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/259868.png?v=23"
+          },
+          {
+              "Name": "Brandon Austin",
+              "Position": "GK",
+              "ATT": "32.25",
+              "MID": "31.25",
+              "DEF": "28.63",
+              "GK": "64.00",
+              "Power": 64,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/236568.png?v=23"
+          },
+          {
+              "Name": "Dane Scarlett",
+              "Position": "ATT",
+              "ATT": "63.00",
+              "MID": "64.25",
+              "DEF": "53.25",
+              "GK": "20.00",
+              "Power": 63,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/261025.png?v=23"
+          },
+          {
+              "Name": "Harvey White",
+              "Position": "MID",
+              "ATT": "61.25",
+              "MID": "62.00",
+              "DEF": "61.25",
+              "GK": "20.00",
+              "Power": 62,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/245903.png?v=23"
+          },
+          {
+              "Name": "Ashley Phillips",
+              "Position": "DEF",
+              "ATT": "50.50",
+              "MID": "56.25",
+              "DEF": "60.00",
+              "GK": "20.00",
+              "Power": 60,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/264731.png?v=23"
+          }
+      ]
       },
       "Everton": {
         "Country": "England",
         "Stadium": "Goodison Park",
-        "Manager": "Rafael Benitez"
+        "Manager": "Rafael Benitez",
+        "players":[
+          {
+              "Name": "Jordan Pickford",
+              "Position": "GK",
+              "ATT": "40.88",
+              "MID": "42.13",
+              "DEF": "37.63",
+              "GK": "82.00",
+              "Power": 82,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/204935.png?v=23"
+          },
+          {
+              "Name": "Arnaut Danjuma",
+              "Position": "ATT",
+              "ATT": "81.00",
+              "MID": "78.00",
+              "DEF": "68.25",
+              "GK": "20.00",
+              "Power": 81,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/236276.png?v=23"
+          },
+          {
+              "Name": "Beto",
+              "Position": "ATT",
+              "ATT": "81.00",
+              "MID": "76.00",
+              "DEF": "63.50",
+              "GK": "20.00",
+              "Power": 81,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/251892.png?v=23"
+          },
+          {
+              "Name": "James Tarkowski",
+              "Position": "DEF",
+              "ATT": "59.75",
+              "MID": "64.00",
+              "DEF": "79.00",
+              "GK": "20.00",
+              "Power": 79,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/202695.png?v=23"
+          },
+          {
+              "Name": "Dominic Calvert-Lewin",
+              "Position": "ATT",
+              "ATT": "77.00",
+              "MID": "72.50",
+              "DEF": "64.25",
+              "GK": "20.00",
+              "Power": 77,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/221479.png?v=23"
+          },
+          {
+              "Name": "Abdoulaye Doucouré",
+              "Position": "MID",
+              "ATT": "74.25",
+              "MID": "77.00",
+              "DEF": "73.00",
+              "GK": "20.00",
+              "Power": 77,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/208135.png?v=23"
+          },
+          {
+              "Name": "Demarai Gray",
+              "Position": "MID",
+              "ATT": "75.25",
+              "MID": "77.00",
+              "DEF": "62.75",
+              "GK": "20.00",
+              "Power": 77,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/220633.png?v=23"
+          },
+          {
+              "Name": "Idrissa Gueye",
+              "Position": "MID",
+              "ATT": "65.75",
+              "MID": "77.00",
+              "DEF": "69.25",
+              "GK": "20.00",
+              "Power": 77,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/193474.png?v=23"
+          },
+          {
+              "Name": "Michael Keane",
+              "Position": "DEF",
+              "ATT": "59.75",
+              "MID": "63.25",
+              "DEF": "77.00",
+              "GK": "20.00",
+              "Power": 77,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/207599.png?v=23"
+          },
+          {
+              "Name": "André Filipe Tavares Gomes",
+              "Position": "MID",
+              "ATT": "65.75",
+              "MID": "77.00",
+              "DEF": "67.25",
+              "GK": "20.00",
+              "Power": 77,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/211575.png?v=23"
+          },
+          {
+              "Name": "Jack Harrison",
+              "Position": "MID",
+              "ATT": "74.50",
+              "MID": "76.00",
+              "DEF": "67.00",
+              "GK": "20.00",
+              "Power": 76,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/227252.png?v=23"
+          },
+          {
+              "Name": "Alex Iwobi",
+              "Position": "MID",
+              "ATT": "72.50",
+              "MID": "76.00",
+              "DEF": "69.25",
+              "GK": "20.00",
+              "Power": 76,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/213655.png?v=23"
+          },
+          {
+              "Name": "Dwight McNeil",
+              "Position": "MID",
+              "ATT": "68.75",
+              "MID": "76.00",
+              "DEF": "66.00",
+              "GK": "20.00",
+              "Power": 76,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/243282.png?v=23"
+          },
+          {
+              "Name": "Amadou Onana",
+              "Position": "MID",
+              "ATT": "70.25",
+              "MID": "76.00",
+              "DEF": "73.25",
+              "GK": "20.00",
+              "Power": 76,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/257057.png?v=23"
+          },
+          {
+              "Name": "Ashley Young",
+              "Position": "DEF",
+              "ATT": "69.25",
+              "MID": "72.00",
+              "DEF": "76.00",
+              "GK": "20.00",
+              "Power": 76,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/152908.png?v=23"
+          },
+          {
+              "Name": "Dele Alli",
+              "Position": "MID",
+              "ATT": "72.00",
+              "MID": "75.00",
+              "DEF": "69.00",
+              "GK": "20.00",
+              "Power": 75,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/211117.png?v=23"
+          },
+          {
+              "Name": "Séamus Coleman",
+              "Position": "DEF",
+              "ATT": "67.50",
+              "MID": "69.25",
+              "DEF": "75.00",
+              "GK": "20.00",
+              "Power": 75,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/180216.png?v=23"
+          },
+          {
+              "Name": "Ben Godfrey",
+              "Position": "DEF",
+              "ATT": "67.25",
+              "MID": "71.25",
+              "DEF": "75.00",
+              "GK": "20.00",
+              "Power": 75,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/225793.png?v=23"
+          },
+          {
+              "Name": "Vitaliy Mykolenko",
+              "Position": "DEF",
+              "ATT": "61.00",
+              "MID": "65.75",
+              "DEF": "75.00",
+              "GK": "20.00",
+              "Power": 75,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/244380.png?v=23"
+          },
+          {
+              "Name": "Jean-Philippe Gbamin",
+              "Position": "MID",
+              "ATT": "68.00",
+              "MID": "74.00",
+              "DEF": "72.00",
+              "GK": "20.00",
+              "Power": 74,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/214947.png?v=23"
+          },
+          {
+              "Name": "Neal Maupay",
+              "Position": "ATT",
+              "ATT": "74.00",
+              "MID": "69.75",
+              "DEF": "62.25",
+              "GK": "20.00",
+              "Power": 74,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/211784.png?v=23"
+          },
+          {
+              "Name": "Jarrad Branthwaite",
+              "Position": "DEF",
+              "ATT": "57.50",
+              "MID": "61.00",
+              "DEF": "72.00",
+              "GK": "20.00",
+              "Power": 72,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/247649.png?v=23"
+          },
+          {
+              "Name": "Youssef Chermiti",
+              "Position": "ATT",
+              "ATT": "72.00",
+              "MID": "66.25",
+              "DEF": "57.50",
+              "GK": "20.00",
+              "Power": 72,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/270866.png?v=23"
+          },
+          {
+              "Name": "James Garner",
+              "Position": "MID",
+              "ATT": "66.75",
+              "MID": "72.00",
+              "DEF": "69.00",
+              "GK": "20.00",
+              "Power": 72,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/243657.png?v=23"
+          },
+          {
+              "Name": "Nathan Patterson",
+              "Position": "DEF",
+              "ATT": "65.75",
+              "MID": "69.50",
+              "DEF": "72.00",
+              "GK": "20.00",
+              "Power": 72,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/257896.png?v=23"
+          },
+          {
+              "Name": "Thomas Cannon",
+              "Position": "ATT",
+              "ATT": "69.00",
+              "MID": "66.50",
+              "DEF": "55.25",
+              "GK": "20.00",
+              "Power": 69,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/272651.png?v=23"
+          },
+          {
+              "Name": "João Virgínia",
+              "Position": "GK",
+              "ATT": "33.00",
+              "MID": "33.00",
+              "DEF": "30.88",
+              "GK": "66.00",
+              "Power": 66,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/237704.png?v=23"
+          },
+          {
+              "Name": "Lewis Dobbin",
+              "Position": "MID",
+              "ATT": "64.50",
+              "MID": "63.00",
+              "DEF": "52.50",
+              "GK": "20.00",
+              "Power": 63,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/264039.png?v=23"
+          },
+          {
+              "Name": "Kyle John",
+              "Position": "DEF",
+              "ATT": "56.00",
+              "MID": "59.25",
+              "DEF": "63.00",
+              "GK": "20.00",
+              "Power": 63,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/247764.png?v=23"
+          },
+          {
+              "Name": "Tyler Onyango",
+              "Position": "MID",
+              "ATT": "58.25",
+              "MID": "60.00",
+              "DEF": "60.50",
+              "GK": "20.00",
+              "Power": 60,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/263168.png?v=23"
+          },
+          {
+              "Name": "Mackenzie Hunt",
+              "Position": "MID",
+              "ATT": "57.75",
+              "MID": "58.00",
+              "DEF": "58.50",
+              "GK": "20.00",
+              "Power": 58,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/277434.png?v=23"
+          },
+          {
+              "Name": "Andy Lonergan",
+              "Position": "GK",
+              "ATT": "29.13",
+              "MID": "27.38",
+              "DEF": "25.63",
+              "GK": "58.00",
+              "Power": 58,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/118794.png?v=23"
+          }
+      ]
       },
       "LeicesterCity": {
         "Country": "England",
@@ -3110,7 +3784,299 @@
       "WolverhamptonWanderers": {
         "Country": "England",
         "Stadium": "Molineux Stadium",
-        "Manager": "Bruno Lage"
+        "Manager": "Bruno Lage",
+        "players":[
+          {
+              "Name": "José Sá",
+              "Position": "GK",
+              "ATT": "39.25",
+              "MID": "38.63",
+              "DEF": "35.00",
+              "GK": "79.00",
+              "Power": 79,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/212442.png?v=23"
+          },
+          {
+              "Name": "Matheus Nunes",
+              "Position": "MID",
+              "ATT": "78.00",
+              "MID": "79.00",
+              "DEF": "76.25",
+              "GK": "20.00",
+              "Power": 79,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/253124.png?v=23"
+          },
+          {
+              "Name": "Nélson Semedo",
+              "Position": "DEF",
+              "ATT": "73.25",
+              "MID": "76.25",
+              "DEF": "78.00",
+              "GK": "20.00",
+              "Power": 78,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/227928.png?v=23"
+          },
+          {
+              "Name": "Matheus Cunha",
+              "Position": "ATT",
+              "ATT": "78.00",
+              "MID": "77.50",
+              "DEF": "67.00",
+              "GK": "20.00",
+              "Power": 78,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/240243.png?v=23"
+          },
+          {
+              "Name": "Mario Lemina",
+              "Position": "MID",
+              "ATT": "71.75",
+              "MID": "78.00",
+              "DEF": "73.75",
+              "GK": "20.00",
+              "Power": 78,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/212811.png?v=23"
+          },
+          {
+              "Name": "Pablo Sarabia",
+              "Position": "MID",
+              "ATT": "70.50",
+              "MID": "78.00",
+              "DEF": "66.50",
+              "GK": "20.00",
+              "Power": 78,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/198950.png?v=23"
+          },
+          {
+              "Name": "Craig Dawson",
+              "Position": "DEF",
+              "ATT": "55.50",
+              "MID": "58.50",
+              "DEF": "77.00",
+              "GK": "20.00",
+              "Power": 77,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/194806.png?v=23"
+          },
+          {
+              "Name": "Saša Kalajdžić",
+              "Position": "ATT",
+              "ATT": "77.00",
+              "MID": "66.50",
+              "DEF": "60.00",
+              "GK": "20.00",
+              "Power": 77,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/239901.png?v=23"
+          },
+          {
+              "Name": "Pedro Neto",
+              "Position": "MID",
+              "ATT": "74.00",
+              "MID": "77.00",
+              "DEF": "61.00",
+              "GK": "20.00",
+              "Power": 77,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/238616.png?v=23"
+          },
+          {
+              "Name": "Santiago Bueno",
+              "Position": "DEF",
+              "ATT": "53.75",
+              "MID": "59.75",
+              "DEF": "77.00",
+              "GK": "20.00",
+              "Power": 77,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/237658.png?v=23"
+          },
+          {
+              "Name": "Daniel Podence",
+              "Position": "MID",
+              "ATT": "68.00",
+              "MID": "76.00",
+              "DEF": "56.75",
+              "GK": "20.00",
+              "Power": 76,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/226766.png?v=23"
+          },
+          {
+              "Name": "Jonny",
+              "Position": "DEF",
+              "ATT": "65.75",
+              "MID": "69.50",
+              "DEF": "76.00",
+              "GK": "20.00",
+              "Power": 76,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/210455.png?v=23"
+          },
+          {
+              "Name": "João Victor Gomes da Silva ",
+              "Position": "MID",
+              "ATT": "69.75",
+              "MID": "76.00",
+              "DEF": "72.25",
+              "GK": "20.00",
+              "Power": 76,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/273463.png?v=23"
+          },
+          {
+              "Name": "Hee Chan Hwang",
+              "Position": "MID",
+              "ATT": "76.25",
+              "MID": "76.00",
+              "DEF": "65.50",
+              "GK": "20.00",
+              "Power": 76,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/226380.png?v=23"
+          },
+          {
+              "Name": "Max Kilman",
+              "Position": "DEF",
+              "ATT": "61.00",
+              "MID": "66.50",
+              "DEF": "76.00",
+              "GK": "20.00",
+              "Power": 76,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/245336.png?v=23"
+          },
+          {
+              "Name": "Rayan Aït Nouri",
+              "Position": "DEF",
+              "ATT": "68.75",
+              "MID": "73.00",
+              "DEF": "75.00",
+              "GK": "20.00",
+              "Power": 75,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/242641.png?v=23"
+          },
+          {
+              "Name": "Matt Doherty",
+              "Position": "DEF",
+              "ATT": "69.75",
+              "MID": "71.25",
+              "DEF": "75.00",
+              "GK": "20.00",
+              "Power": 75,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/201417.png?v=23"
+          },
+          {
+              "Name": "Jean-Ricner Bellegarde",
+              "Position": "MID",
+              "ATT": "72.00",
+              "MID": "75.00",
+              "DEF": "72.75",
+              "GK": "20.00",
+              "Power": 75,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/235456.png?v=23"
+          },
+          {
+              "Name": "Rayan Aït Nouri",
+              "Position": "DEF",
+              "ATT": "68.75",
+              "MID": "73.00",
+              "DEF": "75.00",
+              "GK": "20.00",
+              "Power": 75,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/242641.png?v=23"
+          },
+          {
+              "Name": "Toti",
+              "Position": "DEF",
+              "ATT": "65.25",
+              "MID": "69.25",
+              "DEF": "74.00",
+              "GK": "20.00",
+              "Power": 74,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/258607.png?v=23"
+          },
+          {
+              "Name": "Daniel Bentley",
+              "Position": "GK",
+              "ATT": "36.00",
+              "MID": "36.25",
+              "DEF": "32.75",
+              "GK": "73.00",
+              "Power": 73,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/198350.png?v=23"
+          },
+          {
+              "Name": "Fábio Silva",
+              "Position": "ATT",
+              "ATT": "73.00",
+              "MID": "69.50",
+              "DEF": "58.75",
+              "GK": "20.00",
+              "Power": 73,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/252037.png?v=23"
+          },
+          {
+              "Name": "Hugo Bueno",
+              "Position": "DEF",
+              "ATT": "68.00",
+              "MID": "72.50",
+              "DEF": "72.00",
+              "GK": "20.00",
+              "Power": 72,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/261224.png?v=23"
+          },
+          {
+              "Name": "Tommy Doyle",
+              "Position": "MID",
+              "ATT": "66.75",
+              "MID": "69.00",
+              "DEF": "65.50",
+              "GK": "20.00",
+              "Power": 69,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/254120.png?v=23"
+          },
+          {
+              "Name": "Boubacar Traoré",
+              "Position": "MID",
+              "ATT": "62.75",
+              "MID": "68.00",
+              "DEF": "65.00",
+              "GK": "20.00",
+              "Power": 68,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/252975.png?v=23"
+          },
+          {
+              "Name": "Bruno Jordão",
+              "Position": "MID",
+              "ATT": "62.50",
+              "MID": "64.00",
+              "DEF": "60.25",
+              "GK": "20.00",
+              "Power": 64,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/240175.png?v=23"
+          },
+          {
+              "Name": "Tom King",
+              "Position": "GK",
+              "ATT": "31.75",
+              "MID": "31.50",
+              "DEF": "28.75",
+              "GK": "64.00",
+              "Power": 64,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/225650.png?v=23"
+          },
+          {
+              "Name": "Joe Hodge",
+              "Position": "MID",
+              "ATT": "57.00",
+              "MID": "61.00",
+              "DEF": "58.50",
+              "GK": "20.00",
+              "Power": 61,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/261032.png?v=23"
+          },
+          {
+              "Name": "Enso González",
+              "Position": "MID",
+              "ATT": "56.75",
+              "MID": "59.00",
+              "DEF": "51.75",
+              "GK": "20.00",
+              "Power": 59,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/274377.png?v=23"
+          }
+      ]
       },
       "WestHamUnited": {
         "Country": "England",
@@ -3125,7 +4091,329 @@
       "Southampton": {
         "Country": "England",
         "Stadium": "St Mary's Stadium",
-        "Manager": "Ralph Hasenhüttl"
+        "Manager": "Ralph Hasenhüttl",
+        "Players": [
+          {
+              "Name": "Kyle Walker-Peters",
+              "Position": "DEF",
+              "ATT": "65.25",
+              "MID": "71.00",
+              "DEF": "76.00",
+              "GK": "20.00",
+              "Power": 76,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/227927.png?v=23"
+          },
+          {
+              "Name": "Ché Adams",
+              "Position": "ATT",
+              "ATT": "75.00",
+              "MID": "72.75",
+              "DEF": "64.25",
+              "GK": "20.00",
+              "Power": 75,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/226093.png?v=23"
+          },
+          {
+              "Name": "Jan Bednarek",
+              "Position": "DEF",
+              "ATT": "50.25",
+              "MID": "58.25",
+              "DEF": "74.00",
+              "GK": "20.00",
+              "Power": 74,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/220570.png?v=23"
+          },
+          {
+              "Name": "Armel Bella Kotchap",
+              "Position": "DEF",
+              "ATT": "57.50",
+              "MID": "63.75",
+              "DEF": "74.00",
+              "GK": "20.00",
+              "Power": 74,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/247497.png?v=23"
+          },
+          {
+              "Name": "Mason Holgate",
+              "Position": "DEF",
+              "ATT": "62.00",
+              "MID": "68.25",
+              "DEF": "74.00",
+              "GK": "20.00",
+              "Power": 74,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/225024.png?v=23"
+          },
+          {
+              "Name": "Ryan Manning",
+              "Position": "DEF",
+              "ATT": "68.50",
+              "MID": "71.75",
+              "DEF": "74.00",
+              "GK": "20.00",
+              "Power": 74,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/226012.png?v=23"
+          },
+          {
+              "Name": "Jack Stephens",
+              "Position": "DEF",
+              "ATT": "56.00",
+              "MID": "60.75",
+              "DEF": "74.00",
+              "GK": "20.00",
+              "Power": 74,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/202697.png?v=23"
+          },
+          {
+              "Name": "Kamaldeen Sulemana",
+              "Position": "ATT",
+              "ATT": "74.00",
+              "MID": "74.50",
+              "DEF": "61.75",
+              "GK": "20.00",
+              "Power": 74,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/256035.png?v=23"
+          },
+          {
+              "Name": "Taylor Harwood-Bellis",
+              "Position": "DEF",
+              "ATT": "60.50",
+              "MID": "66.50",
+              "DEF": "74.00",
+              "GK": "20.00",
+              "Power": 74,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/252793.png?v=23"
+          },
+          {
+              "Name": "Carlos Alcaraz",
+              "Position": "MID",
+              "ATT": "74.50",
+              "MID": "73.00",
+              "DEF": "65.75",
+              "GK": "20.00",
+              "Power": 73,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/256402.png?v=23"
+          },
+          {
+              "Name": "Joe Aribo",
+              "Position": "MID",
+              "ATT": "71.75",
+              "MID": "73.00",
+              "DEF": "71.25",
+              "GK": "20.00",
+              "Power": 73,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/231044.png?v=23"
+          },
+          {
+              "Name": "Stuart Armstrong",
+              "Position": "MID",
+              "ATT": "69.00",
+              "MID": "73.00",
+              "DEF": "67.00",
+              "GK": "20.00",
+              "Power": 73,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/202282.png?v=23"
+          },
+          {
+              "Name": "Moussa Djenepo",
+              "Position": "ATT",
+              "ATT": "73.00",
+              "MID": "71.75",
+              "DEF": "62.50",
+              "GK": "20.00",
+              "Power": 73,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/237560.png?v=23"
+          },
+          {
+              "Name": "Ryan Fraser",
+              "Position": "ATT",
+              "ATT": "73.00",
+              "MID": "70.00",
+              "DEF": "63.00",
+              "GK": "20.00",
+              "Power": 73,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/207807.png?v=23"
+          },
+          {
+              "Name": "Onuachu",
+              "Position": "ATT",
+              "ATT": "73.00",
+              "MID": "65.50",
+              "DEF": "60.75",
+              "GK": "20.00",
+              "Power": 73,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/212382.png?v=23"
+          },
+          {
+              "Name": "Adam Armstrong",
+              "Position": "ATT",
+              "ATT": "72.00",
+              "MID": "70.25",
+              "DEF": "61.00",
+              "GK": "20.00",
+              "Power": 72,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/221841.png?v=23"
+          },
+          {
+              "Name": "Alex McCarthy",
+              "Position": "GK",
+              "ATT": "35.75",
+              "MID": "34.63",
+              "DEF": "31.63",
+              "GK": "72.00",
+              "Power": 72,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/189324.png?v=23"
+          },
+          {
+              "Name": "Ross Stewart",
+              "Position": "ATT",
+              "ATT": "72.00",
+              "MID": "69.25",
+              "DEF": "60.75",
+              "GK": "20.00",
+              "Power": 72,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/244319.png?v=23"
+          },
+          {
+              "Name": "Gavin Bazunu",
+              "Position": "GK",
+              "ATT": "35.13",
+              "MID": "35.75",
+              "DEF": "32.38",
+              "GK": "71.00",
+              "Power": 71,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/243585.png?v=23"
+          },
+          {
+              "Name": "James Bree",
+              "Position": "DEF",
+              "ATT": "61.75",
+              "MID": "66.50",
+              "DEF": "71.00",
+              "GK": "20.00",
+              "Power": 71,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/222156.png?v=23"
+          },
+          {
+              "Name": "Flynn Downes",
+              "Position": "MID",
+              "ATT": "65.00",
+              "MID": "71.00",
+              "DEF": "68.25",
+              "GK": "20.00",
+              "Power": 71,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/240097.png?v=23"
+          },
+          {
+              "Name": "Joe Lumley",
+              "Position": "GK",
+              "ATT": "34.75",
+              "MID": "35.88",
+              "DEF": "32.13",
+              "GK": "70.00",
+              "Power": 70,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/217096.png?v=23"
+          },
+          {
+              "Name": " Sékou Mara",
+              "Position": "ATT",
+              "ATT": "70.00",
+              "MID": "65.25",
+              "DEF": "54.75",
+              "GK": "20.00",
+              "Power": 70,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/257612.png?v=23"
+          },
+          {
+              "Name": "Will Smallbone",
+              "Position": "MID",
+              "ATT": "63.00",
+              "MID": "68.00",
+              "DEF": "60.50",
+              "GK": "20.00",
+              "Power": 68,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/237916.png?v=23"
+          },
+          {
+              "Name": "Samuel Edozie",
+              "Position": "ATT",
+              "ATT": "65.00",
+              "MID": "63.00",
+              "DEF": "52.50",
+              "GK": "20.00",
+              "Power": 65,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/263953.png?v=23"
+          },
+          {
+              "Name": "Shea Charles",
+              "Position": "MID",
+              "ATT": "58.25",
+              "MID": "63.00",
+              "DEF": "62.25",
+              "GK": "20.00",
+              "Power": 63,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/276695.png?v=23"
+          },
+          {
+              "Name": "Dynel Simeu",
+              "Position": "DEF",
+              "ATT": "54.25",
+              "MID": "58.50",
+              "DEF": "63.00",
+              "GK": "20.00",
+              "Power": 63,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/248469.png?v=23"
+          },
+          {
+              "Name": "Thierry Small",
+              "Position": "DEF",
+              "ATT": "59.00",
+              "MID": "63.25",
+              "DEF": "63.00",
+              "GK": "20.00",
+              "Power": 63,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/264421.png?v=23"
+          },
+          {
+              "Name": "Jake Vokins",
+              "Position": "DEF",
+              "ATT": "58.00",
+              "MID": "59.50",
+              "DEF": "62.00",
+              "GK": "20.00",
+              "Power": 62,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/236325.png?v=23"
+          },
+          {
+              "Name": "Juan Larios López",
+              "Position": "DEF",
+              "ATT": "54.75",
+              "MID": "58.25",
+              "DEF": "60.00",
+              "GK": "20.00",
+              "Power": 60,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/271669.png?v=23"
+          },
+          {
+              "Name": "Zach Awe",
+              "Position": "DEF",
+              "ATT": "46.50",
+              "MID": "49.75",
+              "DEF": "57.00",
+              "GK": "20.00",
+              "Power": 57,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/261156.png?v=23"
+          },
+          {
+              "Name": "Samuel Amo-Ameyaw",
+              "Position": "ATT",
+              "ATT": "56.00",
+              "MID": "54.75",
+              "DEF": "47.00",
+              "GK": "20.00",
+              "Power": 56,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/277561.png?v=23"
+          }
+      ]
       },
       "CrystalPalace": {
         "Country": "England",
@@ -3157,7 +4445,339 @@
       "AtleticoMadrid": {
         "Country": "Spain",
         "Stadium": "Wanda Metropolitano",
-        "Manager": "Diego Simeone"
+        "Manager": "Diego Simeone",
+        "Players":[
+          {
+              "Name": "Antoine Griezmann",
+              "Position": "ATT",
+              "ATT": "88.00",
+              "MID": "82.50",
+              "DEF": "75.00",
+              "GK": "20.00",
+              "Power": 88,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/194765.png?v=23"
+          },
+          {
+              "Name": "Jan Oblak",
+              "Position": "GK",
+              "ATT": "43.50",
+              "MID": "42.00",
+              "DEF": "36.88",
+              "GK": "88.00",
+              "Power": 88,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/200389.png?v=23"
+          },
+          {
+              "Name": "De Paul",
+              "Position": "MID",
+              "ATT": "80.00",
+              "MID": "84.00",
+              "DEF": "79.75",
+              "GK": "20.00",
+              "Power": 84,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/212616.png?v=23"
+          },
+          {
+              "Name": "Memphis Depay",
+              "Position": "ATT",
+              "ATT": "84.00",
+              "MID": "82.00",
+              "DEF": "68.25",
+              "GK": "20.00",
+              "Power": 84,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/202556.png?v=23"
+          },
+          {
+              "Name": "Jorge Resurrección Koke",
+              "Position": "MID",
+              "ATT": "74.50",
+              "MID": "84.00",
+              "DEF": "77.75",
+              "GK": "20.00",
+              "Power": 84,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/193747.png?v=23"
+          },
+          {
+              "Name": " Marcos Llorente",
+              "Position": "MID",
+              "ATT": "82.00",
+              "MID": "84.00",
+              "DEF": "81.75",
+              "GK": "20.00",
+              "Power": 84,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/226161.png?v=23"
+          },
+          {
+              "Name": "Yannick Carrasco",
+              "Position": "MID",
+              "ATT": "80.00",
+              "MID": "84.00",
+              "DEF": "73.25",
+              "GK": "20.00",
+              "Power": 84,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/208418.png?v=23"
+          },
+          {
+              "Name": "Giménez",
+              "Position": "DEF",
+              "ATT": "65.00",
+              "MID": "68.00",
+              "DEF": "83.00",
+              "GK": "20.00",
+              "Power": 83,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/216460.png?v=23"
+          },
+          {
+              "Name": "Morata",
+              "Position": "ATT",
+              "ATT": "83.00",
+              "MID": "78.00",
+              "DEF": "66.00",
+              "GK": "20.00",
+              "Power": 83,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/201153.png?v=23"
+          },
+          {
+              "Name": "Mario Hermoso",
+              "Position": "DEF",
+              "ATT": "68.50",
+              "MID": "74.75",
+              "DEF": "82.00",
+              "GK": "20.00",
+              "Power": 82,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/229668.png?v=23"
+          },
+          {
+              "Name": "Ángel Correa",
+              "Position": "ATT",
+              "ATT": "82.00",
+              "MID": "80.75",
+              "DEF": "71.75",
+              "GK": "20.00",
+              "Power": 82,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/214997.png?v=23"
+          },
+          {
+              "Name": "Stefan Savić",
+              "Position": "DEF",
+              "ATT": "59.00",
+              "MID": "64.50",
+              "DEF": "82.00",
+              "GK": "20.00",
+              "Power": 82,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/204639.png?v=23"
+          },
+          {
+              "Name": "Thomas Lemar",
+              "Position": "MID",
+              "ATT": "77.75",
+              "MID": "82.00",
+              "DEF": "74.25",
+              "GK": "20.00",
+              "Power": 82,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/213565.png?v=23"
+          },
+          {
+              "Name": "Nahuel Molina",
+              "Position": "DEF",
+              "ATT": "75.50",
+              "MID": "77.75",
+              "DEF": "82.00",
+              "GK": "20.00",
+              "Power": 82,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/233084.png?v=23"
+          },
+          {
+              "Name": "Javi Galán",
+              "Position": "DEF",
+              "ATT": "73.00",
+              "MID": "78.25",
+              "DEF": "82.00",
+              "GK": "20.00",
+              "Power": 82,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/231591.png?v=23"
+          },
+          {
+              "Name": "Reinildo",
+              "Position": "DEF",
+              "ATT": "73.25",
+              "MID": "76.50",
+              "DEF": "81.00",
+              "GK": "20.00",
+              "Power": 81,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/236045.png?v=23"
+          },
+          {
+              "Name": "João Félix",
+              "Position": "ATT",
+              "ATT": "81.00",
+              "MID": "77.75",
+              "DEF": "66.50",
+              "GK": "20.00",
+              "Power": 81,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/242444.png?v=23"
+          },
+          {
+              "Name": "Saúl",
+              "Position": "MID",
+              "ATT": "74.50",
+              "MID": "80.00",
+              "DEF": "74.25",
+              "GK": "20.00",
+              "Power": 80,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/208421.png?v=23"
+          },
+          {
+              "Name": "Azpilicueta",
+              "Position": "DEF",
+              "ATT": "65.25",
+              "MID": "70.50",
+              "DEF": "79.00",
+              "GK": "20.00",
+              "Power": 79,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/184432.png?v=23"
+          },
+          {
+              "Name": "Axel Witsel",
+              "Position": "MID",
+              "ATT": "61.75",
+              "MID": "79.00",
+              "DEF": "66.25",
+              "GK": "20.00",
+              "Power": 79,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/177413.png?v=23"
+          },
+          {
+              "Name": "Rodrigo Riquelme Reche",
+              "Position": "MID",
+              "ATT": "70.75",
+              "MID": "77.00",
+              "DEF": "60.00",
+              "GK": "20.00",
+              "Power": 77,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/252324.png?v=23"
+          },
+          {
+              "Name": "Çağlar Söyüncü",
+              "Position": "DEF",
+              "ATT": "64.25",
+              "MID": "67.50",
+              "DEF": "77.00",
+              "GK": "20.00",
+              "Power": 77,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/232119.png?v=23"
+          },
+          {
+              "Name": "Samuel Dias Lino",
+              "Position": "MID",
+              "ATT": "73.75",
+              "MID": "77.00",
+              "DEF": "62.00",
+              "GK": "20.00",
+              "Power": 77,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/251445.png?v=23"
+          },
+          {
+              "Name": "Ivo Grbić",
+              "Position": "GK",
+              "ATT": "37.00",
+              "MID": "37.38",
+              "DEF": "31.88",
+              "GK": "75.00",
+              "Power": 75,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/258390.png?v=23"
+          },
+          {
+              "Name": "Pablo Barrios Rivas",
+              "Position": "MID",
+              "ATT": "69.00",
+              "MID": "73.00",
+              "DEF": "68.25",
+              "GK": "20.00",
+              "Power": 73,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/272449.png?v=23"
+          },
+          {
+              "Name": "Vitolo",
+              "Position": "MID",
+              "ATT": "69.75",
+              "MID": "71.00",
+              "DEF": "61.50",
+              "GK": "20.00",
+              "Power": 71,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/199715.png?v=23"
+          },
+          {
+              "Name": "Borja Garcés Moreno",
+              "Position": "ATT",
+              "ATT": "66.00",
+              "MID": "60.00",
+              "DEF": "51.50",
+              "GK": "20.00",
+              "Power": 66,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/243652.png?v=23"
+          },
+          {
+              "Name": "Alejandro Iturbe Encabo",
+              "Position": "GK",
+              "ATT": "33.38",
+              "MID": "33.63",
+              "DEF": "31.25",
+              "GK": "66.00",
+              "Power": 66,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/264116.png?v=23"
+          },
+          {
+              "Name": "Cedric Wilfred Teguía Noubi",
+              "Position": "MID",
+              "ATT": "69.25",
+              "MID": "65.00",
+              "DEF": "67.25",
+              "GK": "20.00",
+              "Power": 65,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/258536.png?v=23"
+          },
+          {
+              "Name": "Antonio Gomis Alemañ",
+              "Position": "GK",
+              "ATT": "31.63",
+              "MID": "31.75",
+              "DEF": "29.50",
+              "GK": "64.00",
+              "Power": 64,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/271193.png?v=23"
+          },
+          {
+              "Name": "Pablo Pérez Rico",
+              "Position": "DEF",
+              "ATT": "55.00",
+              "MID": "60.00",
+              "DEF": "63.00",
+              "GK": "20.00",
+              "Power": 63,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/256058.png?v=23"
+          },
+          {
+              "Name": "Diego Bri",
+              "Position": "MID",
+              "ATT": "54.00",
+              "MID": "61.00",
+              "DEF": "44.75",
+              "GK": "20.00",
+              "Power": 61,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/258689.png?v=23"
+          },
+          {
+              "Name": "Sergio Mestre Sánchez",
+              "Position": "GK",
+              "ATT": "30.38",
+              "MID": "30.25",
+              "DEF": "28.00",
+              "GK": "60.00",
+              "Power": 60,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/272503.png?v=23"
+          }
+      ]
       },
       "Valencia": {
         "Country": "Spain",
@@ -3187,7 +4807,279 @@
       "RealBetis": {
         "Country": "Spain",
         "Stadium": "Benito Villamarin",
-        "Manager": "Manuel Pellegrini"
+        "Manager": "Manuel Pellegrini",
+        "Players": [
+          {
+              "Name": "Nabil Fekir",
+              "Position": "MID",
+              "ATT": "82.25",
+              "MID": "83.00",
+              "DEF": "70.50",
+              "GK": "20.00",
+              "Power": 83,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/216594.png?v=23"
+          },
+          {
+              "Name": "Borja Iglesias",
+              "Position": "ATT",
+              "ATT": "83.00",
+              "MID": "73.25",
+              "DEF": "64.25",
+              "GK": "20.00",
+              "Power": 83,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/224179.png?v=23"
+          },
+          {
+              "Name": "Guido Rodríguez",
+              "Position": "MID",
+              "ATT": "64.75",
+              "MID": "83.00",
+              "DEF": "72.00",
+              "GK": "20.00",
+              "Power": 83,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/225659.png?v=23"
+          },
+          {
+              "Name": "Rui Silva",
+              "Position": "GK",
+              "ATT": "40.38",
+              "MID": "40.50",
+              "DEF": "33.88",
+              "GK": "81.00",
+              "Power": 81,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/210385.png?v=23"
+          },
+          {
+              "Name": "William Carvalho",
+              "Position": "MID",
+              "ATT": "68.25",
+              "MID": "81.00",
+              "DEF": "70.75",
+              "GK": "20.00",
+              "Power": 81,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/207566.png?v=23"
+          },
+          {
+              "Name": "Isco",
+              "Position": "MID",
+              "ATT": "68.25",
+              "MID": "80.00",
+              "DEF": "64.25",
+              "GK": "20.00",
+              "Power": 80,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/197781.png?v=23"
+          },
+          {
+              "Name": "Claudio Bravo",
+              "Position": "GK",
+              "ATT": "39.63",
+              "MID": "40.00",
+              "DEF": "37.00",
+              "GK": "80.00",
+              "Power": 80,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/174543.png?v=23"
+          },
+          {
+              "Name": "Luiz Felipe",
+              "Position": "DEF",
+              "ATT": "60.75",
+              "MID": "68.75",
+              "DEF": "80.00",
+              "GK": "20.00",
+              "Power": 80,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/236355.png?v=23"
+          },
+          {
+              "Name": "Bartra",
+              "Position": "DEF",
+              "ATT": "70.25",
+              "MID": "73.00",
+              "DEF": "79.00",
+              "GK": "20.00",
+              "Power": 79,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/198141.png?v=23"
+          },
+          {
+              "Name": "Ayoze Pérez Gutiérrez",
+              "Position": "MID",
+              "ATT": "73.50",
+              "MID": "79.00",
+              "DEF": "68.50",
+              "GK": "20.00",
+              "Power": 79,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/215590.png?v=23"
+          },
+          {
+              "Name": "Héctor Bellerín Moruno",
+              "Position": "DEF",
+              "ATT": "68.00",
+              "MID": "72.75",
+              "DEF": "78.00",
+              "GK": "20.00",
+              "Power": 78,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/203747.png?v=23"
+          },
+          {
+              "Name": "Juan Miranda González",
+              "Position": "DEF",
+              "ATT": "70.50",
+              "MID": "73.00",
+              "DEF": "77.00",
+              "GK": "20.00",
+              "Power": 77,
+              "img": "aaaaaaa"
+          },
+          {
+              "Name": "L. Henrique Rosa da Silva",
+              "Position": "MID",
+              "ATT": "74.75",
+              "MID": "77.00",
+              "DEF": "67.50",
+              "GK": "20.00",
+              "Power": 77,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/240915.png?v=23"
+          },
+          {
+              "Name": "Youssouf Sabaly",
+              "Position": "DEF",
+              "ATT": "69.25",
+              "MID": "72.00",
+              "DEF": "77.00",
+              "GK": "20.00",
+              "Power": 77,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/215699.png?v=23"
+          },
+          {
+              "Name": "Rodri",
+              "Position": "MID",
+              "ATT": "69.75",
+              "MID": "77.00",
+              "DEF": "60.00",
+              "GK": "20.00",
+              "Power": 77,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/259681.png?v=23"
+          },
+          {
+              "Name": "Willian José",
+              "Position": "ATT",
+              "ATT": "76.00",
+              "MID": "69.75",
+              "DEF": "61.75",
+              "GK": "20.00",
+              "Power": 76,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/195093.png?v=23"
+          },
+          {
+              "Name": "Andrés Guardado",
+              "Position": "MID",
+              "ATT": "68.00",
+              "MID": "76.00",
+              "DEF": "69.00",
+              "GK": "20.00",
+              "Power": 76,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/171897.png?v=23"
+          },
+          {
+              "Name": "Germán Pezzella",
+              "Position": "DEF",
+              "ATT": "58.00",
+              "MID": "58.00",
+              "DEF": "76.00",
+              "GK": "20.00",
+              "Power": 76,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/193601.png?v=23"
+          },
+          {
+              "Name": "Aitor Ruibal García",
+              "Position": "DEF",
+              "ATT": "74.75",
+              "MID": "74.25",
+              "DEF": "76.00",
+              "GK": "20.00",
+              "Power": 76,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/241867.png?v=23"
+          },
+          {
+              "Name": "Marc Roca Junqué",
+              "Position": "MID",
+              "ATT": "64.75",
+              "MID": "75.00",
+              "DEF": "66.50",
+              "GK": "20.00",
+              "Power": 75,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/235945.png?v=23"
+          },
+          {
+              "Name": "Abdessamad Ezzalzouli",
+              "Position": "ATT",
+              "ATT": "73.00",
+              "MID": "67.75",
+              "DEF": "54.75",
+              "GK": "20.00",
+              "Power": 73,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/264432.png?v=23"
+          },
+          {
+              "Name": "Paul Akouokou",
+              "Position": "MID",
+              "ATT": "61.25",
+              "MID": "72.00",
+              "DEF": "64.50",
+              "GK": "20.00",
+              "Power": 72,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/246947.png?v=23"
+          },
+          {
+              "Name": "Abner Vinicius da Silva Santos",
+              "Position": "DEF",
+              "ATT": "66.00",
+              "MID": "71.25",
+              "DEF": "72.00",
+              "GK": "20.00",
+              "Power": 72,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/263815.png?v=23"
+          },
+          {
+              "Name": "Juan Cruz",
+              "Position": "MID",
+              "ATT": "65.50",
+              "MID": "70.00",
+              "DEF": "54.75",
+              "GK": "20.00",
+              "Power": 70,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/243604.png?v=23"
+          },
+          {
+              "Name": "Yassin Fekir",
+              "Position": "MID",
+              "ATT": "65.25",
+              "MID": "67.00",
+              "DEF": "53.75",
+              "GK": "20.00",
+              "Power": 67,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/239496.png?v=23"
+          },
+          {
+              "Name": "Assane Diao Diaoune",
+              "Position": "MID",
+              "ATT": "64.25",
+              "MID": "64.00",
+              "DEF": "53.25",
+              "GK": "20.00",
+              "Power": 64,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/275324.png?v=23"
+          },
+          {
+              "Name": "Manuel Morillo León",
+              "Position": "ATT",
+              "ATT": "62.00",
+              "MID": "59.75",
+              "DEF": "48.75",
+              "GK": "20.00",
+              "Power": 62,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/264166.png?v=23"
+          }
+      ]
       },
       "CeltaVigo": {
         "Country": "Spain",
@@ -4227,7 +6119,289 @@
       "Osasuna": {
         "Country": "Spain",
         "Stadium": "El Sadar Stadium",
-        "Manager": "Jagoba Arrasate"
+        "Manager": "Jagoba Arrasate",
+        "players":[
+          {
+              "Name": "David García",
+              "Position": "DEF",
+              "ATT": "59.50",
+              "MID": "66.75",
+              "DEF": "82.00",
+              "GK": "20.00",
+              "Power": 82,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/225341.png?v=23"
+          },
+          {
+              "Name": "Ezequiel Ávila",
+              "Position": "ATT",
+              "ATT": "80.00",
+              "MID": "75.75",
+              "DEF": "67.50",
+              "GK": "20.00",
+              "Power": 80,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/228520.png?v=23"
+          },
+          {
+              "Name": "Catena",
+              "Position": "DEF",
+              "ATT": "58.75",
+              "MID": "64.75",
+              "DEF": "79.00",
+              "GK": "20.00",
+              "Power": 79,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/243976.png?v=23"
+          },
+          {
+              "Name": "Moisés Gómez Bordonado",
+              "Position": "MID",
+              "ATT": "70.00",
+              "MID": "79.00",
+              "DEF": "67.00",
+              "GK": "20.00",
+              "Power": 79,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/206590.png?v=23"
+          },
+          {
+              "Name": "Sergio Herrera",
+              "Position": "GK",
+              "ATT": "38.88",
+              "MID": "38.50",
+              "DEF": "34.63",
+              "GK": "79.00",
+              "Power": 79,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/224003.png?v=23"
+          },
+          {
+              "Name": "Aitor Fernández",
+              "Position": "GK",
+              "ATT": "38.50",
+              "MID": "37.75",
+              "DEF": "34.75",
+              "GK": "78.00",
+              "Power": 78,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/193314.png?v=23"
+          },
+          {
+              "Name": "Rubén García",
+              "Position": "MID",
+              "ATT": "70.50",
+              "MID": "78.00",
+              "DEF": "63.00",
+              "GK": "20.00",
+              "Power": 78,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/211022.png?v=23"
+          },
+          {
+              "Name": "Jon Moncayola Tollar",
+              "Position": "MID",
+              "ATT": "69.50",
+              "MID": "78.00",
+              "DEF": "70.50",
+              "GK": "20.00",
+              "Power": 78,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/247495.png?v=23"
+          },
+          {
+              "Name": "Ante Budimir",
+              "Position": "ATT",
+              "ATT": "77.00",
+              "MID": "64.75",
+              "DEF": "55.00",
+              "GK": "20.00",
+              "Power": 77,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/188335.png?v=23"
+          },
+          {
+              "Name": "Johan Mojica",
+              "Position": "DEF",
+              "ATT": "73.75",
+              "MID": "75.75",
+              "DEF": "77.00",
+              "GK": "20.00",
+              "Power": 77,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/214026.png?v=23"
+          },
+          {
+              "Name": "Lucas Torró Marset",
+              "Position": "MID",
+              "ATT": "63.00",
+              "MID": "77.00",
+              "DEF": "66.25",
+              "GK": "20.00",
+              "Power": 77,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/208137.png?v=23"
+          },
+          {
+              "Name": "Ignacio Vidal Miralles",
+              "Position": "DEF",
+              "ATT": "66.50",
+              "MID": "69.75",
+              "DEF": "76.00",
+              "GK": "20.00",
+              "Power": 76,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/238305.png?v=23"
+          },
+          {
+              "Name": "Juan Cruz Álvaro Armada",
+              "Position": "DEF",
+              "ATT": "62.50",
+              "MID": "68.00",
+              "DEF": "75.00",
+              "GK": "20.00",
+              "Power": 75,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/206219.png?v=23"
+          },
+          {
+              "Name": "Enrique Barja Afonso",
+              "Position": "MID",
+              "ATT": "70.00",
+              "MID": "75.00",
+              "DEF": "60.25",
+              "GK": "20.00",
+              "Power": 75,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/225200.png?v=23"
+          },
+          {
+              "Name": "Unai García Lugea",
+              "Position": "DEF",
+              "ATT": "58.50",
+              "MID": "63.50",
+              "DEF": "75.00",
+              "GK": "20.00",
+              "Power": 75,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/215569.png?v=23"
+          },
+          {
+              "Name": "Rubén Peña",
+              "Position": "DEF",
+              "ATT": "69.75",
+              "MID": "70.00",
+              "DEF": "75.00",
+              "GK": "20.00",
+              "Power": 75,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/211241.png?v=23"
+          },
+          {
+              "Name": "Darko Brašanac",
+              "Position": "MID",
+              "ATT": "65.50",
+              "MID": "74.00",
+              "DEF": "66.25",
+              "GK": "20.00",
+              "Power": 74,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/236221.png?v=23"
+          },
+          {
+              "Name": "Raúl García de Haro",
+              "Position": "ATT",
+              "ATT": "74.00",
+              "MID": "67.75",
+              "DEF": "56.25",
+              "GK": "20.00",
+              "Power": 74,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/253416.png?v=23"
+          },
+          {
+              "Name": "Aimar Oroz Huarte",
+              "Position": "MID",
+              "ATT": "70.00",
+              "MID": "73.00",
+              "DEF": "64.75",
+              "GK": "20.00",
+              "Power": 73,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/258937.png?v=23"
+          },
+          {
+              "Name": "José Arnáiz",
+              "Position": "MID",
+              "ATT": "73.25",
+              "MID": "70.00",
+              "DEF": "62.25",
+              "GK": "20.00",
+              "Power": 70,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/231530.png?v=23"
+          },
+          {
+              "Name": "Jesús Areso Blanco",
+              "Position": "DEF",
+              "ATT": "58.25",
+              "MID": "66.50",
+              "DEF": "68.00",
+              "GK": "20.00",
+              "Power": 68,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/239614.png?v=23"
+          },
+          {
+              "Name": "Pablo Ibáñez Lumbreras",
+              "Position": "MID",
+              "ATT": "58.25",
+              "MID": "67.00",
+              "DEF": "58.50",
+              "GK": "20.00",
+              "Power": 67,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/264160.png?v=23"
+          },
+          {
+              "Name": "Max Svensson Río",
+              "Position": "ATT",
+              "ATT": "66.00",
+              "MID": "66.75",
+              "DEF": "60.50",
+              "GK": "20.00",
+              "Power": 66,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/260340.png?v=23"
+          },
+          {
+              "Name": "Guillem Molina Gutiérrez",
+              "Position": "DEF",
+              "ATT": "51.50",
+              "MID": "56.00",
+              "DEF": "64.00",
+              "GK": "20.00",
+              "Power": 64,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/258747.png?v=23"
+          },
+          {
+              "Name": "Nikolaos Michelis",
+              "Position": "DEF",
+              "ATT": "48.25",
+              "MID": "50.25",
+              "DEF": "63.00",
+              "GK": "20.00",
+              "Power": 63,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/263555.png?v=23"
+          },
+          {
+              "Name": "Pablo Valencia García",
+              "Position": "GK",
+              "ATT": "32.13",
+              "MID": "31.88",
+              "DEF": "26.13",
+              "GK": "63.00",
+              "Power": 63,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/264161.png?v=23"
+          },
+          {
+              "Name": "Jorge Herrando Oroz",
+              "Position": "DEF",
+              "ATT": "46.75",
+              "MID": "50.00",
+              "DEF": "62.00",
+              "GK": "20.00",
+              "Power": 62,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/272433.png?v=23"
+          },
+          {
+              "Name": "Darío Ramos Pinazo",
+              "Position": "GK",
+              "ATT": "29.75",
+              "MID": "30.25",
+              "DEF": "26.38",
+              "GK": "60.00",
+              "Power": 60,
+              "img": "https://cdn.futbin.com/content/fifa24/img/players/245599.png?v=23"
+          }
+      ]
       }
     }
   }
