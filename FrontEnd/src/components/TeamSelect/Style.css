@@ -1,4 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+
 .teamSelectAllContainer {
+    font-family: Roboto;
+    letter-spacing: 10px;
+    font-size: 20px;
     display: flex;
     background-image: url("../../Assets/Market/Default_soccer_stadium_view_full_of_crowd_night_time_ray_traci_0_d6bb2c97-38a0-444f-8a16-15375f76b1ba_1.jpg");
     height: calc(100vh - 170px);
@@ -6,7 +11,6 @@
     background-repeat: no-repeat;
     align-items: center;
     justify-content: center;
-    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .mySwiper {

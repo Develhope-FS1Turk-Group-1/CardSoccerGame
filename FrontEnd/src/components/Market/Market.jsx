@@ -118,15 +118,15 @@ const Market = () => {
     {
       title: '---',
       title2: "---",
-      className: "casualUpperCard",
-      price: 10,
+      className: "comingSoonCard",
+      price: '--',
       onClick: buyOther
     },
     {
       title: '---',
       title2: "---",
-      className: "casualUpperCard",
-      price: 10,
+      className: "comingSoonCard",
+      price: '--',
       onClick: buyOther
     },
   ]

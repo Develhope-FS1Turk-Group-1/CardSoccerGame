@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+
 .onlineAllContainer {
+    font-family: Roboto;
     display: flex;
     background-image: url("../../../Assets/Online/onlinebackground.jpg");
     height: calc(100vh - 170px);
@@ -22,7 +25,7 @@
 }
 
 .playFriends {
-    background-image: url("../../../Assets/Single/Win.jpg");
+    background-image: url("../../../Assets/Online/onlineWithFriend.jpg");
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -52,9 +55,9 @@
 }
 
 .playRandom {
-    background-image: url("../../../Assets/Single/draw.jpg");
+    background-image: url("../../../Assets/Online/onlineRandom.jpeg");
     background-size: cover;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
