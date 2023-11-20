@@ -39,7 +39,7 @@ const registerUser = async (req, res) => {
 						return res.status(409).json({
 							message: 'Your username is registered before. Please try again with another username!!!',
 						});
-						
+
 					}
 				} catch (error) {
 					res.status(500).json({ message: 'Internal server error' });
@@ -52,7 +52,7 @@ const registerUser = async (req, res) => {
 					RETURNING *
 				`;
 
-				
+
 				try {
 					await sendRegistrationEmail({
 						username: username,
@@ -91,15 +91,15 @@ const randomPlayer = async (req, res) => {
 	try {
 		const result = await pool.query(
 			`WITH ranked_players AS (
-                SELECT 
-                    basePlayers.*, 
+                SELECT
+                    basePlayers.*,
                     ROW_NUMBER() OVER (PARTITION BY basePlayers.position ORDER BY RANDOM()) AS position_rank
-                FROM basePlayers 
+                FROM basePlayers
                 WHERE basePlayers.power >= 40 AND basePlayers.power <= 70
             )
-            SELECT * 
+            SELECT *
             FROM ranked_players
-            WHERE 
+            WHERE
                 (position = 'ATT' AND position_rank <= 4)
                 OR (position = 'MID' AND position_rank <= 6)
                 OR (position = 'DEF' AND position_rank <= 6)
@@ -212,6 +212,29 @@ const getUsername = async (req, res) => {
 	}
 };
 
+const getUser = async (req, res) => {
+	const userId = req.params.userId;
+	try {
+		const query = `
+      SELECT mail,username
+      FROM users
+      WHERE userId = $1
+    `;
+
+		const result = await pool.query(query, [userId]);
+		if (result.rows.length === 1) {
+			const email = result.rows[0].mail;
+			const username = result.rows[0].username;
+			res.json({ email,username });
+		} else {
+			res.status(404).json({ message: 'User not found' });
+		}
+	} catch (error) {
+		console.error('Error retrieving username', error);
+		res.status(500).json({ message: 'Internal server error' });
+	}
+};
+
 const updatePassword = async (req, res) => {
 	const { mail, oldPassword, newPassword } = req.body;
 
@@ -274,7 +297,7 @@ const updateCountdownPowers = async (req, res) => {
 		'UPDATE users SET energy = GREATEST(energy - 30, 0) WHERE userId = $1 RETURNING *',
 		[userId]
 	  );
-  
+
 	  res.status(200).json({
 		message: 'Updated energy successfully',
 		data: result.rows,
@@ -288,10 +311,10 @@ const updateCountdownPowers = async (req, res) => {
 	  });
 	}
   };
-  
+
 
 const resetPassword = async (req, res) => {
-	const { resetToken, newPassword } = req.body;  
+	const { resetToken, newPassword } = req.body;
 	try {
 		const userResult = await pool.query('SELECT * FROM users WHERE reset_token = $1', [resetToken]);
 		const user = userResult.rows[0];
@@ -300,7 +323,6 @@ const resetPassword = async (req, res) => {
 		}
 		const hashedPassword = await bcrypt.hash(newPassword, 10);
 		console.log(user);
-		console.log('sergen is asking');
 		await pool.query('UPDATE users SET password = $1, reset_token = NULL WHERE userid = $2', [hashedPassword, user.userid]);
 		res.status(200).json({ success: true, message: 'Password reset successful.' });
 	} catch (error) {
@@ -332,14 +354,14 @@ async function updateFormation(req, res) {
 
 	console.log(userId,newFormation,"Formation type");
 
-	
+
 	try {
 	  const query = 'UPDATE users SET formation = $1 WHERE userid = $2 RETURNING *';
 	  const result = await pool.query(query, [newFormation, userId]);
-  
+
 	  if (result.rows.length > 0) {
 		res.json(result.rows[0].formation);
-		} 
+		}
 	}
 	catch (error) {
 		console.error('Error fetching and adding players', error);
@@ -348,17 +370,17 @@ async function updateFormation(req, res) {
   }
 
 
-  
+
 async function getFormationType(req, res) {
 	const {userId} = req.body;
 
 	try {
 	  const query = 'select formation from users  WHERE userid = $1';
 	  const result = await pool.query(query, [userId]);
-  
+
 	  if (result.rows.length > 0) {
 		res.json(result.rows[0]);
-		} 
+		}
 	}
 	catch (error) {
 		console.error('Error fetching and adding players', error);
@@ -371,7 +393,7 @@ module.exports = {
 	loginUser,
 	getUsername,
 	updatePassword,
-	activateUser, 
+	activateUser,
 	randomPlayer,
 	updateCountupPowers,
 	updateCountdownPowers,
@@ -379,5 +401,6 @@ module.exports = {
 	sendUserResetPassword,
 	saveResetToken,
 	updateFormation,
-	getFormationType
+	getFormationType,
+	getUser
 };

@@ -279,12 +279,29 @@ const getPlayerById = async (req, res) => {
   }
 };
 
+const getAllFormation = async (req, res) => {
+	const { userId } = req.params;
+	try {
+		const result = await pool.query('SELECT * FROM formation WHERE userId = $1', [userId]);
+
+		const players = result.rows;
+
+		res.status(200).json(players);
+	} catch (error) {
+		console.error('Error retrieving formations data', error);
+		res.status(500).json({ error: 'Database error' });
+	}
+};
+
+
 module.exports = {
-  getAllPlayers,
-  buyPlayer,
-  saveFormation,
-  getMoney,
-  loadFormation,
-  getPlayerById,
-  getXP,
+
+	getAllPlayers,
+	buyPlayer,
+	saveFormation,
+	getMoney,
+	loadFormation,
+	getPlayerById,
+	getXP,
+	getAllFormation,
 };

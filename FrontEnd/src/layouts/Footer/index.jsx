@@ -10,39 +10,71 @@ import {Link,useNavigate} from 'react-router-dom';
 const Footer = () => {
     const navigate = useNavigate();
     return (
-        <div>
-            <div className='MainFooterComponent'>
-                <div className="FooterButtonField">
-                    <button onClick={()=>{
-                        navigate('/online');
-                    }}
-                    >Online</button>
-                    <button onClick={()=>{
-                        navigate('/single');
-                    }}
-                    >Single</button>
-                    <button onClick={()=>{
-                        navigate('/formation');
-                    }}>Team</button>
-                    <button onClick={()=>{
-                        navigate('/market');
-                    }}>Market</button>
-                    <div className='FooterTwoSideButton'>
-                        <button><img src={ppIcon} alt="" /></button>
-                        <button><img src={messageIcon} alt="" /></button>
-                    </div>
-                </div>
-                <div className="FooterSocialField">
-                    <div className="TopSideSocial">
-                        <img src={instagramFooter} alt="" />
-                        <img src={twitterFooter} alt="" />
-                        <img src={linkedinFooter} alt="" />
-                    </div>
-                    <h5>@2023 SoccerCard</h5>
-                </div>
-            </div>
-        </div>
-    );
+		<div>
+			<div className='MainFooterComponent'>
+				<div className='FooterButtonField'>
+					<button
+						onClick={() => {
+							navigate('/online');
+						}}>
+						Online
+					</button>
+					<button
+						onClick={() => {
+							navigate('/single');
+						}}>
+						Single
+					</button>
+					<button
+						onClick={() => {
+							navigate('/formation');
+						}}>
+						Team
+					</button>
+					<button
+						onClick={() => {
+							navigate('/market');
+						}}>
+						Market
+					</button>
+					<div className='FooterTwoSideButton'>
+						<button>
+							<img
+								src={messageIcon}
+								alt=''
+							/>
+						</button>
+						<button>
+							<img
+								src={ppIcon}
+								alt=''
+								onClick={() => {
+									navigate('/userInfo');
+								}}
+							/>
+						</button>
+					</div>
+				</div>
+				<div className='FooterSocialField'>
+					<div className='TopSideSocial'>
+						<img
+							src={instagramFooter}
+							alt=''
+						/>
+						<img
+							src={twitterFooter}
+							alt=''
+						/>
+						<img
+							src={linkedinFooter}
+							alt=''
+						/>
+					</div>
+					<h5>@2023 SoccerCard</h5>
+				</div>
+			</div>
+		</div>
+	);
 }
 
 export default Footer

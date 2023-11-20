@@ -8,6 +8,8 @@ router.post('/login', userController.loginUser);
 
 router.get('/getUsername/:userId', userController.getUsername);
 
+router.get('/getUser/:userId', userController.getUser);
+
 router.put('/updatePassword', userController.updatePassword);
 
 router.post('/randomplayer', userController.randomPlayer);
@@ -27,7 +29,7 @@ router.get('/activate/:token', async (req, res) => {
     const { token } = req.params;
     try {
       const result = await userController.activateUser(token);
-  
+
       if (result.success) {
         res.send('Account activated successfully!');
       } else {
@@ -38,7 +40,7 @@ router.get('/activate/:token', async (req, res) => {
       res.status(500).send('Internal Server Error');
     }
 });
-  
+
 router.post('/updateFormationType', userController.updateFormation);
 router.post('/getFormationType', userController.getFormationType);
 
