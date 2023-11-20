@@ -85,27 +85,27 @@ const updateUserXpAndMoney = async (userId, result) => {
 
 
 async function getPlayerIdByUsername(username) {
-  console.log(username , "username check");
+  console.log(username, "username check");
   try {
     const query = 'SELECT userid FROM users WHERE username = $1';
     const result = await pool.query(query, [username]);
-    
+
     console.log(result.rows);
 
 
     if (result.rows.length > 0) {
       return result.rows[0].userid;
-    } 
+    }
     else {
       return null; // If no user found with that username
     }
   }
-  catch(e){
+  catch (e) {
     console.log("Couldnt get username by id");
   }
 }
 
-const calculateTeamPower = async (userId)=>{
+const calculateTeamPower = async (userId) => {
   const result = await pool.query(
     `SELECT formation.positionId, formation.playerId, basePlayers.*, onlinePlayers.*
        FROM formation
@@ -123,19 +123,28 @@ const calculateTeamPower = async (userId)=>{
   //console.log(result.rows.slice(0, 3));
   const midPower = calculateTotalMid(result.rows.slice(3, 6));
   //console.log(result.rows.slice(3, 6));
-
   const defPower = calculateTotalDef(result.rows.slice(6, 10));
   //console.log(result.rows.slice(6, 10));
-
   const gkPower = result.rows[10].gk;
   //console.log(result.rows[10]);
 
   const teamPower = attPower + midPower + defPower + gkPower;
 
-  return teamPower;
+  return {
+    teamPower: teamPower,
+    attPower: attPower,
+    midPower: midPower,
+    defPower: defPower,
+    gkPower: gkPower
+  };
 }
 
 
+const teamPower = async (req, res) => {
+  const { userId } = req.params;
+  const userTeamPower = await calculateTeamPower(userId);
+  res.status(200).json(userTeamPower);
+};
 
 
 
@@ -144,11 +153,11 @@ const playOnlineMatch = async (req, res) => {
   console.log(userId, username);
   const opponentId = await getPlayerIdByUsername(username);
 
- 
+
   const userTeamPower = await calculateTeamPower(userId);
   const userGoal = Math.floor((Math.random() * userTeamPower) / 100);
 
- 
+
   const opponentPower = await calculateTeamPower(opponentId);
   const opponentGoal = Math.floor((Math.random() * opponentPower) / 100);
 
@@ -159,8 +168,8 @@ const playOnlineMatch = async (req, res) => {
       userGoal > opponentGoal
         ? "WIN"
         : userGoal == opponentGoal
-        ? "DRAW"
-        : "LOSE",
+          ? "DRAW"
+          : "LOSE",
     userTeamPower: userTeamPower,
     opponentTeamPower: opponentPower,
   };
@@ -245,7 +254,7 @@ const playSingleMatch = (req, res) => {
             calculateTotalMid(midfielders.rows) +
             goalkeeper.rows[0].gk;
 
-         
+
 
           const userTeamPower = await calculateTeamPower(userId);
           const userGoal = Math.floor((Math.random() * userTeamPower) / 100);
@@ -260,8 +269,8 @@ const playSingleMatch = (req, res) => {
               userGoal > opponentGoal
                 ? "WIN"
                 : userGoal == opponentGoal
-                ? "DRAW"
-                : "LOSE",
+                  ? "DRAW"
+                  : "LOSE",
             userTeamPower: userTeamPower,
             opponentTeamPower: teamPowerValue,
             attackers: attackers.rows,
@@ -280,7 +289,7 @@ const playSingleMatch = (req, res) => {
 };
 
 
-const addMatchHistory =  async (req, res) => {
+const addMatchHistory = async (req, res) => {
   const {
     userId,
     opponentId,
@@ -410,12 +419,13 @@ const getAllUsersTeamPowerAndSort = async (req, res) => {
     for (const user of distinctUserIds.rows) {
       const userId = user.userid;
       const allUserInfo = await getUserById(userId);
-      const userTeamPower = await calculateTeamPower(userId); // Replace this with your team power calculation logic
+      const calculatedAllPower = await calculateTeamPower(userId);
+      const userTeamPower = await calculatedAllPower.teampower; // Replace this with your team power calculation logic
 
       usersTeamPower.push({
         username: allUserInfo.username,
         userId: userId,
-        xp:allUserInfo.xp,
+        xp: allUserInfo.xp,
         teamPower: userTeamPower
       });
     }
@@ -423,7 +433,7 @@ const getAllUsersTeamPowerAndSort = async (req, res) => {
     // Sort users by their team power in ascending order
     usersTeamPower.sort((a, b) => b.teamPower - a.teamPower);
 
-    res.status(200).json({  usersTeamPower });
+    res.status(200).json({ usersTeamPower });
   } catch (error) {
     console.error("Error fetching and sorting users' team power:", error);
     res.status(500).send("Database error");
@@ -442,5 +452,6 @@ module.exports = {
   playOnlineMatch,
   addMatchHistory,
   getMatchHistoryById,
-  getAllUsersTeamPowerAndSort
+  getAllUsersTeamPowerAndSort,
+  teamPower
 };

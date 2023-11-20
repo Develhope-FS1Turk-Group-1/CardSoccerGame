@@ -8,11 +8,11 @@ const UserInfo = () => {
 	const [teamName, setTeamName] = useState();
 	const { userId } = useUserProvider();
 	const [email, setEmail] = useState();
-    const [ isOpen, setIsOpen ] = useState([ true, false, false ]);
-    const { resetToken } = useParams();
-    const [ newPassword, setNewPassword ] = useState('');
-    const [ error, setError ] = useState('');
-    const [isText, setIsText] = useState(false)
+	const [isOpen, setIsOpen] = useState([true, false, false]);
+	const { resetToken } = useParams();
+	const [newPassword, setNewPassword] = useState('');
+	const [error, setError] = useState('');
+	const [isText, setIsText] = useState(false)
 
 	useEffect(() => {
 		axios.get(`http://localhost:3050/getUser/${userId}`).then((res) => {
@@ -40,10 +40,7 @@ const UserInfo = () => {
 					return [true, false, false];
 			}
 		});
-    };
-
-
-    
+	};
 
 	const resetPassword = async () => {
 		try {
@@ -64,31 +61,28 @@ const UserInfo = () => {
 			console.error('Error resetting password:', error);
 			setError('Internal server error. Please try again later.');
 		}
-    };
+	};
 
-    const typeText = () => {
-        setIsText(!isText)
-    }
-
-
-    function calculateTotalAtt(players) {
-		return players.reduce((total, player) => total + player.att, 0);
+	const typeText = () => {
+		setIsText(!isText)
 	}
-	function calculateTotalMid(players) {
-		return players.reduce((total, player) => total + player.mid, 0);
+
+	useEffect(() => {
+		getStats();
+	}, [])
+
+
+	const getStats = () => {
+		console.log(userId);
+		axios
+			.get(`http://localhost:3050/play/teampower/${userId}`)
+			.then((response) => {
+				console.log(response.data);
+			})
+			.catch((error) => {
+				console.error("Error:", error);
+			});
 	}
-	function calculateTotalDef(players) {
-		return players.reduce((total, player) => total + player.def, 0);
-    }
-
-    useEffect(() => {
-
-        axios.get(`http://localhost:3050/player/get-all-formation/${userId}`).then((res) => console.log(res.data));
-
-
-
-    }, [])
-
 
 	return (
 		<div className='infoContainer'>
