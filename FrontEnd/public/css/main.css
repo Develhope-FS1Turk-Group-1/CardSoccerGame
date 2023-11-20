@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
@@ -211,12 +212,14 @@
   padding: 10px;
   margin-bottom: 10px;
   border: none;
-  border-radius: 100px;
+  border-radius: 10px;
   background-color: #fe453b;
   cursor: pointer;
 }
 .formationContainer .formationBtn button:hover {
   background-color: #ff2418;
+  box-shadow: rgb(255, 255, 255) 0 0 0 1px inset, rgb(135, 59, 59) 0 6px 15px 0, rgb(163, 62, 62) 0 2px 2px 0, rgb(151, 32, 32) 0 0 4px;
+  transform: scale(1.1);
 }
 .formationContainer .formationBtn .logo {
   display: flex;
@@ -269,16 +272,27 @@
   overflow: auto;
 }
 .formationContainer .playerList .player {
-  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: black;
   border: none;
-  border-radius: 50px;
-  background-color: #6fa26c;
+  font-weight: bolder;
+  background-color: white;
+  border-radius: 5px;
   padding: 5px 20px;
   text-align: center;
   cursor: pointer;
+  font-family: Roboto;
 }
 .formationContainer .playerList .player p:last-child {
-  color: #000;
+  color: purple;
+  font-size: larger;
+}
+.formationContainer .playerList .player:hover {
+  transition: transform 0.2s;
+  box-shadow: rgb(255, 255, 255) 0 0 0 1px inset, rgb(135, 59, 59) 0 6px 15px 0, rgb(163, 62, 62) 0 2px 2px 0, rgb(151, 32, 32) 0 0 4px;
+  transform: scale(1.1);
 }
 .formationContainer .playerCards {
   display: flex;

@@ -40,7 +40,7 @@ const buyPlayer = async (req, res) => {
       price = 35;
       break;
     case "3":
-      minRating = 91;
+      minRating = 75;
       count = 3;
       price = 70;
       break;
