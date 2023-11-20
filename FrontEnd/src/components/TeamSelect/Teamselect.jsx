@@ -38,7 +38,20 @@ const Teamselect = () => {
   const [result, setResult] = useState("none");
   const [blur, setBlur] = useState("blur(0px)");
   const [earnedMoney, setEarnedMoney] = useState("10");
+  const [showEnergyError, setShowEnergyError] = useState(false);
+  const [energyErrorMessage, setEnergyErrorMessage] = useState("");
   const navigate = useNavigate();
+  
+  const checkEnergyAndStartMatch = () => {
+    if (energy >= 30) {
+      startMatch();
+      updateEnergy();
+    } else {
+      // Show popup error if energy is not sufficient
+      setEnergyErrorMessage("Insufficient energy. Need at least 30 energy to start a match!");
+      setShowEnergyError(true);
+    }
+  };
 
   const startMatch = () => {
     setResultScreen("flex");
@@ -53,6 +66,7 @@ const Teamselect = () => {
         console.error("Error:", error);
       });
   };
+
 
   const updateMoney = () => {
     axios
@@ -287,7 +301,7 @@ const Teamselect = () => {
             <button
               id="GreenButton"
               onClick={() => {
-                startMatch();
+                checkEnergyAndStartMatch();
                 updateEnergy();
               }}
             >
@@ -295,6 +309,21 @@ const Teamselect = () => {
             </button>
           </div>
         </div>
+
+
+        {showEnergyError && (
+          <div className="energyErrorPopup">
+            <p>{energyErrorMessage}</p>
+            <button
+              id="GreenButton"
+              onClick={() => {
+                setShowEnergyError(false);
+              }}
+            >
+              OK
+            </button>
+          </div>
+        )}
 
         <div
           className="resultScreen"

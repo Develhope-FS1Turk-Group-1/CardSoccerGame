@@ -15,6 +15,7 @@ const Fourthree = ({ selectedPlayer, setSelectedPlayer, addPlayerToIndex, delete
 					addPlayerToIndex={addPlayerToIndex}
 					deletePlayerAtIndex={deletePlayerAtIndex}
 					playersOnBoard={playersOnBoard}
+
 				/>
 				<Card
 					id={2}
@@ -23,6 +24,7 @@ const Fourthree = ({ selectedPlayer, setSelectedPlayer, addPlayerToIndex, delete
 					deletePlayerAtIndex={deletePlayerAtIndex}
 					addPlayerToIndex={addPlayerToIndex}
 					playersOnBoard={playersOnBoard}
+
 				/>
 				<Card
 					id={3}
@@ -31,6 +33,7 @@ const Fourthree = ({ selectedPlayer, setSelectedPlayer, addPlayerToIndex, delete
 					deletePlayerAtIndex={deletePlayerAtIndex}
 					addPlayerToIndex={addPlayerToIndex}
 					playersOnBoard={playersOnBoard}
+
 				/>
 			</div>
 			<div className='midField'>
@@ -41,6 +44,7 @@ const Fourthree = ({ selectedPlayer, setSelectedPlayer, addPlayerToIndex, delete
 					deletePlayerAtIndex={deletePlayerAtIndex}
 					addPlayerToIndex={addPlayerToIndex}
 					playersOnBoard={playersOnBoard}
+
 				/>
 				<Card
 					id={5}
@@ -49,6 +53,7 @@ const Fourthree = ({ selectedPlayer, setSelectedPlayer, addPlayerToIndex, delete
 					deletePlayerAtIndex={deletePlayerAtIndex}
 					addPlayerToIndex={addPlayerToIndex}
 					playersOnBoard={playersOnBoard}
+
 				/>
 				<Card
 					id={6}
@@ -57,6 +62,7 @@ const Fourthree = ({ selectedPlayer, setSelectedPlayer, addPlayerToIndex, delete
 					deletePlayerAtIndex={deletePlayerAtIndex}
 					addPlayerToIndex={addPlayerToIndex}
 					playersOnBoard={playersOnBoard}
+
 				/>
 			</div>
 			<div className='defence'>
@@ -67,6 +73,7 @@ const Fourthree = ({ selectedPlayer, setSelectedPlayer, addPlayerToIndex, delete
 					deletePlayerAtIndex={deletePlayerAtIndex}
 					addPlayerToIndex={addPlayerToIndex}
 					playersOnBoard={playersOnBoard}
+
 				/>
 				<Card
 					id={8}
@@ -75,6 +82,7 @@ const Fourthree = ({ selectedPlayer, setSelectedPlayer, addPlayerToIndex, delete
 					deletePlayerAtIndex={deletePlayerAtIndex}
 					addPlayerToIndex={addPlayerToIndex}
 					playersOnBoard={playersOnBoard}
+
 				/>
 				<Card
 					id={9}
@@ -83,6 +91,7 @@ const Fourthree = ({ selectedPlayer, setSelectedPlayer, addPlayerToIndex, delete
 					deletePlayerAtIndex={deletePlayerAtIndex}
 					addPlayerToIndex={addPlayerToIndex}
 					playersOnBoard={playersOnBoard}
+
 				/>
 				<Card
 					id={10}
@@ -91,6 +100,7 @@ const Fourthree = ({ selectedPlayer, setSelectedPlayer, addPlayerToIndex, delete
 					deletePlayerAtIndex={deletePlayerAtIndex}
 					addPlayerToIndex={addPlayerToIndex}
 					playersOnBoard={playersOnBoard}
+
 				/>
 			</div>
 			<div className='goalKeeper'>
@@ -101,6 +111,7 @@ const Fourthree = ({ selectedPlayer, setSelectedPlayer, addPlayerToIndex, delete
 					deletePlayerAtIndex={deletePlayerAtIndex}
 					addPlayerToIndex={addPlayerToIndex}
 					playersOnBoard={playersOnBoard}
+
 				/>
 			</div>
 		</div>

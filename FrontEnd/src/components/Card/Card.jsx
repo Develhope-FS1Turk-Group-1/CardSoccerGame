@@ -12,10 +12,15 @@ const Card = ({
 	playersOnBoard,
 	playerList,
 	setPlayerList,
+	addPlayerToListedPlayers,
+
 }) => {
 	const [selectedCard, setSelectedCard] = useState(null);
 
 	useEffect(() => {
+		//console.log(playersOnBoard[id-1]);
+		//console.log(id);
+		//console.log(playersOnBoard);
 		if (playersOnBoard[id - 1] != null) {
 			setSelectedCard(playersOnBoard[id - 1]);
 		}
@@ -53,6 +58,8 @@ const Card = ({
 			if (response.status === 200) {
 
 				
+				console.log("sa over");
+				//await addPlayerToListedPlayers(selectedCard);
 				
 				let player = response.data.player;
 				player.onlineplayerid = dataArray[1];
@@ -60,11 +67,10 @@ const Card = ({
 				player.positionId = id;
 				setSelectedCard(player);
 				addPlayerToIndex(id - 1, player);
-				deletePlayerAtIndex(dataArray[2]-1);
+				
 
 				//console.log(playersOnBoard);
 				//event.target.innerHTML = dataArray[0];
-
 
 			} else {
 				console.error(
@@ -77,13 +83,23 @@ const Card = ({
 		}
 	};
 
-	const handleDragOver = (event) => {
+	const handleDragOver = async (event) => {
 		event.preventDefault();
+
+	};
+	const handleDragEnd = async (event) => {
+		event.preventDefault();
+		
+		await deletePlayerAtIndex(id-1);
+		setSelectedCard(playersOnBoard[id-1]);
+
+
 	};
 	const handleDragStart = (event, data) => {
 		let obj = data;
 		obj.push(id);
 		event.dataTransfer.setData('text/plain', obj);
+
 		
 	};
 
@@ -99,7 +115,10 @@ const Card = ({
 			className='player-card'
 			id={id}
 			onDragOver={handleDragOver}
-			onDrop={handleDrop}>
+			onDrop={handleDrop}
+			onDragEnd = {handleDragEnd}
+			>
+			
 			{selectedCard?.name ? (
 				<>
 					<div className='player-details'>

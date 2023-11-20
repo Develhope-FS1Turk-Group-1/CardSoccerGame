@@ -11,7 +11,9 @@ const Online = () => {
   const [result, setResult] = useState("none");
   const [blur, setBlur] = useState("blur(0px)");
   const [earnedMoney, setEarnedMoney] = useState("10");
-
+  const [showEnergyError, setShowEnergyError] = useState(false);
+  const [energyErrorMessage, setEnergyErrorMessage] = useState("");
+  
   const updateMoney = () => {
     axios
       .get(`http://localhost:3050/player/getMoney/${userId}`)
@@ -38,6 +40,17 @@ const Online = () => {
       .catch((error) => {
         console.log(error);
       });
+  };
+  
+  const checkEnergyAndStartMatch = () => {
+    if (energy >= 30) {
+      startFriendMatch();
+      updateEnergy();
+    } else {
+      // Show popup error if energy is not sufficient
+      setEnergyErrorMessage("Insufficient energy. Need at least 30 energy to start a match!");
+      setShowEnergyError(true);
+    }
   };
 
   const startFriendMatch = () => {
@@ -84,10 +97,24 @@ const Online = () => {
               <input onChange={(e) => {
                 setOpponentId(e.target.value);
               }} type="text" placeholder='Enter Your Friend Username' />
-              <button onClick={() => { startFriendMatch(); updateEnergy(); }} id='PlayFriendButton'>PLAY!</button>
+              <button onClick={() => { checkEnergyAndStartMatch(); updateEnergy(); }} id='PlayFriendButton'>PLAY!</button>
             </div>
           </div>
         </div>
+
+        {showEnergyError && (
+          <div className="energyErrorPopup">
+            <p>{energyErrorMessage}</p>
+            <button
+              id="GreenButton"
+              onClick={() => {
+                setShowEnergyError(false);
+              }}
+            >
+              OK
+            </button>
+          </div>
+        )}
 
         <div
           className="resultScreen"

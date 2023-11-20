@@ -40,6 +40,13 @@
     <label for="PHY">Physicality (PHY):</label>
     <input type="number" id="PHY" min="0" max="100"><br><br>
 
+
+    <label for="playerImg">Img:</label>
+    <input type="text" id="playerImg"><br><br>
+    <label for="teamName">teamName:</label>
+    <input type="text" id="teamName"><br><br>
+
+
     <button onclick="calculateStats()">Calculate</button><br><br>
 
     <h2>Results:</h2>
@@ -56,6 +63,9 @@
         function calculateStats() {
             const name = document.getElementById('name').value;
             const position = document.getElementById('position').value;
+            const playerImg = document.getElementById('playerImg').value
+            const teamName = document.getElementById('teamName').value
+
             const defaultValue = parseFloat(document.getElementById('defaultValue').value);
             const PAC = parseFloat(document.getElementById('PAC').value) || defaultValue;
             const SHO = parseFloat(document.getElementById('SHO').value) || defaultValue;
@@ -102,16 +112,39 @@
             const jsonResult = {
                 Name: name,
                 Position: position,
-                ATT: ATT.toFixed(2),
-                MID: MID.toFixed(2),
-                DEF: DEFValue.toFixed(2),
-                GK: GKValue.toFixed(2),
-                Power: defaultValue,
-                img: "aaaaaaa"
+                ATT: Math.ceil(ATT.toFixed(2)),
+                MID: Math.ceil(MID.toFixed(2)),
+                DEF: Math.ceil(DEFValue.toFixed(2)),
+                GK: Math.ceil(GKValue.toFixed(2)),
+                Team: teamName,
+                power: defaultValue,
+                img: playerImg
             };
             results.push(jsonResult);
             console.log(results);
             document.getElementById('jsonResult').textContent = JSON.stringify(jsonResult, null, 2);
+
+            fetch('http://localhost:3050/player/addBasePlayer', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(jsonResult),
+                })
+                .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+                })
+                .then(data => {
+                console.log('Added player:', data.player);
+                })
+                .catch(error => {
+                console.error('Error adding player:', error);
+                });
+
+
         }
     </script>
 </body>

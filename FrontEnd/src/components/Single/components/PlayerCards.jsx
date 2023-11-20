@@ -13,6 +13,9 @@ const PlayerCards = ({
 		if (playersOnBoard[id - 1] != null) {
 			setSelectedCard(playersOnBoard[id - 1].name);
 		}
+		else{
+			setSelectedCard(null);
+		}
 	}, [playersOnBoard]);
 
 	const handleClick = (cardId) => {

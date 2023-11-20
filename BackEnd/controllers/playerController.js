@@ -279,6 +279,71 @@ const getPlayerById = async (req, res) => {
   }
 };
 
+
+
+const addBasePlayerFunction = async (req, res) => {
+  const {
+    Name,
+    Position,
+    power,
+    ATT,
+    MID,
+    DEF,
+    GK,
+    Team,
+    img
+  } = req.body;
+
+  if (!Name || !Position || !power || !ATT || !MID || !DEF || !GK || !Team || !img) {
+    console.log(Name,
+      Position,
+      power,
+      ATT,
+      MID,
+      DEF,
+      GK,
+      Team,
+      img)
+    res.status(400).send("Missing required fields");
+    return;
+  }
+
+  try {
+    const insertQuery = `
+      INSERT INTO basePlayers (Name, Position, power, ATT, MID, DEF, GK, Team, img)
+      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+      RETURNING *;
+    `;
+
+    const values = [
+      Name,
+      Position,
+      power,
+      ATT,
+      MID,
+      DEF,
+      GK,
+      Team,
+      img
+    ];
+
+    const result = await pool.query(insertQuery, values);
+
+    if (result.rows.length === 0) {
+      res.status(500).send("Failed to add player");
+      return;
+    }
+
+    const addedPlayer = result.rows[0];
+    res.status(201).json({ player: addedPlayer });
+  } catch (error) {
+    console.error("Error adding player", error);
+    res.status(500).send("Database error");
+  }
+};
+
+
+
 module.exports = {
   getAllPlayers,
   buyPlayer,
@@ -287,4 +352,5 @@ module.exports = {
   loadFormation,
   getPlayerById,
   getXP,
+  addBasePlayerFunction,
 };
