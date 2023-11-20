@@ -40,7 +40,10 @@ const UserInfo = () => {
 					return [true, false, false];
 			}
 		});
-	};
+    };
+
+
+    
 
 	const resetPassword = async () => {
 		try {
