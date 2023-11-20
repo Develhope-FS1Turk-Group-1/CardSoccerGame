@@ -12,8 +12,8 @@ import OnlinePage from './Pages/OnlinePage';
 import ResetPassword from './components/ResetPassword/ResetPassword';
 import PasswordReset from './components/PasswordReset/PasswordReset';
 import Card from './components/Card/Card';
+import UserInfoPage from './Pages/UserInfoPage';
 import LeaderboardPage from './Pages/LeaderboardPage';
-
 
 function App() {
 	return (
@@ -75,6 +75,10 @@ function App() {
 							element={<Card />}
 						/>
 						<Route
+
+							path='/userInfo'
+							exact
+							element={<UserInfoPage />}
 							path='/leaderboard'
 							exact
 							element={<LeaderboardPage />}

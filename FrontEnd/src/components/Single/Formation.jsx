@@ -74,6 +74,8 @@ const Single = () => {
 
 
 
+
+
 	const randomPlayer = async () => {
 		try {
 			const response = await axios.post(`http://localhost:3050/randomplayer`, {
@@ -120,7 +122,7 @@ const Single = () => {
 		setTeamInfo(initialTeamData);
 
 
-		
+
 
 
 
@@ -202,7 +204,7 @@ const Single = () => {
 		}
 
 		axios
-			.post(`http://localhost:3050/player/saveFormation`, {
+			.post(`http://localhost:3050/`, {
 				userId: userId,
 				players: playersOnBoard,
 			})
