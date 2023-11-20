@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import './DashboardStyle.css'
 import tactics from "../../../Assets/Dashboard/tactics.jpg"
 import playnow from "../../../Assets/Dashboard/playnow.jpg"
-import online from "../../../images/bellingham.jpeg"
+import online from "../../../Assets/Dashboard/online.jpg"
 import market from "../../../Assets/Dashboard/market.jpg"
 import Teamselect from '../TeamSelect/Teamselect';
 import { useUserProvider } from '../../Contexts/UserContext';

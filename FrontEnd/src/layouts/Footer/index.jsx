@@ -1,11 +1,11 @@
 import React from 'react'
 import './FooterStyle.css'
 import ppIcon from './Components/ppiconFooter.svg'
-import messageIcon from './Components/messageiconFooter.svg'
+import podiumIcon from './Components/podiumIcon.svg'
 import instagramFooter from './Components/instagramFooter.svg'
 import linkedinFooter from './Components/linkedinFooter.svg'
 import twitterFooter from './Components/twitterFooter.svg'
-import {Link,useNavigate} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Footer = () => {
     const navigate = useNavigate();
@@ -13,23 +13,27 @@ const Footer = () => {
         <div>
             <div className='MainFooterComponent'>
                 <div className="FooterButtonField">
-                    <button onClick={()=>{
+                    <button onClick={() => {
                         navigate('/online');
                     }}
                     >Online</button>
-                    <button onClick={()=>{
+                    <button onClick={() => {
                         navigate('/single');
                     }}
                     >Single</button>
-                    <button onClick={()=>{
+                    <button onClick={() => {
                         navigate('/formation');
                     }}>Team</button>
-                    <button onClick={()=>{
+                    <button onClick={() => {
                         navigate('/market');
                     }}>Market</button>
                     <div className='FooterTwoSideButton'>
                         <button><img src={ppIcon} alt="" /></button>
-                        <button><img src={messageIcon} alt="" /></button>
+                        <button
+                            onClick={() => {
+                                navigate('/leaderboard');
+                            }}
+                        ><img src={podiumIcon} alt="" /></button>
                     </div>
                 </div>
                 <div className="FooterSocialField">
