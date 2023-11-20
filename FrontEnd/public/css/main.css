@@ -598,5 +598,41 @@
   -webkit-box-shadow: 1px 0px 28px 6px red;
   -moz-box-shadow: 1px 0px 28px 6px red;
 }
+.soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .comingSoonCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  max-width: 250px;
+  width: 100%;
+  height: 100%;
+}
+.soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .comingSoonCard h3,
+.soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .comingSoonCard h5,
+.soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .comingSoonCard b {
+  color: gray;
+  font-family: "Kalam", cursive;
+}
+.soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .comingSoonCard #cardImage {
+  height: 60%;
+  width: 90%;
+  object-fit: cover;
+  filter: blur(1px);
+  transition: 1s ease;
+  border: 2px solid gray;
+  border-radius: 10px;
+  background-image: url("../../Assets/Market/comingSoon.jpeg");
+  background-position: center top;
+  background-size: cover;
+}
+.soccerMarket .marketAllContainer .marketSmallContainer .marketCardContainer .comingSoonCard #cardImage:hover {
+  filter: blur(0);
+  transition: 2s ease;
+  height: 100%;
+  box-shadow: 1px 0px 8px 6px gray;
+  -webkit-box-shadow: 1px 0px 8px 6px gray;
+  -moz-box-shadow: 1px 0px 8px 6px gray;
+}
 
 /*# sourceMappingURL=main.css.map */
