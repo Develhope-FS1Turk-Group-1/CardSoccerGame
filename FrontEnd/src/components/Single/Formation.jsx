@@ -250,6 +250,7 @@ const Single = () => {
 							//console.log(player);
 							return !playersOnBoard.some(
 								(formPlayer) =>{
+									if(formPlayer == null) return false;
 									//console.log(formPlayer);
 									return formPlayer.onlineplayerid ==
 									player.onlineplayerid 
