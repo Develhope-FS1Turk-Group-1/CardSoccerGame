@@ -12,6 +12,7 @@ import OnlinePage from './Pages/OnlinePage';
 import ResetPassword from './components/ResetPassword/ResetPassword';
 import PasswordReset from './components/PasswordReset/PasswordReset';
 import Card from './components/Card/Card';
+import LeaderboardPage from './Pages/LeaderboardPage';
 
 
 function App() {
@@ -72,6 +73,11 @@ function App() {
 							path='/card'
 							exact
 							element={<Card />}
+						/>
+						<Route
+							path='/leaderboard'
+							exact
+							element={<LeaderboardPage />}
 						/>
 					</Routes>
 				</Router>

@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,700;0,800;0,900;1,300;1,400;1,700;1,800;1,900&family=Roboto:ital@1&display=swap');
+
+.leaderboardAllContainer {
+    font-family: 'Red Hat Display', sans-serif;
+    display: flex;
+    background-image: url("../../../Assets/LeaderBoard/leaderboardBackground.jpeg");
+    height: calc(100vh - 170px);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    align-items: center;
+    justify-content: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+table {
+    width: 60%;
+    font-family: 'Red Hat Display', sans-serif;
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: white;
+}
+
+thead {
+    background-color: #f2f2f2;
+}
+
+th,
+td {
+    padding: 9px;
+    text-align: center;
+    font-weight: 1000;
+}
+
+th {
+    background-color:rgb(163, 18, 18);
+    color: white;
+}
+
+tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+.userRank{
+    font-weight: 400;
+}
+
+#firstPlace{
+    font-size: 50px;
+    font-weight: 900;
+    color: #FFD700;
+    background-color: #ffd90067;
+    -webkit-text-stroke: 1px black;
+}
+
+#secondPlace{
+    font-size: 40px;
+    font-weight: 900;
+    color: silver;
+    background-color: rgba(192, 192, 192, 0.336);
+    -webkit-text-stroke: 1px black;
+}
+
+#thirdPlace{
+    font-size: 30px;
+    font-weight: 900;
+    color: #CD7F32;
+    background-color: #cd803245;
+    -webkit-text-stroke: 1px black;
+}
