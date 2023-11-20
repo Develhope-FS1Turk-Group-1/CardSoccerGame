@@ -84,13 +84,13 @@ const Single = () => {
 
 
 
-	const deletePlayerAtIndex = (index) => {
+	const deletePlayerAtIndex = async(index) => {
 		console.log(index);
 		let players = playersOnBoard;
-		players[index] = null;
+		players[index] = null
 		console.log(players);
 
-		setPlayersOnBoard(players);
+		await setPlayersOnBoard(players);
 		console.log(playersOnBoard);
 
 	};
