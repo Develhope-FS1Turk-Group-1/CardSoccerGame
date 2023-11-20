@@ -75,7 +75,7 @@ $Courgette: 'Courgette', cursive;
         color: white;
         display: flex;
         position: absolute;
-        z-index: 1;
+        z-index: 2;
         flex-direction: column;
         top: 30%;
         align-items: center;
@@ -140,6 +140,12 @@ $Courgette: 'Courgette', cursive;
                 width: 100%;
                 height: 90%;
                 justify-content: space-around;
+
+                .swiper-backface-hidden .swiper-slide{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
 
                 button {
                     background-color: transparent;
@@ -317,6 +323,44 @@ $Courgette: 'Courgette', cursive;
                         box-shadow: 1px 0px 28px 6px red;
                         -webkit-box-shadow: 1px 0px 28px 6px red;
                         -moz-box-shadow: 1px 0px 28px 6px red;
+                    }
+                }
+                .comingSoonCard {
+                    @include flex;
+                    flex-direction: column;
+                    overflow: hidden;
+                    max-width: 250px;
+                    width: 100%;
+                    height: 100%;
+
+                    h3,
+                    h5,
+                    b {
+                        color: gray;
+                        font-family: $Kalam;
+                    }
+
+
+                    #cardImage {
+                        height: 60%;
+                        width: 90%;
+                        object-fit: cover;
+                        filter: blur(1px);
+                        transition: 1s ease;
+                        border: 2px solid gray;
+                        border-radius: 10px;
+                        background-image: url("../../Assets/Market/comingSoon.jpeg");
+                        background-position: center top;
+                        background-size: cover;
+                    }
+
+                    #cardImage:hover {
+                        filter: blur(0);
+                        transition: 2s ease;
+                        height: 100%;
+                        box-shadow: 1px 0px 8px 6px gray;
+                        -webkit-box-shadow: 1px 0px 8px 6px gray;
+                        -moz-box-shadow: 1px 0px 8px 6px gray;
                     }
                 }
             }

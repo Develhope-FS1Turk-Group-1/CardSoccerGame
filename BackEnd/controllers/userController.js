@@ -37,7 +37,7 @@ const registerUser = async (req, res) => {
 						}
 
 						return res.status(409).json({
-							message: 'Your username is registered before. Please try again with another username!!!',
+							message: 'Your username is registered before. Please try again with another username !',
 						});
 
 					}

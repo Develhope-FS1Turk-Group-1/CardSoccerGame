@@ -21,6 +21,7 @@ const Single = () => {
 	const [playerList, setPlayerList] = useState([]);
 	const [giftAlert, setGiftAlert] = useState('giftAlertOff');
 	const [blur, setBlur] = useState('');
+	const [systemUpdate,setSystemUpdate] = useState(false);
 	const [teamInfo, setTeamInfo] = useState({
 		logo: '',
 		name: '',
@@ -52,13 +53,22 @@ const Single = () => {
 
 	const [listedPlayers, setListedPlayers] = useState([]);
 
-	const addPlayerToIndex = (index, player) => {
-		let players = playersOnBoard;
-		players[index] = player;
-		setPlayersOnBoard(players);
-
+	const addPlayerToListedPlayers = async (player) => {
+		let players = listedPlayers;
+		console.log(players);
+		players.push(player);
+		console.log(players);
+		players.sort((a,b) => b.power - a.power);
+		console.log(players);
+		await setListedPlayers(players);
 	};
 
+	const addPlayerToIndex = async (index, player) => {
+		let players = playersOnBoard;
+		players[index] = player;
+		await setPlayersOnBoard(players);
+		setSystemUpdate(!systemUpdate);
+	};
 
 
 
@@ -86,15 +96,15 @@ const Single = () => {
 
 
 
-	const deletePlayerAtIndex = (index) => {
+	const deletePlayerAtIndex = async(index) => {
 		console.log(index);
 		let players = playersOnBoard;
-		players[index] = null;
+		players[index] = null
 		console.log(players);
 
-		setPlayersOnBoard(players);
+		await setPlayersOnBoard(players);
 		console.log(playersOnBoard);
-
+		setSystemUpdate(!systemUpdate);
 	};
 
 	useEffect(() => {
@@ -226,32 +236,48 @@ const Single = () => {
 	const handleDragStart = (event, data) => {
 		event.dataTransfer.setData('text/plain', data);
 	};
+	/*const handleDragStart = (event, data) => {
+		event.dataTransfer.setData('text/plain', data);
+	};*/
 
 
 	useEffect(() => {
+		console.log("system Updated");
+		//console.log(playersOnBoard);
 		const newListing = async () => {
 			if (playerList.length !== 0) {
 				if (playersOnBoard[1] !== null) {
 					const newlist = await playerList.filter(
-						(player) =>
-							!playersOnBoard.some(
-								(formPlayer) =>
-									formPlayer.playerId ===
-									player.onlineplayerid,
-							),
+						(player) =>{
+							//console.log(player);
+							return !playersOnBoard.some(
+								(formPlayer) =>{
+									if(formPlayer == null) return false;
+									//console.log(formPlayer);
+									return formPlayer.onlineplayerid ==
+									player.onlineplayerid 
+
+								}
+									
+							);
+						}
+							
 					);
 					setListedPlayers(newlist);
+					//console.log("up");
+					
+					//console.log(listedPlayers);
 
 				} else {
-					console.log("else ");
+					//console.log("else ");
 					setListedPlayers(playerList);
 				}
 			}
 		};
-
+		
 		newListing();
-		addPlayerToIndex();
-	}, [playersOnBoard, playerList]);
+		//addPlayerToIndex();
+	}, [systemUpdate, playerList]);
 
 
 	/*
@@ -269,6 +295,7 @@ const Single = () => {
 								<Card
 									id={player + 1}
 									playersOnBoard={playerList}
+									
 								/>}
 						</div>
 					))}
@@ -324,6 +351,7 @@ const Single = () => {
 								playersOnBoard={playersOnBoard}
 								playerList={playerList}
 								setPlayerList={setPlayerList}
+
 							/>
 						) : (
 							<Fourthree
@@ -333,6 +361,7 @@ const Single = () => {
 								addPlayerToIndex={addPlayerToIndex}
 								deletePlayerAtIndex={deletePlayerAtIndex}
 								playersOnBoard={playersOnBoard}
+
 							/>
 						)}
 					</div>
@@ -366,7 +395,7 @@ const Single = () => {
 									addPlayerToIndex={addPlayerToIndex}
 									deletePlayerAtIndex={deletePlayerAtIndex}
 									playersOnBoard={playersOnBoard}
-								/>
+						/>
 								<Card
 									id={13}
 									selectedPlayer={selectedPlayer}
@@ -374,7 +403,7 @@ const Single = () => {
 									addPlayerToIndex={addPlayerToIndex}
 									deletePlayerAtIndex={deletePlayerAtIndex}
 									playersOnBoard={playersOnBoard}
-								/>
+						/>
 								<Card
 									id={14}
 									selectedPlayer={selectedPlayer}
@@ -382,7 +411,7 @@ const Single = () => {
 									addPlayerToIndex={addPlayerToIndex}
 									deletePlayerAtIndex={deletePlayerAtIndex}
 									playersOnBoard={playersOnBoard}
-								/>
+							/>
 								<Card
 									id={15}
 									selectedPlayer={selectedPlayer}
@@ -390,7 +419,7 @@ const Single = () => {
 									addPlayerToIndex={addPlayerToIndex}
 									deletePlayerAtIndex={deletePlayerAtIndex}
 									playersOnBoard={playersOnBoard}
-								/>
+							/>
 								<Card
 									id={16}
 									selectedPlayer={selectedPlayer}
@@ -398,7 +427,7 @@ const Single = () => {
 									addPlayerToIndex={addPlayerToIndex}
 									deletePlayerAtIndex={deletePlayerAtIndex}
 									playersOnBoard={playersOnBoard}
-								/>
+							/>
 								<Card
 									id={17}
 									selectedPlayer={selectedPlayer}
@@ -406,7 +435,7 @@ const Single = () => {
 									deletePlayerAtIndex={deletePlayerAtIndex}
 									addPlayerToIndex={addPlayerToIndex}
 									playersOnBoard={playersOnBoard}
-								/>
+							/>
 								<Card
 									id={18}
 									selectedPlayer={selectedPlayer}
@@ -414,6 +443,7 @@ const Single = () => {
 									setSelectedPlayer={setSelectedPlayer}
 									addPlayerToIndex={addPlayerToIndex}
 									playersOnBoard={playersOnBoard}
+						
 								/>
 							</div>
 						</div>

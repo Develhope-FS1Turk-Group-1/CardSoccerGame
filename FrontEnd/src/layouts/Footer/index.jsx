@@ -1,15 +1,16 @@
 import React from 'react'
 import './FooterStyle.css'
 import ppIcon from './Components/ppiconFooter.svg'
-import messageIcon from './Components/messageiconFooter.svg'
+import podiumIcon from './Components/podiumIcon.svg'
 import instagramFooter from './Components/instagramFooter.svg'
 import linkedinFooter from './Components/linkedinFooter.svg'
 import twitterFooter from './Components/twitterFooter.svg'
-import {Link,useNavigate} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Footer = () => {
     const navigate = useNavigate();
     return (
+
 		<div>
 			<div className='MainFooterComponent'>
 				<div className='FooterButtonField'>
@@ -38,12 +39,11 @@ const Footer = () => {
 						Market
 					</button>
 					<div className='FooterTwoSideButton'>
-						<button>
-							<img
-								src={messageIcon}
-								alt=''
-							/>
-						</button>
+						<button
+             onClick={() => {
+                                navigate('/leaderboard');
+                            }}
+                        ><img src={podiumIcon} alt="" /></button>
 						<button>
 							<img
 								src={ppIcon}
@@ -75,6 +75,7 @@ const Footer = () => {
 			</div>
 		</div>
 	);
+
 }
 
 export default Footer

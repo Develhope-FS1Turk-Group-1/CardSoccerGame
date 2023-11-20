@@ -82,6 +82,8 @@ const updateUserXpAndMoney = async (userId, result) => {
   }
 };
 
+
+
 async function getPlayerIdByUsername(username) {
   console.log(username , "username check");
   try {
@@ -103,12 +105,7 @@ async function getPlayerIdByUsername(username) {
   }
 }
 
-const playOnlineMatch = async (req, res) => {
-  const { userId, username } = req.body;
-  console.log(userId, username);
-  const opponentId = await getPlayerIdByUsername(username);
-
- console.log(userId, "BABBA");
+const calculateTeamPower = async (userId)=>{
   const result = await pool.query(
     `SELECT formation.positionId, formation.playerId, basePlayers.*, onlinePlayers.*
        FROM formation
@@ -120,8 +117,7 @@ const playOnlineMatch = async (req, res) => {
   );
 
   if (result.rows.length === 0) {
-    res.status(404).send("Formation not found for the specified user");
-    return;
+    return 0;
   }
   const attPower = calculateTotalAtt(result.rows.slice(0, 3));
   //console.log(result.rows.slice(0, 3));
@@ -134,36 +130,26 @@ const playOnlineMatch = async (req, res) => {
   const gkPower = result.rows[10].gk;
   //console.log(result.rows[10]);
 
-  const userTeamPower = attPower + midPower + defPower + gkPower;
+  const teamPower = attPower + midPower + defPower + gkPower;
+
+  return teamPower;
+}
+
+
+
+
+
+const playOnlineMatch = async (req, res) => {
+  const { userId, username } = req.body;
+  console.log(userId, username);
+  const opponentId = await getPlayerIdByUsername(username);
+
+ 
+  const userTeamPower = await calculateTeamPower(userId);
   const userGoal = Math.floor((Math.random() * userTeamPower) / 100);
 
-  const resultOpponent = await pool.query(
-    `SELECT formation.positionId, formation.playerId, basePlayers.*, onlinePlayers.*
-       FROM formation
-       JOIN onlinePlayers ON formation.playerId = onlinePlayers.id
-       JOIN basePlayers ON onlinePlayers.baseId = basePlayers.id
-       WHERE formation.userId = $1
-       ORDER BY formation.positionId`,
-    [opponentId]
-  );
-
-  if (resultOpponent.rows.length === 0) {
-    res.status(404).send("Formation not found for the specified user");
-    return;
-  }
-  const attPowerOpponent = calculateTotalAtt(resultOpponent.rows.slice(0, 3));
-  //console.log(result.rows.slice(0, 3));
-  const midPowerOpponent = calculateTotalMid(resultOpponent.rows.slice(3, 6));
-  //console.log(result.rows.slice(3, 6));
-
-  const defPowerOpponent = calculateTotalDef(resultOpponent.rows.slice(6, 10));
-  //console.log(result.rows.slice(6, 10));
-
-  const gkPowerOpponent = resultOpponent.rows[10].gk;
-  //console.log(result.rows[10]);
-
-  const opponentPower =
-    attPowerOpponent + midPowerOpponent + defPowerOpponent + gkPowerOpponent;
+ 
+  const opponentPower = await calculateTeamPower(opponentId);
   const opponentGoal = Math.floor((Math.random() * opponentPower) / 100);
 
   const matchResult = {
@@ -259,32 +245,9 @@ const playSingleMatch = (req, res) => {
             calculateTotalMid(midfielders.rows) +
             goalkeeper.rows[0].gk;
 
-          const result = await pool.query(
-            `SELECT formation.positionId, formation.playerId, basePlayers.*, onlinePlayers.*
-                         FROM formation
-                         JOIN onlinePlayers ON formation.playerId = onlinePlayers.id
-                         JOIN basePlayers ON onlinePlayers.baseId = basePlayers.id
-                         WHERE formation.userId = $1
-                         ORDER BY formation.positionId`,
-            [userId]
-          );
+         
 
-          if (result.rows.length === 0) {
-            res.status(404).send("Formation not found for the specified user");
-            return;
-          }
-          const attPower = calculateTotalAtt(result.rows.slice(0, 3));
-          //console.log(result.rows.slice(0, 3));
-          const midPower = calculateTotalMid(result.rows.slice(3, 6));
-          //console.log(result.rows.slice(3, 6));
-
-          const defPower = calculateTotalDef(result.rows.slice(6, 10));
-          //console.log(result.rows.slice(6, 10));
-
-          const gkPower = result.rows[10].gk;
-          //console.log(result.rows[10]);
-
-          const userTeamPower = attPower + midPower + defPower + gkPower;
+          const userTeamPower = await calculateTeamPower(userId);
           const userGoal = Math.floor((Math.random() * userTeamPower) / 100);
           const opponentGoal = Math.floor(
             (Math.random() * teamPowerValue) / 100
@@ -316,10 +279,168 @@ const playSingleMatch = (req, res) => {
   });
 };
 
+
+const addMatchHistory =  async (req, res) => {
+  const {
+    userId,
+    opponentId,
+    opponentType,
+    userGoal,
+    opponentGoal,
+    result
+  } = req.body;
+
+  if (
+    userId === undefined ||
+    opponentId === undefined ||
+    userGoal === undefined ||
+    opponentGoal === undefined ||
+    result === undefined
+  ) {
+    res.status(400).send("Missing required fields");
+    return;
+  }
+
+  try {
+    const insertQuery = `
+      INSERT INTO game_results (userId, opponentId, opponentType, userGoal, opponentGoal, result)
+      VALUES ($1, $2, $3, $4, $5, $6)
+      RETURNING *;
+    `;
+
+    const values = [
+      userId,
+      opponentId,
+      opponentType,
+      userGoal,
+      opponentGoal,
+      result
+    ];
+
+    const result = await pool.query(insertQuery, values);
+
+    if (result.rows.length === 0) {
+      res.status(500).send("Failed to save game result");
+      return;
+    }
+
+    const savedGameResult = result.rows[0];
+    res.status(201).json({ gameResult: savedGameResult });
+  } catch (error) {
+    console.error("Error saving game result", error);
+    res.status(500).send("Database error");
+  }
+};
+
+
+
+
+
+
+const getMatchHistoryById = async (req, res) => {
+  const userId = req.params.userId;
+
+  if (!userId) {
+    res.status(400).send("Missing userId");
+    return;
+  }
+
+  try {
+    const query = `
+      SELECT * FROM matchhistory
+      WHERE userId = $1
+    `;
+
+    const result = await pool.query(query, [userId]);
+
+    if (result.rows.length === 0) {
+      res.status(404).send("No game history found for this user");
+      return;
+    }
+
+    const gameHistory = result.rows;
+    res.status(200).json({ history: gameHistory });
+  } catch (error) {
+    console.error("Error fetching game history", error);
+    res.status(500).send("Database error");
+  }
+};
+
+
+
+const getUserById = async (userId) => {
+
+  try {
+    const query = `
+      SELECT * FROM users
+      WHERE userid = $1
+    `;
+
+    const result = await pool.query(query, [userId]);
+
+    if (result.rows.length === 0) {
+      return null;
+    }
+
+    const user = result.rows[0];
+    return user;
+  } catch (error) {
+    console.error("Error fetching user by ID:", error);
+    return null;
+  }
+};
+
+
+
+const getAllUsersTeamPowerAndSort = async (req, res) => {
+  try {
+    // Get distinct userIds from the formation table
+    const distinctUserIdsQuery = `
+      SELECT DISTINCT userId FROM formation
+    `;
+    const distinctUserIds = await pool.query(distinctUserIdsQuery);
+
+    if (distinctUserIds.rows.length === 0) {
+      return [];
+    }
+
+    // Calculate team power for each user
+    const usersTeamPower = [];
+
+    for (const user of distinctUserIds.rows) {
+      const userId = user.userid;
+      const allUserInfo = await getUserById(userId);
+      const userTeamPower = await calculateTeamPower(userId); // Replace this with your team power calculation logic
+
+      usersTeamPower.push({
+        username: allUserInfo.username,
+        userId: userId,
+        xp:allUserInfo.xp,
+        teamPower: userTeamPower
+      });
+    }
+
+    // Sort users by their team power in ascending order
+    usersTeamPower.sort((a, b) => b.teamPower - a.teamPower);
+
+    res.status(200).json({  usersTeamPower });
+  } catch (error) {
+    console.error("Error fetching and sorting users' team power:", error);
+    res.status(500).send("Database error");
+  }
+};
+
+
+
+
+
 module.exports = {
   getLeagues,
   getTeams,
   updateUserXpAndMoney,
   playSingleMatch,
   playOnlineMatch,
+  addMatchHistory,
+  getMatchHistoryById,
+  getAllUsersTeamPowerAndSort
 };

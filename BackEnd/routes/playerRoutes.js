@@ -13,6 +13,6 @@ router.get("/getXP/:userId", playerController.getXP);
 router.post("/saveFormation", playerController.saveFormation);
 router.post("/loadFormation", playerController.loadFormation);
 router.get("/getPlayerById/:playerId", playerController.getPlayerById);
-router.get('/get-all-formation/:userId', playerController.getAllFormation);
+router.post('/addBasePlayer', playerController.addBasePlayerFunction);
 
 module.exports = router;

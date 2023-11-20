@@ -279,29 +279,80 @@ const getPlayerById = async (req, res) => {
   }
 };
 
-const getAllFormation = async (req, res) => {
-	const { userId } = req.params;
-	try {
-		const result = await pool.query('SELECT * FROM formation WHERE userId = $1', [userId]);
 
-		const players = result.rows;
 
-		res.status(200).json(players);
-	} catch (error) {
-		console.error('Error retrieving formations data', error);
-		res.status(500).json({ error: 'Database error' });
-	}
+
+const addBasePlayerFunction = async (req, res) => {
+  const {
+    Name,
+    Position,
+    power,
+    ATT,
+    MID,
+    DEF,
+    GK,
+    Team,
+    img
+  } = req.body;
+
+  if (!Name || !Position || !power || !ATT || !MID || !DEF || !GK || !Team || !img) {
+    console.log(Name,
+      Position,
+      power,
+      ATT,
+      MID,
+      DEF,
+      GK,
+      Team,
+      img)
+    res.status(400).send("Missing required fields");
+    return;
+  }
+
+  try {
+    const insertQuery = `
+      INSERT INTO basePlayers (Name, Position, power, ATT, MID, DEF, GK, Team, img)
+      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+      RETURNING *;
+    `;
+
+    const values = [
+      Name,
+      Position,
+      power,
+      ATT,
+      MID,
+      DEF,
+      GK,
+      Team,
+      img
+    ];
+
+    const result = await pool.query(insertQuery, values);
+
+    if (result.rows.length === 0) {
+      res.status(500).send("Failed to add player");
+      return;
+    }
+
+    const addedPlayer = result.rows[0];
+    res.status(201).json({ player: addedPlayer });
+  } catch (error) {
+    console.error("Error adding player", error);
+    res.status(500).send("Database error");
+  }
 };
 
 
-module.exports = {
 
-	getAllPlayers,
-	buyPlayer,
-	saveFormation,
-	getMoney,
-	loadFormation,
-	getPlayerById,
-	getXP,
-	getAllFormation,
+module.exports = {
+  getAllPlayers,
+  buyPlayer,
+  saveFormation,
+  getMoney,
+  loadFormation,
+  getPlayerById,
+  getXP,
+  addBasePlayerFunction,
+
 };

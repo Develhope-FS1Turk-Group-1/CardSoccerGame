@@ -1,4 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+
 .teamSelectAllContainer {
+    font-family: Roboto;
+    font-size: 20px;
     display: flex;
     background-image: url("../../Assets/Market/Default_soccer_stadium_view_full_of_crowd_night_time_ray_traci_0_d6bb2c97-38a0-444f-8a16-15375f76b1ba_1.jpg");
     height: calc(100vh - 170px);
@@ -6,7 +10,6 @@
     background-repeat: no-repeat;
     align-items: center;
     justify-content: center;
-    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .mySwiper {
@@ -24,6 +27,8 @@
 
 .teamSelectDiv h1 {
     color: white;
+    letter-spacing: 10px;
+
 }
 
 .teamSelectDiv {
@@ -220,3 +225,33 @@
 #drawAlert {
     background-image: url("../../../Assets/Single/draw.jpg");
 }
+
+
+/* Add these styles to your Style.css file or equivalent */
+.energyErrorPopup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-color: #3f234d;
+  }
+  
+  .energyErrorPopup p {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  
+  .energyErrorPopup button {
+    margin-top: 10px;
+  }
+  

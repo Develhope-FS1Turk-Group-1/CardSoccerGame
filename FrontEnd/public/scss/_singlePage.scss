@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+
 @mixin flex {
 	display: flex;
 	align-items: center;
@@ -50,9 +52,9 @@
 	margin: auto;
 	height: 80%;
 
-	h3{
-		color:#3f234d;
-		
+	h3 {
+		color: #3f234d;
+
 	}
 
 	.playerBought {
@@ -63,14 +65,15 @@
 		justify-content: center;
 		text-align: center;
 	}
+
 	.boughtPlayersPopUp {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        width: 100%;
-        flex-wrap: wrap;
-        height: 80%;
-    }
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		width: 100%;
+		flex-wrap: wrap;
+		height: 80%;
+	}
 
 }
 
@@ -86,7 +89,7 @@
 
 .formationLoadingAllContainer {
 
-	
+
 	.formationLoading {
 		filter: blur(8px);
 		height: calc(100vh - 170px);
@@ -102,6 +105,7 @@
 		position: relative;
 
 	}
+
 	.formationLoadingError {
 		position: fixed;
 		top: 50%;
@@ -117,13 +121,14 @@
 		height: 40%;
 		flex-direction: column;
 		text-align: center;
+
 		.button-9 {
 			appearance: button;
 			backface-visibility: hidden;
 			background-color: rgba(137, 163, 163, 0.717);
 			border-radius: 6px;
 			border-width: 0;
-			box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+			box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .1) 0 2px 5px 0, rgba(0, 0, 0, .07) 0 1px 1px 0;
 			box-sizing: border-box;
 			color: #fff;
 			cursor: pointer;
@@ -133,17 +138,17 @@
 			margin: 12px 0 0;
 			padding: 0 25px;
 			text-align: center;
-			transition: all .2s,box-shadow .08s ease-in;
+			transition: all .2s, box-shadow .08s ease-in;
 			width: 100%;
-		  }
-		  
-		  .button-9:disabled {
+		}
+
+		.button-9:disabled {
 			cursor: default;
-		  }
-		  
-		  .button-9:hover {
+		}
+
+		.button-9:hover {
 			box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
-		  }
+		}
 	}
 }
 
@@ -218,12 +223,15 @@
 			padding: 10px;
 			margin-bottom: 10px;
 			border: none;
-			border-radius: 100px;
+			border-radius: 10px;
 			background-color: #fe453b;
 			cursor: pointer;
 
 			&:hover {
 				background-color: #ff2418;
+				box-shadow: rgba(255, 255, 255) 0 0 0 1px inset, rgb(135, 59, 59) 0 6px 15px 0, rgb(163, 62, 62) 0 2px 2px 0, rgb(151, 32, 32)0 0 4px;
+				transform: scale(1.1);
+
 			}
 
 		}
@@ -291,20 +299,34 @@
 		overflow: auto;
 
 		.player {
-			color: #fff;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			color: black;
 			border: none;
-			border-radius: 50px;
-			background-color: #6fa26c;
+			font-weight: bolder;
+			background-color: white;
+			border-radius: 5px;
 			padding: 5px 20px;
 			text-align: center;
 			cursor: pointer;
+			font-family: Roboto;
 
 			p {
 				&:last-child {
-					color: #000;
+					color: purple;
+					font-size: larger
 				}
 			}
 		}
+
+		.player:hover {
+			transition: transform .2s;
+			box-shadow: rgba(255, 255, 255) 0 0 0 1px inset, rgb(135, 59, 59) 0 6px 15px 0, rgb(163, 62, 62) 0 2px 2px 0, rgb(151, 32, 32)0 0 4px;
+			transform: scale(1.1);
+
+		}
+		
 	}
 
 	.playerCards {
