@@ -281,6 +281,7 @@ const getPlayerById = async (req, res) => {
 
 
 
+
 const addBasePlayerFunction = async (req, res) => {
   const {
     Name,
@@ -353,4 +354,5 @@ module.exports = {
   getPlayerById,
   getXP,
   addBasePlayerFunction,
+
 };

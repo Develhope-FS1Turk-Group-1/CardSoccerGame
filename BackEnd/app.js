@@ -34,3 +34,16 @@ app.listen(PORT, () => {
 	connectDB();
 	console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+process.on('SIGINT', () => {
+	console.log('Caught interrupt signal, closing database connection');
+	closeDBConnection();
+});
+
+async function closeDBConnection() {
+	if (client) {
+		await client.release();
+		console.log('Database connection closed');
+	}
+	process.exit();
+}
