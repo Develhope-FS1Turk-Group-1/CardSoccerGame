@@ -144,7 +144,7 @@ const UserInfo = () => {
 						<div className='mactchList'>
 							{history?.map((match, index) => {
 								{console.log(match.opponentusername)}
-								<p>{match.opponentusername}{match.opponentgoal}-{match.usergoal}</p>
+								<p>{match?.opponentusername}{match?.opponentgoal}-{match?.usergoal}</p>
 							})};
 						</div>
 					</div>
