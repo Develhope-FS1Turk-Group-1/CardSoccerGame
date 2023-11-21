@@ -12,9 +12,9 @@ const UserInfo = () => {
 	const { resetToken } = useParams();
 	const [newPassword, setNewPassword] = useState('');
 	const [error, setError] = useState('');
-    const [ isText, setIsText ] = useState(false)
-	const [ power, setPower ] = useState();
-	const [ history, setHistory ] = useState();
+	const [isText, setIsText] = useState(false)
+	const [power, setPower] = useState();
+	const [history, setHistory] = useState();
 
 	useEffect(() => {
 		axios.get(`http://localhost:3050/getUser/${userId}`).then((res) => {
@@ -86,7 +86,7 @@ const UserInfo = () => {
 			.get(`http://localhost:3050/play/getHistory/${userId}`)
 			.then((response) => {
 				setHistory(response?.data.history);
-		console.log('as');
+				console.log('as');
 
 			})
 			.catch((error) => {
@@ -105,7 +105,7 @@ const UserInfo = () => {
 		<div className='infoContainer'>
 			<div className='leftside'>
 				<div className='username'>
-					<h1>{teamName ? 'Team : '+teamName : '*****'}</h1>
+					<h1>{teamName ? 'Team : ' + teamName : '*****'}</h1>
 				</div>
 				<div className='statsSection'>
 					<h1
@@ -143,9 +143,13 @@ const UserInfo = () => {
 						</div>
 						<div className='mactchList'>
 							{history?.map((match, index) => {
-								{console.log(match.opponentusername)}
-								<p>{match?.opponentusername}{match?.opponentgoal}-{match?.usergoal}</p>
-							})};
+								console.log(match.opponentusername);
+								return (
+									<p key={index}>
+										{match?.opponentusername} {match?.opponentgoal}-{match?.usergoal}
+									</p>
+								);
+							})}
 						</div>
 					</div>
 					<div className={`statsPanel ${isOpen[1] ? 'block' : 'none'}`}>
