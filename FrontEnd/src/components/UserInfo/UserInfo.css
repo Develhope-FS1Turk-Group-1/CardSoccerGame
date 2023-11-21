@@ -28,6 +28,10 @@
     padding-left: 5px;
 }
 
+.mactchList{
+	color: white;
+}
+
 .infoContainer .leftside h1:not(.username h1):hover {
 	color: #7969e9;
     border-color: #7969e9;

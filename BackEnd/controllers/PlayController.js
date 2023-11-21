@@ -150,7 +150,6 @@ const teamPower = async (req, res) => {
 
 const playOnlineMatch = async (req, res) => {
   const { userId, username } = req.body;
-  console.log(userId, username);
   const opponentId = await getPlayerIdByUsername(username);
 
   const calculatedAllPower = await calculateTeamPower(userId);
@@ -291,29 +290,29 @@ const playSingleMatch = (req, res) => {
 
 const addMatchHistory = async (req, res) => {
   const {
-    userId,
-    opponentId,
-    opponentType,
-    userGoal,
-    opponentGoal,
-    result
+    userId: userId,
+    opponentId: opponentId,
+    opponentType: opponentType,
+    userGoal: userGoal,
+    opponentGoal:opponentGoal,
+    result:result,
   } = req.body;
-
+console.log(req.body);
   if (
     userId === undefined ||
     opponentId === undefined ||
     userGoal === undefined ||
-    opponentGoal === undefined ||
-    result === undefined
+    opponentGoal === undefined
   ) {
+    console.log("Missing required fields");
     res.status(400).send("Missing required fields");
     return;
   }
 
   try {
     const insertQuery = `
-      INSERT INTO matchhistory (userId, opponentId, opponentType, userGoal, opponentGoal, result)
-      VALUES ($1, $2, $3, $4, $5, $6)
+      INSERT INTO matchhistory (userId, opponentUsername, opponentType, userGoal, opponentGoal)
+      VALUES ($1, $2, $3, $4, $5)
       RETURNING *;
     `;
 
@@ -323,8 +322,8 @@ const addMatchHistory = async (req, res) => {
       opponentType,
       userGoal,
       opponentGoal,
-      result
     ];
+    console.log(values, "values");
 
     const result = await pool.query(insertQuery, values);
 
@@ -347,13 +346,12 @@ const addMatchHistory = async (req, res) => {
 
 
 const getMatchHistoryById = async (req, res) => {
-  const userId = req.params.userId;
-
+  const {userId} = req.params;
+  console.log(userId, "userId");
   if (!userId) {
     res.status(400).send("Missing userId");
     return;
   }
-
   try {
     const query = `
       SELECT * FROM matchhistory
@@ -362,7 +360,7 @@ const getMatchHistoryById = async (req, res) => {
 
     const result = await pool.query(query, [ userId ]);
 
-
+console.log(result.rows);
     if (result.rows.length === 0) {
       res.status(404).send("No game history found for this user");
       return;

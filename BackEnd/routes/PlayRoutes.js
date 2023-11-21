@@ -7,7 +7,6 @@ router.get('/getLeagues', PlayController.getLeagues);
 router.post('/playSingle/:team/:userId', PlayController.playSingleMatch);
 router.post('/playOnline',PlayController.playOnlineMatch);
 router.post('/addMatchHistory', PlayController.addMatchHistory);
-router.post('/history/:userId', PlayController.getMatchHistoryById);
 router.get('/rank', PlayController.getAllUsersTeamPowerAndSort);
 router.get('/teampower/:userId', PlayController.teamPower);
 router.get('/getHistory/:userId', PlayController.getMatchHistoryById);

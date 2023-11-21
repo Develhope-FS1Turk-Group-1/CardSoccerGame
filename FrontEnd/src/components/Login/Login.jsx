@@ -62,7 +62,7 @@ const LoginPage = () => {
 					console.log(response.data);
 					setLevel(response.data.level);
 					console.log(response.data);
-					//setEnergy(response.data.energy);
+					setEnergy(response.data.energy);
 					console.log("Check availibility");
 					navigate('/dashboard');
 				} 

@@ -85,8 +85,7 @@ const UserInfo = () => {
 		axios
 			.get(`http://localhost:3050/play/getHistory/${userId}`)
 			.then((response) => {
-				setHistory(response?.data);
-				console.log(response.data);
+				setHistory(response?.data.history);
 		console.log('as');
 
 			})
@@ -142,7 +141,12 @@ const UserInfo = () => {
 							<input type='number' />
 							<button>Filter History</button>
 						</div>
-						<div className='mactchList'></div>
+						<div className='mactchList'>
+							{history?.map((match, index) => {
+								{console.log(match.opponentusername)}
+								<p>{match?.opponentusername}{match?.opponentgoal}-{match?.usergoal}</p>
+							})};
+						</div>
 					</div>
 					<div className={`statsPanel ${isOpen[1] ? 'block' : 'none'}`}>
 						<div className='att'>
