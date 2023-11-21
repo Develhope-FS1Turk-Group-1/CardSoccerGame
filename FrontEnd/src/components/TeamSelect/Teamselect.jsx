@@ -44,6 +44,7 @@ const Teamselect = () => {
   
   const checkEnergyAndStartMatch = () => {
     if (energy >= 30) {
+
       startMatch();
       updateEnergy();
     } else {

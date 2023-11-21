@@ -153,13 +153,13 @@ const playOnlineMatch = async (req, res) => {
   console.log(userId, username);
   const opponentId = await getPlayerIdByUsername(username);
 
+  const calculatedAllPower = await calculateTeamPower(userId);
+  const userTeamPower = await calculatedAllPower.teamPower; 
+  const userGoal = Math.floor((Math.random() * userTeamPower) / 150);
 
-  const userTeamPower = await calculateTeamPower(userId);
-  const userGoal = Math.floor((Math.random() * userTeamPower) / 100);
-
-
-  const opponentPower = await calculateTeamPower(opponentId);
-  const opponentGoal = Math.floor((Math.random() * opponentPower) / 100);
+  const calculatedOpponentAllPower = await calculateTeamPower(opponentId);
+  const opponentPower = await calculatedOpponentAllPower.teamPower; 
+  const opponentGoal = Math.floor((Math.random() * opponentPower) / 150);
 
   const matchResult = {
     userGoal: userGoal,
@@ -181,6 +181,7 @@ const playOnlineMatch = async (req, res) => {
 
 const playSingleMatch = (req, res) => {
   const { team, userId } = req.params;
+  console.log(team, userId);
 
   // Selecting the 3 best attackers (ATT) for the given team
   const bestAttackersQuery = `
@@ -254,12 +255,11 @@ const playSingleMatch = (req, res) => {
             calculateTotalMid(midfielders.rows) +
             goalkeeper.rows[0].gk;
 
-
-
-          const userTeamPower = await calculateTeamPower(userId);
-          const userGoal = Math.floor((Math.random() * userTeamPower) / 100);
+          const calculatedAllPower = await calculateTeamPower(userId);
+          const userTeamPower = await calculatedAllPower.teamPower;
+          const userGoal = Math.floor((Math.random() * userTeamPower) / 150);
           const opponentGoal = Math.floor(
-            (Math.random() * teamPowerValue) / 100
+            (Math.random() * teamPowerValue) / 150
           );
 
           const bestPlayers = {
