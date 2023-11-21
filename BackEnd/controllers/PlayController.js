@@ -420,7 +420,7 @@ const getAllUsersTeamPowerAndSort = async (req, res) => {
       const userId = user.userid;
       const allUserInfo = await getUserById(userId);
       const calculatedAllPower = await calculateTeamPower(userId);
-      const userTeamPower = await calculatedAllPower.teampower; // Replace this with your team power calculation logic
+      const userTeamPower = await calculatedAllPower.teamPower; // Replace this with your team power calculation logic
 
       usersTeamPower.push({
         username: allUserInfo.username,
