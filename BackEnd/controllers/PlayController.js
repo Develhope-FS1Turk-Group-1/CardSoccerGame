@@ -312,7 +312,7 @@ const addMatchHistory = async (req, res) => {
 
   try {
     const insertQuery = `
-      INSERT INTO game_results (userId, opponentId, opponentType, userGoal, opponentGoal, result)
+      INSERT INTO matchhistory (userId, opponentId, opponentType, userGoal, opponentGoal, result)
       VALUES ($1, $2, $3, $4, $5, $6)
       RETURNING *;
     `;
@@ -360,7 +360,8 @@ const getMatchHistoryById = async (req, res) => {
       WHERE userId = $1
     `;
 
-    const result = await pool.query(query, [userId]);
+    const result = await pool.query(query, [ userId ]);
+
 
     if (result.rows.length === 0) {
       res.status(404).send("No game history found for this user");

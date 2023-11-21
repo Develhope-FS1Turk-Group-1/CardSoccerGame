@@ -13,7 +13,7 @@ const Online = () => {
   const [earnedMoney, setEarnedMoney] = useState("10");
   const [showEnergyError, setShowEnergyError] = useState(false);
   const [energyErrorMessage, setEnergyErrorMessage] = useState("");
-  
+
   const updateMoney = () => {
     axios
       .get(`http://localhost:3050/player/getMoney/${userId}`)
@@ -41,7 +41,7 @@ const Online = () => {
         console.log(error);
       });
   };
-  
+
   const checkEnergyAndStartMatch = () => {
     if (energy >= 30) {
       startFriendMatch();
@@ -69,6 +69,18 @@ const Online = () => {
       .catch((error) => {
         console.error("Error:", error);
       });
+
+
+    axios
+		.post(`http://localhost:3050/play/addMatchHistory`, {
+			username: opponentId,
+			userId: userId,
+			result,
+		})
+		.then((res) => console.log(res.data))
+		.catch((error) => {
+			console.error('Error:', error);
+		});
   }
 
   const updateEnergy = async() => {
