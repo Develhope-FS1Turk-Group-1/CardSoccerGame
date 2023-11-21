@@ -13,6 +13,23 @@ const Online = () => {
   const [earnedMoney, setEarnedMoney] = useState("10");
   const [showEnergyError, setShowEnergyError] = useState(false);
   const [energyErrorMessage, setEnergyErrorMessage] = useState("");
+  const [userGoal, setUserGoal] = useState("");
+  const [opponentGoal, setOpponentGoal] = useState("");
+
+  const addMatchHistory = () => {
+    axios
+		.post(`http://localhost:3050/play/addMatchHistory`, {
+			opponentId: opponentId,
+			userId: userId,
+			result: result,
+      userGoal: userGoal,
+      opponentGoal: opponentGoal,
+		})
+		.then((res) =>{    console.log(res.data); console.log("here22221");} )
+		.catch((error) => {
+			console.error('Error:', error);
+		});
+   };
 
   const updateMoney = () => {
     axios
@@ -64,23 +81,14 @@ const Online = () => {
       })
       .then((response) => {
         setResult(response.data);
+        setOpponentGoal(response.data.opponentGoal);
+        setUserGoal(response.data.userGoal);
         console.log(response.data);
+        console.log("here1")
       })
       .catch((error) => {
         console.error("Error:", error);
       });
-
-
-    axios
-		.post(`http://localhost:3050/play/addMatchHistory`, {
-			username: opponentId,
-			userId: userId,
-			result,
-		})
-		.then((res) => console.log(res.data))
-		.catch((error) => {
-			console.error('Error:', error);
-		});
   }
 
   const updateEnergy = async() => {
@@ -159,6 +167,7 @@ const Online = () => {
                     setBlur("blur(0px)");
                     updateMoney();
                     updateXP();
+                    addMatchHistory();
                   }}
                 >
                   OK
@@ -182,6 +191,7 @@ const Online = () => {
                     setBlur("blur(0px)");
                     updateMoney();
                     updateXP();
+                    addMatchHistory();
                   }}
                 >
                   OK
@@ -205,6 +215,7 @@ const Online = () => {
                     setBlur("blur(0px)");
                     updateMoney();
                     updateXP();
+                    addMatchHistory();
                   }}
                 >
                   OK
