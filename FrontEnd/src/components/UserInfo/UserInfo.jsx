@@ -13,7 +13,8 @@ const UserInfo = () => {
 	const [newPassword, setNewPassword] = useState('');
 	const [error, setError] = useState('');
     const [ isText, setIsText ] = useState(false)
-    const [ power, setPower ] = useState();
+	const [ power, setPower ] = useState();
+	const [ history, setHistory ] = useState();
 
 	useEffect(() => {
 		axios.get(`http://localhost:3050/getUser/${userId}`).then((res) => {
@@ -68,11 +69,6 @@ const UserInfo = () => {
 		setIsText(!isText)
 	}
 
-	useEffect(() => {
-		getStats();
-	}, [])
-
-
 	const getStats = () => {
 		axios
 			.get(`http://localhost:3050/play/teampower/${userId}`)
@@ -83,6 +79,29 @@ const UserInfo = () => {
 				console.error("Error:", error);
 			});
 	}
+
+	const getHistory = () => {
+		console.log('selam')
+		axios
+			.get(`http://localhost:3050/play/getHistory/${userId}`)
+			.then((response) => {
+				setHistory(response?.data);
+				console.log(response.data);
+		console.log('as');
+
+			})
+			.catch((error) => {
+				console.error('Hata:', error);
+			});
+	};
+
+
+	useEffect(() => {
+		getStats();
+		getHistory();
+	}, []);
+
+
 	return (
 		<div className='infoContainer'>
 			<div className='leftside'>
