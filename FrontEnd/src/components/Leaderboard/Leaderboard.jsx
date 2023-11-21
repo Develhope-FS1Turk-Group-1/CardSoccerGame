@@ -13,6 +13,7 @@ const Leaderboard = () => {
       try {
         const response = await axios.get('http://localhost:3050/play/rank'); // Replace '/your-api-endpoint' with the actual endpoint URL
         setUsersTeamPower(response.data.usersTeamPower);
+        console.log(response.data)
       } catch (error) {
         console.error('Error fetching users\' team power:', error);
         // Handle error appropriately, e.g., show an error message to the user
