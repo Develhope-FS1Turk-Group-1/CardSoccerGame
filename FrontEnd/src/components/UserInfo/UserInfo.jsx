@@ -12,7 +12,8 @@ const UserInfo = () => {
 	const { resetToken } = useParams();
 	const [newPassword, setNewPassword] = useState('');
 	const [error, setError] = useState('');
-	const [isText, setIsText] = useState(false)
+    const [ isText, setIsText ] = useState(false)
+    const [ power, setPower ] = useState();
 
 	useEffect(() => {
 		axios.get(`http://localhost:3050/getUser/${userId}`).then((res) => {
@@ -73,22 +74,20 @@ const UserInfo = () => {
 
 
 	const getStats = () => {
-		console.log(userId);
 		axios
 			.get(`http://localhost:3050/play/teampower/${userId}`)
 			.then((response) => {
-				console.log(response.data);
+				setPower(response.data);
 			})
 			.catch((error) => {
 				console.error("Error:", error);
 			});
 	}
-
 	return (
 		<div className='infoContainer'>
 			<div className='leftside'>
 				<div className='username'>
-					<h1>{teamName ? teamName : '*****'}</h1>
+					<h1>{teamName ? 'Team : '+teamName : '*****'}</h1>
 				</div>
 				<div className='statsSection'>
 					<h1
@@ -121,7 +120,7 @@ const UserInfo = () => {
 					<div className='historyPanel'>
 						<div className={`historyInput ${isOpen[0] ? 'block' : 'none'}`}>
 							<span>Latest Matchs</span>
-							<input type='text' />
+							<input type='number' />
 							<button>Filter History</button>
 						</div>
 						<div className='mactchList'></div>
@@ -132,35 +131,35 @@ const UserInfo = () => {
 								<h1>ATT Power</h1>
 							</div>
 
-							<h2>puan</h2>
+							<h2>{power?.attPower}</h2>
 						</div>
 						<div className='mid'>
 							<div>
 								<h1>MID Power</h1>
 							</div>
 
-							<h2>puan</h2>
+							<h2>{power?.midPower}</h2>
 						</div>
 						<div className='def'>
 							<div>
 								<h1>DEF Power</h1>
 							</div>
 
-							<h2>puan</h2>
+							<h2>{power?.defPower}</h2>
 						</div>
 						<div className='gk'>
 							<div>
 								<h1>GK Power</h1>
 							</div>
 
-							<h2>puan</h2>
+							<h2>{power?.gkPower}</h2>
 						</div>
 						<div className='total'>
 							<div>
 								<h1>Total Power</h1>
 							</div>
 
-							<h2>puan</h2>
+							<h2>{power?.teamPower}</h2>
 						</div>
 					</div>
 					<div className={`settingsPanel ${isOpen[2] ? 'block' : 'none'}`}>
