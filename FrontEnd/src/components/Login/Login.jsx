@@ -50,20 +50,12 @@ const LoginPage = () => {
 		axios
 			.post('http://localhost:3050/login', formdata)
 			.then((response) => {
-				console.log(response.data);
 				if (response.data) {
-					console.log(response.data);
 					//localStorage.setItem('user', JSON.stringify(response.data.userId));
-					console.log(response.data);
-					
 					setMoney(response.data.money);
-					console.log(response.data);
 					setUserId(response.data.userId);
-					console.log(response.data);
 					setLevel(response.data.level);
-					console.log(response.data);
 					setEnergy(response.data.energy);
-					console.log("Check availibility");
 					navigate('/dashboard');
 				} 
 				else {

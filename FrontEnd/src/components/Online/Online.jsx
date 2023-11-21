@@ -62,7 +62,7 @@ const Online = () => {
   const checkEnergyAndStartMatch = () => {
     if (energy >= 30) {
       startFriendMatch();
-      updateEnergy();
+      // updateEnergy();
     } else {
       // Show popup error if energy is not sufficient
       setEnergyErrorMessage("Insufficient energy. Need at least 30 energy to start a match!");
