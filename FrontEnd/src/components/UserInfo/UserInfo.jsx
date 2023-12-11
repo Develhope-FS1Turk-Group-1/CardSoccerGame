@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import axios from 'axios';
 import './UserInfo.css';
 import { useUserProvider } from '../../Contexts/UserContext';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 const UserInfo = () => {
 	const [teamName, setTeamName] = useState();
@@ -12,9 +12,10 @@ const UserInfo = () => {
 	const { resetToken } = useParams();
 	const [newPassword, setNewPassword] = useState('');
 	const [error, setError] = useState('');
-	const [isText, setIsText] = useState(false)
+	const [isText, setIsText] = useState(false);
 	const [power, setPower] = useState();
 	const [history, setHistory] = useState();
+	const [displayCount, setDisplayCount] = useState(5);
 
 	useEffect(() => {
 		axios.get(`http://localhost:3050/getUser/${userId}`).then((res) => {
@@ -24,7 +25,7 @@ const UserInfo = () => {
 	}, [userId]);
 
 	const setClosing = (id) => {
-		setIsOpen((prevState) => {
+		setIsOpen(() => {
 			switch (Number(id)) {
 				case 1:
 					return [true, false, false];
@@ -43,6 +44,8 @@ const UserInfo = () => {
 			}
 		});
 	};
+
+	const navigate = useNavigate();
 
 	const resetPassword = async () => {
 		try {
@@ -66,8 +69,8 @@ const UserInfo = () => {
 	};
 
 	const typeText = () => {
-		setIsText(!isText)
-	}
+		setIsText(!isText);
+	};
 
 	const getStats = () => {
 		axios
@@ -76,30 +79,35 @@ const UserInfo = () => {
 				setPower(response.data);
 			})
 			.catch((error) => {
-				console.error("Error:", error);
+				console.error('Error:', error);
 			});
-	}
+	};
 
 	const getHistory = () => {
-		console.log('selam')
 		axios
-			.get(`http://localhost:3050/play/getHistory/${userId}`)
+			.get(`http://localhost:3050/play/getHistory/${userId}`, {
+				params: {
+					displayCount: displayCount,
+				},
+			})
 			.then((response) => {
 				setHistory(response?.data.history);
-				console.log('as');
-
 			})
 			.catch((error) => {
 				console.error('Hata:', error);
 			});
 	};
 
-
 	useEffect(() => {
 		getStats();
-		getHistory();
+		getHistory()
 	}, []);
 
+
+	const handleChange = (e) => {
+		const count = parseInt(e.target.value);
+		setDisplayCount(count);
+	}
 
 	return (
 		<div className='infoContainer'>
@@ -135,22 +143,39 @@ const UserInfo = () => {
 					<h1>Stats and Settings</h1>
 				</div>
 				<div className='activePanel'>
-					<div className='historyPanel'>
-						<div className={`historyInput ${isOpen[0] ? 'block' : 'none'}`}>
+					<div className={`historyPanel ${isOpen[0] ? 'flex' : 'none'}`}>
+						<div className={`historyInput `}>
 							<span>Latest Matchs</span>
-							<input type='number' />
-							<button>Filter History</button>
+							<input
+								type='number'
+								value={displayCount}
+								onChange={(e) =>handleChange(e) }
+							/>
+							<button onClick={() => getHistory()}>Filter History</button>
 						</div>
-						<div className='mactchList'>
-							{history?.map((match, index) => {
-								console.log(match.opponentusername);
-								return (
-									<p key={index}>
-										{match?.opponentusername} {match?.opponentgoal}-{match?.usergoal}
-									</p>
-								);
-							})}
-						</div>
+						<ol className='matchList'>
+							{history
+								?.slice(0, displayCount)
+								.sort((a, b) => b.id - a.id)
+								.map((match, index) => {
+									return (
+										<li key={index}>
+											<p>{match?.opponentusername} </p>
+
+											<span className='result'>
+												{match?.opponentgoal}-{match?.usergoal}
+											</span>
+											{match?.opponentgoal == match?.usergoal ? (
+												<span className='draw'>Draw</span>
+											) : '' || match?.opponentgoal > match?.usergoal ? (
+												<span className='defeat'>Defeat</span>
+											) : (
+												<span className='victory'>Victory</span>
+											)}
+										</li>
+									);
+								})}
+						</ol>
 					</div>
 					<div className={`statsPanel ${isOpen[1] ? 'block' : 'none'}`}>
 						<div className='att'>

@@ -1,11 +1,10 @@
-import React from 'react'
 import './FooterStyle.css'
-import ppIcon from './Components/ppiconFooter.svg'
 import podiumIcon from './Components/podiumIcon.svg'
 import instagramFooter from './Components/instagramFooter.svg'
 import linkedinFooter from './Components/linkedinFooter.svg'
 import twitterFooter from './Components/twitterFooter.svg'
-import { Link, useNavigate } from 'react-router-dom';
+import user from '../../../images/user.svg'
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
     const navigate = useNavigate();
@@ -46,7 +45,7 @@ const Footer = () => {
                         ><img src={podiumIcon} alt="" /></button>
 						<button>
 							<img
-								src={ppIcon}
+								src={user}
 								alt=''
 								onClick={() => {
 									navigate('/userInfo');

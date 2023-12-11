@@ -28,16 +28,7 @@
 	padding-left: 5px;
 }
 
-.mactchList {
-	padding-top: 20px;
-	color: white;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 30px;
-	flex-direction: column;
-	gap: 20px;
-}
+
 
 .infoContainer .leftside h1:not(.username h1):hover {
 	color: #7969e9;
@@ -91,6 +82,18 @@
 	padding: 0 0 20px 0;
 	border: 1px solid #d9d9d9;
 	border-radius: 50px;
+}
+
+
+
+.infoContainer .rightside .activePanel .historyPanel{
+	display: flex;
+	flex-direction: column;
+	overflow: scroll;
+	width: 100%;
+	height: 100%;
+	padding-right: 20px;
+
 }
 
 .infoContainer .rightside .activePanel .historyInput span {
@@ -221,4 +224,133 @@
 
 .none {
 	display: none !important;
+}
+
+
+.infoContainer .rightside .activePanel .matchList::-webkit-scrollbar {
+  width: 20px;
+}
+
+
+
+.infoContainer .rightside .activePanel .matchList::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+
+
+.infoContainer .rightside .activePanel .matchList::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+
+ ol.matchList > li, ol.matchList > li::before {
+	 box-shadow: 0.25rem 0.25rem 0.6rem rgba(0, 0, 0, 0.05), 0 0.5rem 1.125rem rgba(75, 0, 0, 0.05);
+}
+ ol.matchList {
+	 counter-reset: gradient-counter;
+	 list-style: none;
+	 margin: 1.75rem 0;
+	 padding-left: 3rem;
+	 padding-right: 3rem;
+	 overflow-y: scroll;
+	 width: 100%;
+
+
+}
+ ol.matchList > li {
+	 background: white;
+	 border-radius: 0 0.5rem 0.5rem 0.5rem;
+	 counter-increment: gradient-counter;
+	 margin-top: 1rem;
+	 min-height: 3rem;
+	 padding: 1rem 1rem 1rem 3rem;
+	 position: relative;
+	 display: flex;
+	 align-items: center;
+	 justify-content: space-between;
+}
+ ol.matchList > li::before, ol.matchList > li::after {
+	 background: linear-gradient(135deg, #83e4e2 0%, #a2ed56 100%);
+	 border-radius: 1rem 1rem 0 1rem;
+	 content: '';
+	 height: 3rem;
+	 left: -1rem;
+	 overflow: hidden;
+	 position: absolute;
+	 top: -1rem;
+	 width: 3rem;
+}
+ ol.matchList > li::before {
+	 align-items: center;
+	 content: counter(gradient-counter);
+	 color: #1d1f20;
+	 display: flex;
+	 font: 900 1.5em/1 'Montserrat';
+	 justify-content: center;
+	 padding: 0.125em 0.25em;
+	 z-index: 1;
+}
+ ol.matchList > li:nth-child(10n+1):before {
+	 background: linear-gradient(135deg, rgba(162, 237, 86, 0.2) 0%, rgba(253, 220, 50, 0.2) 100%);
+}
+ ol.matchList > li:nth-child(10n+2):before {
+	 background: linear-gradient(135deg, rgba(162, 237, 86, 0.4) 0%, rgba(253, 220, 50, 0.4) 100%);
+}
+ ol.matchList > li:nth-child(10n+3):before {
+	 background: linear-gradient(135deg, rgba(162, 237, 86, 0.6) 0%, rgba(253, 220, 50, 0.6) 100%);
+}
+ ol.matchList > li:nth-child(10n+4):before {
+	 background: linear-gradient(135deg, rgba(162, 237, 86, 0.8) 0%, rgba(253, 220, 50, 0.8) 100%);
+}
+ ol.matchList > li:nth-child(10n+5):before {
+	 background: linear-gradient(135deg, rgba(162, 237, 86, 1) 0%, rgba(253, 220, 50, 1) 100%);
+}
+ ol.matchList > li:nth-child(10n+6):before {
+	 background: linear-gradient(135deg, rgba(162, 237, 86, 0.8) 0%, rgba(253, 220, 50, 0.8) 100%);
+}
+ ol.matchList > li:nth-child(10n+7):before {
+	 background: linear-gradient(135deg, rgba(162, 237, 86, 0.6) 0%, rgba(253, 220, 50, 0.6) 100%);
+}
+ ol.matchList > li:nth-child(10n+8):before {
+	 background: linear-gradient(135deg, rgba(162, 237, 86, 0.4) 0%, rgba(253, 220, 50, 0.4) 100%);
+}
+ ol.matchList > li:nth-child(10n+9):before {
+	 background: linear-gradient(135deg, rgba(162, 237, 86, 0.2) 0%, rgba(253, 220, 50, 0.2) 100%);
+}
+ ol.matchList > li:nth-child(10n+10):before {
+	 background: linear-gradient(135deg, rgba(162, 237, 86, 0) 0%, rgba(253, 220, 50, 0) 100%);
+}
+ ol.matchList > li + li {
+	 margin-top: 2rem;
+}
+
+
+ol.matchList > li span{
+	display: inline-block;
+	border-radius: 20px;
+	padding: 5px 30px;
+
+
+
+
+}
+
+ol.matchList > li span.result{
+	background-color: #975bce;
+	font-size: 20px;
+}
+
+ol.matchList > li span.defeat{
+	background-color: rgb(230, 57, 57);
+}
+
+ol.matchList > li span.draw{
+	background-color: gray;
+}
+
+ol.matchList > li span.victory{
+	background-color: rgb(71, 157, 71);
 }
